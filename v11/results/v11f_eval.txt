@@ -1,0 +1,94 @@
+v11 part F (research\PREREG_v11f.md, 2026-10-27 23:00); walk-forward of v11 part B, Top50 bp/day
+days 1164 (2022-01-03 .. 2026-10-22); F1 affects 48 days: val 2022-24 28, hold 2025-26/05 16, post 2026-06..10-22 4
+  of them T2 was non-zero (night session present) on 46; mean |T2 shift of pbar| there 0.0271 (all days 0.0237)
+
+1. each setting (bp/day; worst = mean of the worst 1 % / 5 % days; P(19d) = share of 19-day windows)
+
+  val 2022-24
+                    days     AR     sd  AR/sd  worst1%  worst5%  P(19d>0)  P(19d>20)  timing   xsec
+setting                                                                                            
+v9                   727  13.99  43.43   0.32   -95.58   -71.36      0.94       0.26    1.81  12.18
+v11                  727  14.60  43.86   0.33  -100.71   -73.24      0.94       0.27    2.55  12.06
+v11 + F1             727  14.61  43.82   0.33  -100.71   -73.24      0.94       0.27    2.56  12.05
+W0 (10/27 upload)    727  11.79  36.06   0.33   -80.37   -57.81      0.93       0.11   -0.57  12.36
+W0 + F1              727  11.79  36.06   0.33   -80.37   -57.81      0.93       0.11   -0.57  12.36
+F2 (half and half)   727  11.55  44.12   0.26  -103.92   -75.14      0.90       0.18   -0.00  11.55
+
+  hold 2025-26/05
+                    days     AR     sd  AR/sd  worst1%  worst5%  P(19d>0)  P(19d>20)  timing   xsec
+setting                                                                                            
+v9                   338  14.33  50.42   0.28  -109.49   -76.92      0.91       0.31    2.75  11.58
+v11                  338  14.34  49.62   0.29  -115.22   -78.47      0.93       0.28    3.12  11.22
+v11 + F1             338  14.34  49.69   0.29  -115.22   -77.90      0.92       0.29    3.06  11.28
+W0 (10/27 upload)    338  10.35  37.53   0.28  -102.81   -67.68      0.86       0.12   -2.47  12.82
+W0 + F1              338  10.35  37.53   0.28  -102.81   -67.68      0.86       0.12   -2.47  12.82
+F2 (half and half)   338  13.82  43.17   0.32   -88.93   -69.35      0.88       0.30    0.01  13.81
+
+  post 2026-06..10-22
+                    days     AR     sd  AR/sd  worst1%  worst5%  P(19d>0)  P(19d>20)  timing   xsec
+setting                                                                                            
+v9                    99  16.59  70.11   0.24  -153.94  -126.15      0.93       0.38   -1.92  18.51
+v11                   99  20.35  67.74   0.30  -147.21  -120.97      1.00       0.42    3.14  17.20
+v11 + F1              99  19.59  68.22   0.29  -147.21  -120.97      1.00       0.39    2.67  16.92
+W0 (10/27 upload)     99  21.71  54.03   0.40  -110.29   -89.00      0.99       0.40    2.17  19.54
+W0 + F1               99  21.71  54.03   0.40  -110.29   -89.00      0.99       0.40    2.17  19.54
+F2 (half and half)    99  16.64  60.03   0.28  -117.06  -104.79      0.96       0.37    0.00  16.64
+
+  Jun-Sep 2026
+                    days     AR     sd  AR/sd  worst1%  worst5%  P(19d>0)  P(19d>20)  timing   xsec
+setting                                                                                            
+v9                    84  15.46  72.54   0.21  -153.94  -126.15      0.92       0.44   -1.62  17.09
+v11                   84  21.43  69.78   0.31  -147.21  -120.22      1.00       0.49    3.90  17.53
+v11 + F1              84  20.39  70.35   0.29  -147.21  -120.22      1.00       0.45    3.46  16.93
+W0 (10/27 upload)     84  20.49  54.51   0.38  -110.29   -89.00      0.99       0.46    1.34  19.14
+W0 + F1               84  20.49  54.51   0.38  -110.29   -89.00      0.99       0.46    1.34  19.14
+F2 (half and half)    84  16.71  60.63   0.28  -117.06  -100.43      1.00       0.44    0.00  16.71
+
+  Oct 2026
+                    days     AR     sd  AR/sd  worst1%  worst5%  P(19d>0)  P(19d>20)  timing   xsec
+setting                                                                                            
+v9                    15  22.91  56.29   0.41   -77.01   -77.01      1.00       0.07   -3.60  26.51
+v11                   15  14.27  56.59   0.25   -84.09   -84.09      1.00       0.07   -1.09  15.37
+v11 + F1              15  15.07  56.73   0.27   -84.09   -84.09      1.00       0.07   -1.77  16.85
+W0 (10/27 upload)     15  28.57  52.53   0.54   -58.36   -58.36      1.00       0.07    6.81  21.76
+W0 + F1               15  28.57  52.53   0.54   -58.36   -58.36      1.00       0.07    6.81  21.76
+F2 (half and half)    15  16.21  58.56   0.28  -104.69  -104.69      0.73       0.00    0.00  16.21
+
+  all
+                    days     AR     sd  AR/sd  worst1%  worst5%  P(19d>0)  P(19d>20)  timing   xsec
+setting                                                                                            
+v9                  1164  14.31  48.26   0.30  -117.92   -79.16      0.93       0.28    1.76  12.55
+v11                 1164  15.02  48.00   0.31  -119.19   -80.03      0.94       0.28    2.76  12.25
+v11 + F1            1164  14.96  48.05   0.31  -119.19   -79.87      0.94       0.28    2.72  12.24
+W0 (10/27 upload)   1164  12.22  38.40   0.32   -96.59   -63.83      0.91       0.14   -0.89  13.10
+W0 + F1             1164  12.22  38.40   0.32   -96.59   -63.83      0.91       0.14   -0.89  13.10
+F2 (half and half)  1164  12.64  45.40   0.28  -108.09   -77.08      0.90       0.23    0.00  12.64
+
+2. F1 minus v11 (bp/day)
+  over the 48 affected days (the rule): mean -1.49, sd 19.39, iid t -0.53, positive on 17, negative on 16, zero on 15
+  val 2022-24: affected days 28, mean +0.13; per day over the whole period +0.005
+  hold 2025-26/05: affected days 16, mean +0.00; per day over the whole period +0.000
+  post 2026-06..10-22: affected days 4, mean -18.83; per day over the whole period -0.761
+  whole walk-forward, per day: -0.061 (NW t -0.53)
+  check: W0 + F1 equals W0 (w_T 0 has no T2): largest daily difference 0.00e+00
+  affected days: timing change -1.13, xsec change -0.36
+  RULE: mean over the affected days > 0 -> F1 is not added; v11 unchanged
+
+3. F2 (half and half) minus W0 and minus v11 (bp/day, NW t)
+  minus W0 (10/27 upload): val 2022-24 -0.24 (-0.19); hold 2025-26/05 +3.46 (2.31); post 2026-06..10-22 -5.07 (-1.72); Jun-Sep 2026 -3.77 (-1.18); Oct 2026 -12.36 (-1.76); all +0.42 (0.45)
+  minus v11: val 2022-24 -3.06 (-2.27); hold 2025-26/05 -0.52 (-0.34); post 2026-06..10-22 -3.71 (-0.79); Jun-Sep 2026 -4.72 (-0.88); Oct 2026 +1.94 (0.31); all -2.38 (-2.29)
+  minus v9: val 2022-24 -2.44 (-2.34); hold 2025-26/05 -0.52 (-0.37); post 2026-06..10-22 +0.05 (0.01); Jun-Sep 2026 +1.25 (0.25); Oct 2026 -6.70 (-1.26); all -1.67 (-1.95)
+  F2 check: largest |net exposure| 0.020 (0 when n is even), days with n != 50: 25, days with ex-dividend-rule stocks: 439
+  daily correlation F2 vs W0 0.72; vs v11 0.72
+  RULE: AR >= W0 in val, hold and post -> not recommended over W0; F2 stays an option (--balanced)
+
+4. by the day's market move m (Top50 mean intraday return), all 1,164 days (report only)
+m bin (bp)  days   v11  W0 (10/27 upload)  F2 (half and half)
+-inf..-100   106 38.77              15.06               53.22
+ -100..-50   160 18.66               9.99               32.61
+    -50..0   307 15.05              12.80               18.76
+     0..50   344  5.37               9.23                0.79
+   50..100   176 10.31              13.16               -9.28
+  100..inf    71 29.59              22.62               -7.67
+
+done in 7s

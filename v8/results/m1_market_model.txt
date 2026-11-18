@@ -1,0 +1,14 @@
+[all] 32 inputs; OOS forecasts 2021-03-02..2026-10-22 (1375 days)
+   lambda chosen (count): 300: 11, 1000: 24, 3000: 33
+   corr(mu_hat, m): pre -0.028 (n 211), val 0.087 (n 727), hold 0.239 (n 338), post -0.077 (n 99), all22 0.132 (n 1164); 2021 (pre, OOS) -0.028
+   sd(mu_hat) 11.89 bp, mean -3.79 bp; sd(m) 76.4 bp
+   largest standardised coefficients in the last refit (bp per sd): txoi_chg +2.72, mkt_gap_prev +2.07, txoi_chg5 +1.92, night_ret -1.91, us_gspc_ret1 -1.90, us_ixic_ret5 +1.71, cal_tom +1.65, trust_net_sum +1.56, us_ixic_ret1 -1.48, mkt_intra_5 -1.18
+   share of monthly refits with a positive coefficient, most stable: us_ixic_ret1 0.00, us_gspc_ret1 0.00, night_ret 0.00, mkt_intra_prev 0.00, cal_month_end 0.00, txoi 1.00, twii_ret1 1.00, us_ixic_ret5 1.00, mkt_gap_prev 1.00, cal_post_holiday 1.00
+[comp] 29 inputs; OOS forecasts 2021-03-02..2026-10-22 (1375 days)
+   lambda chosen (count): 1: 2, 3: 1, 30: 3, 100: 5, 300: 1, 1000: 22, 3000: 34
+   corr(mu_hat, m): pre -0.037 (n 211), val 0.078 (n 727), hold 0.250 (n 338), post -0.194 (n 99), all22 0.123 (n 1164); 2021 (pre, OOS) -0.037
+   sd(mu_hat) 12.37 bp, mean -3.97 bp; sd(m) 76.4 bp
+   largest standardised coefficients in the last refit (bp per sd): txoi_chg +2.69, mkt_gap_prev +2.13, us_gspc_ret1 -2.12, txoi_chg5 +1.88, us_ixic_ret1 -1.72, cal_tom +1.66, us_ixic_ret5 +1.59, trust_net_sum +1.56, mkt_ret1_prev +1.22, mkt_intra_5 -1.18
+   share of monthly refits with a positive coefficient, most stable: us_ixic_ret1 0.00, us_gspc_ret1 0.00, breadth_prev 0.00, mkt_intra_prev 0.00, cal_month_end 0.00, txoi_chg 1.00, txoi 1.00, mkt_gap_prev 1.00, mkt_range_prev 1.00, cal_post_holiday 1.00
+
+corr(mu_all, pbar) 2022-26: 0.733; corr(mu_comp, pbar): 0.727

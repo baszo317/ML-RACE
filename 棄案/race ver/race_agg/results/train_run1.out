@@ -1,0 +1,155 @@
+16:58:09 race_agg train: 135 units to do (all), workers 2, budget None
+16:58:21 GM.LU 2022-01-01 seed1: done (11.1 s) {'best_iter': 211}
+16:58:21 GM.LU 2022-01-01 seed2: done (11.8 s) {'best_iter': 250}
+16:58:32 GM.LU 2022-01-01 seed3: done (10.8 s) {'best_iter': 219}
+16:58:41 GM.LU 2023-01-01 seed1: done (19.5 s) {'best_iter': 278}
+16:58:56 GM.LU 2023-01-01 seed2: done (23.8 s) {'best_iter': 361}
+16:59:04 GM.LU 2023-01-01 seed3: done (22.6 s) {'best_iter': 341}
+16:59:16 GM.LU 2024-01-01 seed1: done (19.9 s) {'best_iter': 187}
+16:59:27 GM.LU 2024-01-01 seed2: done (22.7 s) {'best_iter': 217}
+16:59:29 GM.LN 2022-01-01 seed1: done (1.9 s) {'best_epoch': 4}
+16:59:31 GM.LN 2022-01-01 seed2: done (1.6 s) {'best_epoch': 4}
+16:59:33 GM.LN 2022-01-01 seed3: done (1.9 s) {'best_epoch': 5}
+16:59:35 GM.LN 2023-01-01 seed1: done (1.6 s) {'best_epoch': 1}
+16:59:37 GM.LN 2023-01-01 seed2: done (1.7 s) {'best_epoch': 1}
+16:59:40 GM.LN 2023-01-01 seed3: done (2.0 s) {'best_epoch': 2}
+16:59:44 GM.LN 2024-01-01 seed1: done (3.7 s) {'best_epoch': 3}
+16:59:46 GM.LU 2024-01-01 seed3: done (29.4 s) {'best_iter': 304}
+16:59:48 GM.LN 2024-01-01 seed2: done (3.8 s) {'best_epoch': 3}
+16:59:49 GM.LN 2024-01-01 seed3: done (3.1 s) {'best_epoch': 2}
+17:00:03 GM.LP 2022-01-01 seed0: done (15.1 s) 
+17:00:12 GM.LP 2023-01-01 seed0: done (23.0 s) 
+17:00:22 GM.LC 2022-01-01 seed0: done (9.1 s) {'best_iter': 115}
+17:00:36 GM.LP 2024-01-01 seed0: done (32.4 s) 
+17:00:40 GM.LC 2023-01-01 seed0: done (17.8 s) {'best_iter': 165}
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:00:45 GM.LM 2022-01-01 seed2026: done (4.8 s) 
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:00:50 GM.LM 2022-01-01 seed2027: done (4.8 s) 
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:00:55 GM.LM 2022-01-01 seed2028: done (4.5 s) 
+17:01:00 GM.LC 2024-01-01 seed0: done (24.2 s) {'best_iter': 178}
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:01:04 GM.LM 2023-01-01 seed2026: done (8.7 s) 
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:01:08 GM.LM 2023-01-01 seed2027: done (7.5 s) 
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:01:12 GM.LM 2023-01-01 seed2028: done (7.6 s) 
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:01:20 GM.LM 2024-01-01 seed2026: done (11.3 s) 
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:01:23 GM.LM 2024-01-01 seed2027: done (10.6 s) 
+/usr/local/lib/python3.13/site-packages/sklearn/utils/validation.py:2830: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+17:01:30 GM.LM 2024-01-01 seed2028: done (10.5 s) 
+17:02:59 E4sel 2022-01-01 seed0: done (96.1 s) {'n_keep': 102, 'base_ic': 0.1408}
+17:03:05 E4sel 2023-01-01 seed0: done (94.1 s) {'n_keep': 101, 'base_ic': 0.1137}
+17:03:26 C1 2022-01-01 seed0: done (21.4 s) {'T': 47}
+17:04:01 C1 2023-01-01 seed0: done (34.3 s) {'T': 5}
+17:04:52 E4sel 2024-01-01 seed0: done (112.8 s) {'n_keep': 97, 'base_ic': 0.1251}
+17:04:57 C1 2024-01-01 seed0: done (55.9 s) {'T': 45}
+17:05:14 C2 2022-01-01 seed0: done (21.2 s) {'T': 2}
+17:05:33 C2 2023-01-01 seed0: done (35.7 s) {'T': 14}
+17:06:01 C2 2024-01-01 seed0: done (46.7 s) {'T': 3}
+17:07:54 D1 2022-01-01 seed1: done (140.3 s) {'leaves': 2}
+17:10:36 D1 2023-01-01 seed1: done (275.1 s) {'leaves': 3}
+17:12:34 E1 2022-01-01 seed1: done (117.6 s) {'leaf': 250}
+17:14:40 D1 2024-01-01 seed1: done (406.1 s) {'leaves': 2}
+17:16:38 E1 2023-01-01 seed1: done (243.3 s) {'leaf': 250}
+17:16:50 B1 2022-01-01 seed4: done (12.1 s) {'best_iter': 178}
+17:17:03 B1 2022-01-01 seed5: done (12.3 s) {'best_iter': 189}
+17:17:16 B1 2022-01-01 seed6: done (13.3 s) {'best_iter': 194}
+17:17:30 B1 2022-01-01 seed7: done (13.8 s) {'best_iter': 214}
+17:17:45 B1 2022-01-01 seed8: done (14.1 s) {'best_iter': 231}
+17:17:58 B1 2022-01-01 seed9: done (13.1 s) {'best_iter': 204}
+17:18:12 B1 2022-01-01 seed10: done (13.4 s) {'best_iter': 181}
+17:18:44 B1 2023-01-01 seed4: done (31.7 s) {'best_iter': 418}
+17:19:15 B1 2023-01-01 seed5: done (30.0 s) {'best_iter': 382}
+17:19:48 B1 2023-01-01 seed6: done (32.6 s) {'best_iter': 431}
+17:20:20 B1 2023-01-01 seed7: done (31.7 s) {'best_iter': 390}
+17:20:51 B1 2023-01-01 seed8: done (31.1 s) {'best_iter': 371}
+17:21:07 E1 2024-01-01 seed1: done (387.0 s) {'leaf': 250}
+17:21:38 B1 2023-01-01 seed9: done (46.7 s) {'best_iter': 660}
+17:21:44 B1 2023-01-01 seed10: done (36.3 s) {'best_iter': 487}
+17:22:10 B1 2024-01-01 seed4: done (31.8 s) {'best_iter': 277}
+17:22:21 B1 2024-01-01 seed5: done (37.3 s) {'best_iter': 357}
+17:22:42 B1 2024-01-01 seed6: done (31.7 s) {'best_iter': 275}
+17:22:56 B1 2024-01-01 seed7: done (34.6 s) {'best_iter': 316}
+17:23:16 B1 2024-01-01 seed8: done (34.0 s) {'best_iter': 321}
+17:23:30 B1 2024-01-01 seed9: done (33.3 s) {'best_iter': 316}
+17:23:30 B2 2022-01-01 seed1: exists (0.0 s) 
+17:23:31 B2 2022-01-01 seed2: exists (0.0 s) 
+17:23:31 B2 2022-01-01 seed3: exists (0.0 s) 
+17:23:32 B2 2022-01-01 seed4: exists (0.0 s) 
+17:23:32 B2 2022-01-01 seed5: exists (0.0 s) 
+17:23:33 B2 2022-01-01 seed6: exists (0.0 s) 
+17:23:33 B2 2022-01-01 seed7: exists (0.0 s) 
+17:23:34 B2 2022-01-01 seed8: exists (0.0 s) 
+17:23:34 B2 2022-01-01 seed9: exists (0.0 s) 
+17:23:35 B2 2022-01-01 seed10: exists (0.0 s) 
+17:23:35 B2 2023-01-01 seed1: exists (0.0 s) 
+17:23:36 B2 2023-01-01 seed2: exists (0.0 s) 
+17:23:36 B2 2023-01-01 seed3: exists (0.0 s) 
+17:23:37 B2 2023-01-01 seed4: exists (0.0 s) 
+17:23:37 B2 2023-01-01 seed5: exists (0.0 s) 
+17:23:38 B2 2023-01-01 seed6: exists (0.0 s) 
+17:23:38 B2 2023-01-01 seed7: exists (0.0 s) 
+17:23:39 B2 2023-01-01 seed8: exists (0.0 s) 
+17:23:39 B2 2023-01-01 seed9: exists (0.0 s) 
+17:23:40 B2 2023-01-01 seed10: exists (0.0 s) 
+17:23:40 B2 2024-01-01 seed1: exists (0.0 s) 
+17:23:41 B2 2024-01-01 seed2: exists (0.0 s) 
+17:23:41 B2 2024-01-01 seed3: exists (0.0 s) 
+17:23:42 B2 2024-01-01 seed4: exists (0.0 s) 
+17:23:42 B2 2024-01-01 seed5: exists (0.0 s) 
+17:23:43 B2 2024-01-01 seed6: exists (0.0 s) 
+17:23:43 B2 2024-01-01 seed7: exists (0.0 s) 
+17:23:44 B2 2024-01-01 seed8: exists (0.0 s) 
+17:23:44 B2 2024-01-01 seed9: exists (0.0 s) 
+17:23:50 B1 2024-01-01 seed10: done (33.6 s) {'best_iter': 321}
+17:24:03 C3 2022-01-01 seed1: done (12.1 s) {'best_iter': 164}
+17:24:14 B2 2024-01-01 seed10: done (29.3 s) {'best_iter': 247, 'unique_days': 582}
+17:24:15 C3 2022-01-01 seed2: done (11.9 s) {'best_iter': 152}
+17:24:28 C3 2022-01-01 seed3: done (14.0 s) {'best_iter': 204}
+17:24:38 C3 2023-01-01 seed1: done (22.7 s) {'best_iter': 258}
+17:24:54 C3 2023-01-01 seed2: done (25.1 s) {'best_iter': 300}
+17:25:03 C3 2023-01-01 seed3: done (24.2 s) {'best_iter': 278}
+17:25:25 C3 2024-01-01 seed1: done (31.0 s) {'best_iter': 273}
+17:25:31 C3 2024-01-01 seed2: done (28.1 s) {'best_iter': 237}
+17:25:48 D2 2022-01-01 seed1: done (16.2 s) {'best_iter': 256}
+17:25:53 C3 2024-01-01 seed3: done (28.0 s) {'best_iter': 236}
+17:26:04 D2 2022-01-01 seed2: done (16.1 s) {'best_iter': 256}
+17:26:08 D2 2022-01-01 seed3: done (13.9 s) {'best_iter': 181}
+17:26:35 D2 2023-01-01 seed1: done (30.9 s) {'best_iter': 400}
+17:26:41 D2 2023-01-01 seed2: done (32.8 s) {'best_iter': 437}
+17:27:09 D2 2023-01-01 seed3: done (33.9 s) {'best_iter': 436}
+17:27:12 D2 2024-01-01 seed1: done (31.1 s) {'best_iter': 274}
+17:27:37 D2 2024-01-01 seed3: done (24.4 s) {'best_iter': 200}
+17:27:38 F1 2022-01-01 seed1: exists (0.0 s) 
+17:27:38 F1 2022-01-01 seed2: exists (0.0 s) 
+17:27:39 F1 2022-01-01 seed3: exists (0.0 s) 
+17:27:39 F1 2023-01-01 seed1: exists (0.0 s) 
+17:27:40 F1 2023-01-01 seed2: exists (0.0 s) 
+17:27:40 F1 2023-01-01 seed3: exists (0.0 s) 
+17:27:41 F1 2024-01-01 seed1: exists (0.0 s) 
+17:27:41 D2 2024-01-01 seed2: done (30.9 s) {'best_iter': 266}
+17:27:41 F1 2024-01-01 seed2: exists (0.0 s) 
+17:27:42 F1 2024-01-01 seed3: exists (0.0 s) 
+17:27:42 E4 2022-01-01 seed1: exists (0.0 s) 
+17:27:42 E4 2022-01-01 seed2: exists (0.0 s) 
+17:27:42 E4 2022-01-01 seed3: exists (0.0 s) 
+17:27:43 E4 2023-01-01 seed1: exists (0.0 s) 
+17:27:43 E4 2023-01-01 seed2: exists (0.0 s) 
+17:27:43 E4 2023-01-01 seed3: exists (0.0 s) 
+17:27:43 E4 2024-01-01 seed1: exists (0.0 s) 
+17:27:44 E4 2024-01-01 seed2: exists (0.0 s) 
+17:27:44 E4 2024-01-01 seed3: exists (0.0 s) 
+17:27:44 race_agg train: 0 units left (all)

@@ -1,0 +1,35 @@
+V10 groups: L (lgb_res) ['KBAR', 'MA', 'STD', 'RSQR', 'RESI', 'MAX', 'MIN', 'QTLU', 'QTLD', 'RANK', 'RSV', 'IDX', 'CORR', 'CORD', 'CNT', 'VMA', 'VSTD', 'WVMA', 'VSUM']; M (mlp_res_xr9 / BN9 / xrN9) ['RSQR', 'MIN', 'RSV', 'IDX', 'WVMA']
+features: lgb_res 196 (v9 67); mlp_res_xr9 131 (v9 96), mlp_res_BN9 106 (v9 71), mlp_res_xrN9 141 (v9 106)
+
+Top50 bp/day, walk-forward 2022-01..2026-10 (yearly retrain; post = models trained to 2026-05-29)
+                                      config   val  hold  post   all    sd  timing  xsec  P19>0  P19>20  static   Oct
+     v9 (cache: trained in the cloud for v9) 13.99 14.33 16.59 14.31 48.26    1.76 12.55   0.93    0.28   15.46 22.91
+            v9 replica (same machine as V10) 13.99 13.93 16.73 14.20 48.28    1.67 12.53   0.92    0.28   15.76 22.19
+                                         V10 13.78 13.47 18.35 14.08 47.92    1.70 12.38   0.93    0.27   17.49 23.12
+        ablation: V10 with only the L change 13.91 13.25 18.11 14.08 48.33    1.79 12.29   0.93    0.27   17.46 21.76
+        ablation: V10 with only the M change 14.10 13.82 18.17 14.37 47.97    1.66 12.71   0.92    0.30   17.60 21.41
+reference: ALL 158 in L and M (MLP seed 1-5) 13.10 13.90 19.28 13.86 48.43    1.50 12.36   0.93    0.24   19.37 18.72
+     reference: v9 replica with MLP seed 1-5 14.03 13.88 15.53 14.11 48.27    1.62 12.49   0.92    0.29   14.69 20.21
+
+paired difference to the v9 replica (d_, plain t_)
+                                      config  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all
+     v9 (cache: trained in the cloud for v9)   0.00    NaN    0.41    2.04   -0.14   -0.17   0.11   1.16
+            v9 replica (same machine as V10)   0.00    NaN    0.00     NaN    0.00     NaN   0.00    NaN
+                                         V10  -0.21  -0.50   -0.45   -0.75    1.61    1.07  -0.13  -0.37
+        ablation: V10 with only the L change  -0.08  -0.21   -0.68   -1.55    1.38    1.08  -0.13  -0.46
+        ablation: V10 with only the M change   0.11   0.38   -0.11   -0.22    1.44    1.49   0.16   0.64
+reference: ALL 158 in L and M (MLP seed 1-5)  -0.89  -1.74   -0.03   -0.04    2.54    1.66  -0.35  -0.86
+     reference: v9 replica with MLP seed 1-5   0.04   0.19   -0.04   -0.16   -1.21   -1.44  -0.09  -0.55
+
+paired difference to the v9 cache (c_d_, c_t_)
+                                      config  c_d_val  c_t_val  c_d_hold  c_t_hold  c_d_post  c_t_post  c_d_all  c_t_all
+     v9 (cache: trained in the cloud for v9)     0.00      NaN      0.00       NaN      0.00       NaN     0.00      NaN
+            v9 replica (same machine as V10)     0.00      NaN     -0.41     -2.04      0.14      0.17    -0.11    -1.16
+                                         V10    -0.21    -0.50     -0.86     -1.39      1.76      1.19    -0.23    -0.68
+        ablation: V10 with only the L change    -0.08    -0.21     -1.09     -2.22      1.52      1.29    -0.23    -0.82
+        ablation: V10 with only the M change     0.11     0.38     -0.52     -0.96      1.58      1.51     0.06     0.21
+reference: ALL 158 in L and M (MLP seed 1-5)    -0.89    -1.74     -0.44     -0.59      2.69      1.78    -0.45    -1.11
+     reference: v9 replica with MLP seed 1-5     0.04     0.19     -0.45     -1.70     -1.06     -1.22    -0.20    -1.18
+
+pre-registered check (selection used val only): hold diff -0.45 (t -0.75), post diff +1.61 (t 1.07) -> not both > 0: the selected groups did not generalise; keep v9 live
+done in 64s

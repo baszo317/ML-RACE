@@ -1,0 +1,34 @@
+RACE-STD v1 Stage 2 -- V = 2025-01-01 .. 2026-11-09 (447 days), the single use of V
+sealed 2026-11-15 14:08:07 (LOCK 2026-11-15 14:07:17); decision SD = Top25 of Top50 + ex-dividend rule
+
+finalist          units feats    mean   NW t     sd   pos%    IC  | 2025  2026-01..05 2026-06.. | Oct-Nov  P(19d<0)  MCS p
+U-native (U-native)       6   109   +1.70   0.98   35.9  48.5  0.138 |  +1.18    +6.45     -1.27 |   -9.35     0.45   1.000
+ENS_TOP3                  8   319   +1.60   0.92   34.9  49.0  0.113 |  +1.22    +5.65     -1.08 |   -9.35     0.45   0.673
+P.LP (P-native)           1    61   +1.30   0.75   36.8  47.9  0.100 |  +0.73    +5.52     -1.09 |   -9.35     0.46   0.626
+ALLmP.LP                  1   319   +1.19   0.72   33.5  49.0  0.088 |  +1.01    +5.30     -1.97 |   -9.35     0.45   0.568
+U.LP                      1   111   +1.19   0.71   34.3  48.8  0.096 |  +1.23    +5.56     -2.72 |   -9.35     0.45   0.626
+C.LC (C-native)           1   169   -0.70  -0.47   32.3  46.3  0.046 |  +0.81    +1.91     -6.35 |   -9.35     0.50   0.118
+M.LM (M-native)           1    39   -0.82  -0.51   33.3  47.7  0.009 |  -1.00    +3.48     -4.16 |   -9.35     0.50   0.118
+
+3.1  winner on V: U-native (+1.70 bp/day)
+     within 1 SE of the winner (paired NW SE): U-native (+0.00 <= 0.00), ENS_TOP3 (+0.10 <= 0.29)
+     -> race stock view (fewest units, then fewest features): U-native  units ['UB9S.LN', 'UXR9.LN', 'UBN9.LN', 'UXRN9.LN', 'UB.LU', 'UXRN9.LU']
+
+3.2  market view for U-native: IC_D 0.1493; SD_MV - SD (lambda 1): D +3.38 (t 1.35), V +4.53 (t 1.16) -> ADD the market view
+     report only, lambda 0.5: D +3.59, V +5.44; share of 1s on V (lambda 1) 0.07
+
+report only:
+  MCS 90% (Hansen, Lunde & Nason 2011): ['U.LP', 'ALLmP.LP', 'U-native', 'ENS_TOP3', 'P.LP', 'C.LC', 'M.LM']
+  SPA_c p (H0: no finalist beats the native): U-native 0.829, P-native 0.344, C-native 0.056, M-native 0.047
+  P(bootstrap mean of U-native > native): P-native 0.86, C-native 1.00, M-native 1.00
+  James-Stein shrinkage factor 0.00: U.LP +0.78, ALLmP.LP +0.78, U-native +0.78, ENS_TOP3 +0.78, P.LP +0.78, C.LC +0.78, M.LM +0.78
+
+correlation of daily AR on V:
+          U.LP  ALLmP.LP  U-native  ENS_TOP3  P.LP  C.LC  M.LM
+U.LP      1.00      0.96      0.95      0.98  0.93  0.87  0.86
+ALLmP.LP  0.96      1.00      0.95      0.98  0.94  0.86  0.87
+U-native  0.95      0.95      1.00      0.98  0.97  0.85  0.87
+ENS_TOP3  0.98      0.98      0.98      1.00  0.96  0.87  0.86
+P.LP      0.93      0.94      0.97      0.96  1.00  0.82  0.85
+C.LC      0.87      0.86      0.85      0.87  0.82  1.00  0.87
+M.LM      0.86      0.87      0.87      0.86  0.85  0.87  1.00

@@ -1,0 +1,47 @@
+# 競賽資料（課程規定不能分享給沒修課的人）和其他資料：不上傳
+/data/
+/data_backup_original/
+/downloads/
+**/data/
+**/ext/
+v6/phase2/prices/
+
+# 課程投影片
+/docs/
+
+# cache、暫存、模型
+**/cache/
+**/_stage/
+**/models*/
+**/__pycache__/
+**/.ipynb_checkpoints/
+*.pyc
+*.pkl
+*.parquet
+*.feather
+*.npy
+*.npz
+*.h5
+*.pt
+*.pth
+*.joblib
+*.zip
+*.tar
+*.tgz
+*.tar.gz
+棄案/_github_tmp/
+
+# race 版每天要讀的 feature 清單（在 cache 裡，例外放上來）
+!race ver/race_std/cache/
+race ver/race_std/cache/*
+!race ver/race_std/cache/features.json
+
+# 組員的檔案和 leaderboard 截圖：不公開
+race ver/NTU_M2_Final_System/
+race ver/NTU_M2_同學快速指南.txt
+race ver/framework_features_v2.3.md
+race ver/所有特徵by陳聖翰.md
+race ver/陳聖翰的V5架構.md
+v6/others/
+棄案/v6/submission-1-phase1*
+leaderboard/*.png

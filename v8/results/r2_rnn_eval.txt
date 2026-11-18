@@ -1,0 +1,36 @@
+rows: members 116353, GRU 116353; common 116353
+
+v4 rule with each market view, Top50 bp/day, walk-forward 2022-01..2026-10; d_/t_ = paired difference to the control
+                          config    val   hold   post  all22     sd  timing   xsec  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+control: (MLP + Transformer) / 2 13.220 13.949 12.632 13.382 49.595   1.550 11.832  0.911    NaN    NaN     NaN     NaN     NaN     NaN
+              R1 (MLP + GRU) / 2 12.032 13.882 12.458 12.605 48.954   1.096 11.509  0.901 -1.188 -2.486  -0.067  -0.092  -0.174  -0.079
+R2 (MLP + Transformer + GRU) / 3 12.567 13.786 12.703 12.933 49.309   1.400 11.532  0.902 -0.653 -1.821  -0.163  -0.269   0.071   0.037
+         (info) Transformer only 13.122 12.873 15.431 13.246 50.661   2.003 11.243  0.889 -0.098 -0.297  -1.076  -1.812   2.799   1.703
+                 (info) GRU only 11.456 13.944 12.389 12.258 49.484   0.689 11.568  0.896 -1.764 -2.178  -0.005  -0.004  -0.243  -0.063
+
+Holm (2 tests) and hold > 0:
+  R2 (MLP + Transformer + GRU) / 3   val t -1.82 (needs 1.96), hold diff -0.16 -> do not adopt
+  R1 (MLP + GRU) / 2                 val t -2.49 (needs 1.65), hold diff -0.07 -> do not adopt
+
+correlation of each pbar with the Top50 intraday return m:
+  control: (MLP + Transformer) / 2   val +0.110, hold +0.203, post -0.097, all22 +0.110
+  R1 (MLP + GRU) / 2                 val +0.084, hold +0.206, post -0.109, all22 +0.100
+  R2 (MLP + Transformer + GRU) / 3   val +0.099, hold +0.209, post -0.082, all22 +0.110
+  (info) Transformer only            val +0.113, hold +0.204, post -0.030, all22 +0.117
+  (info) GRU only                    val +0.039, hold +0.188, post -0.025, all22 +0.085
+
+correlation between the market views (daily pbar): MLP-Transformer 0.890, MLP-GRU 0.661, Transformer-GRU 0.716
+
+for information, static 2026-06-01..09-30:
+  control: (MLP + Transformer) / 2   AR   12.16  timing  -2.33  diff  +0.00 (t nan)
+  R1 (MLP + GRU) / 2                 AR   12.79  timing  -1.21  diff  +0.63 (t 0.25)
+  R2 (MLP + Transformer + GRU) / 3   AR   12.56  timing  -1.20  diff  +0.40 (t 0.18)
+  (info) Transformer only            AR   14.66  timing  -0.34  diff  +2.50 (t 1.40)
+  (info) GRU only                    AR   12.52  timing   0.18  diff  +0.36 (t 0.08)
+
+for information, live 2026-10-01..10-22:
+  control: (MLP + Transformer) / 2   AR   15.26  timing  -5.17  diff  +0.00 (t nan)
+  R1 (MLP + GRU) / 2                 AR   10.58  timing  -7.27  diff  -4.68 (t -1.49)
+  R2 (MLP + Transformer + GRU) / 3   AR   13.50  timing  -4.02  diff  -1.76 (t -1.40)
+  (info) Transformer only            AR   19.74  timing  -0.93  diff  +4.48 (t 1.02)
+  (info) GRU only                    AR   11.66  timing  -4.36  diff  -3.60 (t -0.79)

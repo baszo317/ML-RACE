@@ -1,0 +1,12 @@
+                                    config   val  hold  post   all    sd  timing  xsec  share1  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all  nwt_val  nwt_all
+orig (v4 training), MLP seeds 1-5 + TF 1-5 13.08 13.58 14.25 13.33 49.99    1.56 11.76    0.55    NaN    NaN     NaN     NaN     NaN     NaN    NaN    NaN      NaN      NaN
+                 sigma as input, alpha = 0 12.91 13.56 13.80 13.17 50.39    1.59 11.58    0.55  -0.17  -0.44   -0.02   -0.04   -0.44   -0.36  -0.15  -0.49    -0.43    -0.48
+               sigma as input, alpha = 0.5 13.48 13.37 13.19 13.42 50.66    1.72 11.70    0.55   0.39   0.94   -0.21   -0.31   -1.05   -0.73   0.10   0.27     0.97     0.29
+                 sigma as input, alpha = 1 13.33 13.81 11.90 13.35 51.10    1.51 11.84    0.55   0.25   0.54    0.23    0.30   -2.35   -1.38   0.02   0.06     0.56     0.06
+
+Holm (val, one-sided):
+  sigma as input, alpha = 0.5      t_val =  0.94  needs >= 2.13
+  sigma as input, alpha = 1        t_val =  0.54  needs >= 1.96
+  sigma as input, alpha = 0        t_val = -0.44  needs >= 1.64
+  sig_a05 vs alpha 0 (weighting only): val +0.57 (t 2.07), hold -0.19 (t -0.36), post -0.61
+  sig_a1 vs alpha 0 (weighting only): val +0.42 (t 1.12), hold +0.25 (t 0.36), post -1.91

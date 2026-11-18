@@ -1,0 +1,79 @@
+Phase 2 check  2026-10-30 (Fri)   prices: course zip data (6).zip 50   (50/50 stocks)
+  market: Top50 mean (close - open)/open 79.71 bp, 32 of 50 up; previous trading day 2026-10-29
+
+   AR score     AR bp   timing     xsec    1s   hits  file
+  -0.007971    -79.71   -79.71     0.00  0.00  18/50  (baseline) Always down
+  -0.001918    -19.18   -25.51     6.33  0.34  27/50  (baseline) Previous day
+   0.002962     29.62    19.13    10.49  0.62  31/50  v6/submission_v11_1030_wt0_lam0.5.csv
+
+  per stock: r_bp = (close - open)/open in bp, y = close > open, prev_p = the Previous day baseline,
+  pN = prediction of file N, bpN = its contribution (2p - 1) * r / 50 in bp (the column sums to the AR in bp)
+    p1, bp1: v6/submission_v11_1030_wt0_lam0.5.csv
+        r_bp  y  prev_p  p1    bp1                   source
+id                                                         
+2330  -42.02  0       0   1  -0.84  course zip data (6).zip
+2317   20.41  1       0   0  -0.41  course zip data (6).zip
+2454  248.69  1       0   1   4.97  course zip data (6).zip
+2308 -219.78  0       0   1  -4.40  course zip data (6).zip
+2881   93.75  1       1   1   1.87  course zip data (6).zip
+2882  131.00  1       1   1   2.62  course zip data (6).zip
+2382  225.08  1       0   1   4.50  course zip data (6).zip
+2412   62.89  1       1   1   1.26  course zip data (6).zip
+2891  106.67  1       1   1   2.13  course zip data (6).zip
+3711  214.07  1       0   1   4.28  course zip data (6).zip
+2886  110.70  1       1   1   2.21  course zip data (6).zip
+2303  136.36  1       0   1   2.73  course zip data (6).zip
+6669  -27.55  0       0   0   0.55  course zip data (6).zip
+5871 -140.19  0       0   1  -2.80  course zip data (6).zip
+2884   10.20  1       1   1   0.20  course zip data (6).zip
+2357  179.78  1       0   1   3.60  course zip data (6).zip
+2345 -386.90  0       0   0   7.74  course zip data (6).zip
+1216  177.66  1       1   1   3.55  course zip data (6).zip
+2885   83.33  1       0   1   1.67  course zip data (6).zip
+2603  402.30  1       0   1   8.05  course zip data (6).zip
+3045  -74.35  0       1   1  -1.49  course zip data (6).zip
+2892   67.72  1       1   1   1.35  course zip data (6).zip
+2880   39.84  1       1   1   0.80  course zip data (6).zip
+6505 -170.00  0       0   0   3.40  course zip data (6).zip
+5880   34.60  1       1   1   0.69  course zip data (6).zip
+3231   27.32  1       0   1   0.55  course zip data (6).zip
+3017  709.34  1       0   1  14.19  course zip data (6).zip
+2383  229.76  1       0   1   4.60  course zip data (6).zip
+2207  -37.31  0       1   1  -0.75  course zip data (6).zip
+2327 -346.15  0       0   0   6.92  course zip data (6).zip
+4904    0.00  0       1   1   0.00  course zip data (6).zip
+2002  -51.68  0       0   1  -1.03  course zip data (6).zip
+3008 -118.29  0       0   1  -2.37  course zip data (6).zip
+2890  108.70  1       1   1   2.17  course zip data (6).zip
+2883 -117.65  0       1   1  -2.35  course zip data (6).zip
+1303  -16.86  0       0   0   0.34  course zip data (6).zip
+2301 -143.44  0       0   0   2.87  course zip data (6).zip
+2395  149.25  1       0   0  -2.99  course zip data (6).zip
+3034  -34.66  0       0   0   0.69  course zip data (6).zip
+2379  635.76  1       1   0 -12.72  course zip data (6).zip
+8069  -33.44  0       0   0   0.67  course zip data (6).zip
+2887   23.72  1       0   0  -0.47  course zip data (6).zip
+2912  134.83  1       0   1   2.70  course zip data (6).zip
+3661 -214.29  0       0   0   4.29  course zip data (6).zip
+2059  249.60  1       0   0  -4.99  course zip data (6).zip
+3653  507.49  1       0   0 -10.15  course zip data (6).zip
+1301   41.55  1       0   0  -0.83  course zip data (6).zip
+2615  526.32  1       0   0 -10.53  course zip data (6).zip
+3293  163.11  1       1   0  -3.26  course zip data (6).zip
+2609  308.44  1       0   0  -6.17  course zip data (6).zip
+
+
+Accumulated from v6/phase2/scores.csv (board: total = sum of the daily AR scores, average = total / days)
+  days      total    average       first        last  series
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  uploaded (v6/phase2/uploaded.csv)
+     1   0.001497   0.001497  2026-10-30  2026-10-30  v11/out/submission_v11_MMDD.csv
+     1   0.002962   0.002962  2026-10-30  2026-10-30  v11/out/submission_v11_MMDD_wt0_lam0.5.csv
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  v11/out/submission_v9.4_MMDD_wt0_lam0.5.csv
+     2   0.008093   0.004046  2026-10-28  2026-10-29  v6/submission_v11_MMDD.csv
+     3   0.020248   0.006749  2026-10-28  2026-10-30  v6/submission_v11_MMDD_wt0_lam0.5.csv
+     1   0.017756   0.017756  2026-10-29  2026-10-29  v6/upload_v5_2026-10-29.csv
+     2  -0.010096  -0.005048  2026-10-27  2026-10-30  v9/out/submission_v9_MMDD.csv
+     4   0.010446   0.002612  2026-10-27  2026-10-30  (baseline) Always down (every scored day)
+     4  -0.011982  -0.002996  2026-10-27  2026-10-30  (baseline) Previous day (every scored day)
+        same 1 days as uploaded: Always down total 0.010730, average 0.010730
+        same 1 days as uploaded: Previous day total 0.004795, average 0.004795

@@ -1,0 +1,37 @@
+race_agg -- aggregation methods of topic 6 / W12 on the race version, D only (2022-01-01 .. 2024-12-31, 727 days)
+written 2026-11-18 17:29:19; SD reproduces part 1 (C.LU on D +15.0996); PREREG sha256 ccbc3dd4cb3859ac
+missing: none
+
+cand fam description                              D mean   diff   NW t  2022   2023   2024  pass  Holm p   IC     sd  P19<0 corrCLU chg25
+SD   -   race version (C.LU, Top25 + ex-div)       +15.10  +0.00    nan  +0.00  +0.00  +0.00  no      nan 0.1207  42.7  0.03    nan   nan
+A1   A   uniform blend C.LU + C.LN                 +15.09  -0.01  -0.01  -0.18  +0.00  +0.16  no    1.000 0.1274  41.4  0.03  0.943   2.3
+A2   A   uniform blend of the 5 C learners         +14.94  -0.16  -0.31  +0.08  -0.63  +0.06  no    1.000 0.1256  41.6  0.04  0.956   1.8
+A3   A   linear blending (alpha >= 0)              +15.87  +0.77   1.55  +1.06  -0.04  +1.27  no    0.968 0.1262  42.8  0.03  0.946   1.9
+A4   A   any blending (stacking GBDT)              +14.20  -0.90  -1.41  -0.54  -0.39  -1.77  no    1.000 0.1157  40.3  0.02  0.867   3.0
+B1   B   LU, 10 seeds                              +14.64  -0.46  -1.94  -1.26  -0.45  +0.35  no    1.000 0.1200  42.8  0.04  0.994   0.7
+B2   B   day-bootstrap bagging of LU, 10 bags      +13.94  -1.15  -2.01  -0.38  -2.81  -0.31  no    1.000 0.1177  42.9  0.06  0.957   1.9
+C1   C   AdaBoost-Stump                            +10.68  -4.42  -3.89  -6.52  -3.48  -3.21  no    1.000 0.0975  40.5  0.08  0.732   5.1
+C2   C   AdaBoost-DTree (depth 3)                  +10.01  -5.09  -5.97  -7.12  -2.60  -5.49  no    1.000 0.0870  42.2  0.10  0.692   5.7
+C3   C   GBDT, exponential loss                    +14.48  -0.62  -2.01  -1.29  -0.44  -0.11  no    1.000 0.1170  43.5  0.04  0.985   1.1
+D1   D   single C&RT, cost-complexity pruned        +8.21  -6.89  -5.45  -7.60  -4.64  -8.39  no    1.000 0.0723  47.7  0.23  0.541   6.3
+D2   D   LU, categorical dow / month               +14.35  -0.75  -2.06  -0.83  -0.40  -1.01  no    1.000 0.1203  42.6  0.03  0.987   1.0
+E1   E   random forest                             +12.52  -2.58  -3.28  -3.14  -3.56  -1.06  no    1.000 0.1066  45.4  0.08  0.868   3.4
+E2   E   uniform blend C.LU + RF                   +13.59  -1.51  -2.89  -2.05  -1.64  -0.84  no    1.000 0.1177  43.8  0.06  0.962   1.9
+E4   E   LU on permutation-selected features       +14.34  -0.76  -1.67  -1.19  -0.48  -0.60  no    1.000 0.1181  42.5  0.03  0.943   2.2
+F1   F   GBDT, squared loss                        +14.13  -0.97  -1.77  -1.55  -0.53  -0.81  no    1.000 0.1115  40.4  0.04  0.935   2.3
+F2   F   LU score x absres_60                      +14.55  -0.55  -1.29  -1.18  +0.15  -0.60  no    1.000 0.1187  40.2  0.02  0.958   1.4
+
+family winners (mean > 0, NW t >= 2, >= 2 of 3 years > 0): none
+combination: None
+ADOPTED: nothing (race version unchanged; V is not opened)
+
+A3 linear blending weights (share of sum alpha) / A4 stacker gain share, per fold:
+  2022-01-01: alpha C.LU 0.033, C.LN 0.188, C.LP 0.000, C.LC 0.182, C.LM 0.000  | stack gain C.LU 0.06, C.LN 0.46, C.LP 0.10, C.LC 0.20, C.LM 0.11, vol_rank 0.07, C__vix 0.01
+         g- IC on the blending days C.LU 0.1405, C.LN 0.1448, C.LP 0.1362, C.LC 0.1424, C.LM 0.1172  (2021-07-13 .. 2021-12-30)
+  2023-01-01: alpha C.LU 0.259, C.LN 0.029, C.LP 0.000, C.LC 0.000, C.LM 0.039  | stack gain C.LU 0.46, C.LN 0.08, C.LP 0.06, C.LC 0.02, C.LM 0.19, vol_rank 0.03, C__vix 0.16
+         g- IC on the blending days C.LU 0.1169, C.LN 0.1007, C.LP 0.1007, C.LC 0.0994, C.LM 0.1091  (2022-07-14 .. 2022-12-30)
+  2024-01-01: alpha C.LU 0.231, C.LN 0.093, C.LP 0.000, C.LC 0.000, C.LM 0.000  | stack gain C.LU 0.44, C.LN 0.12, C.LP 0.00, C.LC 0.06, C.LM 0.01, vol_rank 0.15, C__vix 0.21
+         g- IC on the blending days C.LU 0.1217, C.LN 0.1158, C.LP 0.1184, C.LC 0.1107, C.LM 0.1164  (2023-07-11 .. 2023-12-29)
+propB_A1: member IC [0.1207, 0.1222], predicted blend IC 0.1282, realized 0.1274
+propB_A2: member IC [0.1207, 0.1222, 0.1141, 0.1058, 0.1123], predicted blend IC 0.1262, realized 0.1256
+propB_E2: member IC [0.1207, 0.1066], predicted blend IC 0.1176, realized 0.1177

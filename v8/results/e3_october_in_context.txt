@@ -1,0 +1,25 @@
+October 2026: 15 days
+  AR           15.26 bp/day   percentile among 1135 historical 15-day windows:  56.0 %
+  timing       -5.17 bp/day   percentile among 1135 historical 15-day windows:   6.8 %
+  beta_bet    -12.11 bp/day   percentile among 1135 historical 15-day windows:   0.7 %
+  mkt_part    -17.28 bp/day   percentile among 1135 historical 15-day windows:   1.3 %
+  rest         32.54 bp/day   percentile among 1135 historical 15-day windows:  98.2 %
+  m            18.79 bp/day   percentile among 1135 historical 15-day windows:  90.0 %
+sampling sd of a correlation estimated on 15 days (true value near 0): about 0.26
+sampling sd of a correlation estimated on 19 days (true value near 0): about 0.23
+sampling sd of a correlation estimated on 99 days (true value near 0): about 0.10
+sampling sd of a correlation estimated on 250 days (true value near 0): about 0.06
+
+model-free check (no beta estimate): slope of daily xsec on m = hidden market exposure of the stock view
+  val    n  727: slope -0.319, corr(xsec, m) -0.509, mean m -2.22 -> implied hidden-bet P&L +0.71 bp/day (beta decomposition says +0.85)
+  hold   n  338: slope -0.085, corr(xsec, m) -0.167, mean m -7.58 -> implied hidden-bet P&L +0.65 bp/day (beta decomposition says +3.08)
+  post   n   99: slope -0.179, corr(xsec, m) -0.308, mean m +4.58 -> implied hidden-bet P&L -0.82 bp/day (beta decomposition says -2.25)
+  all22  n 1164: slope -0.223, corr(xsec, m) -0.380, mean m -3.20 -> implied hidden-bet P&L +0.71 bp/day (beta decomposition says +1.23)
+  Oct26  n   15: slope -0.016, corr(xsec, m) -0.018, mean m +18.79 -> implied hidden-bet P&L -0.29 bp/day (beta decomposition says -12.11)
+  with the 2022-26 slope -0.223, October implied hidden-bet P&L = -4.18 bp/day; explicit timing -5.17
+
+correlation of the daily total score AR (and its parts) with the market move m (v4 rule):
+  val   : corr(AR, m) -0.281, corr(timing, m) +0.475, corr(xsec, m) -0.509
+  hold  : corr(AR, m) -0.084, corr(timing, m) +0.119, corr(xsec, m) -0.167
+  post  : corr(AR, m) -0.432, corr(timing, m) -0.475, corr(xsec, m) -0.308
+  all22 : corr(AR, m) -0.249, corr(timing, m) +0.217, corr(xsec, m) -0.380

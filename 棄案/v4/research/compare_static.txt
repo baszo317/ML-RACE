@@ -1,0 +1,14 @@
+AR in bp/day, Top50, static dates 2026-06-01..09-30 (84 days). Reference only (see the docstring).
+
+                                                config    AR  timing  xsec  share1  sd_day  t_vs_first     06    07    08    09
+frozen 2026-05-29 (= v2 static), old ex-dividend table 11.27   -2.36 13.63    0.45   79.47         NaN   5.38 19.17 -6.58 27.52
+       frozen 2026-05-29, ex-dividend incl. 2026/08-09 12.16   -2.33 14.49    0.44   79.00        1.80   5.38 19.17 -3.65 28.18
+                                  v4 rolling (default) 15.36   -3.13 18.49    0.45   81.79        0.83   7.71 29.02 -4.44 29.15
+                   v4 rolling MLP + frozen Transformer 14.43   -3.17 17.60    0.46   82.17        0.68   9.98 25.45 -4.58 26.96
+                          v4 rolling, MLP members only 11.57   -6.27 17.84    0.46   82.17        0.05   4.53 22.20 -6.53 26.26
+            v4 rolling, v1 rule (raw members, p > 0.5)  5.71   -5.29 11.00    0.32   95.96       -0.81 -30.35 37.57 -6.69 21.54
+                frozen, v1 rule (raw members, p > 0.5)  3.94   -2.80  6.74    0.33   97.22       -1.14 -29.11 29.75  3.14 11.10
+                                 v4 rolling, w_T = 0.0 15.68   -0.43 16.11    0.51   70.81        0.72  23.32  6.40  1.54 32.69
+                                v4 rolling, w_T = 0.25 15.56   -1.76 17.32    0.47   75.74        0.82  16.84 20.65 -5.03 30.24
+                                v4 rolling, w_T = 0.75 14.22   -4.08 18.29    0.42   88.25        0.56  -3.49 38.94 -3.06 23.74
+                                 v4 rolling, w_T = 1.0 11.75   -5.08 16.83    0.39   92.77        0.09 -10.51 41.07 -5.31 20.78

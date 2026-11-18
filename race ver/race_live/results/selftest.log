@@ -1,0 +1,14 @@
+18:01:49 selftest lu: best_iter 290 vs part 1 290; max |p - p(part 1)| = 0 over 24196 rows -> IDENTICAL
+18:02:13 copied /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_std/ext -> /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/ext
+18:03:03 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+18:03:12 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+18:03:12 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+18:03:12 unit check day-trade volume: median ratio to shares traded 0.2396 -> factor 1
+18:03:12 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+18:03:57 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+18:04:02 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+18:04:02 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+18:04:02 unit check day-trade volume: median ratio to shares traded 0.2396 -> factor 1
+18:04:02 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+18:04:22 panel: built 166346 rows x 169 C columns in 52s
+18:04:23 selftest panel: rows 166346 vs 166346; C values: NaN pattern differs in 0 cells, max |diff| 0; labels and ex flags equal: True

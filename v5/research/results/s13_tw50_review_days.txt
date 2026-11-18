@@ -1,0 +1,15 @@
+26 review days with data (2020-03-20 .. 2026-09-18)
+Top50 mean intraday return: review days +3.8 bp (sd 80.5), other days -3.2 bp; t (review days vs 0) = +0.24; positive on 10 of 26
+share of Top50 stocks with close > open: review days 0.411, other days 0.451
+by year (mean of the review days, bp):
+      mean  count
+date             
+2020  82.1      4
+2021   2.2      4
+2022   0.5      4
+2023  -8.1      4
+2024 -31.9      4
+2025 -19.3      4
+2026  -1.6      2
+
+v4 rule (walk-forward 2022-01..2026-10): review days AR +1.27 (n = 18, timing -2.30, xsec +3.57); other days AR +13.57; difference t = -1.51

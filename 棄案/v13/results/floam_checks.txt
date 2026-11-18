@@ -1,0 +1,21 @@
+floam_checks.py  2026-11-06 00:54  Top50, prices 2020-01-02 .. 2026-10-22
+
+A1/A2 -- closing price scaled to [0, 1] per stock (as in the paper); 50 stocks: median [min, max]
+  R2 persistence (all days)        +0.997070  [+0.966561, +0.998843]
+  MSE persistence                  +0.000129  [+0.000052, +0.000881]
+  R2 persistence (random 20%)      +0.996976  [+0.959781, +0.998948]
+  R2 interpolation (random 20%)    +0.998422  [+0.971817, +0.999332]
+  MSE interpolation                +0.000069  [+0.000030, +0.000758]
+  R2 log return, persistence       -0.986829  [-1.361275, -0.782545]
+  R2 log return, zero              -0.002590  [-0.006283, -0.000000]
+  (paper: R2 0.9809 best ablation, 0.99915 Optuna-tuned 600883; MSE 0.0028 for 603880)
+
+A3 -- SVMD (K 7, alpha 2000, keep |Spearman| > 0.5); whole series: 1.1 of 7 IMFs kept on average
+  past-250-day SVMD: 21,840 decompositions in 14.2 min, 1.6 IMFs kept on average
+  daily rank IC over the Top50, 2025-01-02 .. 2026-10-22 (feature = latest change of the denoised log close, known at D-1 only if the decomposition is causal):
+  feature                                        IC intraday r(D)  IC close-to-close  pooled corr, intraday
+  SVMD on the whole series (as in the paper)   +0.0832 (t   8.6) +0.1270 (t  11.3)   +0.0945            437 days
+  SVMD on days D-250 .. D-1 only               +0.0002 (t   0.0) -0.0051 (t  -0.5)   -0.0116            437 days
+  (rank IC inside a day is the same for the intraday and the excess intraday return: they differ by the day mean)
+
+done in 14.8 min

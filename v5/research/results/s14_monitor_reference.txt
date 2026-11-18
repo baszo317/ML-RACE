@@ -1,0 +1,13 @@
+1164 days -> ref_daily_components.csv; average (bp/day): AR 13.38, timing 1.55, between 4.38, within 7.46, xsec 11.83
+
+quantiles of 20-day averages (bp/day):
+           q01   q05    q50    q95  share_negative
+AR      -10.66 -2.25  13.06  30.42            0.08
+timing  -15.03 -5.29   1.31  10.19            0.35
+between -12.12 -6.63   4.00  15.36            0.27
+within   -4.96 -1.46   7.31  15.64            0.07
+xsec     -9.23 -2.99  11.78  25.77            0.10
+
+share of 19-day stretches (1146, overlapping) in which the monitor flags a part at least once by chance:
+  first version (day >= 10, 5 % of 20-day averages): AR 0.202, timing 0.146, between 0.170, within 0.163, xsec 0.198; any part 0.427
+  v5 (day >= 5, n-matched percentile < 1 %): AR 0.036, timing 0.027, between 0.043, within 0.039, xsec 0.039; any part 0.112

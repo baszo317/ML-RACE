@@ -1,0 +1,9 @@
+10/30: how far each decision is from flipping (the cloud vs laptop difference of the scores is <= about 1e-6, see verify_1029.txt)
+final decision = score + c*beta > 0 (ex-dividend -> 0), c from a grid of step 0.0025 chosen by the beta hedge (v8 hedge_beta.py)
+
+v9      chosen c +0.0075: smallest |score + c*beta| 7.4e-04 (stock 3711); hedge distance 0.0192, next grid point 0.0291; smallest margin anywhere on the grid 5.0e-06 at c -0.1225 (distance 0.310, never chosen)
+v11     chosen c +0.0050: smallest |score + c*beta| 7.0e-04 (stock 3017); hedge distance 0.0016, next grid point 0.0929; smallest margin anywhere on the grid 2.0e-05 at c -0.0925 (distance 0.567, never chosen)
+v11 W0  chosen c +0.0075: smallest |score + c*beta| 5.8e-04 (stock 2345); hedge distance 0.0345, next grid point 0.0484; smallest margin anywhere on the grid 1.4e-05 at c +0.0575 (distance 0.933, never chosen)
+
+All margins are at least 5e-6, five times the observed difference, and the hedge choice has a clear gap: running on the laptop
+gives the same three files.

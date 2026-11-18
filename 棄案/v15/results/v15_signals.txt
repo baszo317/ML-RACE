@@ -1,0 +1,16 @@
+v15_signals.py: D1, D2 on 1654 days x 100 stocks; betas 165,846 rows (8s)
+
+D1 Kalman: chosen q per fold (median over stocks, and the share at the grid edges); steady-state gain K = (-q + sqrt(q^2 + 4q)) / 2
+  2022-01-01: median q 1.00e-06 (K 0.001, half-life 693 days), at the lower edge 0.73, upper edge 0.00
+  2023-01-01: median q 1.00e-06 (K 0.001, half-life 693 days), at the lower edge 0.62, upper edge 0.00
+  2024-01-01: median q 1.00e-06 (K 0.001, half-life 693 days), at the lower edge 0.57, upper edge 0.00
+  2025-01-01: median q 2.05e-06 (K 0.001, half-life 484 days), at the lower edge 0.48, upper edge 0.00
+  2026-01-01: median q 2.05e-06 (K 0.001, half-life 484 days), at the lower edge 0.47, upper edge 0.00
+  2026-06-01: median q 1.00e-06 (K 0.001, half-life 693 days), at the lower edge 0.53, upper edge 0.00
+
+leak check (data cut at D-1, 6 random days from 2022 on; max |difference| at D, must be 0):  D1 0.0e+00, D2 0.0e+00, beta_V 0.0e+00
+  OK
+
+E1 betas: mean |beta_V - beta| 0.063, mean se 0.193, cross-sectional sd of beta 0.635 -> 0.543
+
+saved D:\ML RACE\v15\cache\signals15.pkl (38s)

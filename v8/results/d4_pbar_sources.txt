@@ -1,0 +1,8 @@
+(a) yesterday TW: gap, intraday, TX OI change (3)              R^2 = 0.570;  coefficients (pbar units per sd): mkt_gap_prev +0.0247, mkt_intra_prev -0.0077, txoi_chg +0.0335
+(a+) yesterday TW, 8 inputs                                    R^2 = 0.702;  coefficients (pbar units per sd): mkt_gap_prev +0.0087, mkt_intra_prev -0.0086, txoi_chg +0.0242, txoi_chg5 +0.0203, twii_ret1 +0.0216, ks11_ret1 -0.0013, breadth_prev -0.0103, mkt_intra_5 -0.0022
+(b) last night: S&P, Nasdaq, VIX change, TX night session (4)  R^2 = 0.003;  coefficients (pbar units per sd): us_gspc_ret1 +0.0016, us_ixic_ret1 -0.0041, us_vix_chg -0.0017, night_ret -0.0010
+
+same sets explaining the realised Top50 intraday return m (in-sample R^2, 2022-01..2026-10, for scale):
+  (a) yesterday TW: gap, intraday, TX OI change (3)            R^2 = 0.0154
+  (a+) yesterday TW, 8 inputs                                  R^2 = 0.0277
+  (b) last night: S&P, Nasdaq, VIX change, TX night session (4) R^2 = 0.0108

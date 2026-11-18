@@ -1,0 +1,73 @@
+240 settings scored on 1164 days in 68s (Top50 bp/day; static = 6/1-9/30, Oct = 10/1-10/22, 15 days)
+
+v9 and v11 as they are:
+     w_t  night  t3  x1   lam    val   hold  static    Oct    all     sd
+97   0.5    0.0   0   0  0.75  13.99  14.33   15.46  22.91  14.31  48.26
+130  0.5    0.5   1   1  0.75  14.60  14.34   21.43  14.27  15.02  48.00
+  v11 rank in val: 7 of 240; v9 rank 78
+  v11 rank in hold: 70 of 240; v9 rank 74
+  v11 rank in static: 27 of 240; v9 rank 209
+  v11 rank in Oct: 180 of 240; v9 rank 59
+  v11 rank in all: 5 of 240; v9 rank 86
+
+the 10 settings with the best October, and what they did in the other periods:
+    w_t  night  t3  x1  lam    val   hold  static    Oct    all     sd
+6   0.0   0.00   1   0  0.5  11.62  10.63   21.90  33.02  12.35  38.78
+42  0.0   1.00   1   0  0.5  11.62  10.63   21.90  33.02  12.35  38.78
+30  0.0   0.50   1   0  0.5  11.62  10.63   21.90  33.02  12.35  38.78
+18  0.0   0.25   1   0  0.5  11.62  10.63   21.90  33.02  12.35  38.78
+24  0.0   0.50   0   0  0.5  11.65  11.00   19.10  31.43  12.25  38.94
+0   0.0   0.00   0   0  0.5  11.65  11.00   19.10  31.43  12.25  38.94
+12  0.0   0.25   0   0  0.5  11.65  11.00   19.10  31.43  12.25  38.94
+36  0.0   1.00   0   0  0.5  11.65  11.00   19.10  31.43  12.25  38.94
+20  0.0   0.25   1   0  1.0  12.20  10.89   18.41  30.38  12.50  43.23
+32  0.0   0.50   1   0  1.0  12.20  10.89   18.41  30.38  12.50  43.23
+  mean of these 10: val 11.75, hold 10.83, static 20.08, Oct 31.86, all 12.34 (v11: 14.60 / 14.34 / 21.43 / 14.27 / 15.02)
+
+October-best within one-parameter changes of v11 (everything else as v11):
+  w_t:
+ w_t  night  t3  x1  lam   val  hold  static   Oct   all    sd
+0.00    0.5 1.0 1.0 0.75 12.08 11.58   20.06 25.00 12.68 40.56
+0.25    0.5 1.0 1.0 0.75 14.04 13.23   21.22 21.04 14.41 43.50
+0.50    0.5 1.0 1.0 0.75 14.60 14.34   21.43 14.27 15.02 48.00
+0.75    0.5 1.0 1.0 0.75 14.45 15.11   21.93 12.93 15.16 52.92
+1.00    0.5 1.0 1.0 0.75 13.93 15.36   19.36  7.55 14.65 56.47
+  night:
+ w_t  night  t3  x1  lam   val  hold  static   Oct   all    sd
+ 0.5   0.00 1.0 1.0 0.75 14.52 14.66   18.33 18.89 14.89 47.47
+ 0.5   0.25 1.0 1.0 0.75 14.73 14.20   20.24 17.60 15.01 47.64
+ 0.5   0.50 1.0 1.0 0.75 14.60 14.34   21.43 14.27 15.02 48.00
+ 0.5   1.00 1.0 1.0 0.75 13.71 13.83   22.22 20.08 14.44 51.24
+  t3:
+ w_t  night  t3  x1  lam  val  hold  static   Oct   all    sd
+ 0.5    0.5 0.0 1.0 0.75 14.4 14.59   19.68 15.18 14.85 48.13
+ 0.5    0.5 1.0 1.0 0.75 14.6 14.34   21.43 14.27 15.02 48.00
+  x1:
+ w_t  night  t3  x1  lam   val  hold  static   Oct   all    sd
+ 0.5    0.5 1.0 0.0 0.75 14.54 13.75   21.67 17.64 14.86 48.35
+ 0.5    0.5 1.0 1.0 0.75 14.60 14.34   21.43 14.27 15.02 48.00
+  lam:
+ w_t  night  t3  x1  lam   val  hold  static   Oct   all    sd
+ 0.5    0.5 1.0 1.0 0.50 14.45 13.28   19.29 18.69 14.52 45.22
+ 0.5    0.5 1.0 1.0 0.75 14.60 14.34   21.43 14.27 15.02 48.00
+ 0.5    0.5 1.0 1.0 1.00 14.49 13.72   22.53 15.36 14.86 50.20
+
+across the 240 settings: correlation of October with the other periods (does a good October predict a good setting?)
+  corr(Oct, val) -0.61; rank corr -0.52
+  corr(Oct, hold) -0.89; rank corr -0.91
+  corr(Oct, static) +0.32; rank corr +0.21
+  corr(Oct, all) -0.67; rank corr -0.60
+
+"tune on the recent past" done honestly: best setting on the 15 trading days before October (9/9-9/30) -> October
+     w_t  night  t3  x1   lam    val   hold  static    Oct    all     sd  pre15
+231  1.0    1.0   0   1  0.50  12.12  13.58   18.89  16.95  13.09  58.29  24.23
+237  1.0    1.0   1   1  0.50  12.21  13.50   21.29  15.27  13.28  58.48  24.23
+234  1.0    1.0   1   0  0.50  12.34  13.45   20.58  18.38  13.34  59.07  23.86
+228  1.0    1.0   0   0  0.50  12.15  13.57   18.72  19.45  13.13  58.73  23.86
+229  1.0    1.0   0   0  0.75  12.21  14.02   18.49  14.92  13.22  59.90  21.89
+  best pre-October setting: October 16.95 (v11 14.27, v9 22.91); rank of that setting in October 143 of 240
+
+every 15-day block of 2022-01..2026-10 (77 blocks), using the setting that was best in the previous 15-day block:
+  picked 14.77, v11 fixed 14.94, average of all 240 settings 13.75, best in hindsight 24.60 bp/day; picked - v11 t -0.20
+
+grid written to ..\results\v11c_october_grid.csv; done in 68s

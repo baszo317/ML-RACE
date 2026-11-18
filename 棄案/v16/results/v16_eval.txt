@@ -1,0 +1,128 @@
+v16_eval.py -- Kalman filter: K1 hedge beta, K2 time-varying timing coefficients, K3 v11 / W0 switch (research\PREREG_v16.md)
+  2026-11-08 10:13, pandas 2.3.3, numpy 2.2.6
+
+PART 0 -- checks
+  v9   rebuilt 13.99 / 14.33 / 16.59 / 14.31   published 13.99 / 14.33 / 16.59 / 14.31   same
+  v11  rebuilt 14.60 / 14.34 / 20.35 / 15.02   published 14.60 / 14.34 / 20.35 / 15.02   same
+  W0   rebuilt 11.79 / 10.35 / 21.71 / 12.22   published 11.79 / 10.35 / 21.71 / 12.22   same
+  120-day OLS beta of v16 (prices read like hedge_beta) vs the beta in the judge (Top50 rows): max |diff| 0.0e+00
+  m50 from the prices vs the judge's Top50 mean m: max |diff| 2.3e-13 bp over 1164 days
+  K1 leak check (v16_signals.py): OK (max 0.0e+00)
+  K2 nesting: q = (0, 0) timing term vs w_T x: max |diff| 0.0e+00; v11 rebuilt through it: max |AR diff| 0.0e+00
+  K2 leak check (m50 cut at D-1, 4 random days from 2023 on; max |diff| of the timing term at D): 0.0e+00  OK
+  K3 leak check (AR of D removed, 4 random days; max |diff| of mu at D): 0.0e+00  OK
+
+PART 1 -- what the filters chose (only data before each fold; never the AR)
+  K1 (v16_signals.py): 2022-01 phi 0.999 q 0.001 (memory 52 d, gain +113.3); 2023-01 phi 1 q 0.0003 (memory 95 d, gain +168.9); 2024-01 phi 0.999 q 0.001 (memory 56 d, gain +596.8); 2025-01 phi 0.999 q 0.001 (memory 58 d, gain +771.3); 2026-01 phi 0.999 q 0.001 (memory 58 d, gain +1018.6); 2026-06 phi 0.999 q 0.001 (memory 58 d, gain +1140.2)
+  K2: (q_a, q_b) per fold and the log-likelihood gain over (0, 0) on the days before the fold:
+    2022-01-01: q_a 0, q_b 0  (fixed: no out-of-sample pbar before 2022)
+    2023-01-01: q_a 0.001, q_b 0, gain +0.12; best with q_b > 0: +0.12
+    2024-01-01: q_a 0, q_b 0, gain +0.00; best with q_b > 0: -0.03
+    2025-01-01: q_a 0, q_b 0, gain +0.00; best with q_b > 0: -0.09
+    2026-01-01: q_a 0, q_b 0, gain +0.00; best with q_b > 0: -0.00
+    2026-06-01: q_a 0, q_b 1e-05, gain +0.75; best with q_b > 0: +0.75
+    v9 version: 2022-01 (0, 0), 2023-01 (0.001, 0), 2024-01 (0, 1e-06), 2025-01 (0, 0), 2026-01 (0, 1e-05), 2026-06 (0, 1e-05)
+  K3: q per fold (concentrated likelihood of the daily v11 - W0 difference before the fold):
+    2022-01-01: q 0.00e+00 (cumulative mean)  (fixed: no difference before 2022)
+    2023-01-01: q 1.58e-05 (half-life 174 days)
+    2024-01-01: q 1.58e-05 (half-life 174 days)
+    2025-01-01: q 0.00e+00 (cumulative mean)
+    2026-01-01: q 0.00e+00 (cumulative mean)
+    2026-06-01: q 0.00e+00 (cumulative mean)
+
+PART 2 -- the rules (PREREG_v16.md section 3), bp/day (NW t)
+  K1  v11 + K1   - v11 : val -0.05 (-0.24)  hold -0.11 (-0.39)  post -0.17 (-0.29)  all -0.08 (-0.49)   -> not selected
+  K2  v11 + K2   - v11 : val -0.72 (-2.50)  hold +0.00 (nan)  post -0.16 (-0.13)  all -0.47 (-2.21)   -> not selected
+  K3  K3         - v11 : val -0.03 (-0.07)  hold +0.00 (nan)  post +0.00 (nan)  all -0.02 (-0.07)   -> not selected
+  selected: none
+  nothing selected -> NOT PASSED: v9, v11 and W0 stay as they are
+
+PART 3 -- report only
+  W0 and v9 versions, and the nested references:
+    W0 + K1            - W0                : val -0.10 (-0.38)  hold -0.32 (-0.95)  post +0.95 (1.69)  all -0.08 (-0.38)
+    K3                 - W0                : val +2.79 (2.30)  hold +3.99 (1.94)  post -1.36 (-0.24)  all +2.78 (2.56)
+    v9 + K2            - v9                : val -0.85 (-2.24)  hold -0.24 (-0.53)  post +0.14 (0.11)  all -0.59 (-1.99)
+    v11 + K1 q=0       - v11               : val -0.16 (-0.70)  hold -0.19 (-0.51)  post +0.35 (0.40)  all -0.13 (-0.65)
+    v11 + E1 Vasicek   - v11               : val +0.30 (1.97)  hold +0.14 (0.69)  post -0.23 (-0.55)  all +0.21 (1.78)
+    v11 + K1           - v11 + E1 Vasicek  : val -0.35 (-2.22)  hold -0.24 (-0.84)  post +0.05 (0.08)  all -0.28 (-2.01)
+    v11 + K1           - v11 + K1 q=0      : val +0.12 (0.56)  hold +0.08 (0.21)  post -0.53 (-0.55)  all +0.05 (0.28)
+    W0 + K1 q=0        - W0                : val +0.14 (0.35)  hold +0.35 (0.66)  post +0.26 (0.17)  all +0.21 (0.66)
+    W0 + E1 Vasicek    - W0                : val +0.39 (1.86)  hold +0.19 (0.80)  post -0.03 (-0.05)  all +0.29 (1.89)
+
+  stricter standard (all-period NW t >= 2), each candidate against its base:
+    K1: all -0.08 (t -0.49) -> not met
+    K2: all -0.47 (t -2.21) -> not met
+    K3: all -0.02 (t -0.07) -> not met
+
+  by year, candidate - base (bp/day, NW t):
+    K1  2022 -0.08 (-0.32)  2023 -0.02 (-0.05)  2024 -0.04 (-0.12)  2025 -0.41 (-2.34)  2026-01..05 +0.67 (0.78)  post -0.17 (-0.29)
+    K2  2022 +0.00 (nan)  2023 -2.20 (-2.66)  2024 +0.00 (nan)  2025 +0.00 (nan)  2026-01..05 +0.00 (nan)  post -0.16 (-0.13)
+    K3  2022 -0.08 (-0.07)  2023 +0.00 (nan)  2024 +0.00 (nan)  2025 +0.00 (nan)  2026-01..05 +0.00 (nan)  post +0.00 (nan)
+
+  2026-10-01 .. 10-22 (15 days, information only):
+    K1  2026-10-01..10-22 +3.40 (2.00)
+    K2  2026-10-01..10-22 +1.44 (1.09)
+    K3  2026-10-01..10-22 +0.00 (nan)
+    W0 + K1 - W0  2026-10-01..10-22 +0.89 (1.85)
+
+  power of the rule (normal approximation; P(selected and both later periods > 0 | true effect delta), alone):
+    K1: daily sd val 5.1, hold 5.2, post 6.7;  +0.0 -> 0.12, +0.3 -> 0.54, +0.5 -> 0.74, +1.0 -> 0.93
+    K2: daily sd val 10.1, hold 0.0, post 10.6;  +0.0 -> 0.25, +0.3 -> 0.48, +0.5 -> 0.62, +1.0 -> 0.82
+    K3: daily sd val 9.6, hold 0.0, post 0.0;  +0.0 -> 0.50, +0.3 -> 0.80, +0.5 -> 0.92, +1.0 -> 1.00
+
+  K1: beta forecast error on the Top50 stock-days (README_v16 4.4): L = mean over the day of (r - beta m)^2;
+  the paired daily difference against the 120-day OLS divided by mean(m^2) estimates the change of the beta MSE
+    OLS120      L (bp^2): 24280 / 31518 / 58480 / 29290
+    E1 Vasicek  L (bp^2): 24278 / 31476 / 58508 / 29280   change of beta MSE vs OLS120: val -0.0003 (t -0.05)  hold -0.0056 (t -1.15)  post +0.0021 (t 0.27)  all -0.0016 (t -0.45)
+    K1 q=0      L (bp^2): 24874 / 32077 / 59470 / 29908   change of beta MSE vs OLS120: val +0.1067 (t 3.38)  hold +0.0749 (t 2.86)  post +0.0740 (t 1.75)  all +0.0911 (t 4.66)
+    K1          L (bp^2): 24396 / 31493 / 58579 / 29364   change of beta MSE vs OLS120: val +0.0209 (t 1.64)  hold -0.0033 (t -0.33)  post +0.0074 (t 0.93)  all +0.0109 (t 1.47)
+    K1 - E1 Vasicek, change of beta MSE: val +0.0212 (t 2.12)  hold +0.0023 (t 0.22)  post +0.0053 (t 1.13)  all +0.0125 (t 2.03)
+
+  K2 diagnostics:
+    corr(x = pbar' - 0.5, m50) by period: val +0.116  hold +0.199  post +0.009  all +0.122   (by year: 2022 +0.142  2023 +0.064  2024 +0.121  2025 +0.180  2026-01..05 +0.219  post +0.009)
+    sd of x 0.0711; sd of m50 76.3 bp
+    val: multiplier min +1.00 median +1.00 max +1.12 (share < 0: 0.00); intercept term |.| mean 0.0137, max 0.1000
+    hold: multiplier min +1.00 median +1.00 max +1.00 (share < 0: 0.00); intercept term |.| mean 0.0000, max 0.0000
+    post: multiplier min +0.72 median +1.12 max +1.64 (share < 0: 0.00); intercept term |.| mean 0.0013, max 0.0022
+    all: multiplier min +0.72 median +1.00 max +1.64 (share < 0: 0.00); intercept term |.| mean 0.0087, max 0.1000
+    out-of-sample one-step log-likelihood of the chosen q minus (0, 0), summed: val -2.29  hold +0.00  post -0.90  all -3.18
+    forced adaptation (q_a 0, fixed q_b in every fold; v11 + K2 fixed - v11):
+      q_b 0.0001: val -0.30 (-0.43)  hold +1.21 (1.06)  post -2.29 (-0.51)  all -0.03 (-0.05);  log-lik vs (0, 0): val -2.1  hold +1.4  post -0.5
+      q_b 0.001: val -1.74 (-2.08)  hold +0.88 (0.68)  post -1.28 (-0.24)  all -0.94 (-1.19);  log-lik vs (0, 0): val -9.4  hold +1.7  post +0.6
+      q_b 0.01: val -2.70 (-2.73)  hold -0.51 (-0.24)  post -0.21 (-0.03)  all -1.85 (-1.81);  log-lik vs (0, 0): val -34.7  hold -4.0  post -0.1
+
+  K3 diagnostics: share of days on W0, and the filtered mean of v11 - W0 (bp/day) at the end of each period
+    val: W0 on 0.09 of the days; mu at the end +2.70; v11 - W0 that period +2.82
+    hold: W0 on 0.00 of the days; mu at the end +3.28; v11 - W0 that period +3.99
+    post: W0 on 0.00 of the days; mu at the end +2.81; v11 - W0 that period -1.36
+    all: W0 on 0.06 of the days; mu at the end +2.81; v11 - W0 that period +2.80
+    forced adaptation (fixed half-life in every fold; K3 fixed - v11, and the share of days on W0):
+      half-life  20 d (q 1.2e-03): val -0.51 (-0.98)  hold -0.89 (-1.14)  post -1.22 (-0.39)  all -0.68 (-1.42);  W0 share 0.31 / 0.18 / 0.27
+      half-life  60 d (q 1.3e-04): val -0.66 (-1.41)  hold -0.08 (-0.26)  post +0.00 (nan)  all -0.44 (-1.42);  W0 share 0.14 / 0.07 / 0.00
+      half-life 120 d (q 3.3e-05): val -0.03 (-0.07)  hold +0.00 (nan)  post +0.00 (nan)  all -0.02 (-0.07);  W0 share 0.09 / 0.00 / 0.00
+      half-life 250 d (q 7.7e-06): val -0.03 (-0.07)  hold +0.00 (nan)  post +0.00 (nan)  all -0.02 (-0.07);  W0 share 0.09 / 0.00 / 0.00
+    K3 on 2026-10-22 (last walk-forward day): mu +2.81 -> v11
+
+Top50 bp/day (walk-forward 2022-01 .. 2026-10-22)
+                   config   val  hold  post   all    sd  timing  xsec  share1  P19>0
+                       v9 13.99 14.33 16.59 14.31 48.26    1.76 12.55    0.58   0.93
+                      v11 14.60 14.34 20.35 15.02 48.00    2.76 12.25    0.59   0.94
+                       W0 11.79 10.35 21.71 12.22 38.40   -0.89 13.10    0.62   0.91
+                 v11 + K1 14.56 14.23 20.17 14.94 48.10    2.75 12.20    0.59   0.95
+                  W0 + K1 11.68 10.03 22.66 12.14 38.57   -0.81 12.94    0.62   0.90
+             v11 + K1 q=0 14.44 14.16 20.70 14.89 48.76    2.74 12.15    0.59   0.93
+              W0 + K1 q=0 11.92 10.70 21.97 12.42 39.59   -0.74 13.17    0.61   0.91
+         v11 + E1 Vasicek 14.91 14.48 20.12 15.23 48.01    2.83 12.40    0.59   0.95
+          W0 + E1 Vasicek 12.18 10.54 21.68 12.51 38.15   -0.84 13.35    0.62   0.93
+                 v11 + K2 13.88 14.34 20.18 14.55 48.36    2.38 12.17    0.59   0.93
+                  v9 + K2 13.14 14.09 16.73 13.72 49.14    1.37 12.36    0.58   0.90
+v11 + K2 fixed q_b 0.0001 14.30 15.55 18.05 14.98 51.41    2.90 12.08    0.57   0.94
+ v11 + K2 fixed q_b 0.001 12.87 15.22 19.06 14.08 52.49    2.39 11.69    0.57   0.92
+  v11 + K2 fixed q_b 0.01 11.90 13.83 20.14 13.16 52.59    1.95 11.21    0.56   0.88
+                       K3 14.58 14.34 20.35 15.00 47.86    2.74 12.26    0.59   0.94
+          K3 half-life 20 14.10 13.45 19.13 14.34 47.11    1.91 12.42    0.60   0.94
+          K3 half-life 60 13.95 14.26 20.35 14.58 47.70    2.45 12.13    0.59   0.92
+         K3 half-life 120 14.58 14.34 20.35 15.00 47.86    2.74 12.26    0.59   0.94
+         K3 half-life 250 14.58 14.34 20.35 15.00 47.86    2.74 12.26    0.59   0.94
+
+saved results\v16_daily.csv, results\v16_selection.json (18s)

@@ -1,0 +1,32 @@
+30 units, 30 to do
+[1/30] ('2022-01-01', '2023-01-01', 1) 18s, best epoch 1, elapsed 0.3 min
+[2/30] ('2022-01-01', '2023-01-01', 2) 19s, best epoch 1, elapsed 0.3 min
+[3/30] ('2022-01-01', '2023-01-01', 3) 15s, best epoch 1, elapsed 0.6 min
+[4/30] ('2022-01-01', '2023-01-01', 4) 15s, best epoch 1, elapsed 0.6 min
+[5/30] ('2022-01-01', '2023-01-01', 5) 15s, best epoch 1, elapsed 0.8 min
+[6/30] ('2023-01-01', '2024-01-01', 1) 35s, best epoch 2, elapsed 1.2 min
+[7/30] ('2023-01-01', '2024-01-01', 2) 24s, best epoch 1, elapsed 1.2 min
+[8/30] ('2023-01-01', '2024-01-01', 3) 36s, best epoch 2, elapsed 1.7 min
+[9/30] ('2023-01-01', '2024-01-01', 4) 36s, best epoch 2, elapsed 1.8 min
+[10/30] ('2023-01-01', '2024-01-01', 5) 35s, best epoch 2, elapsed 2.3 min
+[11/30] ('2024-01-01', '2025-01-01', 1) 32s, best epoch 1, elapsed 2.3 min
+[12/30] ('2024-01-01', '2025-01-01', 3) 32s, best epoch 1, elapsed 2.9 min
+[13/30] ('2024-01-01', '2025-01-01', 2) 33s, best epoch 1, elapsed 2.9 min
+[14/30] ('2024-01-01', '2025-01-01', 4) 32s, best epoch 1, elapsed 3.4 min
+[15/30] ('2024-01-01', '2025-01-01', 5) 32s, best epoch 1, elapsed 3.4 min
+[16/30] ('2025-01-01', '2026-01-01', 2) 62s, best epoch 2, elapsed 4.5 min
+[17/30] ('2025-01-01', '2026-01-01', 1) 143s, best epoch 6, elapsed 5.8 min
+[18/30] ('2025-01-01', '2026-01-01', 3) 104s, best epoch 4, elapsed 6.2 min
+[19/30] ('2025-01-01', '2026-01-01', 4) 62s, best epoch 2, elapsed 6.8 min
+[20/30] ('2025-01-01', '2026-01-01', 5) 82s, best epoch 3, elapsed 7.6 min
+[21/30] ('2026-01-01', '2026-06-01', 1) 51s, best epoch 1, elapsed 7.7 min
+[22/30] ('2026-01-01', '2026-06-01', 2) 50s, best epoch 1, elapsed 8.4 min
+[23/30] ('2026-01-01', '2026-06-01', 3) 50s, best epoch 1, elapsed 8.5 min
+[24/30] ('2026-01-01', '2026-06-01', 4) 51s, best epoch 1, elapsed 9.2 min
+[25/30] ('2026-01-01', '2026-06-01', 5) 52s, best epoch 1, elapsed 9.4 min
+[26/30] ('2026-06-01', '2100-01-01', 1) 55s, best epoch 1, elapsed 10.2 min
+[27/30] ('2026-06-01', '2100-01-01', 2) 54s, best epoch 1, elapsed 10.3 min
+[28/30] ('2026-06-01', '2100-01-01', 3) 53s, best epoch 1, elapsed 11.0 min
+[29/30] ('2026-06-01', '2100-01-01', 4) 52s, best epoch 1, elapsed 11.1 min
+[30/30] ('2026-06-01', '2100-01-01', 5) 54s, best epoch 1, elapsed 11.9 min
+best epoch counts: {1: 21, 2: 6, 3: 1, 4: 1, 6: 1}

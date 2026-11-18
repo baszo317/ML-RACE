@@ -1,0 +1,12 @@
+check: retrained target "orig" vs cached seeds 1-5: 116353 rows, max |diff| B 4.52e-07, xr 1.04e-05
+
+Top50, bp/day, walk-forward 2022-01..2026-10; d_/t_ = paired difference to the control
+                                                     config    val   hold   post  all22     sd  timing   xsec  beta_bet   rest  mean B  sd_beta_bet  corr(xsec,m)  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+                    control: v4 rule, res seeds 1-5 (cache) 13.329 13.673 14.125 13.497 50.051   1.697 11.800     1.248 10.552  -0.302       25.497        -0.384  0.903    NaN    NaN     NaN     NaN     NaN     NaN
+T5: beta-adjusted residual target + beta-scaled market term 13.196 13.688 14.603 13.459 49.966   1.800 11.659     1.560 10.099  -0.274       23.508        -0.365  0.885 -0.133 -0.231   0.015   0.017   0.478   0.222
+
+pre-registered decision: val t = -0.23 (needs >= 2.0), hold diff = +0.01 (needs > 0) -> do not adopt
+for information, static 2026-06-01..09-30: control 14.04 (beta_bet 0.05), T5 14.61 (beta_bet 0.16), diff +0.57 (t 0.24, 84 days)
+for information, live 2026-10-01..10-22: control 14.61 (beta_bet -11.56), T5 14.55 (beta_bet -10.93), diff -0.06 (t -0.01, 15 days)
+daily rank IC vs resid_r : control val 0.098, hold 0.105, post 0.079, all22 0.098 | T5 val 0.101, hold 0.106, post 0.077, all22 0.100
+daily rank IC vs e_beta  : control val 0.089, hold 0.086, post 0.082, all22 0.087 | T5 val 0.095, hold 0.094, post 0.077, all22 0.093

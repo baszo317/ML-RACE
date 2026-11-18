@@ -1,0 +1,6 @@
+race_news, D (2022-2024), decision SD, 727 days
+  C.LU  (169 features)          AR  15.10  IC 0.1207  2022:17.02 2023:10.69 2024:17.50
+  CN.LU (C + 12 news features)  AR  14.81  IC 0.1209  2022:16.28 2023:10.19 2024:17.87
+  CN.LU - C.LU: -0.29 bp/day, NW t -0.86, years 2022:-0.74 2023:-0.49 2024:+0.37  -> not passed (mean > 0, t >= 2, >= 2 of 3 years > 0)
+  gain importance share of the news features 0.019: mkt_n_on 0.0095, mkt_tone_on 0.0047, nw_on 0.0027, nw_abn 0.0009, tone_on 0.0004, kw_rev_on 0.0003, kw_earn_on 0.0002, nw_pd 0.0002, tone_pd 0.0002, nw_on_solo 0.0000, kw_div_on 0.0000, kw_rating_on 0.0000
+  rank IC with the intraday residual return (D, Top50, mean of daily IC; days where the feature is constant skipped): nw_on -0.0295, nw_on_solo -0.0061, nw_pd -0.0193, nw_abn -0.0100, tone_on -0.0118, tone_pd -0.0117, kw_rev_on -0.0126, kw_earn_on -0.0035, kw_rating_on +0.0052, kw_div_on -0.0094, mkt_n_on +nan, mkt_tone_on +nan

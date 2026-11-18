@@ -1,0 +1,10 @@
+2026-10-26 16:11:46 v11b members ['lgb_res_xrN', 'lgb_res_soft']: 60 units, 60 to do, 2 workers
+2026-10-26 16:12:30 [1/60] lgb_res_xrN 2026-06-01 seed 2: 44s (best 392); elapsed 0.7 min
+2026-10-26 16:12:33 [2/60] lgb_res_xrN 2026-06-01 seed 1: 47s (best 448); elapsed 0.8 min
+2026-10-26 16:15:05 [10/60] lgb_res_soft 2026-06-01 seed 5: 22s (best 325); elapsed 3.3 min
+2026-10-26 16:16:07 [20/60] lgb_res_soft 2026-01-01 seed 5: 9s (best 68); elapsed 4.3 min
+2026-10-26 16:18:13 [30/60] lgb_res_soft 2025-01-01 seed 5: 14s (best 201); elapsed 6.4 min
+2026-10-26 16:19:15 [40/60] lgb_res_soft 2024-01-01 seed 5: 10s (best 183); elapsed 7.5 min
+2026-10-26 16:20:20 [50/60] lgb_res_soft 2023-01-01 seed 5: 7s (best 161); elapsed 8.6 min
+2026-10-26 16:20:50 [60/60] lgb_res_soft 2022-01-01 seed 5: 4s (best 129); elapsed 9.1 min
+2026-10-26 16:20:50 finished 60 units in 9.1 min, 0 failed

@@ -1,0 +1,237 @@
+========================================================================================================================
+0. How much data: rows, days, and how much of it is signal
+========================================================================================================================
+   fold  train rows  train days
+2022-01       45495         455
+2023-01       70067         701
+2024-01       93966         940
+2025-01      118162        1182
+2026-01      142449        1425
+2026-06      151949        1520
+  raw intraday return (market view label): same-day intraclass correlation 0.154 -> one day of 100 stocks is worth 6.1 independent rows; the market component itself has one value per day
+  excess return (stock view label), same day and same industry group: intraclass correlation 0.079 (mean group size 25.0) -> one day of 100 stocks is worth about 35 independent rows
+
+rs_train units loaded: 230
+========================================================================================================================
+1. Member level: production regularization vs removed / stronger (OOS, seed mean, walk-forward 2022-01 .. 2026-10)
+========================================================================================================================
+
+  lgb_res  (stock view: daily rank IC with the same-day excess return; market view: corr(pbar_t, Top50 m_t); wll = weighted log-loss of the training objective, lower = better; in = on its own training window)
+   pset  snap                                                                    setting  seeds  ES stop (mean)  in: IC  in: wll  OOS IC val   hold   post    all  OOS wll all
+    cur    es production (ES, 15 leaves, min_data_in_leaf 500, bagging 0.8, lambda_l2 1)      2        230.4167  0.2232   0.6595      0.1095 0.0986 0.0797 0.1038       0.6864
+    cur n1000                            no ES: 1000 trees, other settings as production      2        230.4167  0.3375   0.6117      0.1102 0.0992 0.0776 0.1043       0.6895
+    cur n2000                                            no ES: 2000 trees (seed 1 only)      1        215.3333  0.4235   0.5688      0.1055 0.0910 0.0881 0.0998       0.6949
+ leaf20    es                                             min_data_in_leaf 500 -> 20, ES      1        250.0000  0.2358   0.6553      0.1100 0.0991 0.0754 0.1039       0.6864
+nol2bag    es                             lambda_l2 0, no bagging / feature fraction, ES      1        214.3333  0.2220   0.6597      0.1052 0.0972 0.0840 0.1011       0.6867
+   none    es                                                 all penalties off, ES kept      1        194.8333  0.2241   0.6594      0.1042 0.0955 0.0698 0.0988       0.6869
+   none n1000                              ALL OFF: penalties off and no ES (1000 trees)      1        194.8333  0.3595   0.6049      0.1054 0.1000 0.0719 0.1010       0.6897
+   none n2000                                                        ALL OFF, 2000 trees      1        194.8333  0.4522   0.5582      0.1038 0.0913 0.0732 0.0976       0.6947
+ strong    es                stronger: 7 leaves, min_data_in_leaf 2000, lambda_l2 10, ES      1        337.0000  0.1738   0.6721      0.1064 0.1000 0.0869 0.1029       0.6866
+default  n100                   LightGBM defaults (lr 0.1, 31 leaves, min 20, 100 trees)      1         26.6667  0.3780   0.5951      0.1010 0.0914 0.0528 0.0941       0.6915
+
+  mlp_res_xr9  (stock view: daily rank IC with the same-day excess return; market view: corr(pbar_t, Top50 m_t); wll = weighted log-loss of the training objective, lower = better; in = on its own training window)
+  pset snap                                         setting  seeds  ES stop (mean)  in: IC  in: wll  OOS IC val   hold   post    all  OOS wll all
+   cur   es production (dropout 0.2, weight decay 1e-2, ES)      2          2.4167  0.1512   0.6729      0.1096 0.1001 0.0849 0.1047       0.6856
+   cur  e10                                no ES: 10 epochs      2          2.4167  0.1983   0.6515      0.1170 0.0896 0.0796 0.1059       0.6885
+   cur  e20                                no ES: 20 epochs      2          2.4167  0.2333   0.6315      0.1072 0.0763 0.0955 0.0972       0.6957
+  nodw   es              dropout 0, weight decay 0, ES kept      2          1.9167  0.1539   0.6718      0.1111 0.0967 0.0766 0.1040       0.6864
+  nodw  e10                              ALL OFF, 10 epochs      2          1.9167  0.2227   0.6366      0.1066 0.0701 0.0929 0.0948       0.7001
+  nodw  e20                              ALL OFF, 20 epochs      2          1.9167  0.2709   0.6050      0.0947 0.0656 0.0933 0.0862       0.7207
+strong   es    stronger: dropout 0.5, weight decay 1e-1, ES      1          5.6667  0.1551   0.6726      0.1108 0.0967 0.0778 0.1039       0.6855
+
+  mlp_raw_B9  (stock view: daily rank IC with the same-day excess return; market view: corr(pbar_t, Top50 m_t); wll = weighted log-loss of the training objective, lower = better; in = on its own training window)
+  pset snap                                         setting  seeds  ES stop (mean)  in: corr  in: wll  OOS corr val   hold    post    all  OOS wll all
+   cur   es production (dropout 0.2, weight decay 1e-2, ES)      2          1.5833    0.3652   0.6645        0.0958 0.2025 -0.1056 0.0989       0.6918
+   cur  e10                                no ES: 10 epochs      2          1.5833    0.5979   0.6195        0.1085 0.1955 -0.0832 0.1095       0.7029
+   cur  e20                                no ES: 20 epochs      2          1.5833    0.6844   0.5929        0.0981 0.1249 -0.1210 0.0800       0.7178
+  nodw   es              dropout 0, weight decay 0, ES kept      2          1.5833    0.3951   0.6594        0.0853 0.2142 -0.1170 0.0939       0.6955
+  nodw  e10                              ALL OFF, 10 epochs      2          1.5833    0.6355   0.6027        0.1017 0.1648 -0.0893 0.0925       0.7265
+  nodw  e20                              ALL OFF, 20 epochs      2          1.5833    0.7204   0.5656        0.0829 0.1114 -0.0167 0.0729       0.7635
+strong   es    stronger: dropout 0.5, weight decay 1e-1, ES      1          1.8333    0.3279   0.6700        0.0918 0.1779 -0.1067 0.0851       0.6915
+
+========================================================================================================================
+2. Competition score (Top50 AR bp/day): mini v9 = market view mlp_raw_B9, stock view (mlp_res_xr9 + lgb_res) / 2,
+   v9's decision (ex-dividend flags, beta hedge lambda 0.75); d / t = paired difference to 'all production', NW t
+========================================================================================================================
+                                                            config   val  hold  post   all    sd  timing  xsec
+                                   all production (ES + penalties) 13.35 14.19 13.38 13.60 49.38    1.48 12.11
+ALL OFF (penalties off, no ES: MLP 20 epochs, LightGBM 1000 trees) 11.87 10.12 17.00 11.79 49.65    0.33 11.46
+                                            ALL OFF, MLP 10 epochs 13.00 11.37 12.43 12.48 48.36    0.98 11.49
+                         only ES removed (penalties as production) 13.45 13.30 13.46 13.41 48.55    0.58 12.83
+                                  only penalties removed (ES kept) 12.24 14.90 10.42 12.86 51.23    1.66 11.20
+                             stronger everywhere (ES kept), seed 1 13.14 13.84 15.88 13.58 48.38    1.38 12.19
+           all production, seed 1 (to compare with the line above) 12.78 14.12 11.77 13.08 48.17    1.44 11.64
+                                        market member ALL OFF only 11.70  9.34 12.52 11.08 57.27    0.93 10.15
+                                            stock MLP ALL OFF only 12.89 13.64 13.51 13.16 42.47    0.51 12.66
+                                             LightGBM ALL OFF only 13.15 14.51 12.88 13.52 47.08    1.36 12.16
+                                            LightGBM defaults only 13.75 15.12 10.37 13.86 46.42    1.25 12.61
+                               (reference) v9 full, cached members 13.99 14.33 16.59 14.31 48.26    1.76 12.55
+
+                                                            config  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all
+                                   all production (ES + penalties)   0.00    NaN    0.00     NaN    0.00     NaN   0.00    NaN
+ALL OFF (penalties off, no ES: MLP 20 epochs, LightGBM 1000 trees)  -1.49  -1.11   -4.08   -1.68    3.62    0.53  -1.80  -1.46
+                                            ALL OFF, MLP 10 epochs  -0.35  -0.29   -2.82   -1.44   -0.95   -0.19  -1.12  -1.08
+                         only ES removed (penalties as production)   0.10   0.08   -0.90   -0.50    0.08    0.02  -0.19  -0.19
+                                  only penalties removed (ES kept)  -1.11  -1.92    0.71    1.00   -2.96   -1.31  -0.74  -1.59
+                             stronger everywhere (ES kept), seed 1  -0.21  -0.31   -0.35   -0.37    2.49    1.06  -0.02  -0.04
+           all production, seed 1 (to compare with the line above)  -0.57  -1.14   -0.07   -0.13   -1.61   -0.63  -0.52  -1.24
+                                        market member ALL OFF only  -1.66  -1.09   -4.85   -2.15   -0.87   -0.14  -2.52  -1.98
+                                            stock MLP ALL OFF only  -0.46  -0.45   -0.55   -0.31    0.13    0.03  -0.44  -0.50
+                                             LightGBM ALL OFF only  -0.20  -0.34    0.31    0.36   -0.50   -0.21  -0.08  -0.16
+                                            LightGBM defaults only   0.40   0.70    0.93    0.97   -3.01   -0.95   0.26   0.50
+                               (reference) v9 full, cached members   0.64   1.20    0.14    0.15    3.21    1.59   0.71   1.53
+
+========================================================================================================================
+3. OOS learning curves of the refit (mean over folds and seeds): production penalties vs all penalties off
+========================================================================================================================
+
+  lgb_res (step = trees; n = fold x seed units averaged)
+      cur: ic  cur: wll  cur: n  none: ic  none: wll  none: n  strong: ic  strong: wll  strong: n
+step                                                                                             
+10     0.0880    0.6914    14.0    0.0785     0.6915      6.0      0.0871       0.6917        6.0
+25     0.0903    0.6898    14.0    0.0827     0.6900      6.0      0.0917       0.6902        6.0
+50     0.0932    0.6882    14.0    0.0864     0.6886      6.0      0.0963       0.6886        6.0
+100    0.0984    0.6868    14.0    0.0921     0.6874      6.0      0.1001       0.6872        6.0
+200    0.1026    0.6860    14.0    0.0980     0.6868      6.0      0.1052       0.6861        6.0
+300    0.1034    0.6862    14.0    0.1001     0.6868      6.0      0.1056       0.6860        6.0
+500    0.1026    0.6869    14.0    0.1002     0.6876      6.0      0.1050       0.6863        6.0
+750    0.1011    0.6882    14.0    0.0996     0.6886      6.0      0.1050       0.6867        6.0
+1000   0.0997    0.6896    14.0    0.0986     0.6897      6.0      0.1046       0.6873        6.0
+1500   0.1003    0.6920     6.0    0.0974     0.6921      6.0         NaN          NaN        NaN
+2000   0.0981    0.6945     6.0    0.0953     0.6944      6.0         NaN          NaN        NaN
+
+  mlp_res_xr9 (step = epochs; n = fold x seed units averaged)
+      cur: ic  cur: wll  cur: n  nodw: ic  nodw: wll  nodw: n  strong: ic  strong: wll  strong: n
+step                                                                                             
+1      0.1034    0.6854      12    0.1025     0.6858       12      0.1037       0.6856          6
+2      0.1032    0.6851      12    0.1012     0.6863       12      0.1057       0.6848          6
+3      0.1016    0.6855      12    0.0966     0.6880       12      0.1058       0.6845          6
+4      0.1012    0.6863      12    0.0990     0.6896       12      0.1060       0.6844          6
+5      0.1035    0.6865      12    0.0981     0.6914       12      0.1058       0.6842          6
+6      0.1029    0.6871      12    0.0969     0.6935       12      0.1043       0.6847          6
+7      0.1037    0.6877      12    0.0949     0.6969       12      0.1066       0.6845          6
+8      0.1017    0.6881      12    0.0939     0.6985       12      0.1066       0.6845          6
+9      0.0994    0.6889      12    0.0900     0.7008       12      0.1071       0.6848          6
+10     0.0995    0.6896      12    0.0887     0.7045       12      0.1036       0.6854          6
+11     0.1009    0.6908      12    0.0878     0.7083       12      0.1068       0.6852          6
+12     0.0979    0.6916      12    0.0847     0.7115       12      0.1036       0.6854          6
+13     0.0985    0.6918      12    0.0808     0.7146       12      0.1050       0.6848          6
+14     0.0981    0.6928      12    0.0824     0.7168       12      0.1042       0.6859          6
+15     0.0947    0.6935      12    0.0796     0.7191       12      0.1045       0.6857          6
+16     0.0946    0.6938      12    0.0806     0.7223       12      0.1056       0.6856          6
+17     0.0942    0.6954      12    0.0809     0.7250       12      0.1031       0.6863          6
+18     0.0922    0.6959      12    0.0795     0.7285       12      0.1044       0.6859          6
+19     0.0934    0.6974      12    0.0776     0.7321       12      0.1010       0.6871          6
+20     0.0917    0.6976      12    0.0767     0.7347       12      0.1011       0.6870          6
+
+  mlp_raw_B9 (step = epochs; n = fold x seed units averaged)
+      cur: corr  cur: wll  cur: n  nodw: corr  nodw: wll  nodw: n  strong: corr  strong: wll  strong: n
+step                                                                                                   
+1        0.0889    0.6938      12      0.0977     0.6959       12        0.0803       0.6905          6
+2        0.0977    0.6969      12      0.1067     0.7008       12        0.0912       0.6923          6
+3        0.0985    0.6988      12      0.0957     0.7045       12        0.0898       0.6936          6
+4        0.1050    0.6993      12      0.0972     0.7079       12        0.1032       0.6936          6
+5        0.1024    0.6996      12      0.0945     0.7123       12        0.1090       0.6930          6
+6        0.1044    0.7009      12      0.0889     0.7171       12        0.1161       0.6937          6
+7        0.0974    0.7027      12      0.0866     0.7233       12        0.1148       0.6938          6
+8        0.1005    0.7043      12      0.0887     0.7289       12        0.1147       0.6948          6
+9        0.0947    0.7052      12      0.0798     0.7338       12        0.1159       0.6949          6
+10       0.0960    0.7064      12      0.0842     0.7380       12        0.1166       0.6958          6
+11       0.0930    0.7089      12      0.0728     0.7460       12        0.1153       0.6954          6
+12       0.0944    0.7101      12      0.0774     0.7508       12        0.1101       0.6966          6
+13       0.0833    0.7125      12      0.0742     0.7567       12        0.1079       0.6967          6
+14       0.0790    0.7139      12      0.0669     0.7609       12        0.1070       0.6975          6
+15       0.0764    0.7158      12      0.0780     0.7677       12        0.1105       0.6979          6
+16       0.0794    0.7181      12      0.0848     0.7709       12        0.1090       0.6981          6
+17       0.0753    0.7203      12      0.0802     0.7763       12        0.1032       0.6995          6
+18       0.0683    0.7212      12      0.0774     0.7792       12        0.0968       0.6999          6
+19       0.0697    0.7239      12      0.0760     0.7883       12        0.0975       0.7014          6
+20       0.0663    0.7251      12      0.0736     0.7917       12        0.0946       0.7006          6
+
+========================================================================================================================
+4. Data size: a random fraction of the training DAYS (same calendar window), OOS rank IC of the stock view members
+========================================================================================================================
+ frac  train days (mean)  train rows (mean)  LGB production  LGB production (in)  LGB ALL OFF  LGB ALL OFF (in)  LGB penalties off, ES  LGB penalties off, ES (in)  MLP production  MLP production (in)  MLP ALL OFF  MLP ALL OFF (in)  MLP penalties off, ES  MLP penalties off, ES (in)
+0.125           129.8333         12979.1667          0.0696               0.2359       0.0502            0.6909                 0.0470                      0.2174          0.0966               0.1378       0.0541            0.3287                 0.0953                      0.1448
+0.250           259.3333         25923.5000          0.0883               0.2455       0.0723            0.5801                 0.0744                      0.2383          0.0992               0.1428       0.0699            0.3067                 0.0988                      0.1463
+0.500           518.5000         51833.5000          0.0999               0.2415       0.0897            0.4668                 0.0922                      0.2547          0.0964               0.1502       0.0746            0.2918                 0.0949                      0.1528
+1.000          1099.3571        109898.1429          0.1037               0.2232       0.1010            0.3595                 0.0988                      0.2241          0.1047               0.1512       0.0862            0.2709                 0.1040                      0.1539
+  (seeds 1-2 for production and MLP ALL OFF at every size, so the columns are comparable down the rows; (in) = IC on the model's own training rows)
+
+========================================================================================================================
+5. Seed averaging (an implicit regularizer): OOS rank IC (all) of one seed vs the seed mean
+========================================================================================================================
+     member pset snap  seed 1  seed 2
+    lgb_res  cur   es  0.1033  0.1030
+mlp_res_xr9  cur   es  0.1043  0.1019
+mlp_res_xr9 nodw  e20  0.0835  0.0742
+
+rs_svm units loaded: 18
+========================================================================================================================
+6. SVM members (same folds, features B 67, labels, weights and ES split as lgb_res / v8 logistic)
+========================================================================================================================
+
+  reference stock-view members, OOS rank IC val / hold / post / all:
+    lgb_res (cache, seed 1-5)                0.1108 / 0.0996 / 0.0806 / 0.1050
+    logistic regression (v8 lr_resid)        0.0969 / 0.0859 / 0.1090 / 0.0947
+    mlp_res_xr9 (cache, seed 1-10)           0.1105 / 0.1024 / 0.0807 / 0.1056
+  reference market-view members, corr(pbar, m) val / hold / post / all:
+    mlp_raw_B9 (cache, seed 1-10)            0.105 / 0.208 / -0.112 / 0.106
+    Transformer tf_raw_B (cache)             0.113 / 0.204 / -0.030 / 0.117
+    logistic regression (v8 lr_raw)          0.092 / 0.142 / -0.134 / 0.075
+    v9 market view (3 MLP + TF)              0.111 / 0.205 / -0.077 / 0.112
+
+  lin SVM, stock view (label beats the day average): path over C (OOS = all folds pooled; val = last 120 days of each window; in = own window)
+     C  lambda = 1/(2Cn)  val hinge  val metric  in hinge  in metric  OOS hinge  share with y f <= 1    |w|  iters (max)  sec fit  OOS IC val  OOS IC hold  OOS IC post  OOS IC all
+0.0000            0.3333     0.9708      0.0878    0.9563     0.1115     0.9649               0.9956 0.1882           19   1.2736      0.0870       0.0805       0.1248      0.0884
+0.0001            0.0333     0.9587      0.0937    0.9347     0.1188     0.9549               0.9591 0.3837          223   0.9809      0.0982       0.0866       0.1178      0.0965
+0.0010            0.0033     0.9591      0.0933    0.9298     0.1231     0.9565               0.9408 0.6181          732   1.9581      0.0963       0.0890       0.1114      0.0955
+0.0100            0.0003     0.9608      0.0920    0.9290     0.1240     0.9573               0.9364 0.8338        13021   4.9454      0.0949       0.0894       0.1120      0.0947
+0.1000            0.0000     0.9614      0.0919    0.9289     0.1243     0.9575               0.9357 1.0557        20000  16.2535      0.0949       0.0893       0.1129      0.0948
+    C chosen per fold by val hinge loss (pre-registered): 0.001, 0.1, 0.0001, 0.0001, 0.0001, 1e-05 -> OOS 0.0971 / 0.0866 / 0.1248 / 0.0964
+    C chosen per fold by val rank IC / corr: 0.001, 0.01, 0.0001, 0.0001, 0.0001, 0.001 -> OOS 0.0969 / 0.0866 / 0.1114 / 0.0951
+
+  lin SVM, market view (label close > open): path over C (OOS = all folds pooled; val = last 120 days of each window; in = own window)
+     C  lambda = 1/(2Cn)  val hinge  val metric  in hinge  in metric  OOS hinge  share with y f <= 1    |w|  iters (max)  sec fit  OOS corr val  OOS corr hold  OOS corr post  OOS corr all  OOS wll (Platt)
+0.0000            0.3333     0.9595      0.1184    0.9371     0.1974     0.9612               0.9920 0.2126           17   0.8415        0.0798         0.1761        -0.1653        0.0654           0.6923
+0.0001            0.0333     0.9442      0.1374    0.9031     0.2479     0.9527               0.9506 0.4743           77   0.8175        0.1187         0.1776        -0.1396        0.0979           0.6933
+0.0010            0.0033     0.9485      0.1245    0.8936     0.2735     0.9583               0.9261 0.7979         1299   2.0569        0.1243         0.1739        -0.1118        0.1068           0.6945
+0.0100            0.0003     0.9512      0.1185    0.8923     0.2796     0.9604               0.9199 1.1024        15621   6.2279        0.1215         0.1743        -0.1079        0.1061           0.6948
+0.1000            0.0000     0.9519      0.1178    0.8921     0.2821     0.9610               0.9188 1.3826        20000  14.4342        0.1209         0.1765        -0.1058        0.1067           0.6949
+    C chosen per fold by val hinge loss (pre-registered): 0.0001, 0.001, 0.0001, 0.001, 0.0001, 0.0001 -> OOS 0.1095 / 0.1747 / -0.1396 / 0.0955
+    C chosen per fold by val rank IC / corr: 1e-05, 0.0001, 1e-05, 0.1, 1e-05, 0.0001 -> OOS 0.0653 / 0.1592 / -0.1396 / 0.0647
+
+  nys SVM, stock view (label beats the day average): path over C (OOS = all folds pooled; val = last 120 days of each window; in = own window)
+    C  lambda = 1/(2Cn)  val hinge  val metric  in hinge  in metric  OOS hinge  share with y f <= 1     |w|  iters (max)  sec fit  OOS IC val  OOS IC hold  OOS IC post  OOS IC all
+0.001            0.0033     0.9761      0.0983    0.9664     0.1177     0.9727               0.9983  1.6961           18  15.3732      0.0999       0.0908       0.1140      0.0984
+0.010            0.0003     0.9443      0.0993    0.9211     0.1274     0.9431               0.9519  5.5277           93  11.1395      0.1027       0.0939       0.1082      0.1006
+0.100            0.0000     0.9356      0.1074    0.8872     0.1641     0.9385               0.9169 16.9818          522  14.3561      0.1098       0.0992       0.0892      0.1050
+    C chosen per fold by val hinge loss (pre-registered): 0.1, 0.1, 0.01, 0.1, 0.01, 0.1 -> OOS 0.1072 / 0.0960 / 0.0892 / 0.1024
+    C chosen per fold by val rank IC / corr: 0.1, 0.1, 0.01, 0.1, 0.001, 0.1 -> OOS 0.1072 / 0.0935 / 0.0892 / 0.1017
+
+========================================================================================================================
+7. SVM in the competition score: v9 with members replaced (Top50 AR bp/day; d / t = paired difference to v9, NW t)
+   stock view: the SVM decision value is centred per day and rescaled to the daily sd of the member it replaces (as X5 / v12)
+========================================================================================================================
+                                          config   val  hold  post   all    sd  timing  xsec
+                             v9 (cached members) 13.99 14.33 16.59 14.31 48.26    1.76 12.55
+            LightGBM -> lin SVM (C by val hinge) 13.03 13.05 19.88 13.62 49.33    1.96 11.65
+ market view -> lin SVM + Platt (C by val hinge) 13.64 13.24 13.73 13.53 50.40    1.51 12.03
+           LightGBM -> lin SVM (C by val metric) 13.03 13.05 15.78 13.27 49.12    1.94 11.33
+market view -> lin SVM + Platt (C by val metric) 13.12 12.79 13.73 13.08 48.52    0.28 12.80
+            LightGBM -> nys SVM (C by val hinge) 13.77 12.31 18.58 13.76 48.44    1.48 12.28
+           LightGBM -> nys SVM (C by val metric) 13.77 12.47 18.58 13.80 48.45    1.48 12.32
+ LightGBM -> logistic regression (v8, reference) 13.05 12.65 15.34 13.13 49.11    1.71 11.42
+ALL SVM: market lin + Platt, stock view lin only 12.22 10.70 17.64 12.24 49.11    1.85 10.39
+
+                                          config  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all
+                             v9 (cached members)   0.00    NaN    0.00     NaN    0.00     NaN   0.00    NaN
+            LightGBM -> lin SVM (C by val hinge)  -0.96  -1.68   -1.28   -1.59    3.29    1.04  -0.69  -1.36
+ market view -> lin SVM + Platt (C by val hinge)  -0.35  -0.62   -1.09   -1.24   -2.86   -1.10  -0.78  -1.60
+           LightGBM -> lin SVM (C by val metric)  -0.96  -1.63   -1.28   -1.59   -0.81   -0.32  -1.04  -2.13
+market view -> lin SVM + Platt (C by val metric)  -0.87  -1.23   -1.54   -1.69   -2.86   -1.10  -1.24  -2.20
+            LightGBM -> nys SVM (C by val hinge)  -0.22  -0.44   -2.02   -2.72    1.99    0.76  -0.55  -1.24
+           LightGBM -> nys SVM (C by val metric)  -0.22  -0.44   -1.87   -2.53    1.99    0.76  -0.51  -1.16
+ LightGBM -> logistic regression (v8, reference)  -0.94  -1.63   -1.69   -2.04   -1.25   -0.45  -1.19  -2.40
+ALL SVM: market lin + Platt, stock view lin only  -1.77  -2.24   -3.64   -2.46    1.05    0.19  -2.07  -2.57
+

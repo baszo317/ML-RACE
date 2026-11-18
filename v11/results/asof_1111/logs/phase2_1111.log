@@ -1,0 +1,32 @@
+Phase 2 check  2026-11-11 (Wed)   prices: course zip data (13).zip 50   (50/50 stocks)
+  course data and downloaded prices agree on all 50 stocks (largest difference 6.7e-16)
+  market: Top50 mean (close - open)/open 144.92 bp, 40 of 50 up; previous trading day 2026-11-10
+
+   AR score     AR bp   timing     xsec    1s   hits  file
+  -0.014492   -144.92  -144.92     0.00  0.00  10/50  (baseline) Always down
+  -0.003701    -37.01    -5.80   -31.22  0.48  22/50  (baseline) Previous day
+   0.000137      1.37    34.78   -33.41  0.62  29/50  v11/out/submission_v11_1111.csv
+   0.000137      1.37    34.78   -33.41  0.62  29/50  v11/out/submission_v11_1111_wt0_lam0.5.csv
+  -0.003188    -31.88     5.80   -37.68  0.52  26/50  v9/out/submission_v9_1111.csv
+
+Accumulated from v6/phase2/scores.csv (board: total = sum of the daily AR scores, average = total / days)
+  days      total    average       first        last  series
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  uploaded (v6/phase2/uploaded.csv)
+     2   0.001635   0.000817  2026-10-30  2026-11-11  v11/out/submission_v11_MMDD.csv
+     2   0.003099   0.001550  2026-10-30  2026-11-11  v11/out/submission_v11_MMDD_wt0_lam0.5.csv
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  v11/out/submission_v9.4_MMDD_wt0_lam0.5.csv
+     1  -0.003173  -0.003173  2026-11-09  2026-11-09  v6/predict_2026-11-09.csv
+     1  -0.023226  -0.023226  2026-11-09  2026-11-09  v6/submission-2-2026-11-09.csv
+     1   0.000713   0.000713  2026-11-10  2026-11-10  v6/submission-2-2026-11-10.csv
+     6  -0.009538  -0.001590  2026-10-28  2026-11-10  v6/submission_v11_MMDD.csv
+     6   0.012482   0.002080  2026-10-28  2026-11-10  v6/submission_v11_MMDD_wt0_lam0.5.csv
+     1   0.017756   0.017756  2026-10-29  2026-10-29  v6/upload_v5_2026-10-29.csv
+     1   0.018213   0.018213  2026-11-05  2026-11-05  v6/upload_v5_2026-11-05.csv
+     3  -0.013284  -0.004428  2026-10-27  2026-11-11  v9/out/submission_v9_MMDD.csv
+    10   0.017875   0.001787  2026-10-27  2026-11-11  (baseline) Always down (every scored day)
+    10   0.006656   0.000666  2026-10-27  2026-11-11  (baseline) Previous day (every scored day)
+        same 1 days as uploaded: Always down total 0.010730, average 0.010730
+        same 1 days as uploaded: Previous day total 0.004795, average 0.004795
+
+report: v6/phase2/report_20261111.txt   scores: v6/phase2/scores.csv
+Compare the AR score column with the daily board, and the uploaded line with the accumulated board.

@@ -1,0 +1,6 @@
+W0 (w_T 0, lambda 0.5): c 0.0025, recomputed decisions equal the file: True, share of 1 0.62, ex-dividend zeros 0
+   smallest |score + c*beta| = 6.54e-05 (2nd 7.26e-04); |E - E*| chosen 0.0205, best grid point with different decisions 0.1370 (c +0.0075)
+v11 default (w_T 0.5, lambda 0.75): c 0.0025, recomputed decisions equal the file: True, share of 1 0.62, ex-dividend zeros 0
+   smallest |score + c*beta| = 1.19e-03 (2nd 1.85e-03); |E - E*| chosen 0.0195, best grid point with different decisions 0.0513 (c +0.0050)
+v9: c 0.0025, recomputed decisions equal the file: True, share of 1 0.52, ex-dividend zeros 0
+   smallest |score + c*beta| = 8.98e-04 (2nd 1.11e-03); |E - E*| chosen 0.0195, best grid point with different decisions 0.0643 (c +0.0050)

@@ -1,0 +1,132 @@
+13:40:34 same-day IC check (D days): 340 features, max |IC| 0.1032; > 0.30 (removed): []; 0.08 .. 0.30 (listed): 22
+13:56:13 K: Yahoo files missing -> those features are missing values: ['TSM', 'UMC', 'ASX', 'CHT', '2330.TW', '2303.TW', '3711.TW', '2412.TW', '^SOX', '^N225', '^KS11', '^IXIC', 'TWD=X', '^TNX', 'DX-Y.NYB', 'SPY', 'SOXX', 'XLK', 'XLF', 'XLB', 'XLI', 'XLP', 'XLY', 'XLE', 'XLV', 'XLC', 'IYT']
+13:56:13 sector ETF map: SOXX 19, SPY 26, XLC 3, XLF 17, XLK 35
+13:56:14 unit check margin balance: no data
+13:56:14 unit check SBL balance: no data
+13:56:14 unit check day-trade volume: no data
+13:56:14 K coverage (share of non-missing rows): adr_ret_1 0.00, adr_prem 0.00, adr_prem_chg_1 0.00, adr_prem_z20 0.00, sector_ret_1 0.00, sector_ret_5 0.00, sector_rel_1 0.00, margin_chg_vol 0.00, margin_util 0.00, margin_chg5 0.00, short_chg_vol 0.00, short_margin_ratio 0.00, short_chg5 0.00, offset_vol 0.00, sbl_sell_vol 0.00, sbl_bal_v20 0.00, sbl_chg_vol 0.00, sbl_chg5_v20 0.00, daytrade_ratio 0.00, daytrade_ratio_rel20 0.00, daytrade_imb 0.00, rank_margin_chg_vol 0.00, rank_sbl_sell_vol 0.00, rank_daytrade_ratio 0.00, n225_gap 0.00, ks11_gap 0.00, asia_gap_mean 0.00, sox_ret_1 0.00, sox_ret_5 0.00, sox_rel_ixic_1 0.00, tsm_ret_1 0.00, K_adr_prem 0.00, K_adr_prem_chg_1 0.00, K_adr_prem_z20 0.00, twd_ret_1 0.00, twd_ret_5 0.00, tnx_chg_1 0.00, tnx_chg_5 0.00, dxy_ret_1 0.00, dxy_ret_5 0.00
+14:01:45 K: Yahoo files missing -> those features are missing values: ['TSM', 'UMC', 'ASX', 'CHT', '2330.TW', '2303.TW', '3711.TW', '2412.TW', '^SOX', '^N225', '^KS11', '^IXIC', 'TWD=X', '^TNX', 'DX-Y.NYB', 'SPY', 'SOXX', 'XLK', 'XLF', 'XLB', 'XLI', 'XLP', 'XLY', 'XLE', 'XLV', 'XLC', 'IYT']
+14:01:45 sector ETF map: SOXX 19, SPY 26, XLC 3, XLF 17, XLK 35
+14:01:46 unit check margin balance: no data
+14:01:46 unit check SBL balance: no data
+14:01:46 unit check day-trade volume: no data
+14:01:46 K coverage (share of non-missing rows): adr_ret_1 0.00, adr_prem 0.00, adr_prem_chg_1 0.00, adr_prem_z20 0.00, sector_ret_1 0.00, sector_ret_5 0.00, sector_rel_1 0.00, margin_chg_vol 0.00, margin_util 0.00, margin_chg5 0.00, short_chg_vol 0.00, short_margin_ratio 0.00, short_chg5 0.00, offset_vol 0.00, sbl_sell_vol 0.00, sbl_bal_v20 0.00, sbl_chg_vol 0.00, sbl_chg5_v20 0.00, daytrade_ratio 0.00, daytrade_ratio_rel20 0.00, daytrade_imb 0.00, rank_margin_chg_vol 0.00, rank_sbl_sell_vol 0.00, rank_daytrade_ratio 0.00, n225_gap 0.00, ks11_gap 0.00, asia_gap_mean 0.00, sox_ret_1 0.00, sox_ret_5 0.00, sox_rel_ixic_1 0.00, tsm_ret_1 0.00, K_adr_prem 0.00, K_adr_prem_chg_1 0.00, K_adr_prem_z20 0.00, twd_ret_1 0.00, twd_ret_5 0.00, tnx_chg_1 0.00, tnx_chg_5 0.00, dxy_ret_1 0.00, dxy_ret_5 0.00
+14:01:55 features built in 51 s: U 111, P 61, C 169, M 39
+14:03:09 panel (166346, 393) written in 126 s; last labelled day 2026-11-09
+14:09:08 2022-03-02 P: max |diff| 4.18e-08; features that differ: none
+14:09:08 2022-03-02 C: max |diff| 3.78e-06; features that differ: none
+14:09:08 2022-03-02 M: max |diff| 0; features that differ: none
+14:09:08   (20 s)
+14:09:28 2023-01-04 P: max |diff| 3.37e-08; features that differ: none
+14:09:28 2023-01-04 C: max |diff| 3.66e-06; features that differ: none
+14:09:28 2023-01-04 M: max |diff| 0; features that differ: none
+14:09:28   (20 s)
+14:09:47 2023-02-07 P: max |diff| 5.53e-08; features that differ: none
+14:09:47 2023-02-07 C: max |diff| 3.72e-06; features that differ: none
+14:09:47 2023-02-07 M: max |diff| 0; features that differ: none
+14:09:47   (20 s)
+14:10:32 2023-02-22 P: max |diff| 3.97e-08; features that differ: none
+14:10:33 2023-02-22 C: max |diff| 3.81e-06; features that differ: none
+14:10:33 2023-02-22 M: max |diff| 0; features that differ: none
+14:10:33   (21 s)
+14:10:53 2023-11-03 P: max |diff| 4.79e-08; features that differ: none
+14:10:53 2023-11-03 C: max |diff| 3.75e-06; features that differ: none
+14:10:53 2023-11-03 M: max |diff| 0; features that differ: none
+14:10:53   (20 s)
+14:11:14 2024-02-16 P: max |diff| 2.93e-08; features that differ: none
+14:11:14 2024-02-16 C: max |diff| 3.79e-06; features that differ: none
+14:11:14 2024-02-16 M: max |diff| 0; features that differ: none
+14:11:14   (21 s)
+14:11:38 2024-08-05 P: max |diff| 5.03e-08; features that differ: none
+14:11:38 2024-08-05 C: max |diff| 3.05e-06; features that differ: none
+14:11:38 2024-08-05 M: max |diff| 0; features that differ: none
+14:11:38   (24 s)
+14:12:05 2025-11-03 P: max |diff| 2.92e-08; features that differ: none
+14:12:05 2025-11-03 C: max |diff| 3.68e-06; features that differ: none
+14:12:06 2025-11-03 M: max |diff| 0; features that differ: none
+14:12:06   (27 s)
+14:12:36 2025-11-27 P: max |diff| 4.73e-08; features that differ: none
+14:12:36 2025-11-27 C: max |diff| 3.66e-06; features that differ: none
+14:12:36 2025-11-27 M: max |diff| 0; features that differ: none
+14:12:36   (30 s)
+14:12:57 2022-03-02 U: max |diff| 3.78e-06; features that differ: none
+14:13:11 2023-01-04 U: max |diff| 0.01; features that differ: ['U__xr_clv']
+14:13:25 2023-02-07 U: max |diff| 0.01; features that differ: ['U__xr_lower_shadow']
+14:15:25 2022-03-02 U: max |diff| 3.78e-06; features that differ: none
+14:15:36 2023-01-04 U: max |diff| 3.66e-06; features that differ: none
+14:15:46 2023-02-07 U: max |diff| 3.72e-06; features that differ: none
+14:15:57 2023-02-22 U: max |diff| 3.81e-06; features that differ: none
+14:16:15 2023-11-03 U: max |diff| 3.75e-06; features that differ: none
+14:16:26 2024-02-16 U: max |diff| 3.79e-06; features that differ: none
+14:16:39 2024-08-05 U: max |diff| 3.05e-06; features that differ: none
+14:16:53 2025-11-03 U: max |diff| 3.68e-06; features that differ: none
+14:17:06 2025-11-27 U: max |diff| 3.66e-06; features that differ: none
+14:42:49 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+14:43:00 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+14:43:00 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+14:43:00 unit check day-trade volume: median ratio to shares traded 0.2396 -> factor 1
+14:43:01 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+14:43:08 features built in 59 s: U 111, P 61, C 169, M 39
+14:43:59 panel (166346, 393) written in 110 s; last labelled day 2026-11-09
+14:44:32 same-day IC check (D days): 380 features, max |IC| 0.1080; > 0.30 (removed): []; 0.08 .. 0.30 (listed): 25
+14:45:30 2022-03-02 P: max |diff| 4.18e-08; features that differ: none
+14:45:30 2022-03-02 C: max |diff| 3.78e-06; features that differ: none
+14:45:30 2022-03-02 M: max |diff| 0; features that differ: none
+14:45:30   (28 s)
+14:45:56 2023-01-04 P: max |diff| 3.37e-08; features that differ: none
+14:45:56 2023-01-04 C: max |diff| 3.66e-06; features that differ: none
+14:45:57 2023-01-04 M: max |diff| 0; features that differ: none
+14:45:57   (27 s)
+14:46:23 2023-02-07 P: max |diff| 5.53e-08; features that differ: none
+14:46:23 2023-02-07 C: max |diff| 3.72e-06; features that differ: none
+14:46:23 2023-02-07 M: max |diff| 0; features that differ: none
+14:46:23   (27 s)
+14:46:50 2023-02-22 P: max |diff| 3.97e-08; features that differ: none
+14:46:50 2023-02-22 C: max |diff| 3.81e-06; features that differ: none
+14:46:50 2023-02-22 M: max |diff| 0; features that differ: none
+14:46:50   (26 s)
+14:47:51 2023-11-03 P: max |diff| 4.79e-08; features that differ: none
+14:47:51 2023-11-03 C: max |diff| 3.75e-06; features that differ: none
+14:47:51 2023-11-03 M: max |diff| 0; features that differ: none
+14:47:51   (38 s)
+14:48:29 2024-02-16 P: max |diff| 2.93e-08; features that differ: none
+14:48:29 2024-02-16 C: max |diff| 3.79e-06; features that differ: none
+14:48:29 2024-02-16 M: max |diff| 0; features that differ: none
+14:48:29   (38 s)
+14:48:59 2024-08-05 P: max |diff| 5.03e-08; features that differ: none
+14:48:59 2024-08-05 C: max |diff| 3.05e-06; features that differ: none
+14:48:59 2024-08-05 M: max |diff| 0; features that differ: none
+14:48:59   (30 s)
+14:49:40 2025-11-03 P: max |diff| 2.92e-08; features that differ: none
+14:49:40 2025-11-03 C: max |diff| 3.68e-06; features that differ: none
+14:49:41 2025-11-03 M: max |diff| 0; features that differ: none
+14:49:41   (41 s)
+14:50:52 2025-11-27 P: max |diff| 4.73e-08; features that differ: none
+14:50:52 2025-11-27 C: max |diff| 3.66e-06; features that differ: none
+14:50:52 2025-11-27 M: max |diff| 0; features that differ: none
+14:50:52   (32 s)
+14:51:04 2022-03-02 U: max |diff| 3.78e-06; features that differ: none
+14:51:14 2023-01-04 U: max |diff| 3.66e-06; features that differ: none
+14:51:24 2023-02-07 U: max |diff| 3.72e-06; features that differ: none
+14:51:33 2023-02-22 U: max |diff| 3.81e-06; features that differ: none
+14:51:44 2023-11-03 U: max |diff| 3.75e-06; features that differ: none
+14:52:01 2024-02-16 U: max |diff| 3.79e-06; features that differ: none
+14:52:13 2024-08-05 U: max |diff| 3.05e-06; features that differ: none
+14:52:26 2025-11-03 U: max |diff| 3.68e-06; features that differ: none
+14:52:39 2025-11-27 U: max |diff| 3.66e-06; features that differ: none
+14:53:33 2023-11-03 P: max |diff| 4.79e-08; features that differ: none
+14:53:33 2023-11-03 C: max |diff| 3.75e-06; features that differ: none
+14:53:33 2023-11-03 M: max |diff| 0; features that differ: none
+14:53:33   (31 s)
+14:54:02 2024-02-16 P: max |diff| 2.93e-08; features that differ: none
+14:54:02 2024-02-16 C: max |diff| 3.79e-06; features that differ: none
+14:54:02 2024-02-16 M: max |diff| 0; features that differ: none
+14:54:02   (28 s)
+14:54:30 2024-08-05 P: max |diff| 5.03e-08; features that differ: none
+14:54:30 2024-08-05 C: max |diff| 3.05e-06; features that differ: none
+14:54:30 2024-08-05 M: max |diff| 0; features that differ: none
+14:54:30   (28 s)
+14:55:01 2025-11-03 P: max |diff| 2.92e-08; features that differ: none
+14:55:01 2025-11-03 C: max |diff| 3.68e-06; features that differ: none
+14:55:01 2025-11-03 M: max |diff| 0; features that differ: none
+14:55:01   (30 s)

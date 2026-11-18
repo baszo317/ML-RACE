@@ -1,0 +1,2 @@
+v11 groups: L (lgb_res) none; M (mlp_res_xr9 / BN9 / xrN9) none
+no Alpha158 group selected: v11 = v9, nothing to compare

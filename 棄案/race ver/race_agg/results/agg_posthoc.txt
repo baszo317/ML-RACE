@@ -1,0 +1,38 @@
+race_agg post-hoc (after the rule; report only)
+
+1. seed lottery (C.LU, D, bp/day)
+   single seeds: 1: 15.34, 2: 14.81, 3: 13.95, 4: 13.77, 5: 14.66, 6: 13.81, 7: 14.59, 8: 14.64, 9: 14.44, 10: 14.51
+   single-seed mean 14.45, sd 0.49
+   3-seed averages (120 triples): mean 14.66, sd 0.31, min 13.81, max 15.43
+   seeds (1,2,3) = the race version: 15.10, rank 9 of 120 (share above it 0.067)
+   10-seed average: 14.64
+
+2. paired differences vs SD: AR (bp/day) and daily Top50 rank IC
+   cand   AR diff   t     IC diff    t
+   A1      -0.01  -0.01  +0.0067    2.41
+   A2      -0.16  -0.31  +0.0049    2.07
+   A3      +0.77   1.55  +0.0055    2.21
+   A4      -0.90  -1.41  -0.0050   -1.57
+   B1      -0.46  -1.94  -0.0007   -1.02
+   B2      -1.15  -2.01  -0.0030   -1.16
+   C1      -4.42  -3.89  -0.0232   -3.44
+   C2      -5.09  -5.97  -0.0336   -6.13
+   C3      -0.62  -2.01  -0.0037   -2.88
+   D1      -6.89  -5.45  -0.0484   -6.05
+   D2      -0.75  -2.06  -0.0004   -0.27
+   E1      -2.58  -3.28  -0.0140   -3.14
+   E2      -1.51  -2.89  -0.0030   -1.26
+   E4      -0.76  -1.67  -0.0026   -0.97
+   F1      -0.97  -1.77  -0.0092   -2.96
+   F2      -0.55  -1.29  -0.0020   -0.94
+
+3. AR diff on IC diff across the 16 candidates: slope 136.3 bp/day per unit IC, corr 0.980
+   -> +0.01 IC buys about +1.36 bp/day; the sd of AR differences here is 30-60x noisier than IC differences
+
+4. blends rebuilt on the 10-seed LU, against the 10-seed LU (bp/day; IC = daily Top50 rank IC)
+   10-seed LU: AR 14.64, IC 0.1200
+   A1 (10-seed LU + C.LN)       AR 15.19  diff +0.54 (t 1.01; 2022 +1.34, 2023 +0.51, 2024 -0.24)  IC diff +0.0073 (t 2.66)
+   A2 (10-seed LU + 4 others)   AR 15.11  diff +0.47 (t 0.86; 2022 +1.54, 2023 +0.02, 2024 -0.18)  IC diff +0.0056 (t 2.37)
+   E2 (10-seed LU + RF)         AR 13.59  diff -1.05 (t -1.89; 2022 -0.36, 2023 -1.83, 2024 -0.98)  IC diff -0.0027 (t -1.13)
+
+5. C.LU all-stock (100) daily IC by test year (comparable with the E3 test-year IC): 2022 0.1248, 2023 0.1203, 2024 0.1377

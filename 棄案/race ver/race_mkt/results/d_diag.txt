@@ -1,0 +1,60 @@
+1. market models: OOS corr(mhat, m) (2021 = calibration only), sign hit rate, E[sign(mhat) m] (bp)
+  MB   D corr +0.117 | 2021: +0.253 2022: +0.132 2023: +0.108 2024: +0.100 | hit 0.530 | all-in (vs median) +6.07 | vol terciles low +0.105 mid +0.163 high +0.100  lambda median 1000
+  MF   D corr +0.123 | 2021: +0.276 2022: +0.137 2023: +0.094 2024: +0.139 | hit 0.546 | all-in (vs median) +7.02 | vol terciles low +0.126 mid +0.114 high +0.122  lambda median 3000
+  MFO  D corr +0.099 | 2021: +0.185 2022: +0.109 2023: +0.056 2024: +0.151 | hit 0.523 | all-in (vs median) +3.52 | vol terciles low +0.084 mid +0.040 high +0.132  lambda median 3000
+  MS   D corr +0.037 | 2021: +0.034 2022: +0.053 2023: +0.038 2024: +0.009 | hit 0.509 | all-in (vs median) +1.93 | vol terciles low +0.020 mid -0.009 high +0.063  gap R2 (train) median 0.730, b median -0.097
+  MV   D corr +0.106 | 2021: +0.270 2022: +0.148 2023: +0.048 2024: +0.113 | hit 0.532 | all-in (vs median) +4.70 | vol terciles low +0.122 mid +0.028 high +0.142  features selected median 38
+  MF - MB: corr diff by year 2022: +0.005 2023: -0.014 2024: +0.038; corr(MF, MB) 0.828
+
+2. each futures feature vs m on D (Pearson; descriptive, in-sample; |t| ~ corr * sqrt(n))
+  rt_mtx_ratio_z250            corr -0.116  n 724
+  rt_small_ratio_z250          corr -0.114  n 724
+  rt_small_ratio               corr -0.108  n 724
+  tw_foreign_netbuy_n          corr +0.098  n 724
+  div_retail_foreign           corr -0.095  n 724
+  f_txeq_net_d5n               corr +0.091  n 724
+  lt10_nonspec_d1n             corr -0.088  n 724
+  f_txeq_net_d1n               corr +0.087  n 724
+  pc_vol_z60                   corr +0.085  n 724
+  fo_bias_d1n                  corr +0.073  n 724
+  it_txeq_net_d1n              corr +0.072  n 724
+  lt10_all_z250                corr +0.070  n 724
+  lt5_all_z250                 corr +0.069  n 724
+  pc_oi_d1n                    corr +0.065  n 724
+  lt10_spec_z250               corr +0.063  n 724
+  f_txeq_net_z250              corr +0.063  n 724
+  rt_tx_ratio_z250             corr -0.061  n 724
+  lt10_all_d1n                 corr +0.061  n 724
+  f_txeq_flow_n                corr +0.060  n 724
+  fo_bias_z250                 corr +0.054  n 724
+  pc_oi_z250                   corr +0.052  n 724
+  rt_small_ratio_d1n           corr -0.051  n 724
+  basis_dev                    corr +0.050  n 668
+  fo_put_net_z250              corr -0.050  n 724
+  small_vol_share_z60          corr +0.048  n 724
+  dl_txeq_net_d1n              corr -0.045  n 724
+  lt10_near_minus_all_z250     corr +0.028  n 724
+  tw_margin_chg_n              corr -0.022  n 724
+  lt10_nonspec_z250            corr -0.019  n 724
+  night_day_vol_z60            corr -0.018  n 724
+  it_txeq_net_z250             corr -0.009  n 724
+  oi_txeq_d1n                  corr +0.009  n 724
+  fo_call_net_z250             corr +0.008  n 724
+  oi_price_regime              corr -0.005  n 724
+  dl_txeq_net_z250             corr +0.002  n 724
+  term_spread_dev              corr +0.001  n 724
+  rt_tmf_ratio_z250            corr +nan  n 47
+
+3. ceilings on D (bp/day), WF3 ranking; ex-dividend rule only where noted
+  DL0 (Top25 + ex-div)                            16.35
+  (a) our ranking, best k known ex post           66.43
+  (b) m known: all 1 if m > 0 else all 0          51.98   (= E|m|)
+  (c) true ranking, Top25                        108.65
+  (d) everything known                           118.61   (= mean |r|)
+
+4. value of a market forecast with OOS correlation rho (synthetic, known calibration mu = rho * sd_m * z; 20 seeds)
+  rho 0.05: gain  -0.21 bp/day (sd over seeds 0.45); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +0.23  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.10: gain  +0.19 bp/day (sd over seeds 0.77); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +0.93  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.15: gain  +0.88 bp/day (sd over seeds 0.89); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +2.08  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.20: gain  +1.82 bp/day (sd over seeds 1.01); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +3.70  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.30: gain  +4.64 bp/day (sd over seeds 1.29); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +8.33  (sd_m 69.5, sd_a = c 20.8)

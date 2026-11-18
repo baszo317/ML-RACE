@@ -1,0 +1,16 @@
+[INFO] environment: python 3.13.18, pandas 3.0.5, numpy 2.5.3, torch 2.14.1+cu130, lightgbm 4.7.0, pyarrow 26.0.1
+[OK] 2026-11-11: newest labelled day 2026-11-10 = previous trading day
+[OK] 2026-11-11: 109 input features present (largest missing share 0%)
+[WARN] ex-dividend download did not succeed today; using the table fetched 2026-11-10 (1 trading day(s) ago) - fine, ex-dates are announced weeks ahead (run ..\v5\fetch_exdiv.py again later if you can)
+[OK] 2026-11-11: TX night session present
+[OK] mlp_raw_B9: newest model trained up to 2026-11-10
+[OK] mlp_raw_xr9: newest model trained up to 2026-11-10
+[OK] mlp_raw_w4_9: newest model trained up to 2026-11-10
+[OK] tf_raw_B: newest model trained up to 2026-11-10
+[OK] mlp_res_B9: newest model trained up to 2026-11-10
+[OK] mlp_res_xr9: newest model trained up to 2026-11-10
+[OK] mlp_res_BN9: newest model trained up to 2026-11-10
+[OK] mlp_res_xrN9: newest model trained up to 2026-11-10
+[OK] lgb_res: newest model trained up to 2026-11-10
+[OK] 2026-11-11: share of 1 = 0.52, pbar = 0.497, 50 Top50 stocks
+[INFO] made 2026-11-11 20:15 (the 11/11 morning run was missed: the zip downloaded at 03:09 was the midnight one, without the U.S. close) from the inputs available before 09:00 on 11/11: the course zip packed 11/11 18:18 (data (13).zip) cut to the rows before 11/11 plus the morning -1 row of 11/11 (U.S. close of 11/10: VIX 19.83, Nasdaq 25065.88, S&P 7520.93), the TX night session 11/10 15:00-11/11 05:00 and the 11/10 day session (FinMind), the ex-dividend table fetched 11/10. Run on a copy in the cloud; the laptop's model pools, history_predictions.csv and pbar_history.csv were not changed (v11\results\asof_1111\README.txt)

@@ -1,0 +1,12 @@
+articles 147895 (2019-10-01 07:13:50 .. 2026-10-31 23:25:08), with a Top100 tag 46025
+share published 08:50-09:00 0.0106, 08:00-08:50 0.0577, 13:30-15:00 0.0717
+articles per year / share with a Taiwan tag: 2019: 4905.0 / 0.78, 2020: 19318.0 / 0.80, 2021: 20798.0 / 0.81, 2022: 19604.0 / 0.62, 2023: 16180.0 / 0.66, 2024: 20571.0 / 0.47, 2025: 24110.0 / 0.37, 2026: 22409.0 / 0.33
+  2020: Top50 stock-days with an ON article 0.480, solo 0.096, PD 0.246
+  2021: Top50 stock-days with an ON article 0.464, solo 0.101, PD 0.288
+  2022: Top50 stock-days with an ON article 0.300, solo 0.092, PD 0.150
+  2023: Top50 stock-days with an ON article 0.357, solo 0.086, PD 0.156
+  2024: Top50 stock-days with an ON article 0.341, solo 0.075, PD 0.190
+  2025: Top50 stock-days with an ON article 0.316, solo 0.072, PD 0.173
+  2026: Top50 stock-days with an ON article 0.277, solo 0.064, PD 0.171
+truncation test on ['2021-07-07', '2021-10-14', '2022-04-11', '2024-07-23', '2024-08-22', '2025-01-20', '2025-02-14', '2025-06-23', '2026-01-27']: PASS
+same-day rank IC with r on D (|IC| > 0.30 = stop and look for a leak): nw_on -0.0295, nw_on_solo -0.0061, nw_pd -0.0193, nw_abn -0.0100, tone_on -0.0118, tone_pd -0.0117, kw_rev_on -0.0126, kw_earn_on -0.0035, kw_rating_on +0.0052, kw_div_on -0.0094, mkt_n_on +nan, mkt_tone_on +nan

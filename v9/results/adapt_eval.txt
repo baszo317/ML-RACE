@@ -1,0 +1,88 @@
+[    0s] grids read from /sessions/rcw-01sxmblq8oaes6ftdppdbw7x/mnt/ML RACE/v9/cache/adapt_grid.npz
+check 1: v9 combination vs v9_eval (1164 days): max |diff| 0.00e+00 bp; mean 14.3110 vs 14.3110
+check 2: v9 combination vs out\probabilities_v9_static.csv (99 days): max |diff| 5.68e-14 bp; static 16.42 (official 16.42), Oct 21.00 (official 21.00)
+
+=== walk-forward 2022-01..2026-10 (Top50 bp/day), N = 15 trading days; d_ = adaptive minus fixed v9 (same days)
+                                scheme   val  hold  post   all    sd  d_val  d_hold  d_post  d_all  t_all  nw_all
+                  v9 fixed (reference) 13.99 14.33 16.59 14.31 48.26   0.00    0.00    0.00   0.00    NaN     NaN
+                       S1 w_t only [7] 13.15 14.34 16.49 13.78 53.86  -0.84    0.01   -0.10  -0.53  -0.75   -0.76
+                       S2 lam only [5] 13.91 13.24 17.65 14.04 46.99  -0.08   -1.09    1.06  -0.27  -0.61   -0.60
+                     S3 lgb_w only [5] 13.79 13.28 15.01 13.74 48.69  -0.20   -1.06   -1.58  -0.57  -1.36   -1.42
+                      S4 tf_w only [5] 14.00 13.65 18.40 14.27 48.42   0.01   -0.68    1.81  -0.04  -0.13   -0.12
+                      S5 bias only [5] 13.05 13.53 12.86 13.18 48.70  -0.94   -0.80   -3.73  -1.13  -1.95   -2.01
+  S6 w_t + lam + lgb_w (primary) [175] 12.15 13.06 14.77 12.64 51.73  -1.84   -1.27   -1.82  -1.67  -1.90   -1.94
+                    S7 all five [4375] 10.05 13.44 16.88 11.62 53.02  -3.94   -0.89    0.29  -2.70  -2.80   -2.87
+S8 S6, exp. weights half-life 15 [175] 12.98 12.83 14.57 13.07 52.46  -1.01   -1.51   -2.02  -1.24  -1.48   -1.49
+  S9 S6, at most one step from v9 [27] 12.91 13.46 17.74 13.48 50.54  -1.08   -0.88    1.15  -0.83  -1.58   -1.57
+
+average coefficient chosen (days with a full window) and share of days that moved away from v9:
+                                scheme   w_t   lam  lgb_w  tf_w   bias  moved
+                       S1 w_t only [7] 0.664 0.750  0.500 0.500  0.000  0.863
+                       S2 lam only [5] 0.500 0.576  0.500 0.500  0.000  0.849
+                     S3 lgb_w only [5] 0.500 0.750  0.493 0.500  0.000  0.861
+                      S4 tf_w only [5] 0.500 0.750  0.500 0.531  0.000  0.855
+                      S5 bias only [5] 0.500 0.750  0.500 0.500  0.001  0.849
+  S6 w_t + lam + lgb_w (primary) [175] 0.680 0.539  0.514 0.500  0.000  0.998
+                    S7 all five [4375] 0.747 0.518  0.509 0.526 -0.000  1.000
+S8 S6, exp. weights half-life 15 [175] 0.727 0.571  0.495 0.500  0.000  0.989
+  S9 S6, at most one step from v9 [27] 0.498 0.745  0.504 0.500  0.000  0.991
+
+=== rolling static splice (history before 6/1 from the walk-forward), N = 15; v9 fixed: static 16.42, Oct 21.00
+                          scheme  static  d_static  t_static   Oct  d_Oct  moved
+                     S1 w_t only   17.86      1.44      0.28 24.74   3.75   0.97
+                     S2 lam only   17.93      1.51      0.48 21.91   0.91   0.94
+                   S3 lgb_w only   14.36     -2.07     -1.02 13.38  -7.62   0.84
+                    S4 tf_w only   16.80      0.37      0.16 23.56   2.56   0.95
+                    S5 bias only   17.08      0.66      0.20 12.59  -8.40   0.87
+  S6 w_t + lam + lgb_w (primary)   13.91     -2.52     -0.49 33.21  12.21   1.00
+                     S7 all five   11.55     -4.87     -0.86 18.47  -2.53   1.00
+S8 S6, exp. weights half-life 15   12.13     -4.29     -0.87 25.41   4.42   1.00
+ S9 S6, at most one step from v9   18.57      2.15      0.68 24.40   3.40   1.00
+
+pre-registered rule, primary S6 N=15: d_val -1.84, d_hold -1.27, d_post -1.82, NW t -1.94 -> FAIL: live keeps the fixed v9 coefficients
+secondary schemes passing (three periods > 0 and NW t >= 2.73): none
+
+=== window length N (report only, not used for picking): full-period difference to fixed v9, bp/day (NW t)
+                        scheme           N5          N10          N15          N20          N30          N60         N120         N250
+                   S1 w_t only -1.36 (-1.4) -1.09 (-1.3) -0.90 (-1.1) -2.05 (-2.5) -1.77 (-2.0) -1.62 (-1.9) -1.21 (-1.9) -1.58 (-2.6)
+                 S3 lgb_w only -0.63 (-1.4) -1.06 (-2.2) -0.73 (-1.6) -0.75 (-1.6) -0.63 (-1.4) -0.82 (-1.9) -0.71 (-1.8) -0.71 (-1.9)
+S6 w_t + lam + lgb_w (primary) -1.98 (-1.9) -1.99 (-2.1) -2.25 (-2.3) -2.00 (-2.1) -1.24 (-1.3) -1.91 (-2.1) -3.22 (-3.9) -1.31 (-1.7)
+  (days from 2023-01 on, so that every N has a full window)
+
+=== persistence (walk-forward): one coefficient changed, the others at v9; D = daily AR difference to v9
+    corr15 = corr(mean D over the previous 15 days, D of the day); block = corr of consecutive 15-day block means;
+    mean D = average advantage over the whole period (what a fixed switch would give)
+ coef  value  mean D      t  corr15  block   sd D
+  w_t   0.00  -1.806 -2.024  -0.016 -0.308 30.436
+  w_t   0.25  -1.096 -2.190   0.001 -0.193 17.078
+  w_t   0.75  -0.101 -0.232  -0.041 -0.201 14.893
+  w_t   1.00  -0.528 -0.786   0.013 -0.085 22.908
+  w_t   1.25  -1.050 -1.239   0.017 -0.124 28.927
+  w_t   1.50  -1.797 -1.791   0.021 -0.150 34.222
+  lam   0.00  -1.489 -1.999  -0.010  0.058 25.425
+  lam   0.25  -0.868 -1.547  -0.021  0.006 19.151
+  lam   0.50  -0.296 -0.815  -0.010 -0.124 12.384
+  lam   1.00   0.272  0.870  -0.005  0.131 10.667
+lgb_w   0.00  -0.875 -1.805  -0.045 -0.149 16.541
+lgb_w   0.25  -0.365 -1.100  -0.035 -0.161 11.313
+lgb_w   0.75  -0.024 -0.068  -0.013  0.038 12.115
+lgb_w   1.00  -0.207 -0.365  -0.023  0.009 19.370
+ tf_w   0.00  -0.525 -1.560  -0.035 -0.089 11.474
+ tf_w   0.25  -0.030 -0.139  -0.046 -0.111  7.272
+ tf_w   0.75   0.275  1.101  -0.039 -0.080  8.511
+ tf_w   1.00  -0.102 -0.298  -0.030 -0.006 11.666
+ bias  -0.02  -0.603 -0.922  -0.025 -0.135 22.300
+ bias  -0.01  -0.557 -1.403  -0.056 -0.155 13.542
+ bias   0.01  -0.120 -0.293  -0.069 -0.079 13.991
+ bias   0.02  -0.673 -0.995  -0.029 -0.023 23.064
+  average corr15 -0.022 (median -0.024); average block corr -0.088; 1/sqrt(n) = 0.029
+  same question with smoother daily signals than AR:
+  stock view IC: 4 resid MLPs 0.0790, LightGBM 0.0782; LightGBM minus MLPs -0.0008 (daily sd 0.1103, so a 15-day mean has se 0.0285); corr15 -0.042, block -0.010, LightGBM ahead in 51% of the 15-day blocks
+  market view hit sign(pbar - 0.5) x Top50 mean return: +4.92 bp/day; corr15 +0.011, block -0.164
+  market view, Transformer minus raw MLPs (sign of the day mean vs its average): +3.23 bp/day; corr15 -0.031, block +0.032
+
+=== hindsight (not usable live): the best fixed combination of each period, all 4375
+  best in val : w_t 0.5, lam 1.0, lgb_w 0.0, tf_w 0.5, bias -0.01 -> val 14.76 (v9 13.99); same combination elsewhere: hold 12.04, post 15.03
+  best in hold: w_t 1.0, lam 0.5, lgb_w 0.5, tf_w 0.0, bias 0.01 -> hold 17.08 (v9 14.33); same combination elsewhere: val 13.34, post 12.01
+  best in post: w_t 0.25, lam 1.0, lgb_w 0.0, tf_w 1.0, bias -0.02 -> post 22.27 (v9 16.59); same combination elsewhere: val 14.47, hold 11.24
+[    5s] done

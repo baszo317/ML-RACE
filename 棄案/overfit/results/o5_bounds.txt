@@ -1,0 +1,71 @@
+o5_bounds.py  2026-10-28 01:42
+
+==============================================================================================================
+T2. Finite-sample lower bound of the true average skill (one-sided 95%), R = 4444 bp
+==============================================================================================================
+       model    n  mean  assumed conditional sd  Bernstein eps  lower bound (Bernstein)  lower bound (NW, asymptotic)  Hoeffding eps (range only)
+          v9 1164 14.31                   48.26           8.96                     5.35                         12.10                      159.43
+          v9 1164 14.31                   72.39          10.26                     4.06                         12.10                      159.43
+          v9 1164 14.31                   96.52          11.72                     2.59                         12.10                      159.43
+         v11 1164 15.02                   48.00           8.95                     6.07                         12.79                      159.43
+         v11 1164 15.02                   71.99          10.23                     4.78                         12.79                      159.43
+         v11 1164 15.02                   95.99          11.68                     3.33                         12.79                      159.43
+          W0 1164 12.22                   38.40           8.52                     3.70                         10.33                      159.43
+          W0 1164 12.22                   57.60           9.44                     2.78                         10.33                      159.43
+          W0 1164 12.22                   76.81          10.51                     1.70                         10.33                      159.43
+v5 (control) 1164 13.38                   49.60           9.03                     4.35                         11.07                      159.43
+v5 (control) 1164 13.38                   74.39          10.37                     3.01                         11.07                      159.43
+v5 (control) 1164 13.38                   99.19          11.89                     1.50                         11.07                      159.43
+  (Hoeffding uses only the range [-22.2%, +22.2%] and is useless; Bernstein uses the variance and certifies the level)
+
+model period   n  mean  Bernstein eps (sd = full-period sd)  lower bound  NW lower bound
+   v9    val 727 13.99                                13.62         0.37           11.42
+   v9   hold 338 14.33                                27.75       -13.41           10.03
+   v9   post  99 16.59                                91.20       -74.61            6.30
+   v9    Oct  15 22.91                               593.32      -570.41           -0.16
+  v11    val 727 14.60                                13.60         1.00           11.99
+  v11   hold 338 14.34                                27.73       -13.39           10.10
+  v11   post  99 20.35                                91.19       -70.84           10.10
+  v11    Oct  15 14.27                               593.30      -579.03           -8.01
+   W0    val 727 11.79                                13.13        -1.35            9.60
+   W0   hold 338 10.35                                27.22       -16.87            6.98
+   W0   post  99 21.71                                90.64       -68.93           12.56
+   W0    Oct  15 28.57                               592.74      -564.18            5.18
+
+==============================================================================================================
+T3. Selection: how much can the best of K settings look better than v9 by luck alone?
+    bound E[max_k noise_k] <= s sqrt(2 ln K), s = the largest NW se of (setting - v9) in that period (bp/day)
+==============================================================================================================
+                            period  days  s = max se  90th pct se  bound K=35  bound K=240  bound K=4375  observed: best of 4,375 minus v9                                         best setting
+     walk-forward all (1,164 days)  1164        1.44         1.19        3.83         4.76          5.88                              0.32   w_t 0.25, lam 1.0, lgb_w 0.5, tf_w 1.0, bias -0.01
+                       val 2022-24   727        1.58         1.31        4.21         5.22          6.46                              0.77    w_t 0.5, lam 1.0, lgb_w 0.0, tf_w 0.5, bias -0.01
+             hold 2025-01..2026-05   338        3.09         2.36        8.24        10.23         12.65                              2.75     w_t 1.0, lam 0.5, lgb_w 0.5, tf_w 0.0, bias 0.01
+ rolling static 6/1-9/30 (84 days)    84        9.55         7.29       25.46        31.61         39.09                             10.79 w_t 0.25, lam 1.0, lgb_w 0.75, tf_w 0.75, bias -0.02
+rolling static + October (99 days)    99        8.77         6.38       23.38        29.03         35.90                              9.56 w_t 0.25, lam 0.25, lgb_w 0.75, tf_w 1.0, bias -0.01
+      October 10/1-10/22 (15 days)    15       23.09        12.43       61.58        76.45         94.55                             19.23     w_t 0.0, lam 0.0, lgb_w 0.25, tf_w 0.0, bias 0.0
+  (static_max = 32.18 vs v9 16.42 on the rolling static; the October-best of the 240 v11 settings was 33.02 vs v11 14.27)
+
+==============================================================================================================
+T4. Re-used holdout: smallest difference a hold (or post) confirmation can certify after b pass/fail decisions
+    eps_b = s sqrt(2 (b ln 2 + ln(2/delta))), delta = 0.05, two-sided
+==============================================================================================================
+ b (decisions)  factor  hold, one change (s = 0.39)  hold, v11 vs v9 (s = 0.99)  post, one change (s = 1.06)  post, v11 vs v9 (s = 3.15)
+             0    2.72                         1.07                        2.68                         2.87                        8.57
+             5    3.78                         1.49                        3.73                         4.00                       11.93
+            10    4.61                         1.82                        4.54                         4.87                       14.54
+            20    5.92                         2.33                        5.84                         6.26                       18.69
+            30    7.00                         2.76                        6.90                         7.40                       22.07
+            50    8.76                         3.45                        8.63                         9.26                       27.62
+  days needed to certify a 0.7 bp/day difference (v11 - v9 size, daily sd of the difference 18.1) with b = 0: 4,948
+  days needed to certify a 0.7 bp/day difference (v11 - v9 size, daily sd of the difference 18.1) with b = 20: 23,541
+  days needed to certify a 0.7 bp/day difference (v11 - v9 size, daily sd of the difference 18.1) with b = 30: 32,837
+
+==============================================================================================================
+T0. Capacity bounds (VC): |test error - training error| <= sqrt(8/n (d ln(2en/d) + ln(4/delta)))
+==============================================================================================================
+  linear rule on the 67 features (d = 68), n = i.i.d. stock-days (optimistic), 2020-03..2026-05 153,000: bound 0.184 on the error-rate gap (the models' OOS edge is about 0.04-0.06)
+  linear rule on the 67 features (d = 68), n = days (what the market view really learns from) 1,530: bound 1.316 on the error-rate gap (the models' OOS edge is about 0.04-0.06)
+  MLP 72-64-32-1 (~6.8k weights, d ~ W log W ~ 6e4), n = i.i.d. stock-days (optimistic), 2020-03..2026-05 153,000: bound 2.872 on the error-rate gap (the models' OOS edge is about 0.04-0.06)
+  MLP 72-64-32-1 (~6.8k weights, d ~ W log W ~ 6e4), n = days (what the market view really learns from) 1,530: bound inf on the error-rate gap (the models' OOS edge is about 0.04-0.06)
+
+done in 1s

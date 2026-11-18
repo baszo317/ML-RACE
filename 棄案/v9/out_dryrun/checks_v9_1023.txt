@@ -1,0 +1,14 @@
+[OK] 2026-10-23: newest labelled day 2026-10-22 = previous trading day
+[OK] 2026-10-23: 109 input features present (largest missing share 0%)
+[OK] ex-dividend table fetched today (0 Top100 announcements)
+[OK] 2026-10-23: TX night session present
+[OK] mlp_raw_B9: newest model trained up to 2026-10-22
+[OK] mlp_raw_xr9: newest model trained up to 2026-10-22
+[OK] mlp_raw_w4_9: newest model trained up to 2026-10-22
+[OK] tf_raw_B: newest model trained up to 2026-10-22
+[OK] mlp_res_B9: newest model trained up to 2026-10-22
+[OK] mlp_res_xr9: newest model trained up to 2026-10-22
+[OK] mlp_res_BN9: newest model trained up to 2026-10-22
+[OK] mlp_res_xrN9: newest model trained up to 2026-10-22
+[OK] lgb_res: newest model trained up to 2026-10-22
+[OK] 2026-10-23: share of 1 = 0.76, pbar = 0.513, 50 Top50 stocks

@@ -1,0 +1,361 @@
+{
+ "written": "2026-11-15 15:22:27",
+ "rule": "PREREG 2.4: top 3 on D + ENS_TOP3 + 4 natives",
+ "ranking_D": [
+  [
+   "ALL.LN",
+   15.3172,
+   1
+  ],
+  [
+   "ALLmU.LN",
+   15.1346,
+   1
+  ],
+  [
+   "C.LU",
+   15.0996,
+   1
+  ],
+  [
+   "ALLmM.LN",
+   14.8246,
+   1
+  ],
+  [
+   "ALLmP.LN",
+   14.7076,
+   1
+  ],
+  [
+   "ALL5",
+   14.6259,
+   5
+  ],
+  [
+   "C.LN",
+   14.6209,
+   1
+  ],
+  [
+   "ALL.LU",
+   14.257,
+   1
+  ],
+  [
+   "ALL.LM",
+   14.0163,
+   1
+  ],
+  [
+   "C.LM",
+   13.9471,
+   1
+  ],
+  [
+   "ALL.LP",
+   13.4057,
+   1
+  ],
+  [
+   "C.LC",
+   13.1607,
+   1
+  ],
+  [
+   "C.LP",
+   12.6212,
+   1
+  ],
+  [
+   "ALL.LC",
+   12.5543,
+   1
+  ],
+  [
+   "U.LU",
+   12.488,
+   1
+  ],
+  [
+   "U.LP",
+   11.9268,
+   1
+  ],
+  [
+   "ALLmC.LN",
+   11.8324,
+   1
+  ],
+  [
+   "U.LM",
+   11.6881,
+   1
+  ],
+  [
+   "ENS4",
+   11.4885,
+   9
+  ],
+  [
+   "U.LN",
+   11.1787,
+   1
+  ],
+  [
+   "U-native",
+   11.0532,
+   6
+  ],
+  [
+   "P.LU",
+   10.8308,
+   1
+  ],
+  [
+   "P.LN",
+   10.8212,
+   1
+  ],
+  [
+   "P.LM",
+   10.6678,
+   1
+  ],
+  [
+   "U.LC",
+   10.6095,
+   1
+  ],
+  [
+   "P.LC",
+   10.5637,
+   1
+  ],
+  [
+   "P.LP",
+   10.5451,
+   1
+  ],
+  [
+   "M.LN",
+   10.0699,
+   1
+  ],
+  [
+   "M.LP",
+   9.4926,
+   1
+  ],
+  [
+   "M.LU",
+   9.1578,
+   1
+  ],
+  [
+   "M.LC",
+   9.1025,
+   1
+  ],
+  [
+   "M.LM",
+   8.2972,
+   1
+  ]
+ ],
+ "top3": [
+  "ALL.LN",
+  "ALLmU.LN",
+  "C.LU"
+ ],
+ "finalists": [
+  "ALL.LN",
+  "ALLmU.LN",
+  "C.LU",
+  "ENS_TOP3",
+  "U-native",
+  "P.LP",
+  "C.LC",
+  "M.LM"
+ ],
+ "defs": {
+  "ALL.LN": {
+   "kind": "unit",
+   "units": [
+    "ALL.LN"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    380
+   ]
+  },
+  "ALLmU.LN": {
+   "kind": "unit",
+   "units": [
+    "ALLmU.LN"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    269
+   ]
+  },
+  "C.LU": {
+   "kind": "unit",
+   "units": [
+    "C.LU"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    169
+   ]
+  },
+  "U-native": {
+   "kind": "unative",
+   "units": [
+    "UB9S.LN",
+    "UXR9.LN",
+    "UBN9.LN",
+    "UXRN9.LN",
+    "UB.LU",
+    "UXRN9.LU"
+   ],
+   "of": null,
+   "complexity": [
+    6,
+    109
+   ]
+  },
+  "P.LP": {
+   "kind": "unit",
+   "units": [
+    "P.LP"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    61
+   ]
+  },
+  "C.LC": {
+   "kind": "unit",
+   "units": [
+    "C.LC"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    169
+   ]
+  },
+  "M.LM": {
+   "kind": "unit",
+   "units": [
+    "M.LM"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    39
+   ]
+  },
+  "ENS_TOP3": {
+   "kind": "zavg",
+   "units": [
+    "ALL.LN",
+    "ALLmU.LN",
+    "C.LU"
+   ],
+   "of": [
+    "ALL.LN",
+    "ALLmU.LN",
+    "C.LU"
+   ],
+   "complexity": [
+    3,
+    380
+   ]
+  }
+ },
+ "finalist_units": [
+  "ALL.LN",
+  "ALLmU.LN",
+  "C.LC",
+  "C.LU",
+  "M.LM",
+  "P.LP",
+  "UB.LU",
+  "UB9S.LN",
+  "UBN9.LN",
+  "UXR9.LN",
+  "UXRN9.LN",
+  "UXRN9.LU"
+ ],
+ "D": {
+  "ALL.LN": {
+   "mean": 15.317191882102078,
+   "nw_t": 10.016980539631525,
+   "sd": 43.177766321059664,
+   "ic": 0.12603164466071806,
+   "days": 727
+  },
+  "ALLmU.LN": {
+   "mean": 15.134568354390169,
+   "nw_t": 9.521764277099386,
+   "sd": 43.61446829438145,
+   "ic": 0.12345961702058075,
+   "days": 727
+  },
+  "C.LU": {
+   "mean": 15.099561468823161,
+   "nw_t": 9.802858652164257,
+   "sd": 42.682453284632466,
+   "ic": 0.12068814091555921,
+   "days": 727
+  },
+  "U-native": {
+   "mean": 11.053202415120348,
+   "nw_t": 6.758763893573927,
+   "sd": 45.37836374310605,
+   "ic": 0.1024839093275311,
+   "days": 727
+  },
+  "P.LP": {
+   "mean": 10.54514572953497,
+   "nw_t": 7.563008431055157,
+   "sd": 40.847158070666644,
+   "ic": 0.09395151402517436,
+   "days": 727
+  },
+  "C.LC": {
+   "mean": 13.16069272763653,
+   "nw_t": 8.080471381309316,
+   "sd": 43.64223100016289,
+   "ic": 0.10583079336750201,
+   "days": 727
+  },
+  "M.LM": {
+   "mean": 8.297179754969974,
+   "nw_t": 6.240187078828859,
+   "sd": 38.0141156386313,
+   "ic": 0.07633253326818955,
+   "days": 727
+  }
+ },
+ "prereg_sha256": "6f9c436c25eac14b29d78b770c91324e6d2e730c299167715f1775574bff8c53",
+ "code": {
+  "build_panel.py": "1ba455c2b97047e349ef54888b0f7595a53d31aa8234d4dccd14e06139666740",
+  "fetch_ext.py": "d007706d150044be0cc495bf6cbaa729625a6515c37510283f5a105c45553bd6",
+  "freeze.py": "c19d3ad525a6bd2229c9db3dff183eba32e01811c13ee61cab2342a143f8cff2",
+  "learners.py": "c1d287721bf580f0ff671ae9a4d4ea89cd672bf3b87d57fb93bbcf9f107b4d92",
+  "rslib.py": "f240dfc5f239b99f7fe4c52ce617db65f684e87abffe5f8ec5a828cc559d2d6a",
+  "stage1_eval.py": "4ed2e823b59213f681aa39169d400d48e361df1456d54bb56b9f1068bfc33d01",
+  "stage2_validate.py": "a49084918338bf7d37e6c6f21275c1d6f43b8ebb2ec1ad7628f4e6423dcf9cb4",
+  "train.py": "f5a718b4305adee1e0c376f97fe423e001b83b58157575b11be75c5ee8abb71c"
+ },
+ "data_sha256": "16ffaaaa8492f51f671329bc299759365a25c85f82b1d076dbccbe1c832450cb",
+ "lstar": "LN",
+ "test": false
+}

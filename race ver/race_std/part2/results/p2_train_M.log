@@ -1,0 +1,116 @@
+16:44:14 M: 108 units, 0 done, 108 to do
+16:45:34 M 2024-12-01 seed1: done (79.8 s)
+16:45:42 M 2024-12-01 seed2: done (87.3 s)
+16:46:24 M 2024-03-01 seed1: done (42.8 s)
+16:46:40 M 2024-08-01 seed1: done (65.7 s)
+16:46:44 M 2022-01-01 seed1: done (19.6 s)
+16:46:45 M: 5 / 108 units done
+16:46:52 M: 108 units, 5 done, 103 to do
+16:48:20 M 2024-12-01 seed3: done (87.4 s)
+16:48:28 M 2024-11-01 seed1: done (95.7 s)
+16:49:16 M 2023-10-01 seed1: done (48.3 s)
+16:49:32 M 2024-03-01 seed2: done (72.4 s)
+16:49:33 M: 9 / 108 units done
+16:49:39 M: 108 units, 9 done, 99 to do
+16:51:03 M 2024-11-01 seed2: done (83.0 s)
+16:51:31 M 2024-11-01 seed3: done (111.1 s)
+16:51:56 M 2024-06-01 seed1: done (52.8 s)
+16:52:44 M: 108 units, 12 done, 96 to do
+16:54:13 M 2024-10-01 seed2: done (87.7 s)
+16:54:27 M 2024-10-01 seed1: done (101.7 s)
+16:55:16 M 2024-03-01 seed3: done (63.5 s)
+16:55:17 M 2023-06-01 seed1: done (49.8 s)
+16:55:17 M: 16 / 108 units done
+16:55:23 M: 108 units, 16 done, 92 to do
+16:56:38 M 2024-10-01 seed3: done (75.1 s)
+16:56:43 M 2024-09-01 seed1: done (80.1 s)
+16:58:02 M 2024-09-01 seed2: done (83.0 s)
+16:58:02 M 2024-08-01 seed2: done (78.5 s)
+16:58:02 M: 20 / 108 units done
+16:58:10 M: 108 units, 20 done, 88 to do
+16:59:19 M 2024-09-01 seed3: done (68.6 s)
+16:59:36 M 2024-08-01 seed3: done (85.7 s)
+17:00:23 M 2024-07-01 seed1: done (63.6 s)
+17:00:59 M 2024-04-01 seed1: done (82.5 s)
+17:01:00 M: 24 / 108 units done
+17:01:05 M: 108 units, 24 done, 84 to do
+17:02:01 M 2024-07-01 seed3: done (55.6 s)
+17:02:09 M 2024-07-01 seed2: done (63.6 s)
+17:03:08 M 2024-06-01 seed2: done (67.1 s)
+17:03:30 M 2024-06-01 seed3: done (81.2 s)
+17:03:42 M 2022-05-01 seed1: done (33.7 s)
+17:03:43 M: 29 / 108 units done
+17:03:49 M: 108 units, 29 done, 79 to do
+17:05:08 M 2024-05-01 seed1: done (78.1 s)
+17:05:25 M 2024-05-01 seed2: done (95.6 s)
+17:06:12 M 2023-10-01 seed2: done (46.9 s)
+17:06:15 M 2024-05-01 seed3: done (67.3 s)
+17:06:16 M: 33 / 108 units done
+17:06:21 M: 108 units, 33 done, 75 to do
+17:07:42 M 2024-04-01 seed2: done (80.3 s)
+17:07:44 M 2024-04-01 seed3: done (81.4 s)
+17:08:43 M 2024-02-01 seed1: done (60.3 s)
+17:09:01 M 2024-02-01 seed2: done (77.5 s)
+17:09:02 M: 37 / 108 units done
+17:09:47 M: 108 units, 61 done, 47 to do
+17:10:36 M 2023-12-01 seed1: done (48.2 s)
+17:11:16 M 2024-02-01 seed3: done (88.7 s)
+17:11:43 M: 108 units, 63 done, 45 to do
+17:13:16 M 2023-12-01 seed3: done (92.7 s)
+17:13:18 M 2023-12-01 seed2: done (94.0 s)
+17:14:05 M 2023-11-01 seed2: done (46.7 s)
+17:14:08 M 2023-11-01 seed1: done (51.1 s)
+17:14:08 M: 67 / 108 units done
+17:14:13 M: 108 units, 67 done, 41 to do
+17:14:51 M 2023-09-01 seed1: done (37.3 s)
+17:14:52 M 2023-11-01 seed3: done (38.8 s)
+17:15:20 M 2023-09-01 seed2: done (28.8 s)
+17:15:33 M 2023-09-01 seed3: done (39.9 s)
+17:16:12 M 2023-08-01 seed2: done (39.8 s)
+17:16:17 M 2023-08-01 seed1: done (57.1 s)
+17:16:45 M 2022-05-01 seed2: done (28.0 s)
+17:16:45 M 2022-08-01 seed1: done (32.7 s)
+17:16:46 M: 75 / 108 units done
+17:16:51 M: 108 units, 75 done, 33 to do
+17:17:34 M 2023-08-01 seed3: done (42.9 s)
+17:17:40 M 2023-06-01 seed2: done (48.4 s)
+17:18:19 M 2023-06-01 seed3: done (44.1 s)
+17:18:33 M 2023-05-01 seed1: done (53.3 s)
+17:19:08 M 2023-05-01 seed2: done (49.0 s)
+17:19:20 M 2023-05-01 seed3: done (46.7 s)
+17:19:22 M: 81 / 108 units done
+17:19:30 M: 108 units, 81 done, 27 to do
+17:21:00 M 2023-03-01 seed1: done (88.8 s)
+17:21:17 M 2023-03-01 seed2: done (105.7 s)
+17:22:07 M 2023-03-01 seed3: done (66.4 s)
+17:22:14 M 2023-02-01 seed1: done (56.6 s)
+17:22:14 M: 85 / 108 units done
+17:22:20 M: 108 units, 85 done, 23 to do
+17:23:00 M 2023-02-01 seed3: done (39.4 s)
+17:23:04 M 2023-02-01 seed2: done (43.5 s)
+17:24:01 M 2022-12-01 seed1: done (61.6 s)
+17:24:04 M 2022-12-01 seed2: done (60.1 s)
+17:25:04 M 2022-11-01 seed1: done (60.4 s)
+17:25:10 M 2022-12-01 seed3: done (68.6 s)
+17:25:10 M: 91 / 108 units done
+17:25:16 M: 108 units, 91 done, 17 to do
+17:25:50 M 2022-11-01 seed2: done (32.8 s)
+17:26:15 M 2022-11-01 seed3: done (58.2 s)
+17:26:46 M 2022-09-01 seed1: done (56.4 s)
+17:27:05 M 2022-09-01 seed2: done (50.3 s)
+17:27:34 M 2022-08-01 seed2: done (28.8 s)
+17:27:35 M 2022-09-01 seed3: done (49.0 s)
+17:27:36 M: 97 / 108 units done
+17:27:41 M: 108 units, 97 done, 11 to do
+17:28:10 M 2022-08-01 seed3: done (29.0 s)
+17:28:17 M 2022-06-01 seed1: done (35.6 s)
+17:28:39 M 2022-06-01 seed2: done (28.9 s)
+17:28:44 M 2022-06-01 seed3: done (27.0 s)
+17:29:00 M 2022-03-01 seed1: done (16.2 s)
+17:29:11 M 2022-05-01 seed3: done (31.4 s)
+17:29:19 M 2022-03-01 seed2: done (18.6 s)
+17:29:27 M 2022-03-01 seed3: done (16.4 s)
+17:29:39 M 2022-02-01 seed1: done (20.0 s)
+17:29:50 M 2022-02-01 seed2: done (22.8 s)
+17:29:57 M 2022-02-01 seed3: done (17.9 s)
+17:29:57 M: 108 / 108 units done  ALL DONE

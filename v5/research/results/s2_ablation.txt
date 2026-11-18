@@ -1,0 +1,25 @@
+(A) walk-forward 2022-01..2026-10-22 (yearly retrain; post frozen at 2026-05-29)
+                                       config   val  hold  post   all    sd  timing  xsec  share1  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all  nwt_val  nwt_all
+                                      v4 full 13.22 13.95 12.63 13.38 49.60    1.55 11.83    0.55    NaN    NaN     NaN     NaN     NaN     NaN    NaN    NaN      NaN      NaN
+                      - market view (w_T = 0) 11.14 11.52 14.15 11.51 43.87   -0.52 12.03    0.56  -2.08  -2.27   -2.42   -1.56    1.51    0.40  -1.87  -2.35    -2.32    -2.30
+- residual target (stock view from raw model) 12.31 13.47  9.71 12.42 53.85    2.98  9.45    0.51  -0.91  -1.16   -0.48   -0.33   -2.92   -0.84  -0.96  -1.35    -1.25    -1.37
+       - Transformer (market view = MLP only) 12.52 13.96 11.12 12.82 49.34    1.23 11.59    0.55  -0.70  -2.04    0.01    0.02   -1.51   -1.35  -0.56  -1.97    -2.08    -1.98
+                   - XR rank members (B only) 12.75 13.86 13.89 13.17 51.23    1.91 11.26    0.54  -0.47  -1.28   -0.09   -0.13    1.26    0.68  -0.21  -0.62    -1.28    -0.64
+      - B members in stock view (res_xr only) 13.08 13.76 12.87 13.26 48.27    1.52 11.73    0.56  -0.14  -0.42   -0.19   -0.31    0.24    0.18  -0.13  -0.42    -0.47    -0.44
+              - XR in stock view (res_B only) 12.63 14.07 12.90 13.07 50.77    1.90 11.17    0.54  -0.59  -1.64    0.12    0.18    0.26    0.17  -0.31  -0.95    -1.62    -1.00
+                                 - exdiv rule 12.84 13.75 12.11 13.04 49.66    1.52 11.52    0.55  -0.38  -3.33   -0.19   -1.22   -0.53   -0.85  -0.34  -3.39    -2.65    -2.96
+               v1 rule (raw members, p > 0.5) 12.02 12.53  2.54 11.36 62.02    4.54  6.82    0.47  -1.20  -0.98   -1.42   -0.72  -10.09   -1.84  -2.02  -1.90    -0.97    -1.78
+
+(B) static 2026-06-01..09-30 (84 days), v4 rolling pool
+                                       config  post    sd  timing  xsec  share1  d_post  t_post
+                                      v4 full 15.36 81.79   -3.13 18.49    0.45     NaN     NaN
+                      - market view (w_T = 0) 15.68 70.81   -0.43 16.11    0.51    0.32    0.07
+- residual target (stock view from raw model) 11.25 84.84   -4.35 15.60    0.40   -4.11   -1.13
+       - Transformer (market view = MLP only) 11.57 82.17   -6.27 17.84    0.46   -3.80   -1.68
+                   - XR rank members (B only) 15.15 87.46   -3.63 18.79    0.43   -0.21   -0.10
+      - B members in stock view (res_xr only) 14.13 77.45   -2.84 16.98    0.46   -1.23   -0.78
+              - XR in stock view (res_B only) 16.04 84.91   -2.74 18.78    0.43    0.68    0.34
+                                 - exdiv rule 14.96 81.61   -2.99 17.95    0.45   -0.40   -0.46
+               v1 rule (raw members, p > 0.5)  5.71 95.96   -5.29 11.00    0.32   -9.65   -1.67
+         - rolling (all frozen at 2026-05-29) 12.16 79.00   -2.33 14.49    0.44   -3.20   -0.67
+                   - rolling Transformer only 14.43 82.17   -3.17 17.60    0.46   -0.93   -0.70

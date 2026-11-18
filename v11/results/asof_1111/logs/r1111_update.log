@@ -1,0 +1,9 @@
+source: /home/claude/w1111/zips/data_asof_1111.zip
+backup of the original competition data (market, global, info.json) -> /home/claude/w1111/asof/data_backup_original
+merged 100 stock files + global_data.csv; data now covers 2020-01-02 .. 2026-11-11
+last complete trading day: 2026-11-10
+day(s) to predict (placeholder rows): ['2026-11-11']
+zip kept as downloads/archive/data_2026-11-11.zip
+checks: OK
+notes (nothing to do if expected):
+  closed day 2026-10-23 (data\ref\closures_manual.csv): rows dropped in 101 file(s)

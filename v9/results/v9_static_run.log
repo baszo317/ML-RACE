@@ -1,0 +1,165 @@
+[   12s] core panel (165346, 134)
+[   13s] extended panel (468668, 77) (303322 rows of extra stocks for mlp_res_B9)
+[   13s] labelled data up to 2026-10-22; torch 2.14.1+cu130; schedule mlp: every 1, 2 new, pool 5; transformer: every 5, 1 new, pool 5; lgb: every 1, 1 new, pool 5
+[   13s] static walk-forward: 99 dates 2026-06-01..2026-10-22, 1569 models in 812 retrain points (folder models_v9_static)
+[   13s] 812 retrain point(s) to train or load, 2 worker(s)
+[  466s] [25/812] mlp_res_B9 2026-06-17: trained 2 (31s); elapsed 7.5 min
+[  851s] [50/812] mlp_res_B9 2026-07-24: trained 2 (34s); elapsed 14.0 min
+[ 1342s] [75/812] mlp_res_B9 2026-08-28: trained 2 (33s); elapsed 22.1 min
+[ 1758s] [100/812] mlp_res_B9 2026-10-06: trained 2 (40s); elapsed 29.1 min
+[ 1934s] [125/812] mlp_raw_B9 2026-06-03: trained 2 (9s); elapsed 32.0 min
+[ 2083s] [150/812] lgb_res 2026-06-08: trained 1 (31s); elapsed 34.5 min
+[ 2242s] [175/812] mlp_raw_B9 2026-06-12: trained 2 (10s); elapsed 37.1 min
+[ 2381s] [200/812] mlp_res_BN9 2026-06-17: trained 2 (7s); elapsed 39.5 min
+[ 2507s] [225/812] mlp_res_xrN9 2026-06-23: trained 2 (10s); elapsed 41.6 min
+[ 2646s] [250/812] lgb_res 2026-06-29: trained 1 (30s); elapsed 43.9 min
+[ 2780s] [275/812] mlp_res_xrN9 2026-07-02: trained 2 (11s); elapsed 46.1 min
+[ 2933s] [300/812] lgb_res 2026-07-08: trained 1 (30s); elapsed 48.7 min
+[ 3052s] [325/812] tf_raw_B 2026-07-14: loaded (0s); elapsed 50.6 min
+[ 3194s] [350/812] mlp_raw_xr9 2026-07-20: trained 2 (10s); elapsed 53.0 min
+[ 3320s] [375/812] mlp_res_xr9 2026-07-23: trained 2 (11s); elapsed 55.1 min
+[ 3434s] [400/812] mlp_raw_w4_9 2026-07-29: trained 2 (5s); elapsed 57.0 min
+[ 3551s] [425/812] mlp_res_xr9 2026-08-03: trained 2 (9s); elapsed 59.0 min
+[ 3683s] [450/812] mlp_raw_w4_9 2026-08-07: trained 2 (5s); elapsed 61.2 min
+[ 3813s] [475/812] mlp_res_BN9 2026-08-12: trained 2 (9s); elapsed 63.3 min
+[ 3935s] [500/812] mlp_raw_w4_9 2026-08-18: trained 2 (6s); elapsed 65.4 min
+[ 4065s] [525/812] mlp_raw_xr9 2026-08-21: trained 2 (13s); elapsed 67.5 min
+[ 4186s] [550/812] mlp_raw_B9 2026-08-27: trained 2 (10s); elapsed 69.6 min
+[ 4309s] [575/812] mlp_res_BN9 2026-09-01: trained 2 (7s); elapsed 71.6 min
+[ 4429s] [600/812] mlp_raw_B9 2026-09-07: trained 2 (10s); elapsed 73.6 min
+[ 4530s] [625/812] lgb_res 2026-09-10: trained 1 (20s); elapsed 75.3 min
+[ 4640s] [650/812] mlp_res_xrN9 2026-09-15: trained 2 (9s); elapsed 77.1 min
+[ 4756s] [675/812] mlp_raw_xr9 2026-09-21: trained 2 (8s); elapsed 79.0 min
+[ 4862s] [700/812] mlp_res_xrN9 2026-09-24: trained 2 (8s); elapsed 80.8 min
+[ 4975s] [725/812] mlp_raw_xr9 2026-10-02: trained 2 (8s); elapsed 82.7 min
+[ 5090s] [750/812] lgb_res 2026-10-08: trained 1 (14s); elapsed 84.6 min
+[ 5204s] [775/812] mlp_res_BN9 2026-10-14: trained 2 (8s); elapsed 86.5 min
+[ 5330s] [800/812] mlp_raw_w4_9 2026-10-20: trained 2 (5s); elapsed 88.6 min
+[ 5382s] [812/812] mlp_res_xrN9 2026-10-21: trained 2 (8s); elapsed 89.5 min
+Top50 bp/day = mean of (2 pred - 1) * (close - open) / open; static = 2026-06-01..09-30, Oct = after 09-30 (extension)
+v9 rolling (each day: models trained up to the day before) static  16.42 (84 d)   Oct  21.00 (15 d)   all  17.11 (99 d)
+  same, before the hedge                                   static  15.69 (84 d)   Oct  22.88 (15 d)   all  16.78 (99 d)
+v9 frozen (all models trained up to 2026-05-29)            static  16.54 (84 d)   Oct  20.84 (15 d)   all  17.19 (99 d)
+v4 static upload (rolling, 15.36 on the static leaderboard) static  15.36 (84 d)   Oct    nan (0 d)   all  15.36 (84 d)
+groupmate V3 (submission-1-phase1_2.csv)                   static  20.31 (84 d)   Oct    nan (0 d)   all  20.31 (84 d)
+
+model pool used on the last day of the static period and on the newest day:
+  2026-09-30 mlp_raw_B9    10 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-09-30 mlp_raw_xr9   10 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-09-30 mlp_raw_w4_9  10 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-09-30 tf_raw_B      5 models, trained up to 2026-08-25..2026-09-22 (previous trading day 2026-09-29)
+  2026-09-30 mlp_res_B9    10 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-09-30 mlp_res_xr9   10 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-09-30 mlp_res_BN9   10 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-09-30 mlp_res_xrN9  10 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-09-30 lgb_res       5 models, trained up to 2026-09-21..2026-09-29 (previous trading day 2026-09-29)
+  2026-10-22 mlp_raw_B9    10 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+  2026-10-22 mlp_raw_xr9   10 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+  2026-10-22 mlp_raw_w4_9  10 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+  2026-10-22 tf_raw_B      5 models, trained up to 2026-09-15..2026-10-16 (previous trading day 2026-10-21)
+  2026-10-22 mlp_res_B9    10 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+  2026-10-22 mlp_res_xr9   10 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+  2026-10-22 mlp_res_BN9   10 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+  2026-10-22 mlp_res_xrN9  10 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+  2026-10-22 lgb_res       5 models, trained up to 2026-10-15..2026-10-21 (previous trading day 2026-10-21)
+[ 5396s] [OK] 2026-06-01: share of 1 = 0.42, pbar = 0.465, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-02: share of 1 = 0.22, pbar = 0.401, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-03: share of 1 = 0.26, pbar = 0.392, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-04: share of 1 = 0.28, pbar = 0.406, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-05: share of 1 = 0.32, pbar = 0.389, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-08: share of 1 = 0.32, pbar = 0.420, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-09: share of 1 = 0.38, pbar = 0.297, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-10: share of 1 = 0.88, pbar = 0.578, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-11: share of 1 = 0.38, pbar = 0.427, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-12: share of 1 = 0.40, pbar = 0.398, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-15: share of 1 = 0.52, pbar = 0.522, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-16: share of 1 = 0.20, pbar = 0.477, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-17: share of 1 = 0.30, pbar = 0.499, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-18: share of 1 = 0.40, pbar = 0.416, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-22: share of 1 = 0.38, pbar = 0.426, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-23: share of 1 = 0.42, pbar = 0.492, 50 Top50 stocks
+[ 5396s] [FATAL] 2026-06-24: share of 1 = 0.18, outside the historical range (0.2, 1.0)
+[ 5396s] [INFO] 2026-06-24: share of 1 = 0.18, pbar = 0.407, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-25: share of 1 = 0.42, pbar = 0.323, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-26: share of 1 = 0.48, pbar = 0.460, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-29: share of 1 = 0.44, pbar = 0.463, 50 Top50 stocks
+[ 5396s] [OK] 2026-06-30: share of 1 = 0.40, pbar = 0.458, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-01: share of 1 = 0.38, pbar = 0.442, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-02: share of 1 = 0.64, pbar = 0.566, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-03: share of 1 = 0.44, pbar = 0.485, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-06: share of 1 = 0.46, pbar = 0.407, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-07: share of 1 = 0.38, pbar = 0.458, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-08: share of 1 = 0.46, pbar = 0.510, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-09: share of 1 = 0.36, pbar = 0.445, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-13: share of 1 = 0.42, pbar = 0.481, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-14: share of 1 = 0.66, pbar = 0.574, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-15: share of 1 = 0.30, pbar = 0.431, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-16: share of 1 = 0.48, pbar = 0.501, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-17: share of 1 = 0.34, pbar = 0.440, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-20: share of 1 = 0.34, pbar = 0.449, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-21: share of 1 = 0.36, pbar = 0.461, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-22: share of 1 = 0.36, pbar = 0.416, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-23: share of 1 = 0.36, pbar = 0.476, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-24: share of 1 = 0.36, pbar = 0.478, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-27: share of 1 = 0.38, pbar = 0.377, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-28: share of 1 = 0.38, pbar = 0.405, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-29: share of 1 = 0.32, pbar = 0.399, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-30: share of 1 = 0.42, pbar = 0.501, 50 Top50 stocks
+[ 5396s] [OK] 2026-07-31: share of 1 = 0.36, pbar = 0.448, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-03: share of 1 = 0.82, pbar = 0.567, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-04: share of 1 = 0.42, pbar = 0.408, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-05: share of 1 = 0.46, pbar = 0.415, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-06: share of 1 = 0.52, pbar = 0.490, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-07: share of 1 = 0.50, pbar = 0.400, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-10: share of 1 = 0.46, pbar = 0.438, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-11: share of 1 = 0.44, pbar = 0.465, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-12: share of 1 = 0.42, pbar = 0.430, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-13: share of 1 = 0.42, pbar = 0.436, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-14: share of 1 = 0.40, pbar = 0.456, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-17: share of 1 = 0.40, pbar = 0.437, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-18: share of 1 = 0.40, pbar = 0.452, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-19: share of 1 = 0.46, pbar = 0.488, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-20: share of 1 = 0.48, pbar = 0.446, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-21: share of 1 = 0.46, pbar = 0.472, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-24: share of 1 = 0.42, pbar = 0.438, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-25: share of 1 = 0.48, pbar = 0.475, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-26: share of 1 = 0.44, pbar = 0.408, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-27: share of 1 = 0.48, pbar = 0.453, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-28: share of 1 = 0.48, pbar = 0.438, 50 Top50 stocks
+[ 5396s] [OK] 2026-08-31: share of 1 = 0.48, pbar = 0.493, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-01: share of 1 = 0.48, pbar = 0.432, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-02: share of 1 = 0.52, pbar = 0.486, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-03: share of 1 = 0.48, pbar = 0.397, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-04: share of 1 = 0.52, pbar = 0.491, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-07: share of 1 = 0.52, pbar = 0.491, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-08: share of 1 = 0.66, pbar = 0.506, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-09: share of 1 = 0.46, pbar = 0.466, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-10: share of 1 = 0.48, pbar = 0.472, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-11: share of 1 = 0.48, pbar = 0.423, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-14: share of 1 = 0.50, pbar = 0.412, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-15: share of 1 = 0.48, pbar = 0.472, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-16: share of 1 = 0.48, pbar = 0.464, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-17: share of 1 = 0.52, pbar = 0.487, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-18: share of 1 = 0.48, pbar = 0.466, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-21: share of 1 = 0.62, pbar = 0.516, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-22: share of 1 = 0.50, pbar = 0.484, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-23: share of 1 = 0.64, pbar = 0.505, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-24: share of 1 = 0.66, pbar = 0.505, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-29: share of 1 = 0.54, pbar = 0.444, 50 Top50 stocks
+[ 5396s] [OK] 2026-09-30: share of 1 = 0.46, pbar = 0.444, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-01: share of 1 = 0.50, pbar = 0.477, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-02: share of 1 = 0.48, pbar = 0.447, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-05: share of 1 = 0.50, pbar = 0.445, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-06: share of 1 = 0.58, pbar = 0.501, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-07: share of 1 = 0.50, pbar = 0.456, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-08: share of 1 = 0.52, pbar = 0.479, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-12: share of 1 = 0.48, pbar = 0.438, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-13: share of 1 = 0.54, pbar = 0.456, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-14: share of 1 = 0.48, pbar = 0.394, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-15: share of 1 = 0.50, pbar = 0.468, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-16: share of 1 = 0.32, pbar = 0.341, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-19: share of 1 = 0.46, pbar = 0.466, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-20: share of 1 = 0.56, pbar = 0.428, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-21: share of 1 = 0.46, pbar = 0.460, 50 Top50 stocks
+[ 5396s] [OK] 2026-10-22: share of 1 = 0.48, pbar = 0.491, 50 Top50 stocks
+stopped by 1 FATAL check(s) above: nothing written. Fix the cause, or rerun with --force after checking.

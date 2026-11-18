@@ -1,0 +1,47 @@
+rows: members 116353, tabular 116353; common 116353
+
+MARKET VIEW: Top50 bp/day, walk-forward 2022-01..2026-10; d_/t_ = paired difference to the control
+                               config    val   hold   post  all22     sd  timing   xsec  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+     control: (MLP + Transformer) / 2 13.220 13.949 12.632 13.382 49.595   1.550 11.832  0.911    NaN    NaN     NaN     NaN     NaN     NaN
+              L1 (MLP + LightGBM) / 2 11.763 14.193 15.725 12.805 48.295   0.892 11.913  0.902 -1.457 -2.568   0.244   0.286   3.093   0.858
+L2 (MLP + Transformer + LightGBM) / 3 12.473 13.435 15.765 13.032 48.808   1.312 11.720  0.900 -0.748 -1.989  -0.514  -0.808   3.134   1.203
+              G1 (MLP + logistic) / 2 12.442 13.846 10.231 12.662 49.876   1.152 11.509  0.898 -0.778 -1.927  -0.103  -0.168  -2.401  -2.173
+G2 (MLP + Transformer + logistic) / 3 12.846 13.802 11.738 13.030 49.863   1.340 11.689  0.909 -0.374 -1.252  -0.147  -0.312  -0.894  -1.139
+                 (info) LightGBM only 10.384 13.043 20.097 11.982 48.140  -0.016 11.998  0.887 -2.836 -3.460  -0.906  -0.646   7.465   1.157
+                 (info) logistic only 12.502 12.496 11.943 12.452 50.348   0.884 11.568  0.891 -0.719 -1.205  -1.453  -1.764  -0.689  -0.343
+Holm (4 tests) and hold > 0:
+  G2 (MLP + Transformer + logistic) / 3 val t -1.25 (needs 2.24), hold diff -0.15 -> do not adopt
+  G1 (MLP + logistic) / 2              val t -1.93 (needs 2.13), hold diff -0.10 -> do not adopt
+  L2 (MLP + Transformer + LightGBM) / 3 val t -1.99 (needs 1.96), hold diff -0.51 -> do not adopt
+  L1 (MLP + LightGBM) / 2              val t -2.57 (needs 1.65), hold diff +0.24 -> do not adopt
+  for information, static 2026-06-01..09-30: control: 12.16; L1 15.44; L2 15.42; G1 9.55; G2 11.43; (info) 20.88; (info) 11.46
+  for information, live 2026-10-01..10-22: control: 15.26; L1 17.31; L2 17.71; G1 14.02; G2 13.48; (info) 15.70; (info) 14.62
+
+correlation of each daily pbar with the Top50 intraday return m (val / hold / post / all):
+  control: (MLP + Transformer) / 2       +0.110 / +0.203 / -0.097 / +0.110   sd(pbar) 0.0600
+  L1 (MLP + LightGBM) / 2                +0.072 / +0.197 / -0.112 / +0.082   sd(pbar) 0.0411
+  L2 (MLP + Transformer + LightGBM) / 3  +0.094 / +0.205 / -0.088 / +0.102   sd(pbar) 0.0468
+  G1 (MLP + logistic) / 2                +0.098 / +0.172 / -0.148 / +0.088   sd(pbar) 0.0567
+  G2 (MLP + Transformer + logistic) / 3  +0.107 / +0.187 / -0.112 / +0.101   sd(pbar) 0.0578
+  (info) LightGBM only                   +0.007 / +0.152 / -0.059 / +0.030   sd(pbar) 0.0351
+  (info) logistic only                   +0.092 / +0.142 / -0.134 / +0.075   sd(pbar) 0.0576
+
+STOCK VIEW: Top50 bp/day, walk-forward 2022-01..2026-10; d_/t_ = paired difference to the control
+                             config    val   hold   post  all22     sd  timing   xsec  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+control: p_e = MLP residual members 13.220 13.949 12.632 13.382 49.595   1.550 11.832  0.911    NaN    NaN     NaN     NaN     NaN     NaN
+      S1 p_e = (MLP + LightGBM) / 2 13.577 14.557 14.633 13.952 51.744   1.881 12.070  0.897  0.357  0.686   0.608   0.628   2.001   0.884
+      S2 p_e = (MLP + logistic) / 2 12.015 13.594 16.591 12.863 52.205   2.297 10.566  0.872 -1.205 -3.012  -0.355  -0.340   3.959   1.190
+               (info) LightGBM only 12.987 13.856 14.626 13.378 53.944   2.421 10.958  0.875 -0.233 -0.290  -0.093  -0.056   1.994   0.474
+               (info) logistic only 10.776 13.091 12.504 11.595 55.157   3.049  8.547  0.839 -2.444 -2.964  -0.858  -0.487  -0.128  -0.026
+Holm (2 tests) and hold > 0:
+  S1 p_e = (MLP + LightGBM) / 2        val t +0.69 (needs 1.96), hold diff +0.61 -> do not adopt
+  S2 p_e = (MLP + logistic) / 2        val t -3.01 (needs 1.65), hold diff -0.36 -> do not adopt
+  for information, static 2026-06-01..09-30: control: 12.16; S1 13.82; S2 17.03; (info) 15.21; (info) 14.10
+  for information, live 2026-10-01..10-22: control: 15.26; S1 19.21; S2 14.13; (info) 11.33; (info) 3.59
+
+daily rank IC of the stock view vs the residual intraday return, Top50 (val / hold / post / all):
+  control: p_e = MLP residual members    0.099 / 0.105 / 0.081 / 0.099
+  S1 p_e = (MLP + LightGBM) / 2          0.102 / 0.111 / 0.087 / 0.103
+  S2 p_e = (MLP + logistic) / 2          0.097 / 0.104 / 0.105 / 0.100
+  (info) LightGBM only                   0.101 / 0.107 / 0.086 / 0.102
+  (info) logistic only                   0.088 / 0.087 / 0.101 / 0.089

@@ -1,0 +1,68 @@
+v9 rebuilt: val 13.99, hold 14.33, post 16.59, all 14.31 (v9_eval.txt: 13.99 / 14.33 / 16.59 / 14.31); 1164 days
+  T1 done (5s)
+  T2 done (5s)
+  T3 done (6s)
+  X1 done (7s)
+  X2 done (9s)
+  X3 done (10s)
+  X4 done (12s)
+
+single changes on top of v9 (Top50 bp/day; d_ = paired difference to v9, NW t)
+                            config   val  hold  post   all  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all  d_static  d_Oct
+                                v9 13.99 14.33 16.59 14.31   0.00    NaN    0.00     NaN    0.00     NaN   0.00    NaN      0.00   0.00
+            T1 pbar over the Top50 13.86 12.87 16.39 13.79  -0.13  -0.39   -1.46   -2.18   -0.20   -0.20  -0.52  -1.74      0.31  -3.04
+         T2 night-session reversal 14.13 14.16 19.78 14.62   0.14   0.23   -0.17   -0.18    3.19    1.20   0.31   0.59      4.92  -6.52
+            T3 month start +5 ones 14.44 13.98 18.51 14.65   0.45   1.51   -0.35   -0.77    1.92    1.43   0.34   1.33      2.15   0.63
+X1 second LightGBM (xrN9 features) 14.26 14.68 15.85 14.51   0.27   0.76    0.34    0.75   -0.74   -0.66   0.20   0.74     -0.01  -4.85
+X2 LightGBM with return-size label 13.94 13.65 16.15 14.04  -0.05  -0.15   -0.69   -2.08   -0.44   -0.34  -0.27  -1.04     -0.54   0.11
+            X3 z-score combination 13.84 13.94 17.33 14.17  -0.15  -0.55   -0.39   -1.01    0.74    0.83  -0.14  -0.66      1.32  -2.50
+          X4 smoothing across days 12.09 13.09 17.04 12.80  -1.90  -3.21   -1.25   -1.28    0.45    0.13  -1.51  -2.71      1.30  -4.29
+
+risk and decomposition
+                            config     sd  P19>0  P19>20  timing   xsec
+                                v9 48.261  0.926   0.283   1.764 12.547
+            T1 pbar over the Top50 47.443  0.924   0.250   1.342 12.444
+         T2 night-session reversal 48.872  0.931   0.276   2.532 12.086
+            T3 month start +5 ones 47.814  0.929   0.284   1.994 12.660
+X1 second LightGBM (xrN9 features) 47.833  0.939   0.280   1.697 12.816
+X2 LightGBM with return-size label 47.869  0.915   0.266   1.648 12.394
+            X3 z-score combination 48.061  0.928   0.262   1.700 12.468
+          X4 smoothing across days 50.186  0.883   0.235   1.438 11.362
+
+market view: corr(pbar, m) and corr(net exposure, m) by period (m = Top50 mean intraday return)
+                            config  corr_pbar_m_val  corr_pbar_m_hold  corr_pbar_m_post  corr_sbar_m_val  corr_sbar_m_hold  corr_sbar_m_post
+                                v9            0.111             0.205            -0.077            0.132             0.151            -0.055
+            T1 pbar over the Top50            0.111             0.203            -0.085            0.126             0.127            -0.077
+         T2 night-session reversal            0.116             0.199             0.009            0.137             0.148             0.053
+            T3 month start +5 ones            0.111             0.205            -0.077            0.140             0.159             0.008
+X1 second LightGBM (xrN9 features)            0.111             0.205            -0.077            0.138             0.147            -0.066
+X2 LightGBM with return-size label            0.111             0.205            -0.077            0.130             0.147            -0.065
+            X3 z-score combination            0.111             0.205            -0.077            0.127             0.148            -0.055
+          X4 smoothing across days            0.111             0.205            -0.077            0.108             0.159            -0.108
+
+stock view: mean daily rank IC of the centred p_e with the intraday return (all ~100 stocks / Top50)
+                            config  IC100_val  IC100_hold  IC100_post  IC50_val  IC50_hold  IC50_post
+                                v9     0.1134      0.1081      0.0848    0.1034     0.1134     0.0857
+X1 second LightGBM (xrN9 features)     0.1140      0.1088      0.0900    0.1042     0.1139     0.0874
+X2 LightGBM with return-size label     0.1123      0.1080      0.0867    0.1030     0.1129     0.0871
+            X3 z-score combination     0.1138      0.1071      0.0813    0.1038     0.1119     0.0815
+          X4 smoothing across days     0.1072      0.1010      0.0999    0.0983     0.1075     0.0950
+
+user's rule (val AR difference > 0): selected ['T2', 'T3', 'X1']
+
+v11 and the ablation (each row: difference to v9; only reported, not used to change v11)
+                 config   val  hold  post   all  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all  d_static  d_Oct    sd  P19>0  P19>20
+v11 = v9 + T2 + T3 + X1 14.60 14.34 20.35 15.02   0.62   0.88    0.01    0.01    3.76    1.19   0.71   1.19      5.97  -8.63 48.00   0.94    0.28
+         v11 without T2 14.52 14.66 18.42 14.89   0.53   1.10    0.33    0.63    1.83    1.05   0.58   1.57      2.87  -4.02 47.47   0.95    0.29
+         v11 without T3 14.40 14.59 19.00 14.85   0.41   0.66    0.25    0.27    2.41    0.91   0.54   1.02      4.22  -7.73 48.13   0.94    0.27
+         v11 without X1 14.54 13.75 21.06 14.86   0.55   0.80   -0.59   -0.57    4.47    1.45   0.55   0.94      6.21  -5.27 48.35   0.94    0.28
+                 config  timing   xsec  corr_pbar_m_val  corr_pbar_m_hold  corr_pbar_m_post  IC100_val  IC100_hold  IC100_post
+v11 = v9 + T2 + T3 + X1   2.762 12.255            0.116             0.199             0.009      0.114       0.109       0.090
+         v11 without T2   1.983 12.911            0.111             0.205            -0.077      0.114       0.109       0.090
+         v11 without T3   2.514 12.333            0.116             0.199             0.009      0.114       0.109       0.090
+         v11 without X1   2.767 12.096            0.116             0.199             0.009      0.113       0.108       0.085
+
+pre-registered check: hold +0.01 (t 0.01), post +3.76 (t 1.19) -> both > 0: v11 holds; build the daily program (parallel to v9)
+by year (v11 - v9): 2022 +0.56, 2023 +0.52, 2024 +0.76, 2025 -0.35, 2026 +2.36
+
+done in 18s

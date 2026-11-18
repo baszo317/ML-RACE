@@ -1,0 +1,802 @@
+# Source: https://github.com/microsoft/qlib (commit 54355232463878d2eebb91fe0ee5fa7fa1f5976c) qlib/data/ops.py (operators used by Alpha158) and qlib/data/_libs/rolling.pyx (Slope, Resi, Rsquare); text only
+
+# NOTE: methods like `rolling.mean` are optimized with cython,
+# and are super faster than `rolling.apply(np.mean)`
+
+
+class Rolling(ExpressionOps):
+    """Rolling Operator
+    The meaning of rolling and expanding is the same in pandas.
+    When the window is set to 0, the behaviour of the operator should follow `expanding`
+    Otherwise, it follows `rolling`
+
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    func : str
+        rolling method
+
+    Returns
+    ----------
+    Expression
+        rolling outputs
+    """
+
+    def __init__(self, feature, N, func):
+        self.feature = feature
+        self.N = N
+        self.func = func
+
+    def __str__(self):
+        return "{}({},{})".format(type(self).__name__, self.feature, self.N)
+
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        # NOTE: remove all null check,
+        # now it's user's responsibility to decide whether use features in null days
+        # isnull = series.isnull() # NOTE: isnull = NaN, inf is not null
+        if isinstance(self.N, int) and self.N == 0:
+            series = getattr(series.expanding(min_periods=1), self.func)()
+        elif isinstance(self.N, float) and 0 < self.N < 1:
+            series = series.ewm(alpha=self.N, min_periods=1).mean()
+        else:
+            series = getattr(series.rolling(self.N, min_periods=1), self.func)()
+            # series.iloc[:self.N-1] = np.nan
+        # series[isnull] = np.nan
+        return series
+
+    def get_longest_back_rolling(self):
+        if self.N == 0:
+            return np.inf
+        if 0 < self.N < 1:
+            return int(np.log(1e-6) / np.log(1 - self.N))  # (1 - N)**window == 1e-6
+        return self.feature.get_longest_back_rolling() + self.N - 1
+
+    def get_extended_window_size(self):
+        if self.N == 0:
+            # FIXME: How to make this accurate and efficiently? Or  should we
+            # remove such support for N == 0?
+            get_module_logger(self.__class__.__name__).warning("The Rolling(ATTR, 0) will not be accurately calculated")
+            return self.feature.get_extended_window_size()
+        elif 0 < self.N < 1:
+            lft_etd, rght_etd = self.feature.get_extended_window_size()
+            size = int(np.log(1e-6) / np.log(1 - self.N))
+            lft_etd = max(lft_etd + size - 1, lft_etd)
+            return lft_etd, rght_etd
+        else:
+            lft_etd, rght_etd = self.feature.get_extended_window_size()
+            lft_etd = max(lft_etd + self.N - 1, lft_etd)
+            return lft_etd, rght_etd
+
+
+class Ref(Rolling):
+    """Feature Reference
+
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        N = 0, retrieve the first data; N > 0, retrieve data of N periods ago; N < 0, future data
+
+    Returns
+    ----------
+    Expression
+        a feature instance with target reference
+    """
+
+    def __init__(self, feature, N):
+        super(Ref, self).__init__(feature, N, "ref")
+
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        # N = 0, return first day
+        if series.empty:
+            return series  # Pandas bug, see: https://github.com/pandas-dev/pandas/issues/21049
+        elif self.N == 0:
+            series = pd.Series(series.iloc[0], index=series.index)
+        else:
+            series = series.shift(self.N)  # copy
+        return series
+
+    def get_longest_back_rolling(self):
+        if self.N == 0:
+            return np.inf
+        return self.feature.get_longest_back_rolling() + self.N
+
+    def get_extended_window_size(self):
+        if self.N == 0:
+            get_module_logger(self.__class__.__name__).warning("The Ref(ATTR, 0) will not be accurately calculated")
+            return self.feature.get_extended_window_size()
+        else:
+            lft_etd, rght_etd = self.feature.get_extended_window_size()
+            lft_etd = max(lft_etd + self.N, lft_etd)
+            rght_etd = max(rght_etd - self.N, rght_etd)
+            return lft_etd, rght_etd
+
+
+class Mean(Rolling):
+    """Rolling Mean (MA)
+
+    Parameters
+class Mean(Rolling):
+    """Rolling Mean (MA)
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling average
+    """
+    def __init__(self, feature, N):
+        super(Mean, self).__init__(feature, N, "mean")
+class Sum(Rolling):
+    """Rolling Sum
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling sum
+    """
+    def __init__(self, feature, N):
+        super(Sum, self).__init__(feature, N, "sum")
+class Std(Rolling):
+    """Rolling Std
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling std
+    """
+    def __init__(self, feature, N):
+        super(Std, self).__init__(feature, N, "std")
+class Var(Rolling):
+    """Rolling Variance
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling variance
+    """
+    def __init__(self, feature, N):
+        super(Var, self).__init__(feature, N, "var")
+class Skew(Rolling):
+    """Rolling Skewness
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling skewness
+    """
+    def __init__(self, feature, N):
+        if N != 0 and N < 3:
+            raise ValueError("The rolling window size of Skewness operation should >= 3")
+        super(Skew, self).__init__(feature, N, "skew")
+class Kurt(Rolling):
+    """Rolling Kurtosis
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling kurtosis
+    """
+    def __init__(self, feature, N):
+        if N != 0 and N < 4:
+            raise ValueError("The rolling window size of Kurtosis operation should >= 5")
+        super(Kurt, self).__init__(feature, N, "kurt")
+class Max(Rolling):
+    """Rolling Max
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling max
+    """
+    def __init__(self, feature, N):
+        super(Max, self).__init__(feature, N, "max")
+class IdxMax(Rolling):
+    """Rolling Max Index
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling max index
+    """
+    def __init__(self, feature, N):
+        super(IdxMax, self).__init__(feature, N, "idxmax")
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        if self.N == 0:
+            series = series.expanding(min_periods=1).apply(lambda x: x.argmax() + 1, raw=True)
+        else:
+            series = series.rolling(self.N, min_periods=1).apply(lambda x: x.argmax() + 1, raw=True)
+        return series
+class Min(Rolling):
+    """Rolling Min
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling min
+    """
+    def __init__(self, feature, N):
+        super(Min, self).__init__(feature, N, "min")
+class IdxMin(Rolling):
+    """Rolling Min Index
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling min index
+    """
+    def __init__(self, feature, N):
+        super(IdxMin, self).__init__(feature, N, "idxmin")
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        if self.N == 0:
+            series = series.expanding(min_periods=1).apply(lambda x: x.argmin() + 1, raw=True)
+        else:
+            series = series.rolling(self.N, min_periods=1).apply(lambda x: x.argmin() + 1, raw=True)
+        return series
+class Quantile(Rolling):
+    """Rolling Quantile
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling quantile
+    """
+    def __init__(self, feature, N, qscore):
+        super(Quantile, self).__init__(feature, N, "quantile")
+        self.qscore = qscore
+    def __str__(self):
+        return "{}({},{},{})".format(type(self).__name__, self.feature, self.N, self.qscore)
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        if self.N == 0:
+            series = series.expanding(min_periods=1).quantile(self.qscore)
+        else:
+            series = series.rolling(self.N, min_periods=1).quantile(self.qscore)
+        return series
+class Med(Rolling):
+    """Rolling Median
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling median
+    """
+    def __init__(self, feature, N):
+        super(Med, self).__init__(feature, N, "median")
+class Mad(Rolling):
+    """Rolling Mean Absolute Deviation
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling mean absolute deviation
+    """
+    def __init__(self, feature, N):
+        super(Mad, self).__init__(feature, N, "mad")
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        # TODO: implement in Cython
+        def mad(x):
+            x1 = x[~np.isnan(x)]
+            return np.mean(np.abs(x1 - x1.mean()))
+        if self.N == 0:
+            series = series.expanding(min_periods=1).apply(mad, raw=True)
+        else:
+            series = series.rolling(self.N, min_periods=1).apply(mad, raw=True)
+        return series
+class Rank(Rolling):
+    """Rolling Rank (Percentile)
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling rank
+    """
+    def __init__(self, feature, N):
+        super(Rank, self).__init__(feature, N, "rank")
+    # for compatiblity of python 3.7, which doesn't support pandas 1.4.0+ which implements Rolling.rank
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        rolling_or_expending = series.expanding(min_periods=1) if self.N == 0 else series.rolling(self.N, min_periods=1)
+        if hasattr(rolling_or_expending, "rank"):
+            return rolling_or_expending.rank(pct=True)
+        def rank(x):
+            if np.isnan(x[-1]):
+                return np.nan
+            x1 = x[~np.isnan(x)]
+            if x1.shape[0] == 0:
+                return np.nan
+            return percentileofscore(x1, x1[-1]) / 100
+        return rolling_or_expending.apply(rank, raw=True)
+# support pair-wise rolling like `Slope(A, B, N)`
+class Slope(Rolling):
+    """Rolling Slope
+    This operator calculate the slope between `idx` and `feature`.
+    (e.g. [<feature_t1>, <feature_t2>, <feature_t3>] and [1, 2, 3])
+
+    Usage Example:
+    - "Slope($close, %d)/$close"
+
+    # TODO:
+    # Some users may want pair-wise rolling like `Slope(A, B, N)`
+
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+
+    Returns
+    ----------
+    Expression
+        a feature instance with linear regression slope of given window
+    """
+
+    def __init__(self, feature, N):
+        super(Slope, self).__init__(feature, N, "slope")
+
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        if self.N == 0:
+            series = pd.Series(expanding_slope(series.values), index=series.index)
+        else:
+            series = pd.Series(rolling_slope(series.values, self.N), index=series.index)
+        return series
+
+
+class Rsquare(Rolling):
+    """Rolling R-value Square
+
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+
+    Returns
+    ----------
+    Expression
+        a feature instance with linear regression r-value square of given window
+    """
+
+    def __init__(self, feature, N):
+        super(Rsquare, self).__init__(feature, N, "rsquare")
+
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        _series = self.feature.load(instrument, start_index, end_index, *args)
+        if self.N == 0:
+            series = pd.Series(expanding_rsquare(_series.values), index=_series.index)
+        else:
+            series = pd.Series(rolling_rsquare(_series.values, self.N), index=_series.index)
+            series.loc[np.isclose(_series.rolling(self.N, min_periods=1).std(), 0, atol=2e-05)] = np.nan
+        return series
+
+
+class Resi(Rolling):
+    """Rolling Regression Residuals
+
+    Parameters
+    ----------
+    feature : Expression
+        feature instance
+    N : int
+        rolling window size
+
+    Returns
+    ----------
+    Expression
+        a feature instance with regression residuals of given window
+    """
+
+    def __init__(self, feature, N):
+        super(Resi, self).__init__(feature, N, "resi")
+
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        series = self.feature.load(instrument, start_index, end_index, *args)
+        if self.N == 0:
+            series = pd.Series(expanding_resi(series.values), index=series.index)
+        else:
+            series = pd.Series(rolling_resi(series.values, self.N), index=series.index)
+        return series
+
+class PairRolling(ExpressionOps):
+    """Pair Rolling Operator
+
+    Parameters
+    ----------
+    feature_left : Expression
+        feature instance
+    feature_right : Expression
+        feature instance
+    N : int
+        rolling window size
+
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling output of two input features
+    """
+
+    def __init__(self, feature_left, feature_right, N, func):
+        # TODO: in what case will a const be passed into `__init__` as `feature_left` or `feature_right`
+        self.feature_left = feature_left
+        self.feature_right = feature_right
+        self.N = N
+        self.func = func
+
+    def __str__(self):
+        return "{}({},{},{})".format(type(self).__name__, self.feature_left, self.feature_right, self.N)
+
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        assert any(
+            [isinstance(self.feature_left, Expression), self.feature_right, Expression]
+        ), "at least one of two inputs is Expression instance"
+
+        if isinstance(self.feature_left, Expression):
+            series_left = self.feature_left.load(instrument, start_index, end_index, *args)
+        else:
+            series_left = self.feature_left  # numeric value
+        if isinstance(self.feature_right, Expression):
+            series_right = self.feature_right.load(instrument, start_index, end_index, *args)
+        else:
+            series_right = self.feature_right
+
+        if self.N == 0:
+            series = getattr(series_left.expanding(min_periods=1), self.func)(series_right)
+        else:
+            series = getattr(series_left.rolling(self.N, min_periods=1), self.func)(series_right)
+        return series
+
+    def get_longest_back_rolling(self):
+        if self.N == 0:
+            return np.inf
+        if isinstance(self.feature_left, Expression):
+            left_br = self.feature_left.get_longest_back_rolling()
+        else:
+            left_br = 0
+
+        if isinstance(self.feature_right, Expression):
+            right_br = self.feature_right.get_longest_back_rolling()
+        else:
+            right_br = 0
+        return max(left_br, right_br)
+
+    def get_extended_window_size(self):
+        if isinstance(self.feature_left, Expression):
+            ll, lr = self.feature_left.get_extended_window_size()
+        else:
+            ll, lr = 0, 0
+        if isinstance(self.feature_right, Expression):
+            rl, rr = self.feature_right.get_extended_window_size()
+        else:
+            rl, rr = 0, 0
+        if self.N == 0:
+            get_module_logger(self.__class__.__name__).warning(
+                "The PairRolling(ATTR, 0) will not be accurately calculated"
+            )
+            return -np.inf, max(lr, rr)
+        else:
+            return max(ll, rl) + self.N - 1, max(lr, rr)
+
+
+class Corr(PairRolling):
+    """Rolling Correlation
+
+    Parameters
+    ----------
+    feature_left : Expression
+        feature instance
+    feature_right : Expression
+        feature instance
+    N : int
+        rolling window size
+
+    Returns
+    ----------
+    Expression
+        a feature instance with rolling correlation of two input features
+    """
+
+    def __init__(self, feature_left, feature_right, N):
+        super(Corr, self).__init__(feature_left, feature_right, N, "corr")
+
+    def _load_internal(self, instrument, start_index, end_index, *args):
+        res: pd.Series = super(Corr, self)._load_internal(instrument, start_index, end_index, *args)
+
+        # NOTE: Load uses MemCache, so calling load again will not cause performance degradation
+        series_left = self.feature_left.load(instrument, start_index, end_index, *args)
+        series_right = self.feature_right.load(instrument, start_index, end_index, *args)
+        res.loc[
+            np.isclose(series_left.rolling(self.N, min_periods=1).std(), 0, atol=2e-05)
+            | np.isclose(series_right.rolling(self.N, min_periods=1).std(), 0, atol=2e-05)
+        ] = np.nan
+        return res
+
+
+# ---- qlib/data/_libs/rolling.pyx ----
+# cython: profile=False
+# cython: boundscheck=False, wraparound=False, cdivision=True
+cimport cython
+cimport numpy as np
+import numpy as np
+
+from libc.math cimport sqrt, isnan, NAN
+from libcpp.deque cimport deque
+
+
+cdef class Rolling:
+    """1-D array rolling"""
+    cdef int window
+    cdef deque[double] barv
+    cdef int na_count
+    def __init__(self, int window):
+        self.window = window
+        self.na_count = window
+        cdef int i
+        for i in range(window):
+            self.barv.push_back(NAN)
+
+    cdef double update(self, double val):
+        pass
+
+
+cdef class Mean(Rolling):
+    """1-D array rolling mean"""
+    cdef double vsum
+    def __init__(self, int window):
+        super(Mean, self).__init__(window)
+        self.vsum = 0
+        
+    cdef double update(self, double val):
+        self.barv.push_back(val)
+        if not isnan(self.barv.front()):
+            self.vsum -= self.barv.front()
+        else:
+            self.na_count -= 1
+        self.barv.pop_front()
+        if isnan(val):
+            self.na_count += 1
+            # return NAN
+        else:
+            self.vsum += val
+        return self.vsum / (self.window - self.na_count)
+
+
+cdef class Slope(Rolling):
+    """1-D array rolling slope"""
+    cdef double i_sum # can be used as i2_sum
+    cdef double x_sum
+    cdef double x2_sum
+    cdef double y_sum
+    cdef double xy_sum
+    def __init__(self, int window):
+        super(Slope, self).__init__(window)
+        self.i_sum  = 0
+        self.x_sum  = 0
+        self.x2_sum = 0
+        self.y_sum  = 0
+        self.xy_sum = 0
+
+    cdef double update(self, double val):
+        self.barv.push_back(val)
+        self.xy_sum = self.xy_sum - self.y_sum
+        self.x2_sum = self.x2_sum + self.i_sum - 2*self.x_sum
+        self.x_sum = self.x_sum - self.i_sum
+        cdef double _val
+        _val = self.barv.front()
+        if not isnan(_val):
+            self.i_sum -= 1
+            self.y_sum -= _val
+        else:
+            self.na_count -= 1
+        self.barv.pop_front()
+        if isnan(val):
+            self.na_count += 1
+            # return NAN
+        else:
+            self.i_sum  += 1
+            self.x_sum  += self.window
+            self.x2_sum += self.window * self.window
+            self.y_sum  += val
+            self.xy_sum += self.window * val
+        cdef int N = self.window - self.na_count
+        return (N*self.xy_sum - self.x_sum*self.y_sum) / \
+            (N*self.x2_sum - self.x_sum*self.x_sum)
+
+    
+cdef class Resi(Rolling):
+    """1-D array rolling residuals"""
+    cdef double i_sum # can be used as i2_sum
+    cdef double x_sum
+    cdef double x2_sum
+    cdef double y_sum
+    cdef double xy_sum
+    def __init__(self, int window):
+        super(Resi, self).__init__(window)
+        self.i_sum  = 0
+        self.x_sum  = 0
+        self.x2_sum = 0
+        self.y_sum  = 0
+        self.xy_sum = 0
+
+    cdef double update(self, double val):
+        self.barv.push_back(val)
+        self.xy_sum = self.xy_sum - self.y_sum
+        self.x2_sum = self.x2_sum + self.i_sum - 2*self.x_sum
+        self.x_sum = self.x_sum - self.i_sum
+        cdef double _val
+        _val = self.barv.front()
+        if not isnan(_val):
+            self.i_sum -= 1
+            self.y_sum -= _val
+        else:
+            self.na_count -= 1
+        self.barv.pop_front()
+        if isnan(val):
+            self.na_count += 1
+            # return NAN
+        else:
+            self.i_sum  += 1
+            self.x_sum  += self.window
+            self.x2_sum += self.window * self.window
+            self.y_sum  += val
+            self.xy_sum += self.window * val
+        cdef int N = self.window - self.na_count
+        slope = (N*self.xy_sum - self.x_sum*self.y_sum) / \
+                (N*self.x2_sum - self.x_sum*self.x_sum)
+        x_mean = self.x_sum / N
+        y_mean = self.y_sum / N
+        interp = y_mean - slope*x_mean
+        return val - (slope*self.window + interp)
+
+    
+cdef class Rsquare(Rolling):
+    """1-D array rolling rsquare"""
+    cdef double i_sum
+    cdef double x_sum
+    cdef double x2_sum
+    cdef double y_sum
+    cdef double y2_sum
+    cdef double xy_sum
+    def __init__(self, int window):
+        super(Rsquare, self).__init__(window)
+        self.i_sum  = 0
+        self.x_sum  = 0
+        self.x2_sum = 0
+        self.y_sum  = 0
+        self.y2_sum = 0
+        self.xy_sum = 0
+
+    cdef double update(self, double val):
+        self.barv.push_back(val)
+        self.xy_sum = self.xy_sum - self.y_sum
+        self.x2_sum = self.x2_sum + self.i_sum - 2*self.x_sum
+        self.x_sum = self.x_sum - self.i_sum
+        cdef double _val
+        _val = self.barv.front()
+        if not isnan(_val):
+            self.i_sum  -= 1
+            self.y_sum  -= _val
+            self.y2_sum -= _val * _val
+        else:
+            self.na_count -= 1
+        self.barv.pop_front()
+        if isnan(val):
+            self.na_count += 1
+            # return NAN
+        else:
+            self.i_sum  += 1
+            self.x_sum  += self.window
+            self.x2_sum += self.window * self.window
+            self.y_sum  += val
+            self.y2_sum += val * val
+            self.xy_sum += self.window * val
+        cdef int N = self.window - self.na_count
+        cdef double rvalue
+        rvalue = (N*self.xy_sum - self.x_sum*self.y_sum) / \
+            sqrt((N*self.x2_sum - self.x_sum*self.x_sum) * (N*self.y2_sum - self.y_sum*self.y_sum))
+        return rvalue * rvalue
+
+    
+cdef np.ndarray[double, ndim=1] rolling(Rolling r, np.ndarray a):
+    cdef int  i
+    cdef int  N = len(a)
+    cdef np.ndarray[double, ndim=1] ret = np.empty(N)
+    for i in range(N):
+        ret[i] = r.update(a[i])
+    return ret
+
+def rolling_mean(np.ndarray a, int window):
+    cdef Mean r = Mean(window)
+    return rolling(r, a)
+
+def rolling_slope(np.ndarray a, int window):
+    cdef Slope r = Slope(window)
+    return rolling(r, a)
+
+def rolling_rsquare(np.ndarray a, int window):
+    cdef Rsquare r = Rsquare(window)
+    return rolling(r, a)
+
+def rolling_resi(np.ndarray a, int window):
+    cdef Resi r = Resi(window)
+    return rolling(r, a)

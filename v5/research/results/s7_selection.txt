@@ -1,0 +1,17 @@
+family: 40 configurations x 1065 days (2022-01..2026-05)
+(1) CSCV: PBO = 0.496  (share of splits where the IS-best config is at or below the OOS median); median logit 0.05; IS-best: IS mean 14.04 -> OOS mean 12.26 bp (OOS median config 12.51)
+(2) nested selection
+       year picked (best on all earlier years)  its earlier AR  its AR this year  v2 default w0.5 this year  family median this year  days
+       2023                   v2 default w0.75           13.97              8.91                       9.80                     8.25   239
+       2024                      v2 +w4 market           11.85             16.13                      16.16                    16.13   242
+       2025                      v2 +w4 market           13.27             11.95                      11.91                    10.76   243
+2026-01..05                      v2 +w4 market           12.94             19.32                      19.17                    19.51    95
+    day-weighted: picked 13.15, v2 default 13.39, family median 12.63
+(3) paired t vs v1-like (2022-01..2026-05) and the reality-check p-value (max-t over 39 configs, stationary bootstrap):
+    v1-like mlp3+tf3 +exdiv          t =  2.73   p_adj = 0.051
+    +w4 mlp v1 rule +exdiv           t =  1.76   p_adj = 0.347
+    v2 MLP-only w0.75                t =  1.41   p_adj = 0.559
+    v2 MLP-only w1.0                 t =  1.37   p_adj = 0.584
+    +w4 mlp,tf v1 rule +exdiv        t =  1.34   p_adj = 0.601
+    v2 default w0.75                 t =  1.30   p_adj = 0.626
+    95% critical value of max-t = 2.73

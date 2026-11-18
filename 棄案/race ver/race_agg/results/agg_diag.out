@@ -1,0 +1,40 @@
+17:30:27 E3 2022-01-01 leaf 50: oob_row_wll 0.6513, oob_row_ic 0.2268, oob_day_wll 0.6806, oob_day_ic 0.1472, oob_day_cover 1.0000, val_wll 0.6814, val_ic 0.1432, test_wll 0.6818, test_ic 0.1136 (105.4 s)
+17:31:40 E3 2022-01-01 leaf 250: oob_row_wll 0.6718, oob_row_ic 0.1744, oob_day_wll 0.6814, oob_day_ic 0.1459, oob_day_cover 1.0000, val_wll 0.6822, val_ic 0.1472, test_wll 0.6825, test_ic 0.1098 (73.5 s)
+17:32:30 E3 2022-01-01 leaf 1000: oob_row_wll 0.6819, oob_row_ic 0.1361, oob_day_wll 0.6842, oob_day_ic 0.1315, oob_day_cover 1.0000, val_wll 0.6849, val_ic 0.1268, test_wll 0.6858, test_ic 0.0941 (49.3 s)
+17:32:57 E3 2022-01-01 leaf 4000: oob_row_wll 0.6877, oob_row_ic 0.1172, oob_day_wll 0.6871, oob_day_ic 0.1204, oob_day_cover 1.0000, val_wll 0.6893, val_ic 0.1066, test_wll 0.6890, test_ic 0.0792 (27.0 s)
+17:36:01 E3 2023-01-01 leaf 50: oob_row_wll 0.6483, oob_row_ic 0.2263, oob_day_wll 0.6791, oob_day_ic 0.1435, oob_day_cover 1.0000, val_wll 0.6812, val_ic 0.1176, test_wll 0.6864, test_ic 0.1133 (184.0 s)
+17:38:18 E3 2023-01-01 leaf 250: oob_row_wll 0.6693, oob_row_ic 0.1728, oob_day_wll 0.6795, oob_day_ic 0.1437, oob_day_cover 1.0000, val_wll 0.6827, val_ic 0.1074, test_wll 0.6866, test_ic 0.1079 (137.6 s)
+17:39:53 E3 2023-01-01 leaf 1000: oob_row_wll 0.6805, oob_row_ic 0.1281, oob_day_wll 0.6828, oob_day_ic 0.1275, oob_day_cover 1.0000, val_wll 0.6873, val_ic 0.0738, test_wll 0.6879, test_ic 0.0955 (94.8 s)
+17:40:50 E3 2023-01-01 leaf 4000: oob_row_wll 0.6869, oob_row_ic 0.1089, oob_day_wll 0.6862, oob_day_ic 0.1110, oob_day_cover 1.0000, val_wll 0.6908, val_ic 0.0631, test_wll 0.6897, test_ic 0.0869 (57.1 s)
+17:45:21 E3 2024-01-01 leaf 50: oob_row_wll 0.6499, oob_row_ic 0.2239, oob_day_wll 0.6804, oob_day_ic 0.1394, oob_day_cover 1.0000, val_wll 0.6840, val_ic 0.1115, test_wll 0.6800, test_ic 0.1351 (271.1 s)
+17:48:44 E3 2024-01-01 leaf 250: oob_row_wll 0.6707, oob_row_ic 0.1700, oob_day_wll 0.6814, oob_day_ic 0.1388, oob_day_cover 1.0000, val_wll 0.6843, val_ic 0.1146, test_wll 0.6814, test_ic 0.1305 (202.8 s)
+17:51:09 E3 2024-01-01 leaf 1000: oob_row_wll 0.6807, oob_row_ic 0.1320, oob_day_wll 0.6833, oob_day_ic 0.1267, oob_day_cover 1.0000, val_wll 0.6854, val_ic 0.1062, test_wll 0.6829, test_ic 0.1287 (144.9 s)
+17:52:40 E3 2024-01-01 leaf 4000: oob_row_wll 0.6867, oob_row_ic 0.1082, oob_day_wll 0.6865, oob_day_ic 0.1115, oob_day_cover 1.0000, val_wll 0.6876, val_ic 0.1008, test_wll 0.6863, test_ic 0.1130 (91.1 s)
+race_agg E3 (report only): out-of-bag estimate vs forward validation vs the test year (RF, 200 trees, sqrt, half samples)
+wll = weighted log-loss (lower is better); IC = mean daily Spearman with e (higher is better)
+
+fold 2022-01-01:
+  leaf   row-OOB wll    IC    | day-OOB wll    IC    | forward-val wll  IC    | test-year wll   IC
+     50  0.65133 +0.2268 | 0.68063 +0.1472 | 0.68142 +0.1432 | 0.68180 +0.1136
+    250  0.67175 +0.1744 | 0.68143 +0.1459 | 0.68224 +0.1472 | 0.68247 +0.1098
+   1000  0.68192 +0.1361 | 0.68420 +0.1315 | 0.68485 +0.1268 | 0.68584 +0.0941
+   4000  0.68767 +0.1172 | 0.68707 +0.1204 | 0.68927 +0.1066 | 0.68902 +0.0792
+  leaf picked by wll: {'oob_row': 50, 'oob_day': 50, 'val': 50, 'test': 50};  by IC: {'oob_row': 50, 'oob_day': 50, 'val': 250, 'test': 50}
+
+fold 2023-01-01:
+  leaf   row-OOB wll    IC    | day-OOB wll    IC    | forward-val wll  IC    | test-year wll   IC
+     50  0.64827 +0.2263 | 0.67913 +0.1435 | 0.68124 +0.1176 | 0.68635 +0.1133
+    250  0.66929 +0.1728 | 0.67949 +0.1437 | 0.68268 +0.1074 | 0.68663 +0.1079
+   1000  0.68050 +0.1281 | 0.68285 +0.1275 | 0.68726 +0.0738 | 0.68788 +0.0955
+   4000  0.68694 +0.1089 | 0.68622 +0.1110 | 0.69076 +0.0631 | 0.68973 +0.0869
+  leaf picked by wll: {'oob_row': 50, 'oob_day': 50, 'val': 50, 'test': 50};  by IC: {'oob_row': 50, 'oob_day': 250, 'val': 50, 'test': 50}
+
+fold 2024-01-01:
+  leaf   row-OOB wll    IC    | day-OOB wll    IC    | forward-val wll  IC    | test-year wll   IC
+     50  0.64995 +0.2239 | 0.68043 +0.1394 | 0.68404 +0.1115 | 0.67999 +0.1351
+    250  0.67071 +0.1700 | 0.68137 +0.1388 | 0.68429 +0.1146 | 0.68144 +0.1305
+   1000  0.68069 +0.1320 | 0.68331 +0.1267 | 0.68537 +0.1062 | 0.68289 +0.1287
+   4000  0.68669 +0.1082 | 0.68647 +0.1115 | 0.68758 +0.1008 | 0.68633 +0.1130
+  leaf picked by wll: {'oob_row': 50, 'oob_day': 50, 'val': 50, 'test': 50};  by IC: {'oob_row': 50, 'oob_day': 50, 'val': 250, 'test': 50}
+
+(1439 s)

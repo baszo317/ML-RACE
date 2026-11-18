@@ -1,0 +1,15 @@
+AR = competition score, bp/day, Top50, v2 rule + ex-dividend rule, MLP members, seeds [1, 2, 3, 4, 5].
+val = 2022-2024 (decides), hold = 2025-2026/05 (confirms), post = 2026/06 .. last labelled day (models frozen at 2026-05-29).
+timing / xsec = part of AR from the overall up/down call / from picking stocks.
+t_* = paired t of the daily difference vs the "v2 stock view" row with the same w_T.
+
+                         config  w_T   val  hold  post   all  sd_day  timing  xsec  2022  2023  2024  2025  2026  t_val  t_hold  t_post  t_all
+  v2 stock view: res_B + res_xr 0.00 11.36 11.41 13.52 11.56   44.09   -0.51 12.06 11.10  9.07 13.88  9.76 15.62    NaN     NaN     NaN    NaN
+    v2+v3: all four res members 0.00 11.16 10.92 14.88 11.41   44.01   -0.57 11.98 10.48  8.81 14.18  8.74 16.49  -0.80   -0.87    0.94  -0.58
+v3 stock view: res_BN + res_xrN 0.00 10.90  9.92 13.73 10.86   44.02   -0.72 11.57 10.18  9.06 13.46  7.77 15.41  -1.24   -2.06    0.11  -1.98
+  v2 stock view: res_B + res_xr 0.50 12.54 13.74 12.13 12.86   49.40    1.22 11.64 12.54 10.22 14.84 11.56 19.33    NaN     NaN     NaN    NaN
+    v2+v3: all four res members 0.50 12.70 13.49 12.61 12.92   49.53    1.14 11.79 12.18 10.51 15.39 10.62 20.82   0.55   -0.48    0.37   0.25
+v3 stock view: res_BN + res_xrN 0.50 12.59 13.70 10.34 12.72   49.62    1.08 11.64 11.59 10.50 15.66 10.78 21.19   0.10   -0.05   -1.00  -0.38
+  v2 stock view: res_B + res_xr 0.75 12.87 14.79  8.27 13.04   53.02    1.92 11.12 13.19  9.74 15.65 12.11 21.64    NaN     NaN     NaN    NaN
+    v2+v3: all four res members 0.75 13.11 14.27  8.22 13.03   53.67    1.90 11.13 12.73  9.96 16.60 11.79 20.62   0.85   -1.07   -0.04  -0.03
+v3 stock view: res_BN + res_xrN 0.75 12.93 14.17  9.32 12.99   53.84    1.93 11.06 11.80 10.08 16.91 11.19 21.79   0.15   -0.90    0.56  -0.15

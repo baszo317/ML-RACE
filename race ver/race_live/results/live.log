@@ -1,0 +1,178 @@
+18:04:46 panel: ex_next1 of 2026-11-10 from the calendar: next trading day 2026-11-11, ex-dividend []
+18:04:58 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+18:05:03 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+18:05:03 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+18:05:03 unit check day-trade volume: median ratio to shares traded 0.2396 -> factor 1
+18:05:03 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+18:05:23 panel: built 166346 rows x 169 C columns in 50s
+18:05:23 pool: training the model of 2026-11-05 (seed 20261105, 2 threads) ...
+18:05:51 pool: 2026-11-05 done: 154 rounds, 162648 rows, 26.8s
+18:05:51 pool: training the model of 2026-11-06 (seed 20261106, 2 threads) ...
+18:06:20 pool: 2026-11-06 done: 189 rounds, 162748 rows, 29.5s
+18:06:20 pool: training the model of 2026-11-09 (seed 20261109, 2 threads) ...
+18:06:49 pool: 2026-11-09 done: 159 rounds, 162848 rows, 28.4s
+18:06:50 race version, day to predict 2026-11-10 (written 2026-11-15 18:06:50)
+18:06:50 labelled data up to 2026-11-09; panel 166346 rows; C columns 169; missing non-ADR C values of the Top50 today 0.0% (yesterday 0.0%)
+18:06:50 pool: 2026-11-05 (154 rounds), 2026-11-06 (189 rounds), 2026-11-09 (159 rounds)
+18:06:50 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+18:06:50 upload file: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out_selftest/submission_race_1110_selftest.csv
+18:06:50 
+18:06:50 checks:
+18:06:50 upload file written: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out_selftest/submission_race_1110_selftest.csv
+18:33:33 panel: cached (166346 rows, built 2026-11-15 18:05:23)
+18:33:41 panel: cached (166346 rows, built 2026-11-15 18:05:23)
+18:34:26 panel: cached (166346 rows, built 2026-11-15 18:05:23)
+18:34:28 race version (daily models), day to predict 2026-11-10 (written 2026-11-15 18:34:28)
+18:34:28 labelled data up to 2026-11-09; panel 166346 rows; C columns 169; missing non-ADR C values of the Top50 today 0.0% (yesterday 0.0%)
+18:34:28 pool: 2026-11-05/seed 20261105 (154 rounds), 2026-11-06/seed 20261106 (189 rounds), 2026-11-09/seed 20261109 (159 rounds)
+18:34:28 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+18:34:29 upload file: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out_selftest/submission_race_1110_selftest_daily.csv
+18:34:29 
+18:34:29 checks:
+18:34:29 upload file written: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out_selftest/submission_race_1110_selftest_daily.csv
+18:34:31 panel: cached (166346 rows, built 2026-11-15 18:05:23)
+18:34:32 pool: training the model of 2026-10-30 seed 1 (2 threads) ...
+18:34:56 pool: 2026-10-30 seed 1 done: 125 rounds, 162248 rows, 22.9s
+18:34:56 pool: training the model of 2026-10-30 seed 2 (2 threads) ...
+18:35:22 pool: 2026-10-30 seed 2 done: 164 rounds, 162248 rows, 26.5s
+18:35:22 pool: training the model of 2026-10-30 seed 3 (2 threads) ...
+18:35:49 pool: 2026-10-30 seed 3 done: 159 rounds, 162248 rows, 26.4s
+18:35:49 race version (monthly models), day to predict 2026-11-10 (written 2026-11-15 18:35:49)
+18:35:49 labelled data up to 2026-11-09; panel 166346 rows; C columns 169; missing non-ADR C values of the Top50 today 0.0% (yesterday 0.0%)
+18:35:49 pool: 2026-10-30/seed 1 (125 rounds), 2026-10-30/seed 2 (164 rounds), 2026-10-30/seed 3 (159 rounds)
+18:35:50 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+18:35:50 upload file: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out_selftest/submission_race_1110_selftest_monthly.csv
+18:35:50 
+18:35:50 checks:
+18:35:50 upload file written: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out_selftest/submission_race_1110_selftest_monthly.csv
+18:36:03 panel: cached (166346 rows, built 2026-11-15 18:05:23)
+18:36:04 train (daily): labelled data up to 2026-11-09; next trading day 2026-11-10; models 2026-11-05/seed 20261105, 2026-11-06/seed 20261106, 2026-11-09/seed 20261109
+18:36:04 train: pool ready for 2026-11-10: 2026-11-05/seed 20261105, 2026-11-06/seed 20261106, 2026-11-09/seed 20261109
+21:07:48 panel: ex_next1 of 2026-11-16 from the calendar: next trading day 2026-11-17, ex-dividend []
+21:08:19 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+21:08:35 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+21:08:35 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+21:08:35 unit check day-trade volume: median ratio to shares traded 0.2399 -> factor 1
+21:08:36 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.98, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+21:09:27 panel: built 167146 rows x 169 C columns in 150s
+21:09:27 pool: training the model of 2026-11-11 seed 20261111 (2 threads) ...
+21:09:53 panel: cached (167146 rows, built 2026-11-15 21:09:27)
+21:09:55 pool: training the model of 2026-11-11 seed 20261111 (2 threads) ...
+21:10:54 pool: 2026-11-11 seed 20261111 done: 152 rounds, 163048 rows, 56.4s
+21:10:54 pool: training the model of 2026-11-12 seed 20261112 (2 threads) ...
+21:12:03 pool: 2026-11-12 seed 20261112 done: 205 rounds, 163148 rows, 68.4s
+21:12:03 pool: training the model of 2026-11-13 seed 20261113 (2 threads) ...
+21:12:55 panel: cached (167146 rows, built 2026-11-15 21:09:27)
+21:12:57 pool: training the model of 2026-11-13 seed 20261113 (2 threads) ...
+21:13:54 pool: 2026-11-13 seed 20261113 done: 130 rounds, 163248 rows, 54.4s
+21:13:56 race version (daily models), day to predict 2026-11-16 (written 2026-11-15 21:13:56)
+21:13:56 labelled data up to 2026-11-13; panel 167146 rows; C columns 169; missing non-ADR C values of the Top50 today 8.5% (yesterday 6.7%)
+21:13:56 pool: 2026-11-11/seed 20261111 (152 rounds), 2026-11-12/seed 20261112 (205 rounds), 2026-11-13/seed 20261113 (130 rounds)
+21:13:56 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+21:13:56 upload file: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out/submission_race_1116_early.csv
+21:13:56 
+21:13:56 checks:
+21:13:56 WARN  Nikkei has no row for 2026-11-16 yet (opens 08:00 Taipei; a holiday there is fine) -> its opening-gap feature is missing today
+21:13:56 WARN  KOSPI has no row for 2026-11-16 yet (opens 08:00 Taipei; a holiday there is fine) -> its opening-gap feature is missing today
+21:13:56 WARN  3 C columns are missing for every Top50 stock today but not yesterday: ['C__n225_gap', 'C__ks11_gap', 'C__asia_gap_mean']
+21:13:56 upload file written: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out/submission_race_1116_early.csv
+21:17:08 panel: ex_next1 of 2026-11-16 from the calendar: next trading day 2026-11-17, ex-dividend []
+21:17:37 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+21:17:48 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+21:17:48 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+21:17:48 unit check day-trade volume: median ratio to shares traded 0.2399 -> factor 1
+21:17:49 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+21:18:36 panel: built 166746 rows x 169 C columns in 120s
+21:18:37 pool: training the model of 2026-11-11 seed 20261111 (2 threads) ...
+21:19:27 panel: cached (166746 rows, built 2026-11-15 21:18:36)
+21:19:29 pool: training the model of 2026-11-11 seed 20261111 (2 threads) ...
+21:20:28 pool: 2026-11-11 seed 20261111 done: 152 rounds, 163048 rows, 56.2s
+21:20:28 pool: training the model of 2026-11-12 seed 20261112 (2 threads) ...
+21:21:33 pool: 2026-11-12 seed 20261112 done: 205 rounds, 163148 rows, 65.0s
+21:21:33 pool: training the model of 2026-11-13 seed 20261113 (2 threads) ...
+21:22:33 panel: cached (166746 rows, built 2026-11-15 21:18:36)
+21:22:35 pool: training the model of 2026-11-13 seed 20261113 (2 threads) ...
+21:23:27 pool: 2026-11-13 seed 20261113 done: 123 rounds, 163248 rows, 50.2s
+21:23:29 race version (daily models), day to predict 2026-11-16 (written 2026-11-15 21:23:29)
+21:23:29 labelled data up to 2026-11-13; panel 166746 rows; C columns 169; missing non-ADR C values of the Top50 today 3.6% (yesterday 1.8%)
+21:23:29 pool: 2026-11-11/seed 20261111 (152 rounds), 2026-11-12/seed 20261112 (205 rounds), 2026-11-13/seed 20261113 (123 rounds)
+21:23:29 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+21:23:29 upload file: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out/submission_race_1116_early.csv
+21:23:29 
+21:23:29 checks:
+21:23:29 WARN  Nikkei has no row for 2026-11-16 yet (opens 08:00 Taipei; a holiday there is fine) -> its opening-gap feature is missing today
+21:23:29 WARN  KOSPI has no row for 2026-11-16 yet (opens 08:00 Taipei; a holiday there is fine) -> its opening-gap feature is missing today
+21:23:29 WARN  3 C columns are missing for every Top50 stock today but not yesterday: ['C__n225_gap', 'C__ks11_gap', 'C__asia_gap_mean']
+21:23:29 upload file written: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out/submission_race_1116_early.csv
+08:19:43 panel: ex_next1 of 2026-11-16 from the calendar: next trading day 2026-11-17, ex-dividend []
+08:19:52 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+08:19:58 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+08:19:58 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+08:19:58 unit check day-trade volume: median ratio to shares traded 0.2399 -> factor 1
+08:19:59 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+08:20:02 panel: built 166746 rows x 169 C columns in 35s
+08:20:02 pool: training the model of 2026-11-11 seed 20261111 (8 threads) ...
+08:20:37 pool: 2026-11-11 seed 20261111 done: 152 rounds, 163048 rows, 32.7s
+08:20:37 pool: training the model of 2026-11-12 seed 20261112 (8 threads) ...
+08:21:18 pool: 2026-11-12 seed 20261112 done: 205 rounds, 163148 rows, 41.1s
+08:21:18 pool: training the model of 2026-11-13 seed 20261113 (8 threads) ...
+08:21:41 pool: 2026-11-13 seed 20261113 done: 123 rounds, 163248 rows, 22.4s
+08:21:42 race version (daily models), day to predict 2026-11-16 (written 2026-11-16 08:21:42)
+08:21:42 labelled data up to 2026-11-13; panel 166746 rows; C columns 169; missing non-ADR C values of the Top50 today 0.6% (yesterday 0.0%)
+08:21:42 pool: 2026-11-11/seed 20261111 (152 rounds), 2026-11-12/seed 20261112 (205 rounds), 2026-11-13/seed 20261113 (123 rounds)
+08:21:42 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+08:21:42 upload file: D:\ML RACE\race ver\race_live\out\submission_race_1116.csv
+08:21:42 
+08:21:42 checks:
+08:21:42 WARN  KOSPI has no row for 2026-11-16 yet (opens 08:00 Taipei; a holiday there is fine) -> its opening-gap feature is missing today
+08:21:42 WARN  1 C columns are missing for every Top50 stock today but not yesterday: ['C__ks11_gap']
+08:21:42 upload file written: D:\ML RACE\race ver\race_live\out\submission_race_1116.csv
+08:30:36 panel: ex_next1 of 2026-11-16 from the calendar: next trading day 2026-11-17, ex-dividend []
+08:30:44 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+08:30:53 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+08:30:53 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+08:30:53 unit check day-trade volume: median ratio to shares traded 0.2399 -> factor 1
+08:30:53 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+08:30:57 panel: built 166746 rows x 169 C columns in 54s
+08:31:03 race version (daily models), day to predict 2026-11-16 (written 2026-11-16 08:31:03)
+08:31:03 labelled data up to 2026-11-13; panel 166746 rows; C columns 169; missing non-ADR C values of the Top50 today 0.0% (yesterday 0.0%)
+08:31:03 pool: 2026-11-11/seed 20261111 (152 rounds), 2026-11-12/seed 20261112 (205 rounds), 2026-11-13/seed 20261113 (123 rounds)
+08:31:03 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+08:31:03 upload file: D:\ML RACE\race ver\race_live\out\submission_race_1116.csv
+08:31:03 
+08:31:03 checks:
+08:31:03 upload file written: D:\ML RACE\race ver\race_live\out\submission_race_1116.csv
+08:44:28 panel: ex_next1 of 2026-11-17 from the calendar: next trading day 2026-11-18, ex-dividend ['2344']
+08:44:36 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+08:44:49 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+08:44:49 unit check SBL balance: median ratio to shares traded 2.035 -> factor 1
+08:44:49 unit check day-trade volume: median ratio to shares traded 0.24 -> factor 1
+08:44:49 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+08:44:51 panel: built 166846 rows x 169 C columns in 40s
+08:44:51 pool: training the model of 2026-11-16 seed 20261116 (8 threads) ...
+08:45:18 pool: 2026-11-16 seed 20261116 done: 160 rounds, 163348 rows, 24.0s
+08:45:18 race version (daily models), day to predict 2026-11-17 (written 2026-11-17 08:45:18)
+08:45:18 labelled data up to 2026-11-16; panel 166846 rows; C columns 169; missing non-ADR C values of the Top50 today 0.0% (yesterday 1.8%)
+08:45:18 pool: 2026-11-12/seed 20261112 (205 rounds), 2026-11-13/seed 20261113 (123 rounds), 2026-11-16/seed 20261116 (160 rounds)
+08:45:18 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+08:45:18 upload file: D:\ML RACE\race ver\race_live\out\submission_race_1117.csv
+08:45:18 
+08:45:18 checks:
+08:45:18 upload file written: D:\ML RACE\race ver\race_live\out\submission_race_1117.csv
+08:49:05 panel: ex_next1 of 2026-11-18 from the calendar: next trading day 2026-11-19, ex-dividend []
+08:49:11 sector ETF map: IYT 6, SOXX 19, SPY 1, XLB 7, XLC 3, XLE 1, XLF 17, XLI 3, XLK 35, XLP 1, XLY 7; by category 95, by group 2
+08:49:15 unit check margin balance: median ratio to shares traded 0.0007532 -> factor 1000
+08:49:15 unit check SBL balance: median ratio to shares traded 2.034 -> factor 1
+08:49:15 unit check day-trade volume: median ratio to shares traded 0.2399 -> factor 1
+08:49:16 K coverage (share of non-missing rows): adr_ret_1 0.04, adr_prem 0.04, adr_prem_chg_1 0.04, adr_prem_z20 0.04, sector_ret_1 1.00, sector_ret_5 1.00, sector_rel_1 1.00, margin_chg_vol 0.99, margin_util 0.99, margin_chg5 0.99, short_chg_vol 0.99, short_margin_ratio 0.99, short_chg5 0.99, offset_vol 0.99, sbl_sell_vol 0.99, sbl_bal_v20 0.99, sbl_chg_vol 0.99, sbl_chg5_v20 0.99, daytrade_ratio 0.99, daytrade_ratio_rel20 0.98, daytrade_imb 0.99, rank_margin_chg_vol 0.99, rank_sbl_sell_vol 0.99, rank_daytrade_ratio 0.99, n225_gap 0.94, ks11_gap 0.96, asia_gap_mean 0.99, sox_ret_1 1.00, sox_ret_5 1.00, sox_rel_ixic_1 1.00, tsm_ret_1 1.00, K_adr_prem 1.00, K_adr_prem_chg_1 1.00, K_adr_prem_z20 1.00, twd_ret_1 1.00, twd_ret_5 1.00, tnx_chg_1 1.00, tnx_chg_5 1.00, dxy_ret_1 1.00, dxy_ret_5 1.00
+08:49:17 panel: built 166946 rows x 169 C columns in 26s
+08:49:18 pool: training the model of 2026-11-17 seed 20261117 (8 threads) ...
+08:49:35 pool: 2026-11-17 seed 20261117 done: 156 rounds, 163448 rows, 16.6s
+08:49:38 race version (daily models), day to predict 2026-11-18 (written 2026-11-18 08:49:38)
+08:49:38 labelled data up to 2026-11-17; panel 166946 rows; C columns 169; missing non-ADR C values of the Top50 today 0.5% (yesterday 1.8%)
+08:49:38 pool: 2026-11-13/seed 20261113 (123 rounds), 2026-11-16/seed 20261116 (160 rounds), 2026-11-17/seed 20261117 (156 rounds)
+08:49:38 ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+08:49:38 upload file: D:\ML RACE\race ver\race_live\out\submission_race_1118.csv
+08:49:38 
+08:49:38 checks:
+08:49:38 upload file written: D:\ML RACE\race ver\race_live\out\submission_race_1118.csv

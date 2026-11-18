@@ -1,0 +1,41 @@
+(1) correlation of pbar (market view) and of m (realised) with each input, 2022-2026; last column: the stock view beta tilt B
+         input  pbar~ val  pbar~ hold  pbar~ post  m~ val  m~ hold  m~ post  B~ all
+  us_gspc_ret1     -0.046      -0.001       0.042  -0.038   -0.067   -0.215  -0.117
+  us_ixic_ret1     -0.058       0.004       0.046  -0.033   -0.070   -0.153  -0.117
+     night_ret     -0.030      -0.025      -0.025  -0.065   -0.051   -0.208  -0.069
+    us_vix_chg      0.052      -0.041      -0.084  -0.021    0.035    0.206   0.110
+        us_vix     -0.080      -0.142      -0.280  -0.043    0.013    0.015   0.220
+     twii_ret1      0.416       0.535       0.534   0.131    0.115   -0.152   0.228
+     ks11_ret1      0.353       0.376       0.459   0.091    0.112   -0.121   0.284
+          txoi      0.172       0.292       0.010   0.054    0.031    0.037  -0.145
+      txoi_chg      0.646       0.613       0.430   0.064    0.126   -0.014   0.267
+     txoi_chg5      0.573       0.499       0.443   0.083    0.092   -0.192   0.171
+mkt_intra_prev     -0.102      -0.144      -0.210   0.030   -0.071    0.111  -0.249
+   mkt_intra_5     -0.045      -0.170      -0.297  -0.006   -0.090   -0.117  -0.247
+  mkt_intra_20     -0.155      -0.077      -0.066   0.007   -0.071   -0.117  -0.176
+  mkt_gap_prev      0.474       0.604       0.650   0.114    0.215   -0.131   0.370
+ mkt_ret1_prev      0.278       0.439       0.409   0.105    0.146   -0.035   0.134
+  breadth_prev     -0.043      -0.189      -0.297  -0.008   -0.091    0.065  -0.204
+   mkt_absr_20      0.165       0.058       0.078  -0.019    0.050   -0.129   0.298
+       cal_tom     -0.044      -0.033      -0.014   0.054    0.054    0.237  -0.028
+
+    R^2 of pbar on these 18 market inputs (2022-01..2026-05): 0.759
+    standardised loadings (x1000): mkt_ret1_prev -140.1, mkt_gap_prev 121.7, mkt_intra_prev 80.9, txoi_chg 24.2, twii_ret1 19.1, txoi_chg5 18.5, txoi 10.0, us_ixic_ret1 -9.6, us_vix -9.3, mkt_absr_20 8.9
+
+(2) mean Top50 intraday return (bp) by quintile of the overnight move (quintiles within each period)
+  night_ret:
+period   Q1    Q2   Q3    Q4    Q5   n  Q5-Q1
+   pre  7.7 -12.1  2.2  -4.5  -7.7 488  -15.3
+   val  4.7  -0.7 -7.3  -2.4  -5.4 727  -10.1
+  hold -7.7 -11.7  2.2 -12.9  -8.0 338   -0.3
+  post 21.8  30.4 -0.7 -17.4 -11.5  99  -33.3
+  us_gspc_ret1:
+period    Q1   Q2    Q3   Q4    Q5   n  Q5-Q1
+   pre  -5.9  7.1  -1.1 -9.3  -4.5 487    1.4
+   val  -1.1  3.1 -11.4  2.5  -4.2 727   -3.1
+  hold -15.0 -5.4 -13.0 -5.5   1.5 338   16.5
+  post  52.1  1.2 -39.3 16.3 -11.0  99  -63.1
+
+(3) beta tilt B_t of the stock view (v4 rule): mean by period and relation to the market inputs
+    mean B: val -0.350, hold -0.210, post -0.243, all22 -0.301
+    corr(B, pbar) 0.459; corr(B, m) 0.019; mean m by period (bp): val -2.22, hold -7.58, post 4.58, all22 -3.20

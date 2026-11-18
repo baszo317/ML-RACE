@@ -1,0 +1,31 @@
+      date                                                   source  AR_bp  timing_bp  xsec_bp  share1  hits  mkt_bp  always_down_bp  prev_day_bp
+2026-10-01                       as-of rebuild (W0 had no file yet)  27.28      17.34     9.94    0.68    30   48.17          -48.17       -69.88
+2026-10-02                       as-of rebuild (W0 had no file yet)  13.65      13.26     0.39    0.72    23   30.14          -30.14       -41.24
+2026-10-05                       as-of rebuild (W0 had no file yet) -44.26      -2.04   -42.22    0.70    16   -5.11            5.11       -44.63
+2026-10-06                       as-of rebuild (W0 had no file yet)   9.44       9.62    -0.18    0.64    27   34.36          -34.36       -11.60
+2026-10-07                       as-of rebuild (W0 had no file yet)   8.51       6.42     2.09    0.62    29   26.77          -26.77        62.19
+2026-10-08                       as-of rebuild (W0 had no file yet)  -4.04       1.29    -5.33    0.60    26    6.44           -6.44       -44.71
+2026-10-12                       as-of rebuild (W0 had no file yet)  35.14      30.56     4.57    0.62    27  127.34         -127.34       -77.67
+2026-10-13                       as-of rebuild (W0 had no file yet)  85.64      28.64    57.00    0.62    37  119.33         -119.33        68.09
+2026-10-14                       as-of rebuild (W0 had no file yet)   4.00      10.14    -6.14    0.60    30   50.69          -50.69        69.31
+2026-10-15                       as-of rebuild (W0 had no file yet) 104.43      -4.94   109.38    0.56    34  -41.18           41.18       -16.43
+2026-10-16                       as-of rebuild (W0 had no file yet)  67.68      20.68    47.00    0.66    33   64.62          -64.62       -41.52
+2026-10-19                       as-of rebuild (W0 had no file yet) -34.94       3.44   -38.38    0.58    16   21.50          -21.50       -71.85
+2026-10-20                       as-of rebuild (W0 had no file yet)  23.09      -3.22    26.31    0.58    28  -20.13           20.13         4.59
+2026-10-21                       as-of rebuild (W0 had no file yet) 138.32      -4.82   143.14    0.58    41  -30.10           30.10       -35.58
+2026-10-22                       as-of rebuild (W0 had no file yet) 156.03      -6.04   162.07    0.52    38 -151.02          151.02       155.61
+2026-10-27                                                your file -69.80     -25.75   -44.05    0.62    19 -107.30          107.30        47.95
+2026-10-28                                                your file  36.15      10.30    25.85    0.66    26   32.20          -32.20       -56.70
+2026-10-29                                                your file 125.64     -17.09   142.73    0.58    34 -106.81          106.81       -86.12
+2026-10-30                          your file (made 11/1 for 10/30)  29.62      19.13    10.49    0.62    31   79.71          -79.71       -19.18
+2026-11-02                                                your file -61.11       8.52   -69.63    0.70    14   21.31          -21.31       -81.74
+2026-11-03                                                your file -20.52    -116.86    96.33    0.72    20 -265.59          265.59       -63.21
+2026-11-04 as-of rerun of daily_v11 + custom_v11 (no file that day) -30.00     -48.03    18.03    0.72    23 -109.16          109.16        73.95
+2026-11-05 as-of rerun of daily_v11 + custom_v11 (no file that day)  59.87     -53.14   113.01    0.60    23 -265.71          265.71       140.68
+
+10/01-10/22 (as-of rebuild)        15 d  W0 total +0.058997 ( +589.97 bp)  avg  +39.33  sd  59.26  | Always down avg  -18.79  Previous day avg   -6.36  | days > 0: 12
+10/27-11/05 (after W0 was chosen)   8 d  W0 total +0.006985 (  +69.85 bp)  avg   +8.73  sd  66.41  | Always down avg  +90.17  Previous day avg   -5.55  | days > 0: 4
+  of which your own files           6 d  W0 total +0.003998 (  +39.98 bp)  avg   +6.66  sd  73.12  | Always down avg  +57.75  Previous day avg  -43.17  | days > 0: 3
+October 10/01-10/30                19 d  W0 total +0.071159 ( +711.59 bp)  avg  +37.45  sd  61.72  | Always down avg   -9.45  Previous day avg  -11.02  | days > 0: 15
+November 11/02-11/05                4 d  W0 total -0.005176 (  -51.76 bp)  avg  -12.94  sd  51.54  | Always down avg +154.79  Previous day avg  +17.42  | days > 0: 1
+all 10/01-11/05                    23 d  W0 total +0.065982 ( +659.82 bp)  avg  +28.69  sd  62.13  | Always down avg  +19.11  Previous day avg   -6.07  | days > 0: 16

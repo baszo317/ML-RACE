@@ -1,0 +1,153 @@
+v13_eval.py  2026-11-05 21:43  units: D:\ML RACE\v13\cache\seq_raw_test   [TEST: 1 epoch, 20,000 rows, 3 Optuna trials -- numbers mean nothing]
+  LSTM-R : 6 of 6 units (this run)
+  CNN-R  : 6 of 6 units (this run)
+  F-LOAM : 6 of 6 units (this run)
+
+best LSTM / CNN epoch of each seed (early stopping on the last 120 days of the window; cap 30) and minutes per unit:
+                   rows best_epochs  min_per_unit
+kind  fold                                       
+floam 2022-01-01  20000           1           0.2
+      2023-01-01  20000           1           0.7
+      2024-01-01  20000           1           0.3
+      2025-01-01  20000           1           0.3
+      2026-01-01  20000           1           0.3
+      2026-06-01  20000           1           0.3
+lstm  2022-01-01  20000           1           0.3
+      2023-01-01  20000           1           0.2
+      2024-01-01  20000           1           0.3
+      2025-01-01  20000           1           0.3
+      2026-01-01  20000           1           0.3
+      2026-06-01  20000           1           0.3
+tcn   2022-01-01  20000           1           0.3
+      2023-01-01  20000           1           0.4
+      2024-01-01  20000           1           0.4
+      2025-01-01  20000           1           0.4
+      2026-01-01  20000           1           0.4
+      2026-06-01  20000           1           0.4
+total minutes: F-LOAM 2, LSTM-R 2, CNN-R 2  (threads per unit: [2])
+F-LOAM Optuna choices (all units): num_leaves 30: 4, 50: 2; learning_rate median 0.056 [0.012, 0.089]; bagging_freq 1: 2, 10: 4; rounds median 6 (lgb_res settings: 1)
+  validation log-loss gain of Optuna over lgb_res settings (same 120 days it was tuned on): median 0.00091
+
+PART 0 -- rebuild check (val / hold / post / all, bp/day)
+  v9   rebuilt 13.99 / 14.33 / 16.59 / 14.31   published 13.99 / 14.33 / 16.59 / 14.31   same
+  v11  rebuilt 14.60 / 14.34 / 20.35 / 15.02   published 14.60 / 14.34 / 20.35 / 15.02   same
+  W0   rebuilt 11.79 / 10.35 / 21.71 / 12.22   published 11.79 / 10.35 / 21.71 / 12.22   same
+
+PART 1 -- own daily rank IC with the excess return (all 100 stocks; report only)
+                                  member    val   hold   post    all
+                                  LSTM-R 0.0817 0.0771 0.1142 0.0831
+                                   CNN-R 0.0682 0.0591 0.0579 0.0647
+                                  F-LOAM 0.0861 0.0380 0.0842 0.0720
+F-LOAM without Optuna (lgb_res settings) 0.0786 0.0589 0.0589 0.0712
+                  F-LOAM own LSTM (2x50) 0.0980 0.0827 0.1135 0.0949
+                             LSTM-B (v8) 0.1028 0.0982 0.1006 0.1013
+                              GRU-B (v8) 0.0998 0.0988 0.0986 0.0994
+                                 lgb_res 0.1108 0.0996 0.0806 0.1050
+                        X1 (lgb_res_xrN) 0.1113 0.1037 0.0965 0.1078
+                  stock MLPs (mean of 4) 0.1119 0.1044 0.0812 0.1071
+                    SVM (exact, reg_svm) 0.1144 0.1018 0.0975 0.1093
+                      v11 stock view p_e 0.1140 0.1088 0.0900 0.1105
+
+  paired daily IC differences, mean (NW t):
+    LSTM-R                     - LSTM-B (v8)               : val -0.0211 (-4.91)  hold -0.0211 (-1.96)  post +0.0135 (0.55)  all -0.0182 (-3.87)
+    CNN-R                      - LSTM-B (v8)               : val -0.0346 (-4.82)  hold -0.0390 (-4.05)  post -0.0427 (-2.17)  all -0.0366 (-6.61)
+    LSTM-R                     - stock MLPs (mean of 4)    : val -0.0302 (-5.63)  hold -0.0274 (-2.37)  post +0.0330 (1.17)  all -0.0240 (-4.38)
+    LSTM-R                     - CNN-R                     : val +0.0135 (2.15)  hold +0.0179 (2.56)  post +0.0563 (2.13)  all +0.0184 (3.65)
+    F-LOAM                     - lgb_res                   : val -0.0246 (-5.50)  hold -0.0616 (-6.78)  post +0.0037 (0.27)  all -0.0330 (-7.75)
+    F-LOAM without Optuna (lgb - lgb_res                   : val -0.0322 (-6.31)  hold -0.0407 (-4.14)  post -0.0217 (-1.36)  all -0.0337 (-7.52)
+    F-LOAM                     - F-LOAM without Optuna (lgb: val +0.0075 (2.03)  hold -0.0209 (-2.20)  post +0.0253 (2.37)  all +0.0008 (0.20)
+    F-LOAM                     - X1 (lgb_res_xrN)          : val -0.0252 (-5.45)  hold -0.0656 (-7.22)  post -0.0122 (-1.01)  all -0.0358 (-8.38)
+    F-LOAM own LSTM (2x50)     - LSTM-B (v8)               : val -0.0048 (-1.68)  hold -0.0154 (-1.53)  post +0.0128 (0.60)  all -0.0064 (-1.63)
+
+  within-day rank correlation (mean over days, all periods):
+    LSTM-R : v11 p_e 0.579, lgb_res 0.545, X1 0.558, MLPs 0.561, LSTM-B 0.630
+    CNN-R  : v11 p_e 0.528, lgb_res 0.495, X1 0.495, MLPs 0.518, LSTM-B 0.482
+    F-LOAM : v11 p_e 0.596, lgb_res 0.574, X1 0.559, MLPs 0.581, LSTM-B 0.567
+    for scale: lgb_res-X1 0.910, lgb_res-MLPs 0.830, LSTM-R-CNN-R 0.582
+
+  two-signal diagnostics (README_v13 3.2; x = v11 stock view, z = candidate; ranks, averaged over days, approximate):
+    adding a little of z raises the IC iff IC_z > rho * IC_x;  best weight w* and best IC of a mix of the two
+    LSTM-R               rho 0.579  val: IC_z-rho*IC_x +0.0097, w* 0.13, best IC 0.1147 (now 0.1140)  hold: IC_z-rho*IC_x +0.0214, w* 0.24, best IC 0.1116 (now 0.1088)  post: IC_z-rho*IC_x +0.0761, w* 0.65, best IC 0.1231 (now 0.0900)
+    CNN-R                rho 0.528  val: IC_z-rho*IC_x +0.0039, w* 0.05, best IC 0.1141 (now 0.1140)  hold: IC_z-rho*IC_x +0.0082, w* 0.09, best IC 0.1092 (now 0.1088)  post: IC_z-rho*IC_x +0.0156, w* 0.20, best IC 0.0917 (now 0.0900)
+    F-LOAM               rho 0.596  val: IC_z-rho*IC_x +0.0057, w* 0.10, best IC 0.1143 (now 0.1140)  hold: IC_z-rho*IC_x -0.0029, w* -0.03, best IC 0.1088 (now 0.1088)  post: IC_z-rho*IC_x +0.0354, w* 0.44, best IC 0.0994 (now 0.0900)
+    LSTM-B (v8)          rho 0.819  val: IC_z-rho*IC_x +0.0071, w* 0.20, best IC 0.1148 (now 0.1140)  hold: IC_z-rho*IC_x +0.0135, w* 0.29, best IC 0.1109 (now 0.1088)  post: IC_z-rho*IC_x +0.0275, w* 0.77, best IC 0.1016 (now 0.0900)
+    GRU-B (v8)           rho 0.826  val: IC_z-rho*IC_x +0.0041, w* 0.12, best IC 0.1143 (now 0.1140)  hold: IC_z-rho*IC_x +0.0120, w* 0.29, best IC 0.1106 (now 0.1088)  post: IC_z-rho*IC_x +0.0247, w* 0.73, best IC 0.0998 (now 0.0900)
+    SVM (exact, reg_svm) rho 0.885  val: IC_z-rho*IC_x +0.0101, w* 0.52, best IC 0.1167 (now 0.1140)  hold: IC_z-rho*IC_x +0.0089, w* 0.29, best IC 0.1101 (now 0.1088)  post: IC_z-rho*IC_x +0.0276, w* 0.66, best IC 0.1001 (now 0.0900)
+  rank IC of the whole stock view: v11 0.1140 / 0.1088 / 0.0900 / 0.1105
+                                   v11 + LSTM-R                 0.1107 / 0.1100 / 0.1065 / 0.1101
+                                   v11 + CNN-R                  0.1098 / 0.1060 / 0.0891 / 0.1069
+                                   v11 + LSTM-R + CNN-R         0.1083 / 0.1048 / 0.1037 / 0.1069
+                                   v11 + F-LOAM (LightGBM part) 0.1133 / 0.1071 / 0.0925 / 0.1097
+                                   v11 + all three              0.1075 / 0.1027 / 0.1049 / 0.1059
+
+PART 2 -- the rules, bp/day (NW t)
+  PREREG_v13.md (LSTM-R, CNN-R as new families). Official decision = the cloud run of 2026-11-05 (results\v13_eval.txt):
+    v11 + LSTM-R - v11: val -1.06 (-2.02)  hold -0.63 (-0.64)  post +0.16 (0.05)  all -0.83 (-1.66)   11/5: val -0.19 -> not selected; re-run here agrees (val <= 0)
+    v11 + CNN-R  - v11: val -0.62 (-1.07)  hold -0.57 (-0.53)  post -2.36 (-0.87)  all -0.75 (-1.42)   11/5: val -0.02 -> not selected; re-run here agrees (val <= 0)
+  PREREG_v13b.md (F-LOAM in the LightGBM part: (lgb_res + X1 + F-LOAM) / 3). LSTM-R and CNN-R are not selected (11/5),
+  so F-LOAM is judged alone:
+    v11 + F-LOAM - v11: val +0.78 (2.13)  hold -0.30 (-0.47)  post +1.15 (0.77)  all +0.50 (1.54)   -> val > 0: selected
+    hold or post <= 0 -> NOT PASSED: v9, v11 and W0 stay as they are
+
+PART 3 -- report only, each minus its base (bp/day, NW t)
+  W0 + LSTM-R                                - W0  : val -0.79 (-1.16)  hold -2.41 (-2.19)  post +0.54 (0.17)  all -1.14 (-1.90)
+  W0 + CNN-R                                 - W0  : val +0.09 (0.15)  hold -2.57 (-2.37)  post -0.57 (-0.25)  all -0.74 (-1.40)
+  W0 + LSTM-R + CNN-R                        - W0  : val -0.76 (-1.06)  hold -3.64 (-2.89)  post -0.79 (-0.26)  all -1.60 (-2.50)
+  v9 + LSTM-R                                - v9  : val -0.37 (-0.66)  hold -0.66 (-0.73)  post -0.58 (-0.21)  all -0.47 (-0.95)
+  v9 + CNN-R                                 - v9  : val -0.39 (-0.65)  hold -0.40 (-0.38)  post -1.57 (-0.67)  all -0.49 (-0.94)
+  v11, LSTM-R in the LightGBM part           - v11 : val -0.08 (-0.22)  hold -0.50 (-0.77)  post -0.10 (-0.05)  all -0.21 (-0.59)
+  v11, CNN-R in the LightGBM part            - v11 : val -0.14 (-0.34)  hold -0.75 (-1.16)  post +0.24 (0.11)  all -0.28 (-0.77)
+  v11 + LSTM-R + CNN-R                       - v11 : val -1.49 (-2.31)  hold -1.50 (-1.22)  post +0.52 (0.17)  all -1.32 (-2.20)
+  v11 + LSTM-B (v8)                          - v11 : val -0.30 (-0.73)  hold -1.38 (-2.20)  post +1.68 (0.87)  all -0.45 (-1.24)
+  v11 + GRU-B (v8)                           - v11 : val -0.12 (-0.34)  hold +0.16 (0.22)  post -0.90 (-0.48)  all -0.10 (-0.30)
+  W0 + F-LOAM (LightGBM part)                - W0  : val +0.40 (0.91)  hold -0.86 (-1.34)  post -1.83 (-0.82)  all -0.15 (-0.40)
+  v9 + F-LOAM (LightGBM part)                - v9  : val +0.79 (1.75)  hold -1.68 (-1.98)  post +0.23 (0.11)  all +0.03 (0.07)
+  v11, F-LOAM as a new family                - v11 : val +0.33 (0.69)  hold -0.85 (-0.86)  post -0.13 (-0.06)  all -0.05 (-0.11)
+  v11, F-LOAM replaces lgb_res               - v11 : val +0.42 (1.05)  hold -0.80 (-1.04)  post +0.17 (0.09)  all +0.04 (0.12)
+  v11, F-LOAM without Optuna (LightGBM part) - v11 : val -0.23 (-0.67)  hold +0.15 (0.26)  post +1.10 (0.67)  all -0.00 (-0.02)
+  v11 + all three                            - v11 : val -1.15 (-1.74)  hold -1.26 (-0.96)  post +0.30 (0.10)  all -1.06 (-1.71)
+  W0 + all three                             - W0  : val -0.07 (-0.10)  hold -5.39 (-3.91)  post -2.10 (-0.59)  all -1.79 (-2.55)
+
+  by year, v11 + candidate - v11 (bp/day, NW t):
+    LSTM-R                 2022 -0.44 (-0.46)  2023 -2.50 (-2.93)  2024 -0.26 (-0.31)  2025 -0.14 (-0.13)  2026-01..05 -1.90 (-0.85)  post +0.16 (0.05)
+    CNN-R                  2022 +0.00 (0.00)  2023 -1.12 (-1.23)  2024 -0.76 (-0.69)  2025 +0.04 (0.04)  2026-01..05 -2.14 (-0.87)  post -2.36 (-0.87)
+    F-LOAM (LightGBM part) 2022 +0.64 (1.27)  2023 +0.62 (0.92)  2024 +1.08 (1.52)  2025 -0.95 (-1.42)  2026-01..05 +1.37 (0.96)  post +1.15 (0.77)
+
+  2026-10-01 .. 10-22 (15 days, information only):
+    v11 + LSTM-R                   - v11 : 2026-10-01..10-22 +1.88 (0.36)
+    v11 + CNN-R                    - v11 : 2026-10-01..10-22 +8.09 (1.58)
+    W0 + LSTM-R                    - W0  : 2026-10-01..10-22 -3.82 (-0.72)
+    W0 + CNN-R                     - W0  : 2026-10-01..10-22 +9.28 (1.62)
+    v11 + F-LOAM (LightGBM part)   - v11 : 2026-10-01..10-22 +2.07 (2.20)
+    W0 + F-LOAM (LightGBM part)    - W0  : 2026-10-01..10-22 +5.98 (1.00)
+
+  power of the rules (normal approximation, daily difference sd and days of each period, v11 + candidate - v11):
+    LSTM-R : daily sd val 14.9 bp (727 days), hold 18.7 bp (338 days), post 30.2 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.23, +0.5 -> 0.32, +1.0 -> 0.51
+    CNN-R  : daily sd val 15.3 bp (727 days), hold 18.4 bp (338 days), post 26.5 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.24, +0.5 -> 0.32, +1.0 -> 0.52
+    F-LOAM : daily sd val 10.0 bp (727 days), hold 12.1 bp (338 days), post 15.8 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.31, +0.5 -> 0.44, +1.0 -> 0.69
+
+Top50 bp/day (walk-forward 2022-01 .. 2026-10)
+                                    config   val  hold  post   all    sd  timing  xsec  P19>0
+                                        v9 13.99 14.33 16.59 14.31 48.26    1.76 12.55   0.93
+                                       v11 14.60 14.34 20.35 15.02 48.00    2.76 12.25   0.94
+                                        W0 11.79 10.35 21.71 12.22 38.40   -0.89 13.10   0.91
+                              v11 + LSTM-R 13.55 13.71 20.50 14.19 52.19    2.87 11.32   0.93
+                               v11 + CNN-R 13.98 13.77 17.99 14.26 51.44    3.35 10.91   0.92
+                      v11 + LSTM-R + CNN-R 13.11 12.84 20.87 13.69 53.03    3.29 10.40   0.92
+              v11 + F-LOAM (LightGBM part) 15.39 14.04 21.49 15.52 49.24    3.08 12.43   0.95
+                           v11 + all three 13.45 13.08 20.65 13.95 53.46    3.46 10.49   0.91
+                               W0 + LSTM-R 11.00  7.95 22.25 11.07 41.09   -0.94 12.01   0.87
+                               v9 + LSTM-R 13.62 13.68 16.01 13.84 51.82    1.78 12.06   0.91
+          v11, LSTM-R in the LightGBM part 14.52 13.84 20.25 14.81 50.15    2.86 11.95   0.93
+                                W0 + CNN-R 11.88  7.79 21.14 11.48 38.84   -0.97 12.44   0.88
+                                v9 + CNN-R 13.60 13.93 15.02 13.82 51.11    2.03 11.79   0.89
+           v11, CNN-R in the LightGBM part 14.46 13.60 20.58 14.73 49.58    3.02 11.71   0.94
+                       W0 + LSTM-R + CNN-R 11.03  6.71 20.92 10.62 40.15   -0.61 11.23   0.88
+                         v11 + LSTM-B (v8) 14.30 12.96 22.02 14.57 48.99    2.79 11.78   0.93
+                          v11 + GRU-B (v8) 14.49 14.50 19.45 14.91 48.99    2.94 11.97   0.95
+               W0 + F-LOAM (LightGBM part) 12.19  9.50 19.88 12.06 38.19   -0.85 12.92   0.92
+               v9 + F-LOAM (LightGBM part) 14.78 12.66 16.82 14.34 48.79    1.78 12.56   0.91
+               v11, F-LOAM as a new family 14.94 13.49 20.22 14.97 50.20    3.32 11.64   0.93
+              v11, F-LOAM replaces lgb_res 15.02 13.55 20.52 15.06 48.87    3.05 12.02   0.95
+v11, F-LOAM without Optuna (LightGBM part) 14.38 14.49 21.44 15.01 49.44    2.78 12.23   0.94
+                            W0 + all three 11.71  4.97 19.61 10.43 40.35   -0.77 11.20   0.88

@@ -1,0 +1,14 @@
+02:16:39 panel (166346, 210), C 169, FUT 37 (dropped []), threads 2
+02:17:07 C.LU 2024-01-01 seed 1: best_iter 290, 28s
+02:17:07 harness check vs race_std C.LU 2024-01-01 seed 1: rows 24196/24196, max |diff| 0, best_iter 290 vs 290
+02:17:19 CF.LU 2022-01-01 seed 1: best_iter 163, 12s
+02:17:32 CF.LU 2022-01-01 seed 2: best_iter 215, 13s
+02:17:47 CF.LU 2022-01-01 seed 3: best_iter 186, 14s
+02:18:21 CF.LU 2023-01-01 seed 1: best_iter 424, 35s
+02:18:51 CF.LU 2023-01-01 seed 2: best_iter 405, 29s
+02:20:02 panel (166346, 210), C 169, FUT 37 (dropped []), threads 2
+02:20:31 CF.LU 2023-01-01 seed 3: best_iter 405, 29s
+02:20:55 CF.LU 2024-01-01 seed 1: best_iter 204, 24s
+02:21:28 CF.LU 2024-01-01 seed 2: best_iter 305, 33s
+02:21:54 CF.LU 2024-01-01 seed 3: best_iter 190, 26s
+02:21:54 done

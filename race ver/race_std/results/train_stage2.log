@@ -1,0 +1,119 @@
+15:22:40 stage 2: 96 units, 0 done, 96 to do
+15:23:36 ALL.LN 2026-06-01 seed1: done (35.3 s)
+15:23:44 ALL.LN 2026-06-01 seed2: done (43.0 s)
+15:24:03 ALL.LN 2026-06-01 seed3: done (26.8 s)
+15:24:04 ALL.LN 2026-01-01 seed1: done (19.7 s)
+15:24:25 ALL.LN 2026-01-01 seed2: done (21.7 s)
+15:24:25 ALL.LN 2026-01-01 seed3: done (21.5 s)
+15:24:47 ALLmU.LN 2026-06-01 seed2: done (21.7 s)
+15:24:50 ALLmU.LN 2026-06-01 seed1: done (25.4 s)
+15:25:04 ALLmU.LN 2026-01-01 seed1: done (13.5 s)
+15:25:09 ALLmU.LN 2026-06-01 seed3: done (22.0 s)
+15:25:16 ALLmU.LN 2025-01-01 seed1: done (12.1 s)
+15:25:20 UXRN9.LN 2026-06-01 seed1: done (11.1 s)
+15:25:21 stage 2: 12 / 96 units done
+15:25:28 stage 2: 96 units, 12 done, 84 to do
+15:26:05 ALL.LN 2025-01-01 seed1: done (17.1 s)
+15:26:20 ALL.LN 2025-01-01 seed2: done (15.3 s)
+15:26:38 ALL.LN 2025-01-01 seed3: done (17.3 s)
+15:26:51 ALLmU.LN 2026-01-01 seed2: done (12.4 s)
+15:27:03 ALLmU.LN 2026-01-01 seed3: done (12.6 s)
+15:27:36 C.LC 2026-06-01 seed0: done (108.4 s)
+15:27:51 ALLmU.LN 2025-01-01 seed2: done (14.4 s)
+15:28:05 ALLmU.LN 2025-01-01 seed3: done (14.3 s)
+15:28:22 UXRN9.LU 2026-06-01 seed1: done (78.4 s)
+15:28:22 stage 2: 21 / 96 units done
+15:28:28 stage 2: 96 units, 21 done, 75 to do
+15:30:43 C.LU 2025-01-01 seed2: done (114.7 s)
+15:30:49 C.LU 2025-01-01 seed1: done (121.1 s)
+15:31:02 UB.LU 2026-01-01 seed1: done (19.6 s)
+15:31:04 UXRN9.LN 2026-06-01 seed2: done (15.2 s)
+15:31:05 stage 2: 25 / 96 units done
+15:31:50 stage 2: 96 units, 25 done, 71 to do
+15:33:59 UXRN9.LU 2026-06-01 seed2: done (105.1 s)
+15:34:07 C.LU 2025-01-01 seed3: done (112.5 s)
+15:34:25 UB.LU 2026-01-01 seed2: done (17.9 s)
+15:34:40 UB.LU 2026-06-01 seed1: done (40.6 s)
+15:34:41 stage 2: 29 / 96 units done
+15:34:47 stage 2: 96 units, 29 done, 67 to do
+15:36:09 C.LC 2026-01-01 seed0: done (58.7 s)
+15:36:28 UXRN9.LU 2026-06-01 seed3: done (77.6 s)
+15:36:42 P.LP 2026-06-01 seed0: done (33.3 s)
+15:37:15 P.LP 2026-01-01 seed0: done (32.1 s)
+15:37:27 UXRN9.LN 2026-06-01 seed3: done (12.2 s)
+15:37:49 stage 2: 96 units, 34 done, 62 to do
+15:38:36 UXRN9.LU 2026-01-01 seed2: done (29.3 s)
+15:38:39 UXRN9.LU 2026-01-01 seed1: done (32.1 s)
+15:39:07 UXRN9.LU 2026-01-01 seed3: done (30.7 s)
+15:39:47 UXRN9.LU 2025-01-01 seed1: done (40.0 s)
+15:39:57 C.LC 2025-01-01 seed0: done (77.9 s)
+15:40:27 P.LP 2025-01-01 seed0: done (30.1 s)
+15:40:35 UXRN9.LU 2025-01-01 seed2: done (47.6 s)
+15:40:36 stage 2: 41 / 96 units done
+15:40:41 stage 2: 96 units, 41 done, 55 to do
+15:41:40 UXRN9.LU 2025-01-01 seed3: done (38.7 s)
+15:41:56 UB.LU 2026-06-01 seed2: done (54.7 s)
+15:42:13 UB.LU 2026-01-01 seed3: done (16.6 s)
+15:42:26 UXR9.LN 2026-06-01 seed1: done (13.4 s)
+15:42:38 UXR9.LN 2026-06-01 seed2: done (11.7 s)
+15:42:47 UB.LU 2026-06-01 seed3: done (66.8 s)
+15:42:52 UXR9.LN 2026-06-01 seed3: done (14.0 s)
+15:42:54 UXRN9.LN 2026-01-01 seed1: done (7.5 s)
+15:43:03 UXRN9.LN 2026-01-01 seed3: done (8.2 s)
+15:43:03 UXRN9.LN 2026-01-01 seed2: done (10.7 s)
+15:43:12 UXR9.LN 2026-01-01 seed1: done (9.6 s)
+15:43:16 UXR9.LN 2026-01-01 seed2: done (12.7 s)
+15:43:16 stage 2: 53 / 96 units done
+15:43:23 stage 2: 96 units, 53 done, 43 to do
+15:44:30 UB.LU 2025-01-01 seed2: done (46.5 s)
+15:44:39 UB.LU 2025-01-01 seed1: done (55.5 s)
+15:44:45 UXR9.LN 2026-01-01 seed3: done (6.1 s)
+15:44:53 UBN9.LN 2026-06-01 seed1: done (8.0 s)
+15:45:03 UB.LU 2025-01-01 seed3: done (33.2 s)
+15:45:03 UBN9.LN 2026-06-01 seed2: done (10.4 s)
+15:45:18 UBN9.LN 2026-06-01 seed3: done (14.7 s)
+15:45:24 UXRN9.LN 2025-01-01 seed1: done (20.2 s)
+15:45:30 UXRN9.LN 2025-01-01 seed2: done (12.1 s)
+15:45:35 UXRN9.LN 2025-01-01 seed3: done (10.8 s)
+15:45:40 UB9S.LN 2026-06-01 seed1: done (10.1 s)
+15:45:42 UB9S.LN 2026-06-01 seed2: done (7.7 s)
+15:45:50 UB9S.LN 2026-06-01 seed3: done (9.6 s)
+15:45:57 UXR9.LN 2025-01-01 seed1: done (14.6 s)
+15:46:00 UXR9.LN 2025-01-01 seed2: done (9.9 s)
+15:46:01 stage 2: 68 / 96 units done
+15:46:07 stage 2: 96 units, 68 done, 28 to do
+15:46:24 UBN9.LN 2026-01-01 seed1: done (6.9 s)
+15:46:30 UXR9.LN 2025-01-01 seed3: done (12.2 s)
+15:46:32 UBN9.LN 2026-01-01 seed2: done (7.7 s)
+15:46:35 UBN9.LN 2026-01-01 seed3: done (5.3 s)
+15:46:38 UB9S.LN 2026-01-01 seed1: done (5.4 s)
+15:46:44 UB9S.LN 2026-01-01 seed2: done (8.4 s)
+15:46:47 UB9S.LN 2026-01-01 seed3: done (8.9 s)
+15:46:57 UBN9.LN 2025-01-01 seed2: done (9.6 s)
+15:46:57 UBN9.LN 2025-01-01 seed1: done (13.2 s)
+15:47:06 UBN9.LN 2025-01-01 seed3: done (8.9 s)
+15:47:09 UB9S.LN 2025-01-01 seed1: done (12.0 s)
+15:47:17 UB9S.LN 2025-01-01 seed2: done (10.9 s)
+15:47:20 UB9S.LN 2025-01-01 seed3: done (10.8 s)
+15:47:25 M.LM 2026-06-01 seed2026: done (8.8 s)
+15:47:28 M.LM 2026-06-01 seed2027: done (8.3 s)
+15:47:32 M.LM 2026-06-01 seed2028: done (6.7 s)
+15:47:35 M.LM 2026-01-01 seed2026: done (6.6 s)
+15:47:39 M.LM 2026-01-01 seed2027: done (6.9 s)
+15:47:42 M.LM 2026-01-01 seed2028: done (6.8 s)
+15:47:46 M.LM 2025-01-01 seed2026: done (6.2 s)
+15:47:50 M.LM 2025-01-01 seed2027: done (7.0 s)
+15:47:51 M.LM 2025-01-01 seed2028: done (5.5 s)
+15:47:52 stage 2: 90 / 96 units done
+15:47:58 stage 2: 96 units, 90 done, 6 to do
+15:50:03 C.LU 2026-06-01 seed1: done (122.6 s)
+15:50:28 C.LU 2026-06-01 seed2: done (148.5 s)
+15:50:31 stage 2: 92 / 96 units done
+15:50:59 stage 2: 96 units, 92 done, 4 to do
+15:52:32 C.LU 2026-01-01 seed1: done (88.4 s)
+15:53:34 C.LU 2026-06-01 seed3: done (149.7 s)
+15:53:34 stage 2: 94 / 96 units done
+15:53:40 stage 2: 96 units, 94 done, 2 to do
+15:54:30 C.LU 2026-01-01 seed3: done (49.2 s)
+15:54:37 C.LU 2026-01-01 seed2: done (57.0 s)
+15:54:39 stage 2: 96 / 96 units done  ALL DONE

@@ -1,0 +1,35 @@
+[    8s] core panel (165346, 134)
+[    9s] extended panel (468668, 77) (303322 rows of extra stocks for mlp_res_B9)
+[    9s] labelled data up to 2026-10-22; parameters: w_T 0, lambda 0.5, T2 night weight 0.5, T3 extra 1s 5, X1 on -> files tagged 1027_wt0_lam0.5
+[    9s] next trading day 2026-10-28: ex-dividend announced for none of the stocks
+[   12s] mlp_raw_B9 for 2026-10-27: 10 models, trained up to 2026-10-16..2026-10-22
+[   12s] mlp_raw_xr9 for 2026-10-27: 10 models, trained up to 2026-10-16..2026-10-22
+[   12s] mlp_raw_w4_9 for 2026-10-27: 10 models, trained up to 2026-10-16..2026-10-22
+[   12s] tf_raw_B for 2026-10-27: 5 models, trained up to 2026-09-22..2026-10-22
+[   12s] mlp_res_B9 for 2026-10-27: 10 models, trained up to 2026-10-16..2026-10-22
+[   12s] mlp_res_xr9 for 2026-10-27: 10 models, trained up to 2026-10-16..2026-10-22
+[   12s] mlp_res_BN9 for 2026-10-27: 10 models, trained up to 2026-10-16..2026-10-22
+[   12s] mlp_res_xrN9 for 2026-10-27: 10 models, trained up to 2026-10-16..2026-10-22
+[   12s] lgb_res for 2026-10-27: 5 models, trained up to 2026-10-16..2026-10-22
+[   12s] lgb_res_xrN for 2026-10-27: 5 models, trained up to 2026-10-22..2026-10-22
+[   12s] 2026-10-27: T2 night z -1.01, sd(pbar) 0.0596, pbar 0.5128 -> 0.5429
+[   13s] [INFO] environment: python 3.13.17, pandas 3.0.5, numpy 2.5.3, torch 2.14.1+cu130, lightgbm 4.7.0, pyarrow 26.0.0
+[   13s] [INFO] parameters: w_T 0, lambda 0.5, T2 night weight 0.5, T3 extra 1s 5, X1 on (non-default: wt0, lam0.5)
+[   13s] [OK] 2026-10-27: newest labelled day 2026-10-22 = previous trading day
+[   13s] [OK] 2026-10-27: 109 input features present (largest missing share 0%)
+[   13s] [WARN] ex-dividend download did not succeed today; using the table fetched 2026-10-26 (1 trading day(s) ago) - fine, ex-dates are announced weeks ahead (run ..\v5\fetch_exdiv.py again later if you can)
+[   13s] [OK] 2026-10-27: TX night session present
+[   13s] [OK] mlp_raw_B9: newest model trained up to 2026-10-22
+[   13s] [OK] mlp_raw_xr9: newest model trained up to 2026-10-22
+[   13s] [OK] mlp_raw_w4_9: newest model trained up to 2026-10-22
+[   13s] [OK] tf_raw_B: newest model trained up to 2026-10-22
+[   13s] [OK] mlp_res_B9: newest model trained up to 2026-10-22
+[   13s] [OK] mlp_res_xr9: newest model trained up to 2026-10-22
+[   13s] [OK] mlp_res_BN9: newest model trained up to 2026-10-22
+[   13s] [OK] mlp_res_xrN9: newest model trained up to 2026-10-22
+[   13s] [OK] lgb_res: newest model trained up to 2026-10-22
+[   13s] [OK] lgb_res_xrN: newest model trained up to 2026-10-22
+[   13s] [OK] 2026-10-27: share of 1 = 0.62, pbar = 0.543, 50 Top50 stocks
+[   13s] wrote /home/claude/rerun1027/A/v11w0/submission_v11_1027_wt0_lam0.5.csv: 50 stocks x 1 date(s), share of 1 = 0.620
+[   13s] 2026-10-27: 7 of 50 predictions differ from v9 (submission_v9_1027.csv); share of 1 v9 0.76, v11 0.62
+[   13s] 2026-10-27: pbar v9 0.513 -> v11 0.543; share of 1 among the 50: before hedge 0.62, final 0.62; month start 0

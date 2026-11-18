@@ -1,0 +1,19 @@
+[INFO] environment: python 3.12.5, pandas 3.0.1, numpy 2.4.3, torch 2.14.1+cpu, lightgbm 4.7.0, pyarrow 26.0.0
+[INFO] parameters: w_T 0.5, lambda 0.75, T2 night weight 0.5, T3 extra 1s 5, X1 on
+[OK] 2026-10-29: newest labelled day 2026-10-28 = previous trading day
+[OK] 2026-10-29: 109 input features present (largest missing share 0%)
+[OK] ex-dividend table fetched today (0 Top100 announcements)
+[OK] 2026-10-29: TX night session present
+[OK] mlp_raw_B9: newest model trained up to 2026-10-28
+[OK] mlp_raw_xr9: newest model trained up to 2026-10-28
+[OK] mlp_raw_w4_9: newest model trained up to 2026-10-28
+[OK] tf_raw_B: newest model trained up to 2026-10-28
+[OK] mlp_res_B9: newest model trained up to 2026-10-28
+[OK] mlp_res_xr9: newest model trained up to 2026-10-28
+[OK] mlp_res_BN9: newest model trained up to 2026-10-28
+[OK] mlp_res_xrN9: newest model trained up to 2026-10-28
+[OK] lgb_res: newest model trained up to 2026-10-28
+[OK] lgb_res_xrN: newest model trained up to 2026-10-28
+[OK] 2026-10-29: share of 1 = 0.68, pbar = 0.514, 50 Top50 stocks
+[INFO] 2026-10-29: 3 of 50 predictions differ from v9 (submission_v9_1029.csv); share of 1 v9 0.62, v11 0.68
+[OK] U.S. data for 2026-10-29: zip data_2026-10-29.zip was packed 2026-10-29 07:00, after the U.S. close of the night before

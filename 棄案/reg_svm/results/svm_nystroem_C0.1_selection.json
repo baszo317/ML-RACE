@@ -1,0 +1,92 @@
+{
+ "name": "NysSVM_C0.1",
+ "rebuild_ok": true,
+ "selected": true,
+ "passed": false,
+ "v11 + SVM minus v11": {
+  "val": [
+   0.04552012192431496,
+   0.159918858171315
+  ],
+  "hold": [
+   -0.7148502744016959,
+   -1.602426972867229
+  ],
+  "post": [
+   0.9621914686985754,
+   0.6187251691257666
+  ],
+  "all": [
+   -0.09731040266979149,
+   -0.3784492847759602
+  ]
+ },
+ "folds": [
+  {
+   "fold": "2022-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C fixed at 0.1 (picked after seeing OOS: optimistic)",
+   "oos_ic": 0.09809882854505604,
+   "val_hinge": 0.9157882553056954,
+   "val_ic": 0.1425836457216923
+  },
+  {
+   "fold": "2023-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C fixed at 0.1 (picked after seeing OOS: optimistic)",
+   "oos_ic": 0.10055576513424938,
+   "val_hinge": 0.9405909518079141,
+   "val_ic": 0.08750852895015003
+  },
+  {
+   "fold": "2024-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C fixed at 0.1 (picked after seeing OOS: optimistic)",
+   "oos_ic": 0.13073847444232756,
+   "val_hinge": 0.9427371118004206,
+   "val_ic": 0.098424212342998
+  },
+  {
+   "fold": "2025-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C fixed at 0.1 (picked after seeing OOS: optimistic)",
+   "oos_ic": 0.09934671945961361,
+   "val_hinge": 0.9189786761334402,
+   "val_ic": 0.1274784314618673
+  },
+  {
+   "fold": "2026-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C fixed at 0.1 (picked after seeing OOS: optimistic)",
+   "oos_ic": 0.09889954299293087,
+   "val_hinge": 0.9600058055740999,
+   "val_ic": 0.0868252034625164
+  },
+  {
+   "fold": "2026-06-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C fixed at 0.1 (picked after seeing OOS: optimistic)",
+   "oos_ic": 0.08916884942164226,
+   "val_hinge": 0.9357768223271625,
+   "val_ic": 0.10182370384018559
+  }
+ ]
+}

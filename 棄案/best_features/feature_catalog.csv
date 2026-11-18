@@ -1,0 +1,124 @@
+﻿feature,group,source,timing,meaning
+ret1,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+ret5,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+ret20,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+intraday_ret,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+gap,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+y_mean5,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+range,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+clv,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+upper_shadow,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+lower_shadow,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+vol_ratio,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+amt_ratio,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+trades_ratio,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+avg_trade_size,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+RSI,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+close_SMA30,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+MACD_hist_norm,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+ATR_pct,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+BB_pctb,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+BB_width,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+vol_ratio_5_60,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+limit_up_prev,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+limit_dn_prev,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+streak_y,C_price_tech,competition market csv,t-1 close,price / volume / technical state of the previous day
+intra_bias_20,C_bias,competition market csv,t-1 close,rolling mean of past intraday returns (stock drift) and of past opening gaps
+intra_bias_60,C_bias,competition market csv,t-1 close,rolling mean of past intraday returns (stock drift) and of past opening gaps
+intra_bias_250,C_bias,competition market csv,t-1 close,rolling mean of past intraday returns (stock drift) and of past opening gaps
+intra_bias_exp,C_bias,competition market csv,t-1 close,rolling mean of past intraday returns (stock drift) and of past opening gaps
+gap_bias_20,C_bias,competition market csv,t-1 close,rolling mean of past intraday returns (stock drift) and of past opening gaps
+foreign_hold,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+foreign_hold_chg1,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+foreign_hold_chg5,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+foreign_net,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+foreign_net_5d,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+trust_net,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+trust_net_5d,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+dealer_self_net,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+dealer_self_net_5d,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+dealer_hedge_net,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+dealer_hedge_net_5d,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+foreign_streak,C_flows,competition market csv,t-1 (published after close),"institutional flows / foreign holding, scaled by 20d ADV"
+group,C_identity,manual sector map,static,"0 fin, 1 semiconductor, 2 electronics, 3 traditional/other"
+is_fin,C_identity,manual sector map,static,"0 fin, 1 semiconductor, 2 electronics, 3 traditional/other"
+mkt_intra_prev,C_xsection,competition market csv,t-1 close,yesterday market / sector intraday state and the stock residual
+breadth_prev,C_xsection,competition market csv,t-1 close,yesterday market / sector intraday state and the stock residual
+mkt_intra_5,C_xsection,competition market csv,t-1 close,yesterday market / sector intraday state and the stock residual
+sector_intra_prev,C_xsection,competition market csv,t-1 close,yesterday market / sector intraday state and the stock residual
+rel_intra_prev,C_xsection,competition market csv,t-1 close,yesterday market / sector intraday state and the stock residual
+us_vix,C_us,competition global csv,last U.S. close (before TW open),U.S. market overnight
+us_vix_chg,C_us,competition global csv,last U.S. close (before TW open),U.S. market overnight
+us_ixic_ret1,C_us,competition global csv,last U.S. close (before TW open),U.S. market overnight
+us_ixic_ret5,C_us,competition global csv,last U.S. close (before TW open),U.S. market overnight
+us_gspc_ret1,C_us,competition global csv,last U.S. close (before TW open),U.S. market overnight
+us_gspc_ret5,C_us,competition global csv,last U.S. close (before TW open),U.S. market overnight
+us_vix_chg_lag1,C_us,competition global csv,U.S. session before last,U.S. market two nights ago
+us_ixic_ret1_lag1,C_us,competition global csv,U.S. session before last,U.S. market two nights ago
+us_gspc_ret1_lag1,C_us,competition global csv,U.S. session before last,U.S. market two nights ago
+twii_ret1,C_tw_kr,competition global csv,t-1 close,TAIEX / KOSPI returns
+twii_ret5,C_tw_kr,competition global csv,t-1 close,TAIEX / KOSPI returns
+ks11_ret1,C_tw_kr,competition global csv,t-1 close,TAIEX / KOSPI returns
+ks11_ret5,C_tw_kr,competition global csv,t-1 close,TAIEX / KOSPI returns
+txoi,C_txoi,competition global csv,t-1 (after close),foreign net open interest in TX futures
+txoi_chg,C_txoi,competition global csv,t-1 (after close),foreign net open interest in TX futures
+txoi_chg5,C_txoi,competition global csv,t-1 (after close),foreign net open interest in TX futures
+beta_us,C_us,competition csv,t-1 / last U.S. close,"rolling sensitivity of the opening gap to Nasdaq, times the overnight move"
+beta_x_us,C_us,competition csv,t-1 / last U.S. close,"rolling sensitivity of the opening gap to Nasdaq, times the overnight move"
+beta_x_us_lag1,C_us,competition csv,t-1 / last U.S. close,"rolling sensitivity of the opening gap to Nasdaq, times the overnight move"
+dow,C_calendar,exchange calendar,known in advance,calendar / settlement effects
+pre_holiday,C_calendar,exchange calendar,known in advance,calendar / settlement effects
+post_holiday,C_calendar,exchange calendar,known in advance,calendar / settlement effects
+tdom,C_calendar,exchange calendar,known in advance,calendar / settlement effects
+turn_of_month,C_calendar,exchange calendar,known in advance,calendar / settlement effects
+settle_monthly,C_calendar,exchange calendar,known in advance,calendar / settlement effects
+nd_margin_util,N_margin,data/pit/margin,t-1 (available_from<=D),"margin utilisation, short/margin ratio, 5d changes"
+nd_short_to_margin,N_margin,data/pit/margin,t-1 (available_from<=D),"margin utilisation, short/margin ratio, 5d changes"
+nd_margin_chg_5,N_margin,data/pit/margin,t-1 (available_from<=D),"margin utilisation, short/margin ratio, 5d changes"
+nd_short_chg_5,N_margin,data/pit/margin,t-1 (available_from<=D),"margin utilisation, short/margin ratio, 5d changes"
+nd_margin_flow,N_margin,data/raw TaiwanStockMarginPurchaseShortSale,t-1 (next trading day),"daily margin/short flow vs ADV, credit day-trade (資券互抵) share of volume, margin-buy and short-sell share of volume"
+nd_short_flow,N_margin,data/raw TaiwanStockMarginPurchaseShortSale,t-1 (next trading day),"daily margin/short flow vs ADV, credit day-trade (資券互抵) share of volume, margin-buy and short-sell share of volume"
+nd_offset_ratio,N_margin,data/raw TaiwanStockMarginPurchaseShortSale,t-1 (next trading day),"daily margin/short flow vs ADV, credit day-trade (資券互抵) share of volume, margin-buy and short-sell share of volume"
+nd_offset_ratio_20,N_margin,data/raw TaiwanStockMarginPurchaseShortSale,t-1 (next trading day),"daily margin/short flow vs ADV, credit day-trade (資券互抵) share of volume, margin-buy and short-sell share of volume"
+nd_margin_buy_ratio,N_margin,data/raw TaiwanStockMarginPurchaseShortSale,t-1 (next trading day),"daily margin/short flow vs ADV, credit day-trade (資券互抵) share of volume, margin-buy and short-sell share of volume"
+nd_short_sell_ratio,N_margin,data/raw TaiwanStockMarginPurchaseShortSale,t-1 (next trading day),"daily margin/short flow vs ADV, credit day-trade (資券互抵) share of volume, margin-buy and short-sell share of volume"
+nd_tick_rel,N_rawprice,data/raw TaiwanStockPrice,t-1 close,"tick size relative to raw price, raw price level"
+nd_log_price,N_rawprice,data/raw TaiwanStockPrice,t-1 close,"tick size relative to raw price, raw price level"
+nd_earnings_yield,N_valuation,data/pit/per,t-1,"E/P, B/P, dividend yield"
+nd_book_to_price,N_valuation,data/pit/per,t-1,"E/P, B/P, dividend yield"
+nd_dividend_yield,N_valuation,data/pit/per,t-1,"E/P, B/P, dividend yield"
+nd_rev_yoy,N_revenue,data/pit/revenue,after the 10th-of-month filing deadline,monthly revenue growth / surprise / newly-released flag
+nd_rev_mom,N_revenue,data/pit/revenue,after the 10th-of-month filing deadline,monthly revenue growth / surprise / newly-released flag
+nd_rev_surprise,N_revenue,data/pit/revenue,after the 10th-of-month filing deadline,monthly revenue growth / surprise / newly-released flag
+nd_rev_fresh,N_revenue,data/pit/revenue,after the 10th-of-month filing deadline,monthly revenue growth / surprise / newly-released flag
+nd_foreign_20,N_dup_flows,"data/pit/flows, shareholding",t-1,"20-day institutional flows / holding change (same underlying source as the competition data, longer window)"
+nd_trust_20,N_dup_flows,"data/pit/flows, shareholding",t-1,"20-day institutional flows / holding change (same underlying source as the competition data, longer window)"
+nd_dealer_20,N_dup_flows,"data/pit/flows, shareholding",t-1,"20-day institutional flows / holding change (same underlying source as the competition data, longer window)"
+nd_foreign_ratio_chg_20,N_dup_flows,"data/pit/flows, shareholding",t-1,"20-day institutional flows / holding change (same underlying source as the competition data, longer window)"
+nd_exdiv_today,N_events,data/raw TaiwanStockDividendResult,scheduled (announced in advance),ex-dividend day / within 5 trading days before or after
+nd_exdiv_next5,N_events,data/raw TaiwanStockDividendResult,scheduled (announced in advance),ex-dividend day / within 5 trading days before or after
+nd_exdiv_prev5,N_events,data/raw TaiwanStockDividendResult,scheduled (announced in advance),ex-dividend day / within 5 trading days before or after
+nd_mkt_ret_20,N_mkt_taiex,data/pit/mkt_taiex,t-1,"TAIEX 20d return / volatility, market turnover vs its 20d mean"
+nd_mkt_vol_20,N_mkt_taiex,data/pit/mkt_taiex,t-1,"TAIEX 20d return / volatility, market turnover vs its 20d mean"
+nd_mkt_value_ratio,N_mkt_taiex,data/pit/mkt_taiex,t-1,"TAIEX 20d return / volatility, market turnover vs its 20d mean"
+nd_mkt_foreign_1,N_mkt_flows,data/pit/mkt_flows,t-1,market-wide institutional net buying (1d / 5d)
+nd_mkt_foreign_5,N_mkt_flows,data/pit/mkt_flows,t-1,market-wide institutional net buying (1d / 5d)
+nd_mkt_trust_1,N_mkt_flows,data/pit/mkt_flows,t-1,market-wide institutional net buying (1d / 5d)
+nd_mkt_trust_5,N_mkt_flows,data/pit/mkt_flows,t-1,market-wide institutional net buying (1d / 5d)
+nd_mkt_dealer_1,N_mkt_flows,data/pit/mkt_flows,t-1,market-wide institutional net buying (1d / 5d)
+nd_mkt_dealer_5,N_mkt_flows,data/pit/mkt_flows,t-1,market-wide institutional net buying (1d / 5d)
+nd_mkt_margin_chg_5,N_mkt_margin,data/pit/mkt_margin + raw total margin,t-1,market-wide margin / short balance changes
+nd_mkt_short_chg_5,N_mkt_margin,data/pit/mkt_margin + raw total margin,t-1,market-wide margin / short balance changes
+nd_mkt_margin_chg_1,N_mkt_margin,data/pit/mkt_margin + raw total margin,t-1,market-wide margin / short balance changes
+nd_mkt_short_chg_1,N_mkt_margin,data/pit/mkt_margin + raw total margin,t-1,market-wide margin / short balance changes
+nd_usdtwd_chg_1,N_fx,data/pit/mkt_fx,t-1,USD/TWD change (positive = TWD weaker)
+nd_usdtwd_chg_20,N_fx,data/pit/mkt_fx,t-1,USD/TWD change (positive = TWD weaker)
+nd_sox_ret_1,N_sox,data/pit/mkt_sox,last U.S. close (before TW open),Philadelphia semiconductor index overnight / two nights ago / minus Nasdaq
+nd_sox_ret_5,N_sox,data/pit/mkt_sox,last U.S. close (before TW open),Philadelphia semiconductor index overnight / two nights ago / minus Nasdaq
+nd_sox_ret_1_lag1,N_sox,data/pit/mkt_sox,last U.S. close (before TW open),Philadelphia semiconductor index overnight / two nights ago / minus Nasdaq
+nd_sox_rel_ixic,N_sox,data/pit/mkt_sox,last U.S. close (before TW open),Philadelphia semiconductor index overnight / two nights ago / minus Nasdaq
+nd_all_intra,N_breadth,data/pit/price (~478 listed stocks),t-1 close,"broad-market intraday return / breadth, small-vs-large spread"
+nd_all_breadth,N_breadth,data/pit/price (~478 listed stocks),t-1 close,"broad-market intraday return / breadth, small-vs-large spread"
+nd_all_intra_vw,N_breadth,data/pit/price (~478 listed stocks),t-1 close,"broad-market intraday return / breadth, small-vs-large spread"
+nd_small_minus_top,N_breadth,data/pit/price (~478 listed stocks),t-1 close,"broad-market intraday return / breadth, small-vs-large spread"
+nd_all_intra_5,N_breadth,data/pit/price (~478 listed stocks),t-1 close,"broad-market intraday return / breadth, small-vs-large spread"

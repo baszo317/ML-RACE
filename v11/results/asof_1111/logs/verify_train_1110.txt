@@ -1,0 +1,32 @@
+models (laptop vs retrained here):
+  lgb_res        2026-11-09_s26110901.pt  values compared   80, largest difference inf
+  lgb_res_xrN    2026-11-09_s26110901.pt  values compared  119, largest difference inf
+  mlp_raw_B9     2026-11-09_s26110901.pt  values compared    6, largest difference 6.41e-07
+  mlp_raw_B9     2026-11-09_s26110902.pt  values compared    6, largest difference 8.94e-08
+  mlp_raw_w4_9   2026-11-09_s26110901.pt  values compared    6, largest difference 3.17e-07
+  mlp_raw_w4_9   2026-11-09_s26110902.pt  values compared    6, largest difference 9.69e-08
+  mlp_raw_xr9    2026-11-09_s26110901.pt  values compared    6, largest difference 7.71e-07
+  mlp_raw_xr9    2026-11-09_s26110902.pt  values compared    6, largest difference 1.61e-06
+  mlp_res_B9     2026-11-09_s26110901.pt  values compared    6, largest difference 1.71e-07
+  mlp_res_B9     2026-11-09_s26110902.pt  values compared    6, largest difference 5.66e-07
+  mlp_res_BN9    2026-11-09_s26110901.pt  values compared    6, largest difference 2.02e-06
+  mlp_res_BN9    2026-11-09_s26110902.pt  values compared    6, largest difference 4.40e-07
+  mlp_res_xr9    2026-11-09_s26110901.pt  values compared    6, largest difference 1.27e-06
+  mlp_res_xr9    2026-11-09_s26110902.pt  values compared    6, largest difference 1.62e-06
+  mlp_res_xrN9   2026-11-09_s26110901.pt  values compared    6, largest difference 1.64e-06
+  mlp_res_xrN9   2026-11-09_s26110902.pt  values compared    6, largest difference 2.21e-06
+  tf_raw_B       2026-11-09_s26110901.pt  values compared   31, largest difference 1.12e-04
+11/10 files (laptop vs here):
+  v9/out/submission_v9_1110.csv: 0/1 identical True
+  v11/out/submission_v11_1110.csv: 0/1 identical True
+  v11/out/submission_v11_1110_wt0_lam0.5.csv: 0/1 identical True
+  v9/out/probabilities_v9_1110.csv: largest difference 5.2e-04 (score 2.6e-04, p_e 2.6e-04)
+  v11/out/probabilities_v11_1110.csv: largest difference 2.6e-04 (score 1.3e-04, p_e 1.3e-04)
+  v11/out/probabilities_v11_1110_wt0_lam0.5.csv: largest difference 2.6e-04 (score 1.3e-04, p_e 1.3e-04)
+
+LightGBM detail (the "inf" above only means the model text differs):
+  lgb_res: trees laptop 72 / here 71 (best round 72 / 71); feature min:max ranges differing in 3 of 67 features, largest relative difference 2.6e-16 (last digits of the feature values)
+  lgb_res_xrN: trees laptop 176 / here 176 (best round 176 / 176); feature min:max ranges differing in 3 of 106 features, largest relative difference 2.6e-16 (last digits of the feature values)
+  W0 11/10 p_e_mlp  |laptop - here|: median 0.0e+00, 90% 0.0e+00, max 0.0e+00
+  W0 11/10 p_e_lgb  |laptop - here|: median 5.1e-05, 90% 1.1e-04, max 2.6e-04
+  W0 11/10 score    |laptop - here|: median 2.8e-05, 90% 5.2e-05, max 1.3e-04

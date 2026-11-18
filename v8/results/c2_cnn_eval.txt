@@ -1,0 +1,41 @@
+rows: members 116353, CNN 116353; common 116353
+
+v4 rule with each market view, Top50 bp/day, walk-forward 2022-01..2026-10; d_/t_ = paired difference to the control
+                          config    val   hold   post  all22     sd  timing   xsec  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+control: (MLP + Transformer) / 2 13.220 13.949 12.632 13.382 49.595   1.550 11.832  0.911    NaN    NaN     NaN     NaN     NaN     NaN
+             C0 Transformer only 13.122 12.873 15.431 13.246 50.661   2.003 11.243  0.889 -0.098 -0.297  -1.076  -1.812   2.799   1.703
+              C1 (MLP + CNN) / 2 12.716 14.603 13.303 13.314 50.988   1.973 11.341  0.910 -0.504 -1.057   0.654   0.858   0.671   0.458
+C2 (MLP + Transformer + CNN) / 3 12.720 14.381 13.905 13.303 50.728   2.001 11.302  0.907 -0.500 -1.552   0.432   0.731   1.273   0.849
+                 (info) MLP only 12.523 13.959 11.119 12.820 49.340   1.232 11.589  0.895 -0.698 -2.040   0.010   0.018  -1.512  -1.351
+                 (info) CNN only 12.318 15.682 13.958 13.435 52.267   2.514 10.920  0.913 -0.902 -1.217   1.733   1.463   1.326   0.462
+
+Holm (3 tests) and hold > 0:
+  C0 Transformer only                val t -0.30 (needs 2.13), hold diff -1.08 -> do not adopt
+  C1 (MLP + CNN) / 2                 val t -1.06 (needs 1.96), hold diff +0.65 -> do not adopt
+  C2 (MLP + Transformer + CNN) / 3   val t -1.55 (needs 1.65), hold diff +0.43 -> do not adopt
+
+correlation of each pbar with the Top50 intraday return m:
+  control: (MLP + Transformer) / 2   val +0.110, hold +0.203, post -0.097, all22 +0.110
+  C0 Transformer only                val +0.113, hold +0.204, post -0.030, all22 +0.117
+  C1 (MLP + CNN) / 2                 val +0.114, hold +0.260, post -0.100, all22 +0.133
+  C2 (MLP + Transformer + CNN) / 3   val +0.117, hold +0.247, post -0.080, all22 +0.130
+  (info) MLP only                    val +0.099, hold +0.194, post -0.153, all22 +0.097
+  (info) CNN only                    val +0.113, hold +0.286, post -0.043, all22 +0.149
+
+correlation between the market views (daily pbar): MLP-Transformer 0.890, MLP-CNN 0.752, Transformer-CNN 0.764
+
+for information, static 2026-06-01..09-30:
+  control: (MLP + Transformer) / 2   AR   12.16  timing  -2.33  diff  +0.00 (t nan)
+  C0 Transformer only                AR   14.66  timing  -0.34  diff  +2.50 (t 1.40)
+  C1 (MLP + CNN) / 2                 AR   13.09  timing  -1.57  diff  +0.93 (t 0.55)
+  C2 (MLP + Transformer + CNN) / 3   AR   13.67  timing  -0.80  diff  +1.50 (t 0.86)
+  (info) MLP only                    AR   10.73  timing  -3.80  diff  -1.43 (t -1.10)
+  (info) CNN only                    AR   14.01  timing  -0.00  diff  +1.85 (t 0.55)
+
+for information, live 2026-10-01..10-22:
+  control: (MLP + Transformer) / 2   AR   15.26  timing  -5.17  diff  +0.00 (t nan)
+  C0 Transformer only                AR   19.74  timing  -0.93  diff  +4.48 (t 1.02)
+  C1 (MLP + CNN) / 2                 AR   14.48  timing  -7.04  diff  -0.78 (t -0.48)
+  C2 (MLP + Transformer + CNN) / 3   AR   15.24  timing  -5.55  diff  -0.03 (t -0.02)
+  (info) MLP only                    AR   13.31  timing  -7.50  diff  -1.95 (t -1.51)
+  (info) CNN only                    AR   13.67  timing  -6.51  diff  -1.59 (t -0.56)

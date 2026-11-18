@@ -1,0 +1,47 @@
+svm_exact_eval.py  2026-11-04 08:58  predictions: ../cache/svm_nystroem_C0.1  folds found: 6 of 6
+
+folds (C_tuned, g = chosen on the last 120 days of the window; C = used for the full fit):
+      fold  C_tuned   g   C  oos_ic
+2022-01-01      0.1 1.0 0.1  0.0981
+2023-01-01      0.1 1.0 0.1  0.1006
+2024-01-01      0.1 1.0 0.1  0.1307
+2025-01-01      0.1 1.0 0.1  0.0993
+2026-01-01      0.1 1.0 0.1  0.0989
+2026-06-01      0.1 1.0 0.1  0.0892
+
+rows: 116,353 (walk-forward 2022-01-03 .. 2026-10-22); SVM missing on 0 of them
+
+PART 0 -- rebuild check (val / hold / post / all, bp/day)
+  v9   rebuilt 13.99 / 14.33 / 16.59 / 14.31   published 13.99 / 14.33 / 16.59 / 14.31   same
+  v11  rebuilt 14.60 / 14.34 / 20.35 / 15.02   published 14.60 / 14.34 / 20.35 / 15.02   same
+  W0   rebuilt 11.79 / 10.35 / 21.71 / 12.22   published 11.79 / 10.35 / 21.71 / 12.22   same
+
+PART 1 -- NysSVM_C0.1: own daily rank IC (all 100 stocks) and within-day correlation (report only)
+                member    val   hold   post    all
+           NysSVM_C0.1 0.1098 0.0992 0.0892 0.1050
+               lgb_res 0.1108 0.0996 0.0806 0.1050
+      X1 (lgb_res_xrN) 0.1113 0.1037 0.0965 0.1078
+stock MLPs (mean of 4) 0.1119 0.1044 0.0812 0.1071
+  within-day correlation: NysSVM_C0.1-lgb_res 0.839, NysSVM_C0.1-X1 0.828, NysSVM_C0.1-MLPs 0.893; for scale: lgb_res-X1 0.927, lgb_res-MLPs 0.861
+  rank IC of the whole stock view: v11 0.1140 / 0.1088 / 0.0900 / 0.1105;  v11 + NysSVM_C0.1 0.1143 / 0.1086 / 0.0894 / 0.1105
+
+PART 2 -- the rule (PREREG_svm.md 3.1): v11 + NysSVM_C0.1 minus v11, bp/day (NW t)
+  val +0.05 (0.16)  hold -0.71 (-1.60)  post +0.96 (0.62)  all -0.10 (-0.38)
+  val > 0 -> selected; hold or post <= 0 -> not passed: v9 / v11 stay as they are
+
+PART 3 -- report only, each minus its base (bp/day, NW t)
+  v9 + NysSVM_C0.1             - v9  : val +0.68 (1.74)  hold -1.18 (-2.00)  post -0.63 (-0.33)  all +0.02 (0.07)
+  W0 + NysSVM_C0.1             - W0  : val +0.23 (0.66)  hold -0.52 (-0.78)  post +0.20 (0.10)  all +0.01 (0.02)
+  v11, NysSVM_C0.1 as a third part - v11 : val -0.37 (-0.96)  hold -0.42 (-0.63)  post +3.05 (2.45)  all -0.10 (-0.29)
+  v9, NysSVM_C0.1 as a third part - v9  : val +0.33 (0.86)  hold -0.50 (-0.82)  post +0.31 (0.18)  all +0.09 (0.26)
+
+Top50 bp/day (walk-forward 2022-01 .. 2026-10)
+                          config   val  hold  post   all    sd  timing  xsec  P19>0
+                              v9 13.99 14.33 16.59 14.31 48.26    1.76 12.55   0.93
+                             v11 14.60 14.34 20.35 15.02 48.00    2.76 12.25   0.94
+                              W0 11.79 10.35 21.71 12.22 38.40   -0.89 13.10   0.91
+               v11 + NysSVM_C0.1 14.65 13.63 21.31 14.92 47.97    2.83 12.09   0.94
+                v9 + NysSVM_C0.1 14.67 13.15 15.96 14.34 48.35    1.47 12.86   0.92
+                W0 + NysSVM_C0.1 12.02  9.83 21.91 12.22 38.68   -0.85 13.08   0.92
+v11, NysSVM_C0.1 as a third part 14.23 13.92 23.40 14.92 48.96    2.87 12.05   0.94
+ v9, NysSVM_C0.1 as a third part 14.32 13.83 16.90 14.40 49.29    1.71 12.68   0.91

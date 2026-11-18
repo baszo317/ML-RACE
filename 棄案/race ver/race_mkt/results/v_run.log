@@ -1,0 +1,44 @@
+02:12:39 model MB: 1418 OOS days to 2026-11-09 (5s)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:1620: RuntimeWarning: All-NaN slice encountered
+  return fnb._ureduce(a,
+/sessions/rcw-01mnyupywwtrsxtyxy7hd3wg/mnt/ML RACE/race ver/race_mkt/research/mktlib.py:405: RuntimeWarning: Mean of empty slice
+  self.mu = np.nanmean(Xc, axis=0); self.sd = np.nanstd(Xc, axis=0)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:2019: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+02:12:48 model MF: 1418 OOS days to 2026-11-09 (9s)
+02:12:52 model MFO: 1418 OOS days to 2026-11-09 (4s)
+02:12:52 model MS: 1418 OOS days to 2026-11-09 (1s)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:1620: RuntimeWarning: All-NaN slice encountered
+  return fnb._ureduce(a,
+/sessions/rcw-01mnyupywwtrsxtyxy7hd3wg/mnt/ML RACE/race ver/race_mkt/research/mktlib.py:405: RuntimeWarning: Mean of empty slice
+  self.mu = np.nanmean(Xc, axis=0); self.sd = np.nanstd(Xc, axis=0)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:2019: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+02:12:54 model MV: 1418 OOS days to 2026-11-09 (2s)
+race_mkt V (2025-01-02 .. 2026-11-09), 447 days; C.LU annual scores; candidates vs DL0
+
+cand  days      AR      t     sd  timing    xsec  ones  !=25    diff      t   holm  pass  years(diff)
+DL0    447   16.16   8.22   42.7   -0.03   16.19  24.5  0.28 
+P1     447   16.21   5.55   62.6    3.78   12.43  22.6  0.96   +0.05   0.02  1.000  None  2025:+1.85 2026:-2.09
+P2     447   16.53   5.89   61.9    4.58   11.96  23.1  0.97   +0.37   0.16  1.000  None  2025:+2.54 2026:-2.21
+P3     447   16.77   7.56   53.7    1.34   15.43  22.2  0.96   +0.61   0.42  1.000  None  2025:+1.59 2026:-0.57
+P4     447   17.63   7.03   59.3    3.03   14.60  24.6  0.96   +1.47   0.76  1.000  None  2025:+2.10 2026:+0.71
+P5     447   15.15   6.62   51.7    1.98   13.16  26.3  0.78   -1.02  -0.59  1.000  None  2025:+0.16 2026:-2.42
+P6     447   14.95   5.67   56.7    2.16   12.79  23.6  0.47   -1.21  -0.61  1.000  None  2025:+2.56 2026:-5.72
+P7     447   16.32   8.10   44.1   -0.06   16.38  24.2  0.55   +0.15   0.46  1.000  None  2025:+0.30 2026:-0.02
+P8     447   15.84   6.33   59.4    2.38   13.46  21.6  0.95   -0.32  -0.18  1.000  None  2025:+1.01 2026:-1.91
+
+ones (5/25/50/75/95 %) and the 19-day view (share of rolling 19-day means above 0/10/20/30/40 bp, worst)
+DL0   ones [22, 24, 25, 25, 25]  P19>0 0.972 >10 0.811 >20 0.259 >30 0.026 >40 0.007  worst19 -8.1
+P1    ones [6, 15, 23, 30, 38]  P19>0 0.902 >10 0.704 >20 0.329 >30 0.124 >40 0.035  worst19 -29.6
+P2    ones [6, 15, 24, 31, 39]  P19>0 0.914 >10 0.734 >20 0.382 >30 0.089 >40 0.026  worst19 -18.0
+P3    ones [12, 18, 22, 26, 32]  P19>0 0.960 >10 0.755 >20 0.336 >30 0.056 >40 0.007  worst19 -10.9
+P4    ones [14, 18, 24, 31, 38]  P19>0 0.951 >10 0.765 >20 0.420 >30 0.089 >40 0.016  worst19 -8.3
+P5    ones [15, 20, 25, 30, 40]  P19>0 0.935 >10 0.688 >20 0.296 >30 0.037 >40 0.002  worst19 -15.1
+P6    ones [6, 24, 25, 25, 39]  P19>0 0.942 >10 0.683 >20 0.219 >30 0.056 >40 0.030  worst19 -23.7
+P7    ones [21, 24, 25, 25, 26]  P19>0 0.970 >10 0.814 >20 0.289 >30 0.021 >40 0.005  worst19 -8.1
+P8    ones [8, 16, 22, 27, 34]  P19>0 0.904 >10 0.767 >20 0.338 >30 0.054 >40 0.007  worst19 -11.6
+
+D passed: none; adopted (D passed and V diff > 0): none
+
+OOS corr(mhat, m) on V: MB +0.112 MF +0.118 MFO +0.042 MS +0.057 MV +0.066

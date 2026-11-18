@@ -1,0 +1,1 @@
+2026-11-07 22:03:21 v15_train.py start: 78 units (B0 6, B1 6, B2 6, B3 6, B4 6, B5 6, C0 6, C1 6, C2 6, A1 6, A2 6, B6 6, A0 6), 0 to do; lightgbm 4.7.0, scikit-learn 1.8.0, torch 2.14.1+cpu, pandas 3.0.1, 8 logical cpus, workers 2 x 2 threads [TEST]

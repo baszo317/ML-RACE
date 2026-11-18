@@ -1,0 +1,62 @@
+race version (daily models), day to predict 2026-11-16 (written 2026-11-15 21:23:29)
+labelled data up to 2026-11-13; panel 166746 rows; C columns 169; missing non-ADR C values of the Top50 today 3.6% (yesterday 1.8%)
+pool: 2026-11-11/seed 20261111 (152 rounds), 2026-11-12/seed 20261112 (205 rounds), 2026-11-13/seed 20261113 (123 rounds)
+ones 25 (Top25 25, ex-dividend rule turned 0 to 0)
+upload file: /sessions/rcw-01mnyupzpguameg4ki57nu8x/mnt/ML RACE/race ver/race_live/out/submission_race_1116_early.csv
+
+checks:
+WARN  Nikkei has no row for 2026-11-16 yet (opens 08:00 Taipei; a holiday there is fine) -> its opening-gap feature is missing today
+WARN  KOSPI has no row for 2026-11-16 yet (opens 08:00 Taipei; a holiday there is fine) -> its opening-gap feature is missing today
+WARN  3 C columns are missing for every Top50 stock today but not yesterday: ['C__n225_gap', 'C__ks11_gap', 'C__asia_gap_mean']
+
+Top50 by probability:
+  1   2412 p 0.6170  1
+  2   1216 p 0.6014  1
+  3   3045 p 0.5957  1
+  4   5880 p 0.5908  1
+  5   4904 p 0.5896  1
+  6   2892 p 0.5789  1
+  7   2886 p 0.5715  1
+  8   5871 p 0.5672  1
+  9   2880 p 0.5662  1
+ 10   2890 p 0.5650  1
+ 11   2884 p 0.5645  1
+ 12   2912 p 0.5636  1
+ 13   2885 p 0.5608  1
+ 14   2059 p 0.5562  1
+ 15   2881 p 0.5539  1
+ 16   2002 p 0.5493  1
+ 17   2891 p 0.5457  1
+ 18   2882 p 0.5448  1
+ 19   3653 p 0.5396  1
+ 20   2207 p 0.5350  1
+ 21   2887 p 0.5303  1
+ 22   2308 p 0.5296  1
+ 23   2345 p 0.5292  1
+ 24   2382 p 0.5278  1
+ 25   6505 p 0.5168  1
+ 26   2330 p 0.5155  0
+ 27   2883 p 0.5121  0
+ 28   2383 p 0.5118  0
+ 29   3034 p 0.5085  0
+ 30   2603 p 0.5064  0
+ 31   3711 p 0.5064  0
+ 32   2379 p 0.5057  0
+ 33   2327 p 0.5016  0
+ 34   2317 p 0.5013  0
+ 35   3293 p 0.5012  0
+ 36   2303 p 0.5005  0
+ 37   2357 p 0.4979  0
+ 38   2301 p 0.4907  0
+ 39   2615 p 0.4863  0
+ 40   8069 p 0.4847  0
+ 41   2395 p 0.4840  0
+ 42   6669 p 0.4803  0
+ 43   3231 p 0.4732  0
+ 44   1301 p 0.4696  0
+ 45   1303 p 0.4687  0
+ 46   2609 p 0.4683  0
+ 47   2454 p 0.4591  0
+ 48   3008 p 0.4532  0
+ 49   3017 p 0.4527  0
+ 50   3661 p 0.4434  0

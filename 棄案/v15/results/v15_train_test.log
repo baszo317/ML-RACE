@@ -1,0 +1,82 @@
+2026-11-07 21:39:38 v15_train.py start: 78 units (B0 6, B1 6, B2 6, B3 6, B4 6, B5 6, C0 6, C1 6, C2 6, A1 6, A2 6, B6 6, A0 6), 78 to do; lightgbm 4.7.0, scikit-learn 1.8.0, torch 2.14.1+cpu, pandas 3.0.1, 8 logical cpus, workers 2 x 2 threads [TEST]
+2026-11-07 21:39:45 [1/78] B0 (lgb_res replica (control)) 2026-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.1 min
+2026-11-07 21:39:45 [2/78] B0 (lgb_res replica (control)) 2026-06-01 seed 1: 0.0 min, 1 rounds; elapsed 0.1 min
+2026-11-07 21:39:45 [3/78] B0 (lgb_res replica (control)) 2025-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.1 min
+2026-11-07 21:39:46 [4/78] B0 (lgb_res replica (control)) 2024-01-01 seed 1: 0.0 min, 57 rounds; elapsed 0.1 min
+2026-11-07 21:39:47 [5/78] B0 (lgb_res replica (control)) 2022-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.1 min
+2026-11-07 21:39:47 [6/78] B0 (lgb_res replica (control)) 2023-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.1 min
+2026-11-07 21:39:48 [7/78] B1 (sigma^0.5 weights (GLS)) 2026-06-01 seed 1: 0.0 min, 1 rounds; elapsed 0.1 min
+2026-11-07 21:39:48 [8/78] B1 (sigma^0.5 weights (GLS)) 2026-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.1 min
+2026-11-07 21:39:48 [9/78] B1 (sigma^0.5 weights (GLS)) 2025-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.2 min
+2026-11-07 21:39:49 [10/78] B1 (sigma^0.5 weights (GLS)) 2024-01-01 seed 1: 0.0 min, 34 rounds; elapsed 0.2 min
+2026-11-07 21:39:49 [11/78] B1 (sigma^0.5 weights (GLS)) 2022-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.2 min
+2026-11-07 21:39:50 [12/78] B1 (sigma^0.5 weights (GLS)) 2023-01-01 seed 1: 0.0 min, 59 rounds; elapsed 0.2 min
+2026-11-07 21:39:50 [13/78] B2 (Huber weights, cap 2 x day median |r|) 2026-06-01 seed 1: 0.0 min, 1 rounds; elapsed 0.2 min
+2026-11-07 21:39:50 [14/78] B2 (Huber weights, cap 2 x day median |r|) 2026-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.2 min
+2026-11-07 21:39:51 [15/78] B2 (Huber weights, cap 2 x day median |r|) 2025-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.2 min
+2026-11-07 21:39:52 [16/78] B2 (Huber weights, cap 2 x day median |r|) 2024-01-01 seed 1: 0.0 min, 56 rounds; elapsed 0.2 min
+2026-11-07 21:39:52 [17/78] B2 (Huber weights, cap 2 x day median |r|) 2023-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.2 min
+2026-11-07 21:39:52 [18/78] B2 (Huber weights, cap 2 x day median |r|) 2022-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.2 min
+2026-11-07 21:39:53 [19/78] B3 (3-day target) 2026-06-01 seed 1: 0.0 min, 2 rounds; elapsed 0.2 min
+2026-11-07 21:39:53 [20/78] B3 (3-day target) 2026-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.2 min
+2026-11-07 21:39:55 [21/78] B3 (3-day target) 2024-01-01 seed 1: 0.0 min, 28 rounds; elapsed 0.3 min
+2026-11-07 21:39:55 [22/78] B3 (3-day target) 2025-01-01 seed 1: 0.0 min, 47 rounds; elapsed 0.3 min
+2026-11-07 21:39:56 [23/78] B3 (3-day target) 2023-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.3 min
+2026-11-07 21:39:56 [24/78] B3 (3-day target) 2022-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.3 min
+2026-11-07 21:39:57 [25/78] B4 (5-day target) 2026-06-01 seed 1: 0.0 min, 3 rounds; elapsed 0.3 min
+2026-11-07 21:39:57 [26/78] B4 (5-day target) 2026-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.3 min
+2026-11-07 21:39:58 [27/78] B4 (5-day target) 2025-01-01 seed 1: 0.0 min, 43 rounds; elapsed 0.3 min
+2026-11-07 21:39:58 [28/78] B4 (5-day target) 2024-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.3 min
+2026-11-07 21:40:00 [29/78] B4 (5-day target) 2023-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.4 min
+2026-11-07 21:40:00 [30/78] B4 (5-day target) 2022-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.4 min
+2026-11-07 21:40:01 [31/78] B5 (no ex-dividend event rows) 2026-06-01 seed 1: 0.0 min, 2 rounds; elapsed 0.4 min
+2026-11-07 21:40:01 [32/78] B5 (no ex-dividend event rows) 2026-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.4 min
+2026-11-07 21:40:01 [33/78] B5 (no ex-dividend event rows) 2025-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.4 min
+2026-11-07 21:40:02 [34/78] B5 (no ex-dividend event rows) 2024-01-01 seed 1: 0.0 min, 27 rounds; elapsed 0.4 min
+2026-11-07 21:40:03 [35/78] B5 (no ex-dividend event rows) 2022-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.4 min
+2026-11-07 21:40:03 [36/78] B5 (no ex-dividend event rows) 2023-01-01 seed 1: 0.0 min, 60 rounds; elapsed 0.4 min
+2026-11-07 21:40:08 [37/78] C0 (mlp_res_xr9 replica (control)) 2026-01-01 seed 1: 0.1 min, best epoch 1; elapsed 0.5 min
+2026-11-07 21:40:08 [38/78] C0 (mlp_res_xr9 replica (control)) 2026-06-01 seed 1: 0.1 min, best epoch 1; elapsed 0.5 min
+2026-11-07 21:40:10 [39/78] C0 (mlp_res_xr9 replica (control)) 2024-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.5 min
+2026-11-07 21:40:10 [40/78] C0 (mlp_res_xr9 replica (control)) 2025-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.5 min
+2026-11-07 21:40:11 [41/78] C0 (mlp_res_xr9 replica (control)) 2022-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.5 min
+2026-11-07 21:40:11 [42/78] C0 (mlp_res_xr9 replica (control)) 2023-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.5 min
+2026-11-07 21:40:13 [43/78] C1 (multi-task MLP (D, D+1, D+2)) 2026-06-01 seed 1: 0.0 min, best epoch 1; elapsed 0.6 min
+2026-11-07 21:40:13 [44/78] C1 (multi-task MLP (D, D+1, D+2)) 2026-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.6 min
+2026-11-07 21:40:14 [45/78] C1 (multi-task MLP (D, D+1, D+2)) 2024-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.6 min
+2026-11-07 21:40:14 [46/78] C1 (multi-task MLP (D, D+1, D+2)) 2025-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.6 min
+2026-11-07 21:40:15 [47/78] C1 (multi-task MLP (D, D+1, D+2)) 2022-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.6 min
+2026-11-07 21:40:16 [48/78] C1 (multi-task MLP (D, D+1, D+2)) 2023-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.6 min
+2026-11-07 21:40:18 [49/78] C2 (supervised autoencoder + MLP) 2026-06-01 seed 1: 0.0 min, best epoch 1; elapsed 0.6 min
+2026-11-07 21:40:18 [50/78] C2 (supervised autoencoder + MLP) 2026-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.7 min
+2026-11-07 21:40:19 [51/78] C2 (supervised autoencoder + MLP) 2024-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.7 min
+2026-11-07 21:40:19 [52/78] C2 (supervised autoencoder + MLP) 2025-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.7 min
+2026-11-07 21:40:21 [53/78] C2 (supervised autoencoder + MLP) 2022-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.7 min
+2026-11-07 21:40:21 [54/78] C2 (supervised autoencoder + MLP) 2023-01-01 seed 1: 0.0 min, best epoch 1; elapsed 0.7 min
+2026-11-07 21:40:23 [55/78] A1 (Random Forest) 2026-06-01 seed 1: 0.0 min, leaf 4000; elapsed 0.7 min
+2026-11-07 21:40:23 [56/78] A1 (Random Forest) 2026-01-01 seed 1: 0.0 min, leaf 4000; elapsed 0.7 min
+2026-11-07 21:40:24 [57/78] A1 (Random Forest) 2025-01-01 seed 1: 0.0 min, leaf 4000; elapsed 0.8 min
+2026-11-07 21:40:24 [58/78] A1 (Random Forest) 2024-01-01 seed 1: 0.0 min, leaf 250; elapsed 0.8 min
+2026-11-07 21:40:26 [59/78] A1 (Random Forest) 2023-01-01 seed 1: 0.0 min, leaf 250; elapsed 0.8 min
+2026-11-07 21:40:26 [60/78] A1 (Random Forest) 2022-01-01 seed 1: 0.0 min, leaf 4000; elapsed 0.8 min
+2026-11-07 21:40:27 [61/78] A2 (ExtraTrees) 2026-06-01 seed 1: 0.0 min, leaf 4000; elapsed 0.8 min
+2026-11-07 21:40:27 [62/78] A2 (ExtraTrees) 2026-01-01 seed 1: 0.0 min, leaf 4000; elapsed 0.8 min
+2026-11-07 21:40:28 [63/78] A2 (ExtraTrees) 2025-01-01 seed 1: 0.0 min, leaf 4000; elapsed 0.8 min
+2026-11-07 21:40:28 [64/78] A2 (ExtraTrees) 2024-01-01 seed 1: 0.0 min, leaf 250; elapsed 0.8 min
+2026-11-07 21:40:29 [65/78] A2 (ExtraTrees) 2023-01-01 seed 1: 0.0 min, leaf 250; elapsed 0.8 min
+2026-11-07 21:40:29 [66/78] A2 (ExtraTrees) 2022-01-01 seed 1: 0.0 min, leaf 4000; elapsed 0.8 min
+2026-11-07 21:40:30 [67/78] B6 (DoubleEnsemble (Qlib)) 2026-06-01 seed 1: 0.0 min, 1 rounds; elapsed 0.9 min
+2026-11-07 21:40:30 [68/78] B6 (DoubleEnsemble (Qlib)) 2026-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.9 min
+2026-11-07 21:40:31 [69/78] B6 (DoubleEnsemble (Qlib)) 2025-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.9 min
+2026-11-07 21:40:33 [70/78] B6 (DoubleEnsemble (Qlib)) 2024-01-01 seed 1: 0.1 min, 57 rounds; elapsed 0.9 min
+2026-11-07 21:40:34 [71/78] B6 (DoubleEnsemble (Qlib)) 2022-01-01 seed 1: 0.0 min, 1 rounds; elapsed 0.9 min
+2026-11-07 21:40:34 [72/78] B6 (DoubleEnsemble (Qlib)) 2023-01-01 seed 1: 0.1 min, 60 rounds; elapsed 0.9 min
+2026-11-07 21:40:36 [73/78] A0 (sklearn default RF (report only)) 2026-01-01 seed 1: 0.0 min, leaf 1; elapsed 1.0 min
+2026-11-07 21:40:36 [74/78] A0 (sklearn default RF (report only)) 2026-06-01 seed 1: 0.0 min, leaf 1; elapsed 1.0 min
+2026-11-07 21:40:37 [75/78] A0 (sklearn default RF (report only)) 2025-01-01 seed 1: 0.0 min, leaf 1; elapsed 1.0 min
+2026-11-07 21:40:37 [76/78] A0 (sklearn default RF (report only)) 2024-01-01 seed 1: 0.0 min, leaf 1; elapsed 1.0 min
+2026-11-07 21:40:38 [77/78] A0 (sklearn default RF (report only)) 2023-01-01 seed 1: 0.0 min, leaf 1; elapsed 1.0 min
+2026-11-07 21:40:38 [78/78] A0 (sklearn default RF (report only)) 2022-01-01 seed 1: 0.0 min, leaf 1; elapsed 1.0 min
+2026-11-07 21:40:39 v15_train.py end: 78 of 78 units done, 1.0 min this run
+2026-11-07 22:03:21 v15_train.py start: 78 units (B0 6, B1 6, B2 6, B3 6, B4 6, B5 6, C0 6, C1 6, C2 6, A1 6, A2 6, B6 6, A0 6), 0 to do; lightgbm 4.7.0, scikit-learn 1.8.0, torch 2.14.1+cpu, pandas 3.0.1, 8 logical cpus, workers 2 x 2 threads [TEST]
+2026-11-07 22:07:08 v15_train.py start: 78 units (B0 6, B1 6, B2 6, B3 6, B4 6, B5 6, C0 6, C1 6, C2 6, A1 6, A2 6, B6 6, A0 6), 0 to do; lightgbm 4.7.0, scikit-learn 1.8.0, torch 2.14.1+cpu, pandas 3.0.1, 8 logical cpus, workers 2 x 2 threads [TEST]

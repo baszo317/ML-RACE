@@ -1,0 +1,36 @@
+RACE-STD v1 Stage 2 -- V = 2025-01-01 .. 2026-11-09 (447 days), the single use of V
+sealed 2026-11-15 15:55:32 (LOCK 2026-11-15 15:22:27); decision SD = Top25 of Top50 + ex-dividend rule
+
+finalist          units feats    mean   NW t     sd   pos%    IC  | 2025  2026-01..05 2026-06.. | Oct-Nov  P(19d<0)  MCS p
+C.LU                      1   169  +16.16   8.22   42.7  67.8  0.120 | +13.44   +18.07    +20.58 |  +32.65     0.03   1.000
+ENS_TOP3                  3   380  +16.14   7.29   49.2  65.1  0.117 | +13.14   +21.86    +17.83 |  +16.19     0.07   0.987
+C.LC (C-native)           1   169  +15.22   7.23   45.9  66.9  0.110 | +10.64   +18.91    +22.24 |  +24.77     0.10   0.682
+U-native (U-native)       6   109  +14.17   6.69   48.8  61.5  0.103 | +10.91   +18.05    +18.06 |  +13.57     0.10   0.617
+ALLmU.LN                  1   269  +14.08   6.48   49.2  64.2  0.106 | +11.86   +19.77    +14.06 |   +6.57     0.06   0.617
+ALL.LN                    1   380  +14.04   6.21   50.5  65.5  0.107 | +11.88   +20.08    +13.61 |   +8.79     0.07   0.617
+P.LP (P-native)           1    61  +11.94   5.86   50.3  59.3  0.092 |  +7.61   +14.39    +19.46 |  +10.47     0.11   0.105
+M.LM (M-native)           1    39   +9.60   4.73   43.5  58.2  0.079 |  +7.75   +10.28    +13.13 |  +23.03     0.16   0.004
+
+3.1  winner on V: C.LU (+16.16 bp/day)
+     within 1 SE of the winner (paired NW SE): C.LU (+0.00 <= 0.00), ENS_TOP3 (+0.03 <= 1.43), C.LC (+0.94 <= 1.51)
+     -> race stock view (fewest units, then fewest features): C.LU  units ['C.LU']
+
+3.2  market view for C.LU: IC_D 0.1207; SD_MV - SD (lambda 1): D -2.07 (t -1.22), V -0.76 (t -0.29) -> no market view
+     report only, lambda 0.5: D +0.34, V +1.32; share of 1s on V (lambda 1) 0.53
+
+report only:
+  MCS 90% (Hansen, Lunde & Nason 2011): ['ALL.LN', 'ALLmU.LN', 'C.LU', 'ENS_TOP3', 'U-native', 'P.LP', 'C.LC']
+  SPA_c p (H0: no finalist beats the native): U-native 0.246, P-native 0.029, C-native 0.483, M-native 0.000
+  P(bootstrap mean of C.LU > native): U-native 0.86, P-native 0.99, C-native 0.74, M-native 1.00
+  James-Stein shrinkage factor 0.35: ALL.LN +13.96, ALLmU.LN +13.97, C.LU +14.70, ENS_TOP3 +14.70, U-native +14.01, P.LP +13.23, C.LC +14.38, M.LM +12.41
+
+correlation of daily AR on V:
+          ALL.LN  ALLmU.LN  C.LU  ENS_TOP3  U-native  P.LP  C.LC  M.LM
+ALL.LN      1.00      0.95  0.71      0.94      0.76  0.57  0.53  0.45
+ALLmU.LN    0.95      1.00  0.70      0.94      0.74  0.59  0.57  0.43
+C.LU        0.71      0.70  1.00      0.82      0.69  0.61  0.73  0.54
+ENS_TOP3    0.94      0.94  0.82      1.00      0.76  0.62  0.63  0.48
+U-native    0.76      0.74  0.69      0.76      1.00  0.72  0.59  0.61
+P.LP        0.57      0.59  0.61      0.62      0.72  1.00  0.60  0.60
+C.LC        0.53      0.57  0.73      0.63      0.59  0.60  1.00  0.59
+M.LM        0.45      0.43  0.54      0.48      0.61  0.60  0.59  1.00

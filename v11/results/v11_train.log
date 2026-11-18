@@ -1,0 +1,58 @@
+2026-10-26 14:52:11 job base: L seed 6-20, M seed 11-20, all folds
+2026-10-26 14:52:11 270 units, 270 to do, 2 worker(s)
+2026-10-26 14:52:45 [1/270] lgb base lgb_res 2026-06-01 seed 6: 32s (best 385); elapsed 0.6 min, about 150 min left
+2026-10-26 14:52:46 [2/270] lgb base lgb_res 2026-06-01 seed 7: 33s (best 420); elapsed 0.6 min, about 77 min left
+2026-10-26 14:55:03 [10/270] lgb base lgb_res 2026-06-01 seed 15: 30s (best 405); elapsed 2.9 min, about 74 min left
+2026-10-26 14:56:50 [20/270] lgb base lgb_res 2026-01-01 seed 10: 13s (best 111); elapsed 4.6 min, about 58 min left
+2026-10-26 14:57:47 [30/270] lgb base lgb_res 2026-01-01 seed 20: 11s (best 82); elapsed 5.6 min, about 45 min left
+2026-10-26 14:59:23 [40/270] lgb base lgb_res 2025-01-01 seed 15: 19s (best 290); elapsed 7.2 min, about 41 min left
+2026-10-26 15:00:40 [50/270] lgb base lgb_res 2024-01-01 seed 10: 10s (best 170); elapsed 8.5 min, about 37 min left
+2026-10-26 15:01:39 [60/270] lgb base lgb_res 2024-01-01 seed 20: 12s (best 222); elapsed 9.5 min, about 33 min left
+2026-10-26 15:02:25 [70/270] lgb base lgb_res 2023-01-01 seed 15: 10s (best 254); elapsed 10.2 min, about 29 min left
+2026-10-26 15:02:53 [80/270] lgb base lgb_res 2022-01-01 seed 10: 5s (best 152); elapsed 10.7 min, about 25 min left
+2026-10-26 15:03:21 [90/270] lgb base lgb_res 2022-01-01 seed 20: 5s (best 201); elapsed 11.2 min, about 22 min left
+2026-10-26 15:03:56 [100/270] mlp base mlp_res_xr9 2026-06-01 seed 20: 6s (best 2); elapsed 11.7 min, about 20 min left
+2026-10-26 15:04:24 [110/270] mlp base mlp_res_BN9 2026-06-01 seed 20: 6s (best 3); elapsed 12.2 min, about 18 min left
+2026-10-26 15:04:58 [120/270] mlp base mlp_res_xr9 2026-01-01 seed 11: 6s (best 2); elapsed 12.8 min, about 16 min left
+2026-10-26 15:05:39 [130/270] mlp base mlp_res_xr9 2026-01-01 seed 20: 7s (best 1); elapsed 13.5 min, about 14 min left
+2026-10-26 15:06:10 [140/270] mlp base mlp_res_BN9 2026-01-01 seed 20: 4s (best 1); elapsed 14.0 min, about 13 min left
+2026-10-26 15:06:36 [150/270] mlp base mlp_res_xrN9 2026-01-01 seed 19: 5s (best 1); elapsed 14.4 min, about 12 min left
+2026-10-26 15:07:17 [160/270] mlp base mlp_res_xr9 2025-01-01 seed 20: 6s (best 3); elapsed 15.1 min, about 10 min left
+2026-10-26 15:07:51 [170/270] mlp base mlp_res_BN9 2025-01-01 seed 20: 8s (best 6); elapsed 15.7 min, about 9 min left
+2026-10-26 15:08:30 [180/270] mlp base mlp_res_xrN9 2025-01-01 seed 20: 9s (best 6); elapsed 16.3 min, about 8 min left
+2026-10-26 15:08:47 [190/270] mlp base mlp_res_BN9 2024-01-01 seed 11: 2s (best 1); elapsed 16.6 min, about 7 min left
+2026-10-26 15:09:00 [200/270] mlp base mlp_res_BN9 2024-01-01 seed 20: 4s (best 3); elapsed 16.8 min, about 6 min left
+2026-10-26 15:09:15 [210/270] mlp base mlp_res_xrN9 2024-01-01 seed 20: 3s (best 1); elapsed 17.1 min, about 5 min left
+2026-10-26 15:09:33 [220/270] mlp base mlp_res_xr9 2023-01-01 seed 20: 3s (best 3); elapsed 17.4 min, about 4 min left
+2026-10-26 15:09:51 [230/270] mlp base mlp_res_BN9 2023-01-01 seed 19: 4s (best 7); elapsed 17.7 min, about 3 min left
+2026-10-26 15:10:07 [240/270] mlp base mlp_res_xr9 2022-01-01 seed 11: 2s (best 2); elapsed 17.9 min, about 2 min left
+2026-10-26 15:10:16 [250/270] mlp base mlp_res_xr9 2022-01-01 seed 20: 2s (best 2); elapsed 18.1 min, about 1 min left
+2026-10-26 15:10:22 [260/270] mlp base mlp_res_BN9 2022-01-01 seed 20: 1s (best 2); elapsed 18.2 min, about 1 min left
+2026-10-26 15:10:30 [270/270] mlp base mlp_res_xrN9 2022-01-01 seed 20: 1s (best 1); elapsed 18.3 min, about 0 min left
+2026-10-26 15:10:30 finished 270 units in 18.3 min, 0 failed, mean 8.1s per unit
+2026-10-26 15:13:11 job list ../cache/jobs_round1.json: 20 configs
+2026-10-26 15:13:11 210 units, 210 to do, 2 worker(s)
+2026-10-26 15:14:39 [1/210] lgb KBAR+MA+STD+RSQR+RESI+MAX+MIN+QTLU+RANK+ lgb_res 2026-06-01 seed 2: 86s (best 409); elapsed 1.5 min, about 304 min left
+2026-10-26 15:14:43 [2/210] lgb KBAR+MA+STD+RSQR+RESI+MAX+MIN+QTLU+RANK+ lgb_res 2026-06-01 seed 1: 90s (best 447); elapsed 1.5 min, about 159 min left
+2026-10-26 15:19:28 [10/210] lgb ROC+BETA+RSQR+RESI+MAX+QTLU+RANK+RSV+COR lgb_res 2026-06-01 seed 5: 57s (best 403); elapsed 6.3 min, about 125 min left
+2026-10-26 15:21:28 [20/210] lgb ROC+BETA+RSQR+RESI+MAX+QTLU+RANK+RSV+COR lgb_res 2026-01-01 seed 5: 20s (best 90); elapsed 8.3 min, about 79 min left
+2026-10-26 15:24:21 [30/210] lgb STD+BETA+RESI+MAX+QTLU+RANK+RSV+CORR+VMA lgb_res 2024-01-01 seed 1: 19s (best 193); elapsed 11.2 min, about 67 min left
+2026-10-26 15:25:56 [40/210] lgb KBAR+MA+STD+RESI+MAX+MIN+QTLU+RANK+RSV+C lgb_res 2023-01-01 seed 5: 17s (best 135); elapsed 12.7 min, about 54 min left
+2026-10-26 15:26:50 [50/210] mlp KBAR+STD+RSQR+MAX+MIN+QTLU+IDX+CORD+SUM+ mlp_res_xr9 2026-06-01 seed 5: 11s (best 3); elapsed 13.6 min, about 44 min left
+2026-10-26 15:27:39 [60/210] mlp STD+RESI+MAX+MIN+RANK+RSV+SUM+WVMA mlp_res_xr9 2026-06-01 seed 1: 7s (best 2); elapsed 14.5 min, about 36 min left
+2026-10-26 15:28:27 [70/210] mlp STD+RESI+MAX+MIN+RANK+RSV+SUM+WVMA mlp_res_xrN9 2026-06-01 seed 1: 9s (best 2); elapsed 15.3 min, about 31 min left
+2026-10-26 15:29:05 [80/210] mlp STD+RSQR+RESI+MAX+IDX+CORR+CORD+VSTD+WVM mlp_res_xr9 2026-01-01 seed 5: 7s (best 1); elapsed 15.9 min, about 26 min left
+2026-10-26 15:29:34 [90/210] mlp STD+RSQR+RESI+MAX+IDX+CORR+CORD+VSTD+WVM mlp_res_xrN9 2026-01-01 seed 5: 5s (best 1); elapsed 16.4 min, about 22 min left
+2026-10-26 15:30:02 [100/210] mlp STD+RESI+MAX+MIN+RANK+RSV+SUM+WVMA mlp_res_BN9 2026-01-01 seed 5: 5s (best 1); elapsed 16.8 min, about 19 min left
+2026-10-26 15:30:31 [110/210] mlp STD+RSV mlp_res_xr9 2026-01-01 seed 4: 5s (best 2); elapsed 17.3 min, about 16 min left
+2026-10-26 15:30:57 [120/210] mlp STD+RSV mlp_res_xrN9 2026-01-01 seed 4: 6s (best 2); elapsed 17.8 min, about 13 min left
+2026-10-26 15:31:35 [130/210] mlp STD+RESI+MAX+MIN+RANK+RSV mlp_res_BN9 2025-01-01 seed 5: 7s (best 5); elapsed 18.4 min, about 11 min left
+2026-10-26 15:32:14 [140/210] mlp STD+RSV mlp_res_xr9 2025-01-01 seed 5: 7s (best 5); elapsed 19.0 min, about 10 min left
+2026-10-26 15:32:47 [150/210] mlp STD+RSV mlp_res_xrN9 2025-01-01 seed 5: 7s (best 5); elapsed 19.6 min, about 8 min left
+2026-10-26 15:33:07 [160/210] mlp KBAR+STD+RESI+MAX+MIN+QTLU+RANK+RSV+IDX+ mlp_res_BN9 2024-01-01 seed 5: 4s (best 1); elapsed 19.9 min, about 6 min left
+2026-10-26 15:33:27 [170/210] mlp STD+RESI+MAX+MIN+RANK+RSV+CORR+CNT+SUM+V mlp_res_BN9 2024-01-01 seed 1: 3s (best 1); elapsed 20.3 min, about 5 min left
+2026-10-26 15:33:48 [180/210] mlp STD+RESI+MAX+MIN+RANK+RSV+CORR+CNT+SUM+V mlp_res_xrN9 2024-01-01 seed 5: 4s (best 1); elapsed 20.6 min, about 3 min left
+2026-10-26 15:34:09 [190/210] mlp KBAR+STD+RSQR+RESI+MAX+MIN+QTLU+QTLD+RAN mlp_res_BN9 2023-01-01 seed 4: 6s (best 6); elapsed 21.0 min, about 2 min left
+2026-10-26 15:34:26 [200/210] mlp STD+MAX+RSV+CORR mlp_res_xr9 2023-01-01 seed 5: 3s (best 2); elapsed 21.2 min, about 1 min left
+2026-10-26 15:34:42 [210/210] mlp STD+MAX+RSV+CORR mlp_res_xrN9 2023-01-01 seed 5: 3s (best 3); elapsed 21.5 min, about 0 min left
+2026-10-26 15:34:42 finished 210 units in 21.5 min, 0 failed, mean 12.3s per unit

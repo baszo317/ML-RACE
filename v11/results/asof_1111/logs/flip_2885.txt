@@ -1,0 +1,2 @@
+2885 score shift +0e+00: c 0.0025, share of 1 0.62, 2885 -> 1, AR +1.37 bp
+2885 score shift -1e-04: c 0.0025, share of 1 0.60, 2885 -> 0, AR -6.07 bp

@@ -1,0 +1,25 @@
+15:55:19 V winner C.LU (+16.16); within 1 SE: ['C.LU', 'ENS_TOP3', 'C.LC']; chosen by the 1-SE rule: C.LU
+15:55:22   Ridge fold 2022: alpha 215, 455 training days
+15:55:22   Ridge fold 2023: alpha 215, 701 training days
+15:55:22   Ridge fold 2024: alpha 215, 940 training days
+15:55:22   Ridge fold 2025: alpha 464, 1182 training days
+15:55:23   Ridge fold 2026-01..05: alpha 2.15e+03, 1425 training days
+15:55:23   Ridge fold 2026-06..: alpha 1e+03, 1520 training days
+15:55:31 market view (lambda 1): D diff -2.07, V diff -0.76 -> do not add
+15:55:32 sealed in 42 s
+15:57:06 V winner C.LU (+16.16); within 1 SE: ['C.LU', 'ENS_TOP3', 'C.LC']; chosen by the 1-SE rule: C.LU
+15:57:07   Ridge fold 2022: alpha 215, 455 training days
+15:57:07   Ridge fold 2023: alpha 215, 701 training days
+15:57:07   Ridge fold 2024: alpha 215, 940 training days
+15:57:07   Ridge fold 2025: alpha 464, 1182 training days
+15:57:07   Ridge fold 2026-01..05: alpha 2.15e+03, 1425 training days
+15:57:07   Ridge fold 2026-06..: alpha 1e+03, 1520 training days
+15:57:12 market view (lambda 1): D diff -2.07, V diff -0.76 -> do not add
+15:57:29 V winner C.LU (+16.16); within 1 SE: ['C.LU', 'ENS_TOP3', 'C.LC']; chosen by the 1-SE rule: C.LU
+15:57:30   Ridge fold 2022: alpha 215, 455 training days
+15:57:30   Ridge fold 2023: alpha 215, 701 training days
+15:57:30   Ridge fold 2024: alpha 215, 940 training days
+15:57:30   Ridge fold 2025: alpha 464, 1182 training days
+15:57:30   Ridge fold 2026-01..05: alpha 2.15e+03, 1425 training days
+15:57:30   Ridge fold 2026-06..: alpha 1e+03, 1520 training days
+15:57:35 market view (lambda 1): D diff -2.07, V diff -0.76 -> do not add

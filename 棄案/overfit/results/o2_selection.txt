@@ -1,0 +1,102 @@
+o2_selection.py  2026-10-28 01:41   grid (1164, 4375), static grid (99, 4375), 94 development series
+
+==============================================================================================================
+1. CSCV / PBO: if a setting is picked because it was best on half of the days, how does it do on the other half?
+==============================================================================================================
+1a. v9 coefficient grid: N = 4375 settings, T = 1164 days, S = 16 blocks, 12870 splits (1s)
+  PBO = 0.429   (share of splits where the IS-best setting lands in the bottom half OOS)
+  IS-best: IS mean 15.45, OOS mean 12.77; OOS median setting 12.83 bp/day
+  OOS relative rank of the IS-best: mean 0.530, quartiles [0.356, 0.55, 0.722]
+  degradation: OOS = 26.92 + -0.916 x IS over the splits (slope 1 = no overfitting, 0 = IS says nothing)
+  IS-best minus w_t 0.5 lam 0.75 lgb 0.5 tf 0.5 bias 0.0 in the same OOS half: mean -1.54 bp/day, share of splits > 0 0.021
+
+  most frequent IS-best settings:
+    w_t 0.25 lam 1.0 lgb 0.5 tf 1.0 bias -0.01: 1275 of 12870 splits
+    w_t 0.25 lam 1.0 lgb 0.0 tf 1.0 bias -0.02: 739 of 12870 splits
+    w_t 0.75 lam 0.75 lgb 0.5 tf 0.0 bias 0.01: 622 of 12870 splits
+    w_t 0.5 lam 0.5 lgb 0.25 tf 1.0 bias 0.02: 568 of 12870 splits
+    w_t 1.0 lam 0.5 lgb 0.5 tf 0.0 bias 0.01: 557 of 12870 splits
+
+1b. only w_t and lam move (35 settings; W0 = w_t 0, lam 0.5 is one of them): N = 35 settings, T = 1164 days, S = 16 blocks, 12870 splits (0s)
+  PBO = 0.143   (share of splits where the IS-best setting lands in the bottom half OOS)
+  IS-best: IS mean 14.68, OOS mean 13.96; OOS median setting 13.10 bp/day
+  OOS relative rank of the IS-best: mean 0.805, quartiles [0.75, 0.917, 0.972]
+  degradation: OOS = 28.94 + -1.021 x IS over the splits (slope 1 = no overfitting, 0 = IS says nothing)
+  IS-best minus w_t 0.5 lam 0.75 lgb 0.5 tf 0.5 bias 0.0 in the same OOS half: mean -0.35 bp/day, share of splits > 0 0.529
+
+  most frequent IS-best settings:
+    w_t 0.5 lam 1.0 lgb 0.5 tf 0.5 bias 0.0: 8208 of 12870 splits
+    w_t 0.5 lam 0.75 lgb 0.5 tf 0.5 bias 0.0: 1407 of 12870 splits
+    w_t 0.75 lam 0.75 lgb 0.5 tf 0.5 bias 0.0: 854 of 12870 splits
+    w_t 1.5 lam 0.0 lgb 0.5 tf 0.5 bias 0.0: 490 of 12870 splits
+    w_t 1.0 lam 0.5 lgb 0.5 tf 0.5 bias 0.0: 449 of 12870 splits
+  (grid with S = 8: PBO 0.386, OOS of IS-best 12.93, OOS median 12.82)
+  (grid with S = 10: PBO 0.317, OOS of IS-best 12.94, OOS median 12.82)
+  (grid with S = 12: PBO 0.548, OOS of IS-best 12.53, OOS median 12.82)
+
+1c. development pool: every distinct daily series of v5..v12 and the screens: N = 92 settings, T = 1164 days, S = 16 blocks, 12870 splits (0s)
+  PBO = 0.460   (share of splits where the IS-best setting lands in the bottom half OOS)
+  IS-best: IS mean 15.50, OOS mean 14.36; OOS median setting 14.28 bp/day
+  OOS relative rank of the IS-best: mean 0.543, quartiles [0.269, 0.538, 0.86]
+  degradation: OOS = 30.24 + -1.025 x IS over the splits (slope 1 = no overfitting, 0 = IS says nothing)
+  IS-best minus v9 in the same OOS half: mean +0.05 bp/day, share of splits > 0 0.508
+
+  most frequent IS-best series:
+    v11 + Y5: 2855 of 12870 splits
+    v11 + Y3: 1862 of 12870 splits
+    v11 + Y1: 1637 of 12870 splits
+    a158 mlp|ALL: 1027 of 12870 splits
+    a158 lgb|MIN: 853 of 12870 splits
+    v11 + F1: 582 of 12870 splits
+==============================================================================================================
+2. Reality check: is any of the 4,375 settings truly better than v9's coefficients? (studentized max, stationary bootstrap)
+==============================================================================================================
+  walk-forward 2022-01..2026-10 (1,164 days):
+    best setting by t: w_t 0.5 lam 0.75 lgb 0.5 tf 0.75 bias 0.0  diff +0.27 bp/day, t 1.16; 95% critical value of the max-t under H0 3.56; p = 0.980
+    best setting by mean: w_t 0.25 lam 1.0 lgb 0.5 tf 1.0 bias -0.01  diff +0.32 bp/day
+  walk-forward val only (2022-2024):
+    best setting by t: w_t 0.5 lam 0.75 lgb 0.5 tf 0.75 bias 0.0  diff +0.43 bp/day, t 1.70; 95% critical value of the max-t under H0 3.49; p = 0.803
+    best setting by mean: w_t 0.5 lam 1.0 lgb 0.0 tf 0.5 bias -0.01  diff +0.77 bp/day
+  rolling static 6/1-10/22 (99 days, the period the static coefficients were chosen on):
+    best setting by t: w_t 0.5 lam 0.75 lgb 0.5 tf 1.0 bias -0.01  diff +7.38 bp/day, t 3.61; 95% critical value of the max-t under H0 3.21; p = 0.013
+    best setting by mean: w_t 0.25 lam 0.25 lgb 0.75 tf 1.0 bias -0.01  diff +9.56 bp/day
+
+==============================================================================================================
+3. Picking the coefficients on a short recent window and using them for the next 19 trading days
+   (static was 84 days, static + October 99 days, October alone 15 days; the private test is about 19 days)
+==============================================================================================================
+ window L  n windows  best in window, advantage over v9  same setting, next 19 days      t  share next19 > 0  slope next19 on window                                 most picked
+       15         60                             14.139                      -2.512 -2.058             0.383                  -0.388   w_t 0.0 lam 0.75 lgb 0.0 tf 0.0 bias 0.02
+       60         58                              6.578                      -1.985 -2.287             0.310                  -0.313  w_t 1.5 lam 0.0 lgb 0.25 tf 0.0 bias -0.02
+       84         56                              5.210                      -1.461 -1.843             0.393                   0.248 w_t 1.5 lam 0.75 lgb 0.0 tf 0.25 bias -0.02
+       99         56                              4.670                      -2.734 -2.856             0.268                   0.149 w_t 1.25 lam 0.75 lgb 1.0 tf 0.25 bias 0.02
+      250         48                              2.193                      -2.285 -2.586             0.292                  -1.632   w_t 0.75 lam 0.0 lgb 0.0 tf 1.0 bias 0.02
+
+  W0 (w_t 0, lam 0.5; in v9's grid) after a 99-day window where it beat v9: next 19 days -5.58 (n = 7); after a window where it lost: -1.47 (n = 49)
+  W0 vs v9 next-19-day difference over all 56 blocks: -1.99
+
+==============================================================================================================
+4. The final models against 0 after counting how many settings were tried (Deflated Sharpe Ratio)
+==============================================================================================================
+  variance of the daily Sharpe ratio across the 4,375 grid settings: 0.00122 (sd 0.0349); E[max of N iid N(0,1)] for N = 4,375: 3.64
+            model  mean bp  daily SR  NW t vs 0   skew   kurt  trials N  SR0 (expected max of N null SRs)  DSR = P(true SR > 0 | N trials)
+               v9  14.3110    0.2965    10.6416 0.9579 8.7851       100                            0.0883                              1.0
+               v9  14.3110    0.2965    10.6416 0.9579 8.7851      4375                            0.1274                              1.0
+               v9  14.3110    0.2965    10.6416 0.9579 8.7851    100000                            0.1531                              1.0
+              v11  15.0167    0.3129    11.0732 0.9232 8.9530       100                            0.0883                              1.0
+              v11  15.0167    0.3129    11.0732 0.9232 8.9530      4375                            0.1274                              1.0
+              v11  15.0167    0.3129    11.0732 0.9232 8.9530    100000                            0.1531                              1.0
+W0 (10/27 upload)  12.2156    0.3181    10.6786 0.2741 4.6351       100                            0.0883                              1.0
+W0 (10/27 upload)  12.2156    0.3181    10.6786 0.2741 4.6351      4375                            0.1274                              1.0
+W0 (10/27 upload)  12.2156    0.3181    10.6786 0.2741 4.6351    100000                            0.1531                              1.0
+               v5  13.3818    0.2698     9.5170 0.8435 8.2893       100                            0.0883                              1.0
+               v5  13.3818    0.2698     9.5170 0.8435 8.2893      4375                            0.1274                              1.0
+               v5  13.3818    0.2698     9.5170 0.8435 8.2893    100000                            0.1531                              1.0
+
+  increments (paired daily differences), t against the max of K null t's:
+    v11 - v9: +0.71 bp/day, NW t +1.19; K = 7 candidates -> E[max null t] ~ 1.35, Bonferroni 5% one-sided t > 2.45
+    v9 - v5 (control): +0.93 bp/day, NW t +1.68; K = 26 candidates -> E[max null t] ~ 1.98, Bonferroni 5% one-sided t > 2.89
+    W0 - v11: -2.80 bp/day, NW t -2.52; K = 240 candidates -> E[max null t] ~ 2.81, Bonferroni 5% one-sided t > 3.53
+    W0 - v9: -2.10 bp/day, NW t -1.92; K = 4375 candidates -> E[max null t] ~ 3.64, Bonferroni 5% one-sided t > 4.23
+
+done in 13s

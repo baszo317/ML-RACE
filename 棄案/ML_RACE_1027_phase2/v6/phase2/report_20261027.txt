@@ -1,0 +1,76 @@
+Phase 2 check  2026-10-27 (Tue)   prices: course zip data (2).zip 50   (50/50 stocks)
+  market: Top50 mean (close - open)/open -107.30 bp, 18 of 50 up; previous trading day 2026-10-22
+
+   AR score     AR bp   timing     xsec    1s   hits  file
+   0.010730    107.30   107.30     0.00  0.00  32/50  (baseline) Always down
+   0.004795     47.95    30.04    17.91  0.36  28/50  (baseline) Previous day
+  -0.006980    -69.80   -25.75   -44.05  0.62  19/50  v11/out/submission_v9.4_1027_wt0_lam0.5.csv   <- uploaded
+  -0.007953    -79.53   -55.80   -23.74  0.76  18/50  v9/out/submission_v9_1027.csv
+
+  per stock: r_bp = (close - open)/open in bp, y = close > open, prev_p = the Previous day baseline,
+  pN = prediction of file N, bpN = its contribution (2p - 1) * r / 50 in bp (the column sums to the AR in bp)
+    p1, bp1: v11/out/submission_v9.4_1027_wt0_lam0.5.csv
+    p2, bp2: v9/out/submission_v9_1027.csv
+        r_bp  y  prev_p  p1    bp1  p2    bp2                   source
+id                                                                    
+2330   84.03  1       0   1   1.68   1   1.68  course zip data (2).zip
+2317   40.57  1       0   0  -0.81   0  -0.81  course zip data (2).zip
+2454 -185.87  0       0   1  -3.72   1  -3.72  course zip data (2).zip
+2308 -162.87  0       0   1  -3.26   1  -3.26  course zip data (2).zip
+2881  -91.74  0       0   1  -1.83   1  -1.83  course zip data (2).zip
+2882 -129.87  0       0   0   2.60   1  -2.60  course zip data (2).zip
+2382 -120.66  0       0   0   2.41   1  -2.41  course zip data (2).zip
+2412  -94.04  0       1   1  -1.88   1  -1.88  course zip data (2).zip
+2891 -247.07  0       1   1  -4.94   1  -4.94  course zip data (2).zip
+3711  -45.87  0       0   1  -0.92   1  -0.92  course zip data (2).zip
+2886 -178.57  0       1   1  -3.57   1  -3.57  course zip data (2).zip
+2303 -354.33  0       0   0   7.09   1  -7.09  course zip data (2).zip
+6669  290.24  1       0   0  -5.80   1   5.80  course zip data (2).zip
+5871  188.68  1       0   1   3.77   1   3.77  course zip data (2).zip
+2884   10.12  1       1   1   0.20   1   0.20  course zip data (2).zip
+2357   10.35  1       0   0  -0.21   1   0.21  course zip data (2).zip
+2345    0.00  0       0   1   0.00   1   0.00  course zip data (2).zip
+1216 -159.51  0       1   1  -3.19   1  -3.19  course zip data (2).zip
+2885 -108.11  0       1   1  -2.16   1  -2.16  course zip data (2).zip
+2603   19.16  1       1   0  -0.38   0  -0.38  course zip data (2).zip
+3045   37.31  1       1   1   0.75   1   0.75  course zip data (2).zip
+2892   34.88  1       1   1   0.70   1   0.70  course zip data (2).zip
+2880  -79.21  0       1   1  -1.58   1  -1.58  course zip data (2).zip
+6505 -230.41  0       0   0   4.61   0   4.61  course zip data (2).zip
+5880   69.93  1       1   1   1.40   1   1.40  course zip data (2).zip
+3231 -129.53  0       0   0   2.59   0   2.59  course zip data (2).zip
+3017 -515.15  0       0   1 -10.30   1 -10.30  course zip data (2).zip
+2383 -865.38  0       0   1 -17.31   1 -17.31  course zip data (2).zip
+2207   73.13  1       1   1   1.46   1   1.46  course zip data (2).zip
+2327  116.50  1       0   1   2.33   1   2.33  course zip data (2).zip
+4904 -129.87  0       1   1  -2.60   1  -2.60  course zip data (2).zip
+2002   25.38  1       0   0  -0.51   0  -0.51  course zip data (2).zip
+3008 -291.26  0       0   1  -5.83   1  -5.83  course zip data (2).zip
+2890 -263.16  0       1   0   5.26   0   5.26  course zip data (2).zip
+2883   26.08  1       0   1   0.52   1   0.52  course zip data (2).zip
+1303 -540.54  0       0   1 -10.81   1 -10.81  course zip data (2).zip
+2301 -380.95  0       0   1  -7.62   1  -7.62  course zip data (2).zip
+2395  -14.53  0       0   0   0.29   0   0.29  course zip data (2).zip
+3034   50.34  1       0   0  -1.01   0  -1.01  course zip data (2).zip
+2379  127.71  1       0   0  -2.55   1   2.55  course zip data (2).zip
+8069   64.10  1       0   0  -1.28   0  -1.28  course zip data (2).zip
+2887 -117.10  0       1   1  -2.34   1  -2.34  course zip data (2).zip
+2912 -174.29  0       1   1  -3.49   1  -3.49  course zip data (2).zip
+3661 -318.56  0       0   1  -6.37   1  -6.37  course zip data (2).zip
+2059  -20.35  0       0   1  -0.41   1  -0.41  course zip data (2).zip
+3653 -361.84  0       0   1  -7.24   1  -7.24  course zip data (2).zip
+1301  -66.76  0       0   0   1.34   1  -1.34  course zip data (2).zip
+2615 -291.67  0       1   0   5.83   0   5.83  course zip data (2).zip
+3293  114.36  1       1   0  -2.29   0  -2.29  course zip data (2).zip
+2609  -78.74  0       0   0   1.57   0   1.57  course zip data (2).zip
+
+
+Accumulated from v6/phase2/scores.csv (board: total = sum of the daily AR scores, average = total / days)
+  days      total    average       first        last  series
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  uploaded (v6/phase2/uploaded.csv)
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  v11/out/submission_v9.4_MMDD_wt0_lam0.5.csv
+     1  -0.007953  -0.007953  2026-10-27  2026-10-27  v9/out/submission_v9_MMDD.csv
+     1   0.010730   0.010730  2026-10-27  2026-10-27  (baseline) Always down (every scored day)
+     1   0.004795   0.004795  2026-10-27  2026-10-27  (baseline) Previous day (every scored day)
+        same 1 days as uploaded: Always down total 0.010730, average 0.010730
+        same 1 days as uploaded: Previous day total 0.004795, average 0.004795

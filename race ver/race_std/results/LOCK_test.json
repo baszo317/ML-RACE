@@ -1,0 +1,346 @@
+{
+ "written": "2026-11-15 14:07:17",
+ "rule": "PREREG 2.4: top 3 on D + ENS_TOP3 + 4 natives",
+ "ranking_D": [
+  [
+   "U.LP",
+   -0.4372,
+   1
+  ],
+  [
+   "ALLmP.LP",
+   -0.4458,
+   1
+  ],
+  [
+   "U-native",
+   -0.5018,
+   6
+  ],
+  [
+   "ALL.LM",
+   -0.5889,
+   1
+  ],
+  [
+   "ENS4",
+   -0.5924,
+   9
+  ],
+  [
+   "ALL.LN",
+   -0.602,
+   1
+  ],
+  [
+   "P.LN",
+   -0.6248,
+   1
+  ],
+  [
+   "P.LU",
+   -0.6707,
+   1
+  ],
+  [
+   "C.LU",
+   -0.6856,
+   1
+  ],
+  [
+   "M.LN",
+   -0.6943,
+   1
+  ],
+  [
+   "U.LM",
+   -0.7039,
+   1
+  ],
+  [
+   "U.LN",
+   -0.7092,
+   1
+  ],
+  [
+   "ALL.LU",
+   -0.745,
+   1
+  ],
+  [
+   "U.LU",
+   -0.748,
+   1
+  ],
+  [
+   "ALLmC.LP",
+   -0.7823,
+   1
+  ],
+  [
+   "U.LC",
+   -0.7956,
+   1
+  ],
+  [
+   "ALLmM.LP",
+   -0.8155,
+   1
+  ],
+  [
+   "ALL.LP",
+   -0.8174,
+   1
+  ],
+  [
+   "ALL5",
+   -0.8385,
+   5
+  ],
+  [
+   "P.LM",
+   -0.8509,
+   1
+  ],
+  [
+   "M.LU",
+   -0.8575,
+   1
+  ],
+  [
+   "M.LP",
+   -0.8862,
+   1
+  ],
+  [
+   "ALLmU.LP",
+   -0.9111,
+   1
+  ],
+  [
+   "P.LP",
+   -0.9297,
+   1
+  ],
+  [
+   "M.LM",
+   -0.9382,
+   1
+  ],
+  [
+   "C.LM",
+   -1.0101,
+   1
+  ],
+  [
+   "ALL.LC",
+   -1.045,
+   1
+  ],
+  [
+   "C.LN",
+   -1.0501,
+   1
+  ],
+  [
+   "M.LC",
+   -1.1491,
+   1
+  ],
+  [
+   "C.LP",
+   -1.2572,
+   1
+  ],
+  [
+   "P.LC",
+   -1.2998,
+   1
+  ],
+  [
+   "C.LC",
+   -1.5529,
+   1
+  ]
+ ],
+ "top3": [
+  "U.LP",
+  "ALLmP.LP",
+  "U-native"
+ ],
+ "finalists": [
+  "U.LP",
+  "ALLmP.LP",
+  "U-native",
+  "ENS_TOP3",
+  "P.LP",
+  "C.LC",
+  "M.LM"
+ ],
+ "defs": {
+  "U.LP": {
+   "kind": "unit",
+   "units": [
+    "U.LP"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    111
+   ]
+  },
+  "ALLmP.LP": {
+   "kind": "unit",
+   "units": [
+    "ALLmP.LP"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    319
+   ]
+  },
+  "U-native": {
+   "kind": "unative",
+   "units": [
+    "UB9S.LN",
+    "UXR9.LN",
+    "UBN9.LN",
+    "UXRN9.LN",
+    "UB.LU",
+    "UXRN9.LU"
+   ],
+   "of": null,
+   "complexity": [
+    6,
+    109
+   ]
+  },
+  "P.LP": {
+   "kind": "unit",
+   "units": [
+    "P.LP"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    61
+   ]
+  },
+  "C.LC": {
+   "kind": "unit",
+   "units": [
+    "C.LC"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    169
+   ]
+  },
+  "M.LM": {
+   "kind": "unit",
+   "units": [
+    "M.LM"
+   ],
+   "of": null,
+   "complexity": [
+    1,
+    39
+   ]
+  },
+  "ENS_TOP3": {
+   "kind": "zavg",
+   "units": [
+    "ALLmP.LP",
+    "U.LP",
+    "UB.LU",
+    "UB9S.LN",
+    "UBN9.LN",
+    "UXR9.LN",
+    "UXRN9.LN",
+    "UXRN9.LU"
+   ],
+   "of": [
+    "U.LP",
+    "ALLmP.LP",
+    "U-native"
+   ],
+   "complexity": [
+    8,
+    319
+   ]
+  }
+ },
+ "finalist_units": [
+  "ALLmP.LP",
+  "C.LC",
+  "M.LM",
+  "P.LP",
+  "U.LP",
+  "UB.LU",
+  "UB9S.LN",
+  "UBN9.LN",
+  "UXR9.LN",
+  "UXRN9.LN",
+  "UXRN9.LU"
+ ],
+ "D": {
+  "U.LP": {
+   "mean": -0.43719204741454526,
+   "nw_t": -0.4268838337179898,
+   "sd": 26.158325371860233,
+   "ic": 0.12444380202085602,
+   "days": 727
+  },
+  "ALLmP.LP": {
+   "mean": -0.4458387046384025,
+   "nw_t": -0.43063251411605513,
+   "sd": 26.41102786837245,
+   "ic": 0.1309300531512229,
+   "days": 727
+  },
+  "U-native": {
+   "mean": -0.5017935757732666,
+   "nw_t": -0.4782721024554311,
+   "sd": 26.89022682167685,
+   "ic": 0.14925738955346693,
+   "days": 727
+  },
+  "P.LP": {
+   "mean": -0.9297138134463725,
+   "nw_t": -0.93143227610341,
+   "sd": 26.325293277783143,
+   "ic": 0.08322921387297239,
+   "days": 727
+  },
+  "C.LC": {
+   "mean": -1.5528772022637862,
+   "nw_t": -1.5521031228647097,
+   "sd": 26.299551074890463,
+   "ic": 0.0077410047381142695,
+   "days": 727
+  },
+  "M.LM": {
+   "mean": -0.9382490141371324,
+   "nw_t": -0.9469737756631234,
+   "sd": 26.15511687395557,
+   "ic": 0.08428609670903085,
+   "days": 727
+  }
+ },
+ "prereg_sha256": "6f9c436c25eac14b29d78b770c91324e6d2e730c299167715f1775574bff8c53",
+ "code": {
+  "build_panel.py": "e54f0cf8841dd4d5e8e114641aa56d886851a0ff3110cab627e212038566ed78",
+  "fetch_ext.py": "d007706d150044be0cc495bf6cbaa729625a6515c37510283f5a105c45553bd6",
+  "freeze.py": "c19d3ad525a6bd2229c9db3dff183eba32e01811c13ee61cab2342a143f8cff2",
+  "learners.py": "8bba8718ee5c285a6924a0058977d1abf88e3fa794539787297ac20b7f5a918c",
+  "rslib.py": "f240dfc5f239b99f7fe4c52ce617db65f684e87abffe5f8ec5a828cc559d2d6a",
+  "stage1_eval.py": "4ed2e823b59213f681aa39169d400d48e361df1456d54bb56b9f1068bfc33d01",
+  "stage2_validate.py": "a49084918338bf7d37e6c6f21275c1d6f43b8ebb2ec1ad7628f4e6423dcf9cb4",
+  "train.py": "43278990439bda2a72529c4335c860b384d284648dd20c8b589b629c819f9fe2"
+ },
+ "data_sha256": "c57f24a2f5ed3bfc4e0347c94a5b1102750ee0e74fa9e69e337abcacc5c03dc0",
+ "lstar": "LP",
+ "test": true
+}

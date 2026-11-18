@@ -1,0 +1,47 @@
+svm_exact_eval.py  2026-11-04 21:18  predictions: D:\ML RACE\reg_svm\cache\svm_exact  folds found: 6 of 6
+
+folds (C_tuned, g = chosen on the last 120 days of the window; C = used for the full fit):
+      fold   rows  C_tuned   g   C   n_sv  pred_sec  oos_ic            finished  fit_min
+2022-01-01  45495      0.1 0.5 0.1  41990     223.6  0.1049 2026-11-04 21:15:44   5.9550
+2023-01-01  70067      0.3 0.5 0.3  63379     267.8  0.1042 2026-11-04 21:18:17  15.6250
+2024-01-01  93966      0.1 0.5 0.1  86669     363.3  0.1341 2026-11-04 20:50:08  28.9333
+2025-01-01 118162      0.3 0.5 0.3 107098     491.7  0.1042 2026-11-04 20:59:40  48.2467
+2026-01-01 142449      0.1 0.5 0.1 131269     248.5  0.0958 2026-11-04 19:56:22  69.7167
+2026-06-01 151949      0.3 0.5 0.3 138478     219.6  0.0975 2026-11-04 20:08:20  82.2450
+
+rows: 116,353 (walk-forward 2022-01-03 .. 2026-10-22); SVM missing on 0 of them
+
+PART 0 -- rebuild check (val / hold / post / all, bp/day)
+  v9   rebuilt 13.99 / 14.33 / 16.59 / 14.31   published 13.99 / 14.33 / 16.59 / 14.31   same
+  v11  rebuilt 14.60 / 14.34 / 20.35 / 15.02   published 14.60 / 14.34 / 20.35 / 15.02   same
+  W0   rebuilt 11.79 / 10.35 / 21.71 / 12.22   published 11.79 / 10.35 / 21.71 / 12.22   same
+
+PART 1 -- SVM: own daily rank IC (all 100 stocks) and within-day correlation (report only)
+                member    val   hold   post    all
+                   SVM 0.1144 0.1018 0.0975 0.1093
+               lgb_res 0.1108 0.0996 0.0806 0.1050
+      X1 (lgb_res_xrN) 0.1113 0.1037 0.0965 0.1078
+stock MLPs (mean of 4) 0.1119 0.1044 0.0812 0.1071
+  within-day correlation: SVM-lgb_res 0.835, SVM-X1 0.824, SVM-MLPs 0.896; for scale: lgb_res-X1 0.927, lgb_res-MLPs 0.861
+  rank IC of the whole stock view: v11 0.1140 / 0.1088 / 0.0900 / 0.1105;  v11 + SVM 0.1148 / 0.1093 / 0.0908 / 0.1111
+
+PART 2 -- the rule (PREREG_svm.md 3.1): v11 + SVM minus v11, bp/day (NW t)
+  val +0.03 (0.10)  hold -0.69 (-1.51)  post -0.30 (-0.18)  all -0.20 (-0.71)
+  val > 0 -> selected; hold or post <= 0 -> not passed: v9 / v11 stay as they are
+
+PART 3 -- report only, each minus its base (bp/day, NW t)
+  v9 + SVM                     - v9  : val +0.77 (1.92)  hold -0.82 (-1.16)  post -2.49 (-1.47)  all +0.03 (0.09)
+  W0 + SVM                     - W0  : val +0.48 (1.45)  hold +0.29 (0.39)  post +0.27 (0.15)  all +0.41 (1.22)
+  v11, SVM as a third part     - v11 : val -0.33 (-0.98)  hold -0.05 (-0.07)  post +0.58 (0.28)  all -0.17 (-0.52)
+  v9, SVM as a third part      - v9  : val +0.05 (0.12)  hold +0.05 (0.08)  post -0.45 (-0.24)  all +0.01 (0.02)
+
+Top50 bp/day (walk-forward 2022-01 .. 2026-10)
+                  config   val  hold  post   all    sd  timing  xsec  P19>0
+                      v9 13.99 14.33 16.59 14.31 48.26    1.76 12.55   0.93
+                     v11 14.60 14.34 20.35 15.02 48.00    2.76 12.25   0.94
+                      W0 11.79 10.35 21.71 12.22 38.40   -0.89 13.10   0.91
+               v11 + SVM 14.64 13.65 20.04 14.81 48.14    2.85 11.97   0.94
+                v9 + SVM 14.76 13.51 14.10 14.34 48.16    1.56 12.78   0.92
+                W0 + SVM 12.27 10.64 21.98 12.62 38.91   -0.81 13.43   0.92
+v11, SVM as a third part 14.27 14.29 20.92 14.84 48.66    2.81 12.03   0.94
+ v9, SVM as a third part 14.04 14.39 16.14 14.32 49.10    1.59 12.72   0.91

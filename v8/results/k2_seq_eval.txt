@@ -1,0 +1,47 @@
+rows: members 116353, new sequence members 116353; common 116353
+
+MARKET VIEW: Top50 bp/day, walk-forward 2022-01..2026-10; d_/t_ = paired difference to the control
+                                          config    val   hold   post  all22     sd  timing   xsec  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+                control: (MLP + Transformer) / 2 13.220 13.949 12.632 13.382 49.595   1.550 11.832  0.911    NaN    NaN     NaN     NaN     NaN     NaN
+                             K1 (MLP + LSTM) / 2 12.006 14.710 12.126 12.801 48.946   1.087 11.715  0.912 -1.215 -2.376   0.761   0.948  -0.506  -0.186
+               K2 (MLP + Transformer + LSTM) / 3 12.232 14.330 12.996 12.906 49.166   1.361 11.545  0.911 -0.988 -2.638   0.381   0.591   0.365   0.171
+              (info, round 5) R1 (MLP + GRU) / 2 12.032 13.882 12.458 12.605 48.954   1.096 11.509  0.901 -1.188 -2.486  -0.067  -0.092  -0.174  -0.079
+(info, round 5) R2 (MLP + Transformer + GRU) / 3 12.567 13.786 12.703 12.933 49.309   1.400 11.532  0.902 -0.653 -1.821  -0.163  -0.269   0.071   0.037
+                                (info) LSTM only 11.243 14.899 13.286 12.479 49.824   0.583 11.895  0.904 -1.977 -2.310   0.950   0.688   0.654   0.154
+                                 (info) GRU only 11.456 13.944 12.389 12.258 49.484   0.689 11.568  0.896 -1.764 -2.178  -0.005  -0.004  -0.243  -0.063
+Holm (2 tests) and hold > 0:
+  K1 (MLP + LSTM) / 2                      val t -2.38 (needs 1.96), hold diff +0.76 -> do not adopt
+  K2 (MLP + Transformer + LSTM) / 3        val t -2.64 (needs 1.65), hold diff +0.38 -> do not adopt
+  for information, static 2026-06-01..09-30: control: 12.16; K1 12.44; K2 12.69; (info, 12.79; (info, 12.56; (info) 13.09; (info) 12.52
+  for information, live 2026-10-01..10-22: control: 15.26; K1 10.35; K2 14.74; (info, 10.58; (info, 13.50; (info) 14.41; (info) 11.66
+
+correlation of each daily pbar with the Top50 intraday return m (val / hold / post / all):
+  control: (MLP + Transformer) / 2                 +0.110 / +0.203 / -0.097 / +0.110
+  K1 (MLP + LSTM) / 2                              +0.084 / +0.211 / -0.111 / +0.102
+  K2 (MLP + Transformer + LSTM) / 3                +0.100 / +0.214 / -0.082 / +0.111
+  (info, round 5) R1 (MLP + GRU) / 2               +0.084 / +0.206 / -0.109 / +0.100
+  (info, round 5) R2 (MLP + Transformer + GRU) / 3 +0.099 / +0.209 / -0.082 / +0.110
+  (info) LSTM only                                 +0.029 / +0.193 / -0.026 / +0.085
+  (info) GRU only                                  +0.039 / +0.188 / -0.025 / +0.085
+
+STOCK VIEW: Top50 bp/day, walk-forward 2022-01..2026-10; d_/t_ = paired difference to the control
+                                       config    val   hold   post  all22     sd  timing   xsec  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+          control: p_e = MLP residual members 13.220 13.949 12.632 13.382 49.595   1.550 11.832  0.911    NaN    NaN     NaN     NaN     NaN     NaN
+                     S3 p_e = (MLP + GRU) / 2 12.147 13.725 15.898 12.924 51.904   1.826 11.098  0.884 -1.073 -2.018  -0.224  -0.234   3.266   1.369
+                    S4 p_e = (MLP + LSTM) / 2 11.858 12.872 15.314 12.446 52.445   1.600 10.846  0.891 -1.363 -2.417  -1.077  -1.210   2.682   1.055
+(info, round 6) S1 p_e = (MLP + LightGBM) / 2 13.577 14.557 14.633 13.952 51.744   1.881 12.070  0.897  0.357  0.686   0.608   0.628   2.001   0.884
+                              (info) GRU only 11.988 14.023 15.766 12.900 52.370   2.286 10.614  0.880 -1.232 -1.640   0.074   0.054   3.134   0.899
+                             (info) LSTM only 11.584 13.569 15.272 12.474 53.525   1.591 10.883  0.879 -1.636 -1.896  -0.380  -0.296   2.640   0.672
+Holm (2 tests) and hold > 0:
+  S3 p_e = (MLP + GRU) / 2                 val t -2.02 (needs 1.96), hold diff -0.22 -> do not adopt
+  S4 p_e = (MLP + LSTM) / 2                val t -2.42 (needs 1.65), hold diff -1.08 -> do not adopt
+  for information, static 2026-06-01..09-30: control: 12.16; S3 16.35; S4 15.24; (info, 13.82; (info) 17.23; (info) 14.42
+  for information, live 2026-10-01..10-22: control: 15.26; S3 13.37; S4 15.70; (info, 19.21; (info) 7.55; (info) 20.05
+
+daily rank IC of the stock view vs the residual intraday return, Top50 (val / hold / post / all):
+  control: p_e = MLP residual members              0.099 / 0.105 / 0.081 / 0.099
+  S3 p_e = (MLP + GRU) / 2                         0.099 / 0.105 / 0.095 / 0.101
+  S4 p_e = (MLP + LSTM) / 2                        0.099 / 0.106 / 0.098 / 0.101
+  (info, round 6) S1 p_e = (MLP + LightGBM) / 2    0.102 / 0.111 / 0.087 / 0.103
+  (info) GRU only                                  0.095 / 0.098 / 0.103 / 0.096
+  (info) LSTM only                                 0.096 / 0.099 / 0.107 / 0.098

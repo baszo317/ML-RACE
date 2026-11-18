@@ -1,0 +1,15 @@
+05:57:00 panel (166346, 185), news features 12
+05:57:35 C.LU 2024-01-01 seed 1: best_iter 290, 35s
+05:57:35 harness check vs race_std C.LU 2024-01-01 seed 1: rows 24196/24196, max |diff| 0
+05:57:49 CN.LU 2022-01-01 seed 1: best_iter 248, 13s
+05:57:59 CN.LU 2022-01-01 seed 2: best_iter 212, 11s
+05:58:09 CN.LU 2022-01-01 seed 3: best_iter 203, 10s
+05:58:38 CN.LU 2023-01-01 seed 1: best_iter 531, 29s
+05:59:12 CN.LU 2023-01-01 seed 2: best_iter 579, 33s
+05:59:12 budget reached: run again to continue
+05:59:25 panel (166346, 185), news features 12
+05:59:46 CN.LU 2023-01-01 seed 3: best_iter 276, 21s
+06:00:11 CN.LU 2024-01-01 seed 1: best_iter 290, 25s
+06:00:35 CN.LU 2024-01-01 seed 2: best_iter 260, 24s
+06:01:00 CN.LU 2024-01-01 seed 3: best_iter 281, 25s
+06:01:00 training done

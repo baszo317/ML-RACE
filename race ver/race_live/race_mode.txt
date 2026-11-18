@@ -1,0 +1,4 @@
+daily
+# race_live.py reads the first word: daily (models of the last 3 labelled days) or monthly (3 seeds, data before the month).
+# Set 2026-11-16 07:33 by the walk-forward rule of PREREG_race_live.md section 2 (results\wf_daily.txt):
+# WF3 - MR = -0.32 bp/day, SE 0.41 -> not worse than monthly by more than 1 SE -> daily.

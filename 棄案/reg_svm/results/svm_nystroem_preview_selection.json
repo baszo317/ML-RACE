@@ -1,0 +1,92 @@
+{
+ "name": "NysSVM",
+ "rebuild_ok": true,
+ "selected": true,
+ "passed": false,
+ "v11 + SVM minus v11": {
+  "val": [
+   0.14899489487449555,
+   0.5219231465627389
+  ],
+  "hold": [
+   -0.7514983258729425,
+   -1.5863246416342158
+  ],
+  "post": [
+   0.9621914686985754,
+   0.6187251691257666
+  ],
+  "all": [
+   -0.04332490564444788,
+   -0.16385392398469031
+  ]
+ },
+ "folds": [
+  {
+   "fold": "2022-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C by smallest val hinge loss over {0.001, 0.01, 0.1}",
+   "oos_ic": 0.09809882854505604,
+   "val_hinge": 0.9157882553056954,
+   "val_ic": 0.1425836457216923
+  },
+  {
+   "fold": "2023-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C by smallest val hinge loss over {0.001, 0.01, 0.1}",
+   "oos_ic": 0.10055576513424938,
+   "val_hinge": 0.9405909518079141,
+   "val_ic": 0.08750852895015003
+  },
+  {
+   "fold": "2024-01-01",
+   "C_tuned": 0.01,
+   "g": 1.0,
+   "C": 0.01,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C by smallest val hinge loss over {0.001, 0.01, 0.1}",
+   "oos_ic": 0.12302437091700513,
+   "val_hinge": 0.9359476510626178,
+   "val_ic": 0.10116783010360059
+  },
+  {
+   "fold": "2025-01-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C by smallest val hinge loss over {0.001, 0.01, 0.1}",
+   "oos_ic": 0.09934671945961361,
+   "val_hinge": 0.9189786761334402,
+   "val_ic": 0.1274784314618673
+  },
+  {
+   "fold": "2026-01-01",
+   "C_tuned": 0.01,
+   "g": 1.0,
+   "C": 0.01,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C by smallest val hinge loss over {0.001, 0.01, 0.1}",
+   "oos_ic": 0.08755413604606513,
+   "val_hinge": 0.959623297674464,
+   "val_ic": 0.09244921701279936
+  },
+  {
+   "fold": "2026-06-01",
+   "C_tuned": 0.1,
+   "g": 1.0,
+   "C": 0.1,
+   "model": "Nystroem 1000 landmarks, gamma 1/67, LinearSVC hinge",
+   "rule": "C by smallest val hinge loss over {0.001, 0.01, 0.1}",
+   "oos_ic": 0.08916884942164226,
+   "val_hinge": 0.9357768223271625,
+   "val_ic": 0.10182370384018559
+  }
+ ]
+}

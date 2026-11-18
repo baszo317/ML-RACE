@@ -1,0 +1,27 @@
+Top50, bp/day; walk-forward 2022-01..2026-10 (post = models frozen at 2026-05-29); d_/t_ = paired difference to the v4 rule
+                   config    val   hold   post  all22     sd  timing   xsec  beta_bet  mean B  corr(sbar,m)  P19>0  d_val  t_val  d_hold  t_hold  d_post  t_post
+        v4 rule (control) 13.220 13.949 12.632 13.382 49.595   1.550 11.832     1.234  -0.301         0.093  0.911    NaN    NaN     NaN     NaN     NaN     NaN
+T1 beta-consistent (pbar) 11.934 13.358 12.479 12.394 45.814   1.989 10.405     1.341  -0.086         0.099  0.911 -1.286 -1.082  -0.591  -0.541  -0.153  -0.052
+   T2 ridge market signal 12.769 15.139 14.494 13.604 51.361   2.390 11.214     1.191  -0.304         0.129  0.917 -0.451 -0.712   1.190   0.866   1.862   0.542
+          T3 pbar + ridge 13.204 14.619 14.137 13.694 50.863   2.311 11.383     1.164  -0.303         0.128  0.917 -0.016 -0.044   0.670   0.718   1.505   0.956
+  T4 T3 + beta-consistent 11.543 14.065 12.342 12.343 47.437   1.974 10.369     1.283  -0.087         0.098  0.900 -1.678 -1.346   0.116   0.086  -0.290  -0.095
+
+Holm (val t in decreasing order; stop at the first failure) and hold > 0:
+  T3 pbar + ridge              val t -0.04 (needs 2.24), hold diff +0.67 -> do not adopt
+  T2 ridge market signal       val t -0.71 (needs 2.13), hold diff +1.19 -> do not adopt
+  T1 beta-consistent (pbar)    val t -1.08 (needs 1.96), hold diff -0.59 -> do not adopt
+  T4 T3 + beta-consistent      val t -1.35 (needs 1.65), hold diff +0.12 -> do not adopt
+
+for information, static 2026-06-01..09-30:
+  v4 rule (control)            AR   12.16  timing  -2.33  beta_bet  -0.49  diff  +0.00 (t nan, 84 days)
+  T1 beta-consistent (pbar)    AR   11.76  timing  -1.18  beta_bet  -1.49  diff  -0.41 (t -0.13, 84 days)
+  T2 ridge market signal       AR   12.51  timing   0.08  beta_bet  -0.21  diff  +0.35 (t 0.09, 84 days)
+  T3 pbar + ridge              AR   13.97  timing  -1.26  beta_bet  -0.06  diff  +1.81 (t 1.00, 84 days)
+  T4 T3 + beta-consistent      AR   11.79  timing  -1.27  beta_bet  -0.78  diff  -0.37 (t -0.11, 84 days)
+
+for information, live 2026-10-01..10-22:
+  v4 rule (control)            AR   15.26  timing  -5.17  beta_bet -12.11  diff  +0.00 (t nan, 15 days)
+  T1 beta-consistent (pbar)    AR   16.53  timing  -4.64  beta_bet  -7.75  diff  +1.27 (t 0.15, 15 days)
+  T2 ridge market signal       AR   25.58  timing   1.05  beta_bet -11.11  diff +10.32 (t 1.66, 15 days)
+  T3 pbar + ridge              AR   15.06  timing  -2.00  beta_bet -11.81  diff  -0.21 (t -0.09, 15 days)
+  T4 T3 + beta-consistent      AR   15.44  timing  -2.92  beta_bet  -6.94  diff  +0.18 (t 0.02, 15 days)

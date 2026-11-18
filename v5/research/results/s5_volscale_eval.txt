@@ -1,0 +1,22 @@
+median a_hat 126.8 bp, median eps_hat 113.7 bp (2020-03..2021-12) -> k0 = 0.448
+  2022: median a 115.7, eps 106.2, ratio 0.918
+  2023: median a 108.3, eps 102.1, ratio 0.943
+  2024: median a 125.7, eps 116.2, ratio 0.925
+  2025: median a 129.6, eps 117.3, ratio 0.905
+  2026: median a 169.1, eps 159.0, ratio 0.940
+
+(A) walk-forward 2022-01..2026-10 (yearly retrain, post frozen)
+                                            config   val  hold  post   all    sd  timing  xsec  share1  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all  nwt_val  nwt_all
+                               v4 rule (w_T = 0.5) 13.22 13.95 12.63 13.38 49.60    1.55 11.83    0.55    NaN    NaN     NaN     NaN     NaN     NaN    NaN    NaN      NaN      NaN
+                  bp rule, k = k0 (pre-registered) 12.83 13.32 13.57 13.03 49.37    1.47 11.56    0.58  -0.40  -0.84   -0.63   -0.90    0.94    0.60  -0.35  -0.91    -0.87    -0.96
+                    diag: bp rule, stock view only 12.67 12.21 12.74 12.54 47.70    1.03 11.51    0.61  -0.55  -0.94   -1.74   -1.82    0.11    0.05  -0.84  -1.69    -1.01    -1.77
+                   diag: bp rule, market view only 12.57 14.73 10.67 13.04 52.51    1.90 11.13    0.52  -0.65  -1.65    0.78    1.14   -1.96   -0.79  -0.34  -0.91    -1.71    -0.86
+  diag: bp rule, gamma = 0.63 (fitted on val+hold) 13.15 13.55 13.52 13.30 49.43    1.53 11.77    0.57  -0.07  -0.21   -0.40   -0.83    0.88    0.78  -0.09  -0.31    -0.21    -0.32
+
+(B) static 2026-06..09, v4 rolling pool
+                                            config  post    sd  timing  xsec  d_post  t_post
+                               v4 rule (w_T = 0.5) 15.36 81.79   -3.13 18.49     NaN     NaN
+                  bp rule, k = k0 (pre-registered) 15.52 79.77   -2.36 17.88    0.16    0.10
+                    diag: bp rule, stock view only 15.46 71.52   -1.19 16.65    0.10    0.04
+                   diag: bp rule, market view only 12.71 90.77   -3.98 16.69   -2.65   -0.84
+  diag: bp rule, gamma = 0.63 (fitted on val+hold) 15.38 79.80   -2.65 18.03    0.02    0.01

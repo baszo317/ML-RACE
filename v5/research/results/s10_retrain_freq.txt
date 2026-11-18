@@ -1,0 +1,11 @@
+                                    config   val  hold  post   all    sd  timing  xsec  share1  d_val  t_val  d_hold  t_hold  d_post  t_post  d_all  t_all  nwt_val  nwt_all
+                            yearly retrain 13.08 13.58 14.25 13.33 49.99    1.56 11.76    0.55    NaN    NaN     NaN     NaN     NaN     NaN    NaN    NaN      NaN      NaN
+                           monthly retrain 14.07 14.80 16.20 14.46 50.84    1.52 12.94    0.55   0.99   1.40    1.22    1.08    1.95    0.44   1.14   1.71     1.43     1.84
+ yearly retrain (MLP only, no Transformer) 12.54 13.74 12.95 12.93 49.37    1.22 11.71    0.55    NaN    NaN     NaN     NaN     NaN     NaN    NaN    NaN      NaN      NaN
+monthly retrain (MLP only, no Transformer) 13.44 14.63 14.09 13.84 50.80    1.01 12.83    0.55   0.89   1.17    0.89    0.75    1.14    0.22   0.91   1.24     1.20     1.35
+
+difference monthly - yearly by part (bp/day):
+  val   AR +0.99  timing -0.56  xsec +1.55
+  hold  AR +1.22  timing +0.49  xsec +0.73
+  post  AR +1.95  timing +1.97  xsec -0.01
+  all   AR +1.14  timing -0.04  xsec +1.18

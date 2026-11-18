@@ -1,0 +1,77 @@
+Phase 2 check  2026-10-29 (Thu)   prices: TWSE 48   (48/50 stocks)
+  no downloaded price on 2026-10-29 for 2 stocks: 8069 3293
+  market: Top50 mean (close - open)/open -109.08 bp, 16 of 48 up; previous trading day 2026-10-28
+  WARNING: only 48 of 50 stocks have a price; the AR below is not comparable to the board
+
+   AR score     AR bp   timing     xsec    1s   hits  file
+   0.010908    109.08   109.08     0.00  0.00  32/48  (baseline) Always down
+  -0.009189    -91.89    -4.54   -87.35  0.52  13/48  (baseline) Previous day
+   0.017756    177.56    36.36   141.20  0.33  38/48  v6/upload_v5_2026-10-29.csv
+
+  per stock: r_bp = (close - open)/open in bp, y = close > open, prev_p = the Previous day baseline,
+  pN = prediction of file N, bpN = its contribution (2p - 1) * r / 50 in bp (the column sums to the AR in bp)
+    p1, bp1: v6/upload_v5_2026-10-29.csv
+        r_bp  y  prev_p  p1    bp1 source
+id                                       
+2330  -20.66  0       1   1  -0.43   TWSE
+2317  -80.00  0       1   0   1.67   TWSE
+2454 -380.50  0       1   0   7.93   TWSE
+2308 -295.08  0       0   0   6.15   TWSE
+2881   93.46  1       0   1   1.95   TWSE
+2882   86.58  1       1   0  -1.80   TWSE
+2382 -363.64  0       1   0   7.58   TWSE
+2412  160.77  1       0   1   3.35   TWSE
+2891  107.38  1       1   1   2.24   TWSE
+3711 -366.71  0       1   0   7.64   TWSE
+2886   73.53  1       0   1   1.53   TWSE
+2303 -532.79  0       1   0  11.10   TWSE
+6669 -382.65  0       0   0   7.97   TWSE
+5871    0.00  0       1   0  -0.00   TWSE
+2884  103.09  1       0   1   2.15   TWSE
+2357 -335.71  0       1   0   6.99   TWSE
+2345 -487.80  0       0   0  10.16   TWSE
+1216  115.24  1       0   1   2.40   TWSE
+2885  -27.17  0       1   1  -0.57   TWSE
+2603    0.00  0       1   1   0.00   TWSE
+3045  228.14  1       0   1   4.75   TWSE
+2892  458.82  1       0   1   9.56   TWSE
+2880  234.93  1       0   1   4.89   TWSE
+6505 -380.49  0       0   0   7.93   TWSE
+5880  230.09  1       0   0  -4.79   TWSE
+3231 -258.40  0       1   0   5.38   TWSE
+3017 -357.14  0       0   0   7.44   TWSE
+2383 -365.38  0       1   0   7.61   TWSE
+2207   37.74  1       0   1   0.79   TWSE
+2327  -18.38  0       1   0   0.38   TWSE
+4904  180.18  1       0   1   3.75   TWSE
+2002 -101.78  0       1   1  -2.12   TWSE
+3008 -791.77  0       1   0  16.50   TWSE
+2890  130.86  1       1   0  -2.73   TWSE
+2883   52.22  1       0   0  -1.09   TWSE
+1303 -188.68  0       1   0   3.93   TWSE
+2301 -363.29  0       1   0   7.57   TWSE
+2395 -288.60  0       1   0   6.01   TWSE
+3034  -33.44  0       0   0   0.70   TWSE
+2379  114.65  1       0   0  -2.39   TWSE
+2887  -11.78  0       0   0   0.25   TWSE
+2912    0.00  0       0   1   0.00   TWSE
+3661 -251.66  0       1   0   5.24   TWSE
+2059 -360.98  0       0   0   7.52   TWSE
+3653 -146.15  0       1   0   3.04   TWSE
+1301 -185.92  0       0   0   3.87   TWSE
+2615 -170.94  0       1   0   3.56   TWSE
+2609  -95.85  0       1   0   2.00   TWSE
+
+
+Accumulated from v6/phase2/scores.csv (board: total = sum of the daily AR scores, average = total / days)
+  days      total    average       first        last  series
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  uploaded (v6/phase2/uploaded.csv)
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  v11/out/submission_v9.4_MMDD_wt0_lam0.5.csv
+     2   0.008093   0.004046  2026-10-28  2026-10-29  v6/submission_v11_MMDD.csv
+     2   0.017286   0.008643  2026-10-28  2026-10-29  v6/submission_v11_MMDD_wt0_lam0.5.csv
+     1   0.017756   0.017756  2026-10-29  2026-10-29  v6/upload_v5_2026-10-29.csv
+     1  -0.007953  -0.007953  2026-10-27  2026-10-27  v9/out/submission_v9_MMDD.csv
+     3   0.018418   0.006139  2026-10-27  2026-10-29  (baseline) Always down (every scored day)
+     3  -0.010064  -0.003355  2026-10-27  2026-10-29  (baseline) Previous day (every scored day)
+        same 1 days as uploaded: Always down total 0.010730, average 0.010730
+        same 1 days as uploaded: Previous day total 0.004795, average 0.004795

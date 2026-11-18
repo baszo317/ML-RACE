@@ -1,0 +1,5 @@
+night sessions: 1653 (2020-01-03 .. 2026-10-23); matched to a previous day close: 1.000
+dating check |night open / previous day close - 1|: median 0.00071, p95 0.00339 (small = the row dated D is the night before D)
+   for comparison |night open / same-date day close - 1|: median 0.00709
+panel days with night data: 0.999 of 1654 days
+descriptive: corr(night_ret, Nasdaq previous session) 0.638; corr(night_ret, Top100 intraday same day) -0.111; corr(night_range, |intraday|) 0.336

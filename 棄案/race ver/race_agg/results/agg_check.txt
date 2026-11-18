@@ -1,0 +1,22 @@
+SD     independent mean +15.0996  agg_eval +15.0996  max daily |diff| 5.68e-14
+A1     independent mean +15.0944  agg_eval +15.0944  max daily |diff| 5.68e-14
+A2     independent mean +14.9402  agg_eval +14.9402  max daily |diff| 5.68e-14
+A3     independent mean +15.8662  agg_eval +15.8662  max daily |diff| 5.68e-14
+A4     independent mean +14.2010  agg_eval +14.2010  max daily |diff| 2.84e-14
+B1     independent mean +14.6420  agg_eval +14.6420  max daily |diff| 5.68e-14
+B2     independent mean +13.9447  agg_eval +13.9447  max daily |diff| 5.68e-14
+C1     independent mean +10.6817  agg_eval +10.6817  max daily |diff| 2.84e-14
+C2     independent mean +10.0089  agg_eval +10.0089  max daily |diff| 8.53e-14
+C3     independent mean +14.4789  agg_eval +14.4789  max daily |diff| 5.68e-14
+D1     independent mean +8.2097  agg_eval +8.2097  max daily |diff| 5.68e-14
+D2     independent mean +14.3537  agg_eval +14.3537  max daily |diff| 5.68e-14
+E1     independent mean +12.5155  agg_eval +12.5155  max daily |diff| 5.68e-14
+E4     independent mean +14.3359  agg_eval +14.3359  max daily |diff| 4.26e-14
+F1     independent mean +14.1281  agg_eval +14.1281  max daily |diff| 4.26e-14
+E2     independent mean +13.5874  agg_eval +13.5874  max daily |diff| 5.68e-14
+F2     independent mean +14.5530  agg_eval +14.5530  max daily |diff| 5.68e-14
+worst daily difference 8.53e-14
+132 unit files checked; problems: none
+blending rows of fold 2022-01-01: 2021-07-13 .. 2021-12-30 (before the fold: True)
+blending rows of fold 2023-01-01: 2022-07-14 .. 2022-12-30 (before the fold: True)
+blending rows of fold 2024-01-01: 2023-07-11 .. 2023-12-29 (before the fold: True)

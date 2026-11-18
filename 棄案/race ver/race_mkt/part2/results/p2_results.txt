@@ -1,0 +1,8 @@
+race_mkt part 2, D (2022-2024), decision SD (Top25 + ex-dividend), 727 days
+  C.LU  (race_std cache, 169 features)   AR  15.10  NW t  9.80  IC 0.1207  2022:17.02 2023:10.69 2024:17.50
+  CF.LU (C + 37 futures features)        AR  14.72  NW t  9.55  IC 0.1208  2022:16.32 2023:9.91 2024:17.83
+  CF.LU - C.LU: -0.38 bp/day, NW t -0.70, years 2022:-0.70 2023:-0.77 2024:+0.33  -> not passed (mean > 0, t >= 2, >= 2 of 3 years > 0)
+  within-day rank correlation of the two scores: 0.963; best_iter CF.LU 163, 215, 186, 424, 405, 405, 204, 305, 190
+  gain importance share of the 37 futures features: 0.187 (mean over the 9 models)
+  top futures features by gain share: tw_margin_chg_n 0.0201, div_retail_foreign 0.0176, rt_tx_ratio_z250 0.0099, lt10_all_d1n 0.0096, night_day_vol_z60 0.0080, rt_small_ratio_z250 0.0078, lt10_all_z250 0.0074, tw_foreign_netbuy_n 0.0072, rt_small_ratio_d1n 0.0070, basis_dev 0.0064
+  top 10 overall: C__margin_util 0.049, C__tx_night_ret 0.039, C__K_adr_prem_chg_1 0.034, C__trust_net 0.030, C__sector_ret_1 0.025, C__gap_mean_20 0.022, C__sector_rel_1 0.022, FUT__tw_margin_chg_n 0.020, C__rank_daytrade_ratio 0.020, C__ksft 0.018

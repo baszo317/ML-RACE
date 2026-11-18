@@ -1,0 +1,31 @@
+v14_signals.py  2026-11-06 17:49  data: /sessions/rcw-01mnyupzgffmuxsgzzax3qar/mnt/ML RACE/data/market
+  100 stocks, 1658 trading days 2020-01-02 .. 2026-11-02
+  built in 11s -> cache\signals.pkl (165,690 rows, 15 columns), cache\calendar.pkl
+
+  coverage from 2022-01 (share of non-missing rows) and mean daily cross-sectional sd:
+    al_k1    0.950   sd 1.0128
+    al_k3    0.950   sd 0.9753
+    al_k5    0.951   sd 0.9645
+    rr_h1    0.958   sd 0.9585
+    rr_h5    0.958   sd 1.9692
+    rr_h10   0.958   sd 2.6126
+    rr_h20   0.958   sd 3.2274
+    beta1    0.958   sd 0.0011
+    beta2    0.958   sd 0.0025
+    beta3    0.958   sd 0.0029
+    beta4    0.958   sd 0.0030
+    beta5    0.958   sd 0.0030
+    al_k10   0.951   sd 0.9702
+    trust60  1.000   sd 3.2846
+    gap      0.999   sd 0.0106
+
+  calendar: q_last20 540 days, q_first3 84 days (2020-01 .. 2026-11-02; the last, unfinished quarter has no q_last flags)
+
+  leak check: recompute from data cut at the close of D-1, compare with the full run (max |difference|)
+    D = 2022-06-13 (cut at 2022-06-10): 14 signals, max |diff| 0.00e+00
+    D = 2022-09-21 (cut at 2022-09-20): 14 signals, max |diff| 0.00e+00
+    D = 2023-09-28 (cut at 2023-09-27): 14 signals, max |diff| 0.00e+00
+    D = 2025-03-03 (cut at 2025-02-27): 14 signals, max |diff| 0.00e+00
+    D = 2025-05-29 (cut at 2025-05-28): 14 signals, max |diff| 0.00e+00
+    D = 2025-12-30 (cut at 2025-12-29): 14 signals, max |diff| 0.00e+00
+  leak check PASSED (identical up to rounding)

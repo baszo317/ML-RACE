@@ -1,0 +1,95 @@
+nested walk-forward: every outer period is selected on 2022-01-01 .. the day before it; difference to the 4 baseline blocks
+
+lgb: by period (dIC in 1e-3 rank IC of the family; dAR in Top50 bp/day, only this family replaced)
+rule period  n_sel                                                                                             selected  dIC_e3   tIC   dAR   tAR
+  R1   2023     16                              KBAR+MA+STD+RESI+MAX+MIN+QTLU+RANK+RSV+CORR+CORD+CNT+VMA+VSTD+WVMA+VSUM    3.21  1.62  0.23  0.55
+  R1   2024     22 KBAR+PRICE+MA+STD+BETA+RSQR+RESI+MAX+MIN+QTLU+QTLD+RANK+RSV+IDX+CORR+CORD+CNT+SUM+VMA+VSTD+WVMA+VSUM   -0.19 -0.12 -0.46 -0.66
+  R1   2025     19                KBAR+MA+STD+RSQR+RESI+MAX+MIN+QTLU+QTLD+RANK+RSV+IDX+CORR+CORD+CNT+VMA+VSTD+WVMA+VSUM    1.22  0.55 -0.54 -1.20
+  R1  2026a     19                 KBAR+MA+STD+RSQR+RESI+MAX+MIN+QTLU+RANK+RSV+IDX+CORR+CORD+CNT+SUM+VMA+VSTD+WVMA+VSUM   -4.95 -1.55 -0.68 -1.04
+  R1   post     19                 KBAR+MA+STD+RSQR+RESI+MAX+MIN+QTLU+RANK+RSV+IDX+CORR+CORD+CNT+SUM+VMA+VSTD+WVMA+VSUM    8.31  2.24  3.69  3.24
+  R2   2023      4                                                                                    STD+MAX+QTLU+RANK    3.59  2.09  0.31  0.87
+  R2   2024      9                                                             STD+BETA+RESI+MAX+QTLU+RANK+RSV+CORR+VMA    1.25  1.09  0.28  0.48
+  R2   2025      8                                                                 BETA+RESI+MAX+QTLU+RANK+RSV+CORR+VMA   -0.62 -0.35 -0.81 -1.65
+  R2  2026a     11                                                   ROC+BETA+RSQR+RESI+MAX+QTLU+RANK+RSV+CORR+CORD+VMA   -4.16 -1.49 -0.07 -0.10
+  R2   post     11                                                   ROC+BETA+RSQR+RESI+MAX+QTLU+RANK+RSV+CORR+CORD+VMA    4.06  1.10  2.33  1.74
+  R3   2023      0                                                                                                         0.00   NaN  0.00   NaN
+  R3   2024      0                                                                                                         0.00   NaN  0.00   NaN
+  R3   2025      1                                                                                                 QTLU    1.33  1.40  0.57  1.95
+  R3  2026a      1                                                                                                 QTLU   -0.48 -0.31 -0.00 -0.01
+  R3   post      0                                                                                                         0.00   NaN  0.00   NaN
+  R4   2023      0                                                                                                         0.00   NaN  0.00   NaN
+  R4   2024      0                                                                                                         0.00   NaN  0.00   NaN
+  R4   2025      0                                                                                                         0.00   NaN  0.00   NaN
+  R4  2026a      0                                                                                                         0.00   NaN  0.00   NaN
+  R4   post      0                                                                                                         0.00   NaN  0.00   NaN
+  R5   2023     23                                                                                                  ALL    0.19  0.08 -0.25 -0.54
+  R5   2024     23                                                                                                  ALL    0.66  0.42 -0.87 -1.41
+  R5   2025     23                                                                                                  ALL    2.12  1.06 -0.49 -0.89
+  R5  2026a     23                                                                                                  ALL   -6.71 -1.92 -0.96 -1.62
+  R5   post     23                                                                                                  ALL   10.08  2.02  3.73  3.01
+   R4 2023: screen (t > 2.79, every year > 0): none
+   R4 2024: screen (t > 2.79, every year > 0): none
+   R4 2025: screen (t > 2.79, every year > 0): none
+   R4 2026a: screen (t > 2.79, every year > 0): none
+   R4 post: screen (t > 2.79, every year > 0): none
+   R5 2023: ALL
+   R5 2024: ALL
+   R5 2025: ALL
+   R5 2026a: ALL
+   R5 post: ALL
+lgb: pooled over the outer periods (2023-01 .. 2026-10-22)
+rule  dIC_e3   tIC    dAR    tAR  days  periods_IC>0  periods_AR>0  eligible
+  R1   1.489 1.415  0.123  0.412   918             3             2     False
+  R2   1.109 1.244  0.185  0.654   918             3             3     False
+  R3   0.302 0.996  0.152  1.708   918             1             1     False
+  R4   0.000   NaN  0.000    NaN   918             0             0     False
+  R5   1.178 1.027 -0.118 -0.384   918             4             1     False
+lgb: final rule (eligible: pooled IC t > 2 and pooled AR > 0; highest pooled dIC) -> none: no Alpha158 group
+
+mlp: by period (dIC in 1e-3 rank IC of the family; dAR in Top50 bp/day, only this family replaced)
+rule period  n_sel                                                        selected  dIC_e3   tIC   dAR   tAR
+  R1   2023     14 KBAR+STD+RSQR+RESI+MAX+MIN+QTLU+QTLD+RANK+RSV+IDX+CNT+VSTD+WVMA    0.96  0.39  0.39  0.64
+  R1   2024     10                    KBAR+STD+RESI+MAX+MIN+QTLU+RANK+RSV+IDX+WVMA    1.72  1.06  0.36  0.87
+  R1   2025      5                                           RSQR+MIN+RSV+IDX+WVMA    2.96  1.25 -0.54 -0.98
+  R1  2026a      9                       STD+RSQR+RESI+MAX+IDX+CORR+CORD+VSTD+WVMA   -4.31 -1.15  0.40  0.30
+  R1   post     11               KBAR+STD+RSQR+MAX+MIN+QTLU+IDX+CORD+SUM+VSTD+WVMA   -0.53 -0.09  2.66  2.09
+  R2   2023      4                                                STD+MAX+RSV+CORR    3.10  1.15 -1.02 -1.93
+  R2   2024     10                      STD+RESI+MAX+MIN+RANK+RSV+CORR+CNT+SUM+VMA    2.03  1.72  0.21  0.51
+  R2   2025      6                                       STD+RESI+MAX+MIN+RANK+RSV    5.52  2.18  0.36  0.65
+  R2  2026a      8                              STD+RESI+MAX+MIN+RANK+RSV+SUM+WVMA   -2.34 -0.52  1.16  1.03
+  R2   post      8                              STD+RESI+MAX+MIN+RANK+RSV+SUM+WVMA   -0.95 -0.21  1.56  1.71
+  R3   2023      1                                                             STD    4.11  2.36 -0.21 -0.53
+  R3   2024      1                                                             STD    0.16  0.14 -0.21 -0.52
+  R3   2025      2                                                         STD+RSV    3.81  2.06 -0.25 -0.42
+  R3  2026a      2                                                         STD+RSV   -2.32 -0.43  0.87  0.69
+  R3   post      0                                                                    0.00   NaN  0.00   NaN
+  R4   2023      0                                                                    0.00   NaN  0.00   NaN
+  R4   2024      1                                                             STD    0.16  0.14 -0.21 -0.52
+  R4   2025      1                                                             STD    1.44  0.98  0.18  0.44
+  R4  2026a      1                                                             STD   -4.51 -1.52  1.59  1.26
+  R4   post      0                                                                    0.00   NaN  0.00   NaN
+  R5   2023     23                                                             ALL   -1.51 -0.39 -0.30 -0.51
+  R5   2024     23                                                             ALL   -1.70 -1.11  0.66  1.21
+  R5   2025     23                                                             ALL    0.54  0.18  0.66  1.31
+  R5  2026a     23                                                             ALL   -6.44 -1.72  0.24  0.19
+  R5   post     23                                                             ALL    0.66  0.10  3.83  2.92
+   R4 2023: screen (t > 2.73, every year > 0): none
+   R4 2024: screen (t > 2.73, every year > 0): STD 3.37; AR guard: STD AR diff +0.01 bp (t 0.02) -> ok
+   R4 2025: screen (t > 2.73, every year > 0): STD 2.96; AR guard: STD AR diff -0.06 bp (t -0.29) -> ok
+   R4 2026a: screen (t > 2.73, every year > 0): STD 3.03; AR guard: STD AR diff -0.00 bp (t -0.01) -> ok
+   R4 post: screen (t > 2.73, every year > 0): none
+   R5 2023: ALL
+   R5 2024: ALL
+   R5 2025: ALL
+   R5 2026a: ALL
+   R5 post: ALL
+mlp: pooled over the outer periods (2023-01 .. 2026-10-22)
+rule  dIC_e3    tIC    dAR    tAR  days  periods_IC>0  periods_AR>0  eligible
+  R1   0.984  0.789  0.382  1.204   918             3             4     False
+  R2   2.458  1.957  0.174  0.613   918             3             4     False
+  R3   1.880  2.001 -0.085 -0.335   918             3             1     False
+  R4  -0.044 -0.074  0.159  0.781   918             2             2     False
+  R5  -1.295 -0.824  0.707  2.174   918             2             4     False
+mlp: final rule (eligible: pooled IC t > 2 and pooled AR > 0; highest pooled dIC) -> none: no Alpha158 group
+
+written ..\results\v11_selection.json; done in 57s

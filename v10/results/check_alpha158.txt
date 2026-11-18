@@ -1,0 +1,16 @@
+1. expressions: 158 fields; names equal alpha158.NAMES in order: True
+   every template occurs verbatim in qlib_alpha158_source.txt
+2. 2330: 1653 days; identical in 143 of 158 features; NaN pattern mismatches 0; largest difference 1.7e-09 sd of the feature (RSQR5)
+2. 2317: 1652 days; identical in 143 of 158 features; NaN pattern mismatches 0; largest difference 2.9e-09 sd of the feature (RSQR5)
+2. 2882: 1653 days; identical in 143 of 158 features; NaN pattern mismatches 0; largest difference 3.9e-09 sd of the feature (RSQR5)
+2. 2603: 1646 days; identical in 143 of 158 features; NaN pattern mismatches 0; largest difference 7.2e-10 sd of the feature (RSQR5)
+2. 6446: 1653 days; identical in 143 of 158 features; NaN pattern mismatches 0; largest difference 2.1e-09 sd of the feature (RSQR5)
+2. 2327: 1638 days; identical in 143 of 158 features; NaN pattern mismatches 0; largest difference 1.6e-09 sd of the feature (RSQR5)
+   families that are not identical (largest difference in sd of the feature): BETA 9.8e-11, RSQR 3.9e-09, RESI 2.0e-10
+   Slope/Resi rows with the largest differences (2330), error vs exact rational arithmetic / close: alpha158.py 1.0e-17, qlib algorithm 7.3e-13 (qlib updates its sums incrementally, so rounding accumulates)
+3. build_alpha158 row D == values of day D-1 (2330): max abs diff 0.0e+00; rows 165346, stocks 100, last date 2026-10-27
+   vs the v9 panel (164646 rows): KMID vs exp(intraday_ret)-1 1.2e-16; ROC5 vs exp(-ret5) 2.0e-15; KLEN vs range*close/open 2.8e-17
+4. VWAP factor (165246 stock-days): restarts 127, days set aside 734; bound on |log F error| (half width of the intersection, valid while no unknown event): median 1.0e-03, 90% 4.3e-03, 99% 8.2e-03; from 2022 on median 7.0e-04, 99% 7.4e-03
+   VWAP0 (vwap / close of the day before): median 1.0005, 1% 0.9746, 99% 1.0280, min 0.9037, max 1.1016; within [LOW0, HIGH0] on 1.0000 of the rows
+5. missing values from 2020-06 on: 0 features above 0.11% of the rows
+done in 12s

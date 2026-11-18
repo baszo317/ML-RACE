@@ -1,0 +1,11 @@
+corr with the Top50 intraday return m_t, by period:
+  gap          : pre -0.047, val -0.043, hold -0.067, post -0.202, all22 -0.078
+  night_ret    : pre -0.137, val -0.065, hold -0.051, post -0.208, all22 -0.087
+  us_gspc_ret1 : pre -0.154, val -0.038, hold -0.067, post -0.215, all22 -0.061
+how well last night predicts the opening gap: corr(night_ret, gap) pre 0.779, val 0.845, hold 0.774, post 0.833, all22 0.812
+  gap surprise (gap - fit on night_ret): pre +0.076, val +0.021, hold -0.041, post -0.018, all22 -0.010
+  corr(signal, m) 2022-26: pbar (now)      +0.110
+  corr(signal, m) 2022-26: -gap (ceiling)  +0.078
+  corr(signal, m) 2022-26: -night_ret      +0.087
+
+scale: at the current bet size (sd of net exposure 0.263) each +0.1 of corr(exposure, m) is worth about 2.0 bp/day (cov = corr x sd(sbar) x sd(m), sd(m) = 76 bp)

@@ -1,0 +1,22 @@
+2026-10-26 18:30:42 v12 members ['lgb_sign', 'lgb_dec_l2', 'lgb_size_l2', 'lgb_dec_pw', 'lgb_size_pw', 'lgb_size_rank']: 180 units, 180 to do, 2 workers
+2026-10-26 18:32:07 [1/180] lgb_dec_pw 2026-06-01 seed 2: 85s (best 454); elapsed 1.4 min
+2026-10-26 18:32:10 [2/180] lgb_dec_pw 2026-06-01 seed 1: 88s (best 474); elapsed 1.5 min
+2026-10-26 18:37:17 [10/180] lgb_size_pw 2026-06-01 seed 4: 73s (best 381); elapsed 6.6 min
+2026-10-26 18:39:15 [20/180] lgb_dec_l2 2026-06-01 seed 5: 29s (best 510); elapsed 8.5 min
+2026-10-26 18:42:08 [30/180] lgb_size_rank 2026-06-01 seed 4: 85s (best 456); elapsed 11.4 min
+2026-10-26 18:44:19 [40/180] lgb_size_pw 2026-01-01 seed 5: 21s (best 64); elapsed 13.6 min
+2026-10-26 18:45:17 [50/180] lgb_dec_l2 2026-01-01 seed 5: 11s (best 92); elapsed 14.6 min
+2026-10-26 18:46:22 [60/180] lgb_size_rank 2026-01-01 seed 5: 13s (best 16); elapsed 15.7 min
+2026-10-26 18:50:29 [70/180] lgb_sign 2025-01-01 seed 1: 11s (best 125); elapsed 19.8 min
+2026-10-26 18:51:37 [80/180] lgb_dec_l2 2025-01-01 seed 4: 18s (best 325); elapsed 20.9 min
+2026-10-26 18:53:52 [90/180] lgb_size_rank 2025-01-01 seed 5: 50s (best 319); elapsed 23.2 min
+2026-10-26 18:56:05 [100/180] lgb_size_pw 2024-01-01 seed 5: 24s (best 136); elapsed 25.4 min
+2026-10-26 18:56:51 [110/180] lgb_dec_l2 2024-01-01 seed 5: 10s (best 191); elapsed 26.1 min
+2026-10-26 18:57:40 [120/180] lgb_size_rank 2024-01-01 seed 5: 10s (best 32); elapsed 27.0 min
+2026-10-26 18:59:32 [130/180] lgb_sign 2023-01-01 seed 1: 7s (best 141); elapsed 28.8 min
+2026-10-26 19:00:17 [140/180] lgb_dec_l2 2023-01-01 seed 5: 10s (best 246); elapsed 29.6 min
+2026-10-26 19:01:12 [150/180] lgb_dec_pw 2022-01-01 seed 1: 19s (best 204); elapsed 30.5 min
+2026-10-26 19:02:34 [160/180] lgb_size_pw 2022-01-01 seed 5: 15s (best 179); elapsed 31.9 min
+2026-10-26 19:03:02 [170/180] lgb_dec_l2 2022-01-01 seed 5: 6s (best 211); elapsed 32.3 min
+2026-10-26 19:03:20 [180/180] lgb_size_rank 2022-01-01 seed 5: 3s (best 3); elapsed 32.6 min
+2026-10-26 19:03:20 finished 180 units in 32.6 min, 0 failed

@@ -1,0 +1,227 @@
+v14_eval.py  2026-11-06 17:50  root: /sessions/rcw-01mnyupzgffmuxsgzzax3qar/mnt/ML RACE
+  data rebuilt in 4s: 116,353 stock-days (100 stocks), 58,175 Top50 stock-days with a label
+
+PART 0 -- rebuild check (val / hold / post / all, bp/day)
+  v9   rebuilt 13.99 / 14.33 / 16.59 / 14.31   published 13.99 / 14.33 / 16.59 / 14.31   same
+  v11  rebuilt 14.60 / 14.34 / 20.35 / 15.02   published 14.60 / 14.34 / 20.35 / 15.02   same
+  W0   rebuilt 11.79 / 10.35 / 21.71 / 12.22   published 11.79 / 10.35 / 21.71 / 12.22   same
+  candidate runs done (24s)
+
+PART 1 -- signals (report only): own daily rank IC with the excess return (100 stocks), val / hold / post / all
+                               signal    val    hold    post    all
+                   v11 stock view p_e 0.1140  0.1088  0.0900 0.1105
+                 E1 -gap (open of D!) 0.0882  0.0599  0.0741 0.0788
+                    E2a AL s-score k5 0.0130 -0.0016 -0.0030 0.0074
+                               E2a k1 0.0136  0.0032 -0.0366 0.0063
+                               E2a k3 0.0131 -0.0036 -0.0030 0.0069
+                              E2a k10 0.0096 -0.0010 -0.0016 0.0056
+                E2b resid reversal 5d 0.0260  0.0007  0.0063 0.0170
+                               E2b 1d 0.0435  0.0192  0.0284 0.0352
+                              E2b 10d 0.0184 -0.0068 -0.0069 0.0089
+                              E2b 20d 0.0079 -0.0052  0.0062 0.0040
+                E4 trust60 (all days) 0.0359  0.0064  0.0404 0.0277
+E4 trust60, last 20 days of a quarter 0.0472  0.0076  0.0156 0.0334
+E4 trust60, first 3 days of a quarter 0.0592 -0.0172 -0.0568 0.0247
+               E4 trust60, other days 0.0280  0.0078  0.0700 0.0250
+  E4 trust60 IC, last 20 days minus other days: +0.0085 (t 0.97, 380 vs 784 days)
+  E4 trust60 IC, first 3 days minus other days: -0.0032 (t -0.16, 60 vs 1104 days)
+
+  two-signal diagnostics (x = v11 stock view, z = signal; within-day rank correlation rho; README_v14 3.1):
+    adding a little of z raises the IC iff IC_z > rho * IC_x;  w* = best weight of z, best = best IC of a mix (now = IC_x);
+    w0 = the largest weight that does not lower the IC (v14 places a new family at w = 1/3)
+    E1 -gap (open of D!)     val: rho +0.159 gain +0.0700 w* 0.41 w0 0.75 best 0.1343 (now 0.1140)  hold: rho +0.156 gain +0.0429 w* 0.30 w0 0.53 best 0.1172 (now 0.1088)  post: rho +0.114 gain +0.0638 w* 0.44 w0 0.81 best 0.1106 (now 0.0900)  all: rho +0.154 gain +0.0617 w* 0.39 w0 0.69 best 0.1269 (now 0.1105)
+    E2a AL s-score k5        val: rho +0.092 gain +0.0025 w* 0.02 w0 0.04 best 0.1141 (now 0.1140)  hold: rho +0.044 gain -0.0064 w* -0.06 w0 0.00 best 0.1090 (now 0.1088)  post: rho +0.048 gain -0.0073 w* -0.09 w0 0.00 best 0.0903 (now 0.0900)  all: rho +0.074 gain -0.0008 w* -0.01 w0 0.00 best 0.1105 (now 0.1105)
+    E2b resid reversal 5d    val: rho +0.147 gain +0.0093 w* 0.08 w0 0.15 best 0.1144 (now 0.1140)  hold: rho +0.169 gain -0.0176 w* -0.19 w0 0.00 best 0.1103 (now 0.1088)  post: rho +0.168 gain -0.0088 w* -0.11 w0 0.00 best 0.0905 (now 0.0900)  all: rho +0.155 gain -0.0001 w* -0.00 w0 0.00 best 0.1105 (now 0.1105)
+    E4 trust60 (all days)    val: rho +0.232 gain +0.0094 w* 0.08 w0 0.15 best 0.1145 (now 0.1140)  hold: rho +0.067 gain -0.0008 w* -0.01 w0 0.00 best 0.1088 (now 0.1088)  post: rho +0.177 gain +0.0245 w* 0.23 w0 0.41 best 0.0934 (now 0.0900)  all: rho +0.180 gain +0.0079 w* 0.07 w0 0.13 best 0.1108 (now 0.1105)
+
+  E5 families: own rank IC (val / hold / post / all) and mean within-day rank correlation with the v11 view:
+                      family    val   hold   post    all  rho_v11
+              stock MLPs (4) 0.1119 0.1044 0.0812 0.1071   0.9646
+LightGBM part (lgb_res + X1) 0.1127 0.1037 0.0899 0.1081   0.9495
+         SVM (reg_svm exact) 0.1144 0.1018 0.0975 0.1093   0.8854
+                LSTM-R (v13) 0.0969 0.0875 0.0907 0.0936   0.7362
+                 CNN-R (v13) 0.0877 0.0802 0.0772 0.0847   0.7131
+                F-LOAM (v13) 0.1101 0.0981 0.0961 0.1054   0.8622
+              lgb_sign (v12) 0.1092 0.0959 0.0858 0.1033   0.8860
+            lgb_dec_l2 (v12) 0.1138 0.1031 0.0900 0.1086   0.9203
+            lgb_dec_pw (v12) 0.1117 0.1011 0.0848 0.1063   0.9026
+           lgb_size_l2 (v12) 0.1050 0.0994 0.0835 0.1015   0.9036
+           lgb_size_pw (v12) 0.1083 0.0930 0.0831 0.1017   0.8829
+         lgb_size_rank (v12) 0.0964 0.0773 0.0614 0.0879   0.7791
+       X2 lgb_res_soft (v11) 0.1047 0.0990 0.0863 0.1015   0.9018
+           X5 lgb_rank (v11) 0.1077 0.0874 0.0844 0.0998   0.8568
+
+  E5 n-signal bound (README_v14 theorem 4), on within-day ranks: IC of a weighted mix <= sqrt(c' S^-1 c)
+    val : best single family 0.1144, 1/N mix 0.1169, best linear mix (in-sample, this period) 0.1212
+    hold: best single family 0.1044, 1/N mix 0.1065, best linear mix (in-sample, this period) 0.1144
+    post: best single family 0.0975, 1/N mix 0.0956, best linear mix (in-sample, this period) 0.1216
+    all : best single family 0.1093, 1/N mix 0.1121, best linear mix (in-sample, this period) 0.1166
+    weights of the val-best mix (sum |w| = 1): stock MLPs -0.00, LightGBM part +0.10, SVM +0.16, LSTM-R +0.06, CNN-R -0.03, F-LOAM +0.06, lgb_sign -0.02, lgb_dec_l2 +0.13, lgb_dec_pw -0.01, lgb_size_l2 +0.01, lgb_size_pw +0.13, lgb_size_rank +0.02, X2 lgb_res_soft -0.24, X5 lgb_rank +0.02
+    realised rank IC (val / hold / post / all): val-best weights 0.1188 / 0.1046 / 0.0991 / 0.1130;  1/N 0.1141 / 0.1052 / 0.0949 / 0.1099;  v11 view 0.1140 / 0.1088 / 0.0900 / 0.1105
+
+PART 2 -- the rules (PREREG_v14.md section 3), v11 + candidate - v11, bp/day (NW t)
+  E2a Avellaneda-Lee s-score (k 5)            : val -1.16 (-1.66)  hold -1.67 (-1.76)  post -2.03 (-0.84)  all -1.38 (-2.50)   -> not selected
+  E2b residual reversal (5 days)              : val -1.01 (-1.43)  hold -2.99 (-3.09)  post -0.11 (-0.05)  all -1.51 (-2.68)   -> not selected
+  E3a industry-neutral                        : val -1.47 (-1.45)  hold -3.66 (-2.57)  post -3.90 (-0.87)  all -2.31 (-2.71)   -> not selected
+  E3b factor-neutral (5 PCA betas)            : val -3.60 (-2.99)  hold -3.11 (-1.84)  post -6.80 (-1.54)  all -3.73 (-3.82)   -> not selected
+  E4a quarter-end trust buying (last 20 days) : val +0.26 (0.95)  hold -0.83 (-1.74)  post -3.20 (-1.83)  all -0.35 (-1.29)   -> val > 0: selected
+  E4b quarter-start reversal (first 3 days)   : val -0.05 (-0.31)  hold -0.22 (-1.00)  post +0.69 (1.08)  all -0.04 (-0.28)   -> not selected
+  E5 1/N of 14 stock-view families            : val +0.29 (0.65)  hold -0.38 (-0.47)  post +2.80 (1.26)  all +0.31 (0.74)   -> val > 0: selected
+
+  selected: E4a, E5
+  together  v11 + selected - v11: val +0.35 (0.76)  hold -0.58 (-0.72)  post +3.07 (1.32)  all +0.31 (0.74)
+  hold or post <= 0 -> NOT PASSED: v9, v11 and W0 stay as they are
+
+PART 3 -- report only, each minus its base (bp/day, NW t)
+  W0 (w_T 0, lambda 0.5; the file uploaded now):
+    W0 + E2a                                      - W0 : val -1.78 (-2.46)  hold -1.81 (-1.40)  post -4.75 (-1.69)  all -2.04 (-3.20)
+    W0 + E2b                                      - W0 : val -1.04 (-1.41)  hold -1.56 (-1.36)  post -3.66 (-1.36)  all -1.41 (-2.30)
+    W0 + E3a                                      - W0 : val -1.32 (-1.36)  hold -3.83 (-2.27)  post -6.88 (-2.10)  all -2.52 (-3.02)
+    W0 + E3b                                      - W0 : val -3.24 (-2.52)  hold -6.76 (-3.12)  post -5.72 (-1.25)  all -4.47 (-4.08)
+    W0 + E4a                                      - W0 : val -0.30 (-0.97)  hold -0.34 (-0.74)  post -1.46 (-0.96)  all -0.41 (-1.52)
+    W0 + E4b                                      - W0 : val +0.03 (0.19)  hold -0.01 (-0.04)  post +0.06 (0.12)  all +0.02 (0.17)
+    W0 + E5                                       - W0 : val -0.08 (-0.14)  hold -0.21 (-0.20)  post +1.17 (0.44)  all -0.01 (-0.02)
+    W0 + selected together                        - W0 : val -0.27 (-0.48)  hold -0.53 (-0.51)  post +1.27 (0.49)  all -0.22 (-0.42)
+    v11 + E5 val-best weights - v11 : val -0.68 (-1.35)  hold -1.52 (-1.49)  post +5.75 (1.79)  all -0.37 (-0.72)
+    W0  + E5 val-best weights - W0  : val +0.10 (0.16)  hold -0.73 (-0.63)  post +0.39 (0.09)  all -0.12 (-0.19)
+
+  the v13 placement (candidate scaled to lgb_res, then averaged as a new family; p_e shrinks, so w_T weighs more):
+    v11 + E2a v13 placement      - v11: val -1.15 (-1.57)  hold -0.26 (-0.21)  post -2.05 (-0.75)  all -0.97 (-1.55)
+    W0  + E2a v13 placement      - W0 : val -1.49 (-2.04)  hold -2.04 (-1.45)  post -3.31 (-0.99)  all -1.81 (-2.67)
+    v11 + E2b v13 placement      - v11: val -0.59 (-0.80)  hold -1.93 (-1.64)  post -2.05 (-0.60)  all -1.10 (-1.71)
+    W0  + E2b v13 placement      - W0 : val -0.77 (-1.05)  hold -1.85 (-1.63)  post -5.80 (-2.30)  all -1.51 (-2.47)
+    v11 + E4a v13 placement      - v11: val +0.20 (0.61)  hold -0.01 (-0.01)  post -3.47 (-1.39)  all -0.17 (-0.51)
+    W0  + E4a v13 placement      - W0 : val -0.34 (-0.98)  hold -0.16 (-0.33)  post -1.46 (-1.02)  all -0.38 (-1.33)
+    v11 + E4b v13 placement      - v11: val -0.07 (-0.44)  hold -0.28 (-0.86)  post +1.23 (1.54)  all -0.02 (-0.12)
+    W0  + E4b v13 placement      - W0 : val +0.02 (0.11)  hold -0.06 (-0.24)  post +0.19 (0.33)  all +0.01 (0.07)
+
+  variants (spread-matched new family, v11 + variant - v11):
+    E2a k 1 (market only)           : v11 val -2.31 (-3.20)  hold -1.27 (-1.31)  post -2.62 (-0.90)  all -2.03 (-3.47)
+                                      W0  val -3.01 (-4.26)  hold -1.63 (-1.45)  post -4.17 (-1.54)  all -2.71 (-4.53)
+    E2a k 3                         : v11 val -1.44 (-2.02)  hold -0.94 (-0.99)  post -4.00 (-1.55)  all -1.51 (-2.66)
+                                      W0  val -2.34 (-3.07)  hold -1.39 (-1.15)  post -2.53 (-1.03)  all -2.08 (-3.30)
+    E2a k 10                        : v11 val -1.00 (-1.43)  hold -1.58 (-1.62)  post +0.75 (0.26)  all -1.02 (-1.77)
+                                      W0  val -1.58 (-2.15)  hold -2.99 (-2.40)  post -1.51 (-0.54)  all -1.98 (-3.12)
+    E2b 1 day                       : v11 val -0.36 (-0.51)  hold -1.81 (-1.68)  post +2.16 (1.00)  all -0.56 (-0.99)
+                                      W0  val -0.33 (-0.50)  hold -3.09 (-2.57)  post -0.71 (-0.27)  all -1.16 (-1.98)
+    E2b 10 days                     : v11 val -0.84 (-1.25)  hold -2.01 (-2.29)  post -3.12 (-1.05)  all -1.37 (-2.47)
+                                      W0  val -1.59 (-2.20)  hold -2.05 (-1.77)  post -0.33 (-0.13)  all -1.62 (-2.69)
+    E2b 20 days                     : v11 val -1.21 (-1.84)  hold -1.12 (-1.27)  post -3.54 (-1.23)  all -1.38 (-2.54)
+                                      W0  val -1.16 (-1.67)  hold -2.25 (-1.81)  post -1.03 (-0.38)  all -1.46 (-2.40)
+    E4a last 5 days                 : v11 val +0.07 (0.44)  hold -0.77 (-1.95)  post +0.19 (0.53)  all -0.16 (-1.06)
+                                      W0  val -0.31 (-1.81)  hold -0.43 (-1.47)  post +0.65 (1.48)  all -0.26 (-1.84)
+    E4a last 10 days                : v11 val +0.24 (1.14)  hold -0.86 (-2.04)  post +0.03 (0.07)  all -0.10 (-0.54)
+                                      W0  val -0.28 (-1.23)  hold -0.38 (-1.04)  post +0.07 (0.08)  all -0.28 (-1.47)
+    E4a last 40 days                : v11 val -0.28 (-0.77)  hold -0.80 (-1.08)  post -1.83 (-0.78)  all -0.56 (-1.51)
+                                      W0  val -0.96 (-2.15)  hold -0.75 (-1.05)  post -1.29 (-0.69)  all -0.93 (-2.40)
+    E4 trust60 every day (placebo)  : v11 val -0.14 (-0.27)  hold -0.48 (-0.57)  post +0.58 (0.21)  all -0.18 (-0.38)
+                                      W0  val -0.42 (-0.65)  hold -0.52 (-0.55)  post +0.74 (0.33)  all -0.35 (-0.67)
+    E3a + E3b together              : v11 val -3.49 (-2.77)  hold -4.54 (-2.39)  post -7.58 (-1.49)  all -4.14 (-3.92)
+                                      W0  val -3.62 (-2.63)  hold -7.38 (-3.19)  post -5.43 (-1.36)  all -4.87 (-4.23)
+
+  E1 -- if the opening price of day D were known before deciding (it is not: static forbids it; live needs the 08:59 trial price)
+    rules without a model, Top50 bp/day (val / hold / post / all):
+      perfect foresight (sign of the return)      118.61 /  135.06 /  194.33 /  129.83
+      each stock: opposite of its own gap           4.58 /    6.83 /   28.18 /    7.24
+      relative: opposite of (gap - day mean)        8.65 /    4.52 /   20.36 /    8.45
+      market: opposite of the mean gap              1.28 /    1.48 /   21.59 /    3.06
+    E1a gap as a stock-view family : v11 val +0.29 (0.46)  hold +1.70 (1.68)  post +4.72 (1.46)  all +1.08 (1.88)
+                                     W0  val +0.41 (0.56)  hold -0.39 (-0.31)  post +1.16 (0.40)  all +0.24 (0.38)
+    E1b open known within N(0, 0.1%^2), 5 seeds: v11 val +0.32 (0.53)  hold +1.13 (1.14)  post +4.41 (1.43)  all +0.91 (1.65)
+    E1b open known within N(0, 0.1%^2), 5 seeds: W0  val +0.26 (0.37)  hold -0.38 (-0.32)  post +0.54 (0.18)  all +0.10 (0.16)
+    E1b open known within N(0, 0.2%^2), 5 seeds: v11 val +0.52 (0.86)  hold +1.16 (1.18)  post +4.87 (1.65)  all +1.08 (1.99)
+    E1b open known within N(0, 0.2%^2), 5 seeds: W0  val +0.28 (0.42)  hold -0.33 (-0.27)  post +1.44 (0.50)  all +0.20 (0.33)
+    E1b open known within N(0, 0.3%^2), 5 seeds: v11 val +0.31 (0.53)  hold +0.96 (0.96)  post +5.02 (1.72)  all +0.90 (1.69)
+    E1b open known within N(0, 0.3%^2), 5 seeds: W0  val +0.53 (0.78)  hold -0.49 (-0.42)  post +0.87 (0.30)  all +0.26 (0.44)
+    E1b open known within N(0, 0.5%^2), 5 seeds: v11 val +0.11 (0.20)  hold +1.17 (1.22)  post +4.65 (1.72)  all +0.81 (1.58)
+    E1b open known within N(0, 0.5%^2), 5 seeds: W0  val +0.40 (0.61)  hold +0.51 (0.45)  post +1.83 (0.61)  all +0.55 (0.95)
+    E1c night reversal -> real mean gap (v11 only; W0 has no market view): val +0.10 (0.22)  hold -0.74 (-1.10)  post +1.36 (0.88)  all -0.04 (-0.09)
+    E1d E1a + E1c                                                         : val +0.49 (0.68)  hold -0.02 (-0.02)  post +4.44 (1.22)  all +0.68 (1.05)
+
+  by year, v11 + candidate - v11 (bp/day, NW t):
+    E2a                2022 +0.38 (0.33)  2023 -0.48 (-0.42)  2024 -3.39 (-2.61)  2025 -2.06 (-2.09)  2026-01..05 -0.67 (-0.30)  post -2.03 (-0.84)
+    E2b                2022 -0.57 (-0.50)  2023 +0.65 (0.55)  2024 -3.10 (-2.44)  2025 -2.74 (-2.59)  2026-01..05 -3.63 (-1.65)  post -0.11 (-0.05)
+    E3a                2022 -1.34 (-0.94)  2023 -0.37 (-0.22)  2024 -2.68 (-1.26)  2025 -3.11 (-1.95)  2026-01..05 -5.09 (-1.66)  post -3.90 (-0.87)
+    E3b                2022 -3.08 (-1.96)  2023 -2.15 (-1.05)  2024 -5.56 (-2.20)  2025 -0.19 (-0.10)  2026-01..05 -10.58 (-3.47)  post -6.80 (-1.54)
+    E4a                2022 +0.19 (0.35)  2023 +0.11 (0.25)  2024 +0.47 (1.24)  2025 -0.60 (-1.56)  2026-01..05 -1.40 (-1.03)  post -3.20 (-1.83)
+    E4b                2022 +0.01 (0.03)  2023 +0.16 (0.97)  2024 -0.32 (-0.76)  2025 +0.03 (0.22)  2026-01..05 -0.86 (-1.28)  post +0.69 (1.08)
+    E5                 2022 +0.29 (0.33)  2023 +0.49 (0.66)  2024 +0.11 (0.15)  2025 -0.21 (-0.25)  2026-01..05 -0.82 (-0.44)  post +2.80 (1.26)
+    selected together  2022 +0.18 (0.20)  2023 +0.40 (0.56)  2024 +0.48 (0.62)  2025 -0.35 (-0.40)  2026-01..05 -1.16 (-0.66)  post +3.07 (1.32)
+
+  2026-10-01 .. 10-22 (15 days, information only):
+    E2a  v11 2026-10-01..10-22 +1.22 (0.41)   W0 2026-10-01..10-22 +4.49 (0.55)
+    E2b  v11 2026-10-01..10-22 +0.41 (0.07)   W0 2026-10-01..10-22 -4.24 (-0.71)
+    E3a  v11 2026-10-01..10-22 -4.15 (-0.59)   W0 2026-10-01..10-22 -8.27 (-0.95)
+    E3b  v11 2026-10-01..10-22 -3.69 (-0.26)   W0 2026-10-01..10-22 -1.87 (-0.15)
+    E4a  v11 2026-10-01..10-22 +0.00 (nan)   W0 2026-10-01..10-22 +0.00 (nan)
+    E4b  v11 2026-10-01..10-22 +4.58 (1.22)   W0 2026-10-01..10-22 -0.95 (-0.32)
+    E5   v11 2026-10-01..10-22 +10.08 (1.23)   W0 2026-10-01..10-22 +4.56 (0.83)
+
+  power of the rules (normal approximation, daily difference sd and days of each period, v11 + candidate - v11):
+    E2a : daily sd val 17.7 bp (727 days), hold 17.6 bp (338 days), post 22.4 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.23, +0.5 -> 0.32, +1.0 -> 0.54
+    E2b : daily sd val 17.8 bp (727 days), hold 18.3 bp (338 days), post 22.6 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.23, +0.5 -> 0.32, +1.0 -> 0.53
+    E3a : daily sd val 27.0 bp (727 days), hold 28.8 bp (338 days), post 44.3 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.19, +0.5 -> 0.24, +1.0 -> 0.37
+    E3b : daily sd val 34.7 bp (727 days), hold 31.0 bp (338 days), post 45.1 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.18, +0.5 -> 0.22, +1.0 -> 0.33
+    E4a : daily sd val 7.5 bp (727 days), hold 6.9 bp (338 days), post 15.7 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.39, +0.5 -> 0.55, +1.0 -> 0.73
+    E4b : daily sd val 4.4 bp (727 days), hold 3.3 bp (338 days), post 5.1 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.66, +0.5 -> 0.83, +1.0 -> 0.98
+    E5  : daily sd val 12.6 bp (727 days), hold 16.2 bp (338 days), post 23.4 bp (99 days);  P(pass | true effect) +0.0 -> 0.12, +0.3 -> 0.26, +0.5 -> 0.36, +1.0 -> 0.57
+
+Top50 bp/day (walk-forward 2022-01 .. 2026-10)
+                              config   val  hold  post   all    sd  timing  xsec  share1  P19>0
+                                  v9 13.99 14.33 16.59 14.31 48.26    1.76 12.55    0.58   0.93
+                                 v11 14.60 14.34 20.35 15.02 48.00    2.76 12.25    0.59   0.94
+                                  W0 11.79 10.35 21.71 12.22 38.40   -0.89 13.10    0.62   0.91
+                           v11 + E2a 13.45 12.67 18.31 13.64 46.98    2.69 10.95    0.58   0.94
+                            W0 + E2a 10.01  8.54 16.96 10.17 36.23   -1.13 11.30    0.62   0.90
+                           v11 + E2b 13.59 11.36 20.24 13.51 46.26    3.15 10.36    0.58   0.94
+                            W0 + E2b 10.75  8.79 18.05 10.80 35.36   -0.81 11.61    0.62   0.91
+                           v11 + E3a 13.14 10.68 16.45 12.71 42.25    2.95  9.76    0.58   0.93
+                            W0 + E3a 10.47  6.53 14.83  9.69 32.66   -1.23 10.92    0.63   0.92
+                           v11 + E3b 11.00 11.23 13.55 11.29 39.76    3.05  8.24    0.58   0.93
+                            W0 + E3b  8.55  3.59 15.99  7.74 31.58   -0.98  8.72    0.61   0.84
+                           v11 + E4a 14.86 13.52 17.15 14.67 48.04    2.84 11.82    0.58   0.95
+                            W0 + E4a 11.49 10.02 20.25 11.80 38.51   -0.87 12.67    0.62   0.91
+                           v11 + E4b 14.55 14.12 21.03 14.98 48.07    2.74 12.24    0.59   0.94
+                            W0 + E4b 11.81 10.35 21.77 12.23 38.52   -0.90 13.13    0.62   0.92
+                            v11 + E5 14.90 13.96 23.15 15.33 48.19    2.76 12.56    0.60   0.94
+                             W0 + E5 11.71 10.15 22.88 12.21 37.35   -1.05 13.26    0.64   0.92
+  v11 + E5 val-best weights (report) 13.93 12.82 26.10 14.64 48.41    2.27 12.37    0.58   0.94
+   W0 + E5 val-best weights (report) 11.89  9.62 22.10 12.10 38.31   -0.91 13.01    0.62   0.92
+             v11 + selected together 14.96 13.76 23.42 15.33 48.35    2.79 12.54    0.60   0.94
+              W0 + selected together 11.52  9.82 22.98 12.00 37.22   -1.04 13.04    0.64   0.92
+             v11 + E2a v13 placement 13.46 14.08 18.29 14.05 50.14    3.64 10.41    0.57   0.94
+              W0 + E2a v13 placement 10.29  8.31 18.40 10.41 36.62   -1.14 11.55    0.62   0.92
+             v11 + E2b v13 placement 14.02 12.41 18.30 13.92 50.10    3.80 10.11    0.57   0.92
+              W0 + E2b v13 placement 11.02  8.50 15.91 10.70 35.49   -0.82 11.52    0.62   0.93
+             v11 + E4a v13 placement 14.80 14.34 16.88 14.84 49.05    3.03 11.81    0.58   0.94
+              W0 + E4a v13 placement 11.45 10.19 20.25 11.83 38.64   -0.82 12.66    0.62   0.90
+             v11 + E4b v13 placement 14.54 14.06 21.58 15.00 48.24    2.69 12.30    0.59   0.94
+              W0 + E4b v13 placement 11.80 10.29 21.90 12.22 38.53   -0.89 13.12    0.62   0.92
+         v11 + E2a k 1 (market only) 12.30 13.07 17.72 12.98 45.85    2.60 10.38    0.58   0.93
+          W0 + E2a k 1 (market only)  8.78  8.73 17.54  9.51 36.57   -1.10 10.61    0.62   0.89
+                       v11 + E2a k 3 13.17 13.40 16.35 13.51 46.40    2.81 10.69    0.58   0.95
+                        W0 + E2a k 3  9.45  8.97 19.18 10.14 35.88   -1.07 11.21    0.62   0.90
+                      v11 + E2a k 10 13.61 12.77 21.09 14.00 46.82    2.81 11.19    0.58   0.95
+                       W0 + E2a k 10 10.21  7.37 20.20 10.23 36.16   -1.00 11.24    0.62   0.93
+                     v11 + E2b 1 day 14.25 12.53 22.51 14.45 45.77    3.04 11.41    0.58   0.94
+                      W0 + E2b 1 day 11.46  7.26 21.00 11.05 35.37   -0.82 11.87    0.62   0.93
+                   v11 + E2b 10 days 13.76 12.34 17.23 13.64 46.94    2.84 10.80    0.58   0.94
+                    W0 + E2b 10 days 10.20  8.30 21.38 10.60 36.51   -0.88 11.48    0.62   0.92
+                   v11 + E2b 20 days 13.40 13.22 16.80 13.64 46.63    2.67 10.97    0.58   0.95
+                    W0 + E2b 20 days 10.63  8.10 20.68 10.75 36.80   -1.04 11.79    0.62   0.93
+               v11 + E4a last 5 days 14.67 13.57 20.53 14.85 48.00    2.75 12.10    0.59   0.94
+                W0 + E4a last 5 days 11.48  9.93 22.36 11.95 38.33   -0.90 12.86    0.62   0.91
+              v11 + E4a last 10 days 14.84 13.48 20.38 14.92 48.04    2.81 12.10    0.59   0.95
+               W0 + E4a last 10 days 11.51  9.97 21.78 11.93 38.35   -0.90 12.84    0.62   0.91
+              v11 + E4a last 40 days 14.33 13.54 18.52 14.45 47.74    3.06 11.40    0.58   0.94
+               W0 + E4a last 40 days 10.83  9.61 20.42 11.29 38.06   -0.85 12.14    0.62   0.90
+v11 + E4 trust60 every day (placebo) 14.47 13.86 20.93 14.84 48.42    3.23 11.61    0.58   0.95
+ W0 + E4 trust60 every day (placebo) 11.36  9.83 22.45 11.86 38.00   -0.82 12.68    0.61   0.90
+            v11 + E3a + E3b together 11.11  9.80 12.76 10.87 39.66    3.18  7.70    0.57   0.91
+             W0 + E3a + E3b together  8.16  2.98 16.28  7.35 31.21   -0.80  8.15    0.61   0.82
+                v11 + E1a gap family 14.90 16.04 25.06 16.09 48.35    2.48 13.61    0.60   0.94
+                 W0 + E1a gap family 12.20  9.97 22.87 12.46 38.27   -1.25 13.71    0.63   0.91
+                v11 + E1c market gap 14.71 13.60 21.71 14.98 49.16    2.77 12.21    0.58   0.93
+                      v11 + E1d both 15.10 14.32 24.79 15.70 48.56    2.35 13.34    0.59   0.94
+
+saved results\v14_daily.csv, results\v14_selection.json  (78s)

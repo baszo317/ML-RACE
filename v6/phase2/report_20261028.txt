@@ -1,0 +1,77 @@
+Phase 2 check  2026-10-28 (Wed)   prices: course data 50   (50/50 stocks)
+  course data and downloaded prices agree on all 50 stocks (largest difference 4.4e-16)
+  market: Top50 mean (close - open)/open 32.20 bp, 25 of 50 up; previous trading day 2026-10-27
+
+   AR score     AR bp   timing     xsec    1s   hits  file
+  -0.003220    -32.20   -32.20     0.00  0.00  25/50  (baseline) Always down
+  -0.005670    -56.70    -9.02   -47.68  0.36  21/50  (baseline) Previous day
+   0.003615     36.15    10.30    25.85  0.66  26/50  v6/submission_v11_1028_wt0_lam0.5.csv
+
+  per stock: r_bp = (close - open)/open in bp, y = close > open, prev_p = the Previous day baseline,
+  pN = prediction of file N, bpN = its contribution (2p - 1) * r / 50 in bp (the column sums to the AR in bp)
+    p1, bp1: v6/submission_v11_1028_wt0_lam0.5.csv
+        r_bp  y  prev_p  p1   bp1       source
+id                                            
+2330   20.66  1       1   1  0.41  course data
+2317  141.13  1       1   0 -2.82  course data
+2454  482.67  1       0   1  9.65  course data
+2308  -95.85  0       0   1 -1.92  course data
+2881    0.00  0       0   1  0.00  course data
+2882   87.34  1       0   1  1.75  course data
+2382  107.20  1       0   0 -2.14  course data
+2412    0.00  0       0   1  0.00  course data
+2891   13.50  1       0   1  0.27  course data
+3711  342.26  1       0   1  6.85  course data
+2886    0.00  0       0   1  0.00  course data
+2303   78.74  1       0   1  1.57  course data
+6669 -151.52  0       1   0  3.03  course data
+5871   46.73  1       1   1  0.93  course data
+2884 -172.76  0       1   1 -3.46  course data
+2357  102.25  1       1   0 -2.04  course data
+2345  -27.47  0       0   0  0.55  course data
+1216 -125.47  0       0   1 -2.51  course data
+2885   82.87  1       0   1  1.66  course data
+2603   76.63  1       1   1  1.53  course data
+3045  -74.91  0       1   1 -1.50  course data
+2892  -81.11  0       1   1 -1.62  course data
+2880  -40.40  0       0   1 -0.81  course data
+6505 -283.02  0       0   0  5.66  course data
+5880 -189.66  0       1   1 -3.79  course data
+3231  209.97  1       0   0 -4.20  course data
+3017  -46.44  0       0   1 -0.93  course data
+2383  100.50  1       0   1  2.01  course data
+2207 -129.15  0       1   0  2.58  course data
+2327  129.63  1       1   0 -2.59  course data
+4904 -175.44  0       0   1 -3.51  course data
+2002   25.38  1       1   1  0.51  course data
+3008  242.52  1       0   1  4.85  course data
+2890   98.15  1       0   1  1.96  course data
+2883  -12.95  0       1   1 -0.26  course data
+1303  257.23  1       0   1  5.14  course data
+2301  135.66  1       0   1  2.71  course data
+2395   14.53  1       0   0 -0.29  course data
+3034  -66.45  0       1   0  1.33  course data
+2379  -87.72  0       1   0  1.75  course data
+8069 -188.68  0       1   0  3.77  course data
+2887 -117.65  0       0   1 -2.35  course data
+2912    0.00  0       0   1  0.00  course data
+3661  468.32  1       0   1  9.37  course data
+2059  -73.35  0       0   0  1.47  course data
+3653  282.26  1       0   1  5.65  course data
+1301  -26.46  0       0   0  0.53  course data
+2615   85.11  1       0   0 -1.70  course data
+3293    0.00  0       1   1  0.00  course data
+2609  145.16  1       0   0 -2.90  course data
+
+
+Accumulated from v6/phase2/scores.csv (board: total = sum of the daily AR scores, average = total / days)
+  days      total    average       first        last  series
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  uploaded (v6/phase2/uploaded.csv)
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  v11/out/submission_v9.4_MMDD_wt0_lam0.5.csv
+     1   0.000320   0.000320  2026-10-28  2026-10-28  v6/submission_v11_MMDD.csv
+     2   0.017286   0.008643  2026-10-28  2026-10-29  v6/submission_v11_MMDD_wt0_lam0.5.csv
+     1  -0.007953  -0.007953  2026-10-27  2026-10-27  v9/out/submission_v9_MMDD.csv
+     3   0.018418   0.006139  2026-10-27  2026-10-29  (baseline) Always down (every scored day)
+     3  -0.010064  -0.003355  2026-10-27  2026-10-29  (baseline) Previous day (every scored day)
+        same 1 days as uploaded: Always down total 0.010730, average 0.010730
+        same 1 days as uploaded: Previous day total 0.004795, average 0.004795

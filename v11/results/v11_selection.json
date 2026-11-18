@@ -1,0 +1,126 @@
+{
+ "lgb": {
+  "rule": null,
+  "pooled": [
+   {
+    "rule": "R1",
+    "dIC_e3": 1.4895,
+    "tIC": 1.415,
+    "dAR": 0.1231,
+    "tAR": 0.4121,
+    "days": 918,
+    "periods_IC>0": 3,
+    "periods_AR>0": 2,
+    "eligible": false
+   },
+   {
+    "rule": "R2",
+    "dIC_e3": 1.109,
+    "tIC": 1.2445,
+    "dAR": 0.1848,
+    "tAR": 0.6543,
+    "days": 918,
+    "periods_IC>0": 3,
+    "periods_AR>0": 3,
+    "eligible": false
+   },
+   {
+    "rule": "R3",
+    "dIC_e3": 0.3021,
+    "tIC": 0.9961,
+    "dAR": 0.1517,
+    "tAR": 1.7078,
+    "days": 918,
+    "periods_IC>0": 1,
+    "periods_AR>0": 1,
+    "eligible": false
+   },
+   {
+    "rule": "R4",
+    "dIC_e3": 0.0,
+    "tIC": NaN,
+    "dAR": 0.0,
+    "tAR": NaN,
+    "days": 918,
+    "periods_IC>0": 0,
+    "periods_AR>0": 0,
+    "eligible": false
+   },
+   {
+    "rule": "R5",
+    "dIC_e3": 1.1777,
+    "tIC": 1.0265,
+    "dAR": -0.1183,
+    "tAR": -0.3844,
+    "days": 918,
+    "periods_IC>0": 4,
+    "periods_AR>0": 1,
+    "eligible": false
+   }
+  ],
+  "groups": [],
+  "groups_val": []
+ },
+ "mlp": {
+  "rule": null,
+  "pooled": [
+   {
+    "rule": "R1",
+    "dIC_e3": 0.9837,
+    "tIC": 0.7886,
+    "dAR": 0.3823,
+    "tAR": 1.2036,
+    "days": 918,
+    "periods_IC>0": 3,
+    "periods_AR>0": 4,
+    "eligible": false
+   },
+   {
+    "rule": "R2",
+    "dIC_e3": 2.4582,
+    "tIC": 1.957,
+    "dAR": 0.1741,
+    "tAR": 0.6134,
+    "days": 918,
+    "periods_IC>0": 3,
+    "periods_AR>0": 4,
+    "eligible": false
+   },
+   {
+    "rule": "R3",
+    "dIC_e3": 1.8798,
+    "tIC": 2.0008,
+    "dAR": -0.0846,
+    "tAR": -0.3345,
+    "days": 918,
+    "periods_IC>0": 3,
+    "periods_AR>0": 1,
+    "eligible": false
+   },
+   {
+    "rule": "R4",
+    "dIC_e3": -0.0443,
+    "tIC": -0.0744,
+    "dAR": 0.1587,
+    "tAR": 0.7814,
+    "days": 918,
+    "periods_IC>0": 2,
+    "periods_AR>0": 2,
+    "eligible": false
+   },
+   {
+    "rule": "R5",
+    "dIC_e3": -1.2952,
+    "tIC": -0.8241,
+    "dAR": 0.7073,
+    "tAR": 2.1739,
+    "days": 918,
+    "periods_IC>0": 2,
+    "periods_AR>0": 4,
+    "eligible": false
+   }
+  ],
+  "groups": [],
+  "groups_val": []
+ }
+}

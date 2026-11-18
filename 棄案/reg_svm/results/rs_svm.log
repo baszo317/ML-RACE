@@ -1,0 +1,19 @@
+lin: 12 units, 12 to do
+[lin 1/12] ('lin', 'res', '2022-01-01') 11s, elapsed 0.2 min
+[lin 2/12] ('lin', 'res', '2023-01-01') 16s, elapsed 0.4 min
+[lin 3/12] ('lin', 'res', '2024-01-01') 22s, elapsed 0.8 min
+[lin 4/12] ('lin', 'res', '2025-01-01') 29s, elapsed 1.3 min
+[lin 5/12] ('lin', 'res', '2026-01-01') 44s, elapsed 2.0 min
+[lin 6/12] ('lin', 'res', '2026-06-01') 41s, elapsed 2.7 min
+[lin 7/12] ('lin', 'raw', '2022-01-01') 6s, elapsed 2.8 min
+[lin 8/12] ('lin', 'raw', '2023-01-01') 18s, elapsed 3.1 min
+[lin 9/12] ('lin', 'raw', '2024-01-01') 23s, elapsed 3.5 min
+[lin 10/12] ('lin', 'raw', '2025-01-01') 22s, elapsed 3.9 min
+[lin 11/12] ('lin', 'raw', '2026-01-01') 43s, elapsed 4.6 min
+[lin 12/12] ('lin', 'raw', '2026-06-01') 41s, elapsed 5.3 min
+nys: 12 units, 12 to do
+[nys 1/12] ('nys', 'res', '2026-01-01') 75s, elapsed 7.1 min
+[nys 2/12] ('nys', 'res', '2025-01-01') 52s, elapsed 8.0 min
+[nys 3/12] ('nys', 'res', '2024-01-01') 30s, elapsed 8.5 min
+[nys 4/12] ('nys', 'res', '2023-01-01') 24s, elapsed 8.9 min
+[nys 5/12] ('nys', 'res', '2022-01-01') 14s, elapsed 9.1 min

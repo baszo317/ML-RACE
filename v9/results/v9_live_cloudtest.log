@@ -1,0 +1,42 @@
+[   12s] core panel (165346, 134)
+[   13s] extended panel (468668, 77) (303322 rows of extra stocks for mlp_res_B9)
+[   13s] labelled data up to 2026-10-22; torch 2.14.1+cu130; schedule mlp: every 1, 2 new, pool 5; transformer: every 1, 1 new, pool 5; lgb: every 1, 1 new, pool 5
+[   13s] next trading day 2026-10-27: ex-dividend announced for none of the stocks
+[   27s] trained mlp_raw_B9 seed(s) [26102201, 26102202] on data up to 2026-10-22 (14s)
+[   41s] trained mlp_raw_xr9 seed(s) [26102201, 26102202] on data up to 2026-10-22 (13s)
+[   44s] trained mlp_raw_w4_9 seed(s) [26102201, 26102202] on data up to 2026-10-22 (4s)
+[  182s] trained tf_raw_B seed(s) [26102201] on data up to 2026-10-22 (138s)
+[  218s] trained mlp_res_B9 seed(s) [26102201, 26102202] on data up to 2026-10-22 (36s)
+[  228s] trained mlp_res_xr9 seed(s) [26102201, 26102202] on data up to 2026-10-22 (10s)
+[  237s] trained mlp_res_BN9 seed(s) [26102201, 26102202] on data up to 2026-10-22 (9s)
+[  246s] trained mlp_res_xrN9 seed(s) [26102201, 26102202] on data up to 2026-10-22 (9s)
+[  263s] trained lgb_res seed(s) [26102201] on data up to 2026-10-22 (17s)
+[  265s] mlp_raw_B9 for 2026-10-23: 10 models, trained up to 2026-10-16..2026-10-22
+[  265s] mlp_raw_xr9 for 2026-10-23: 10 models, trained up to 2026-10-16..2026-10-22
+[  265s] mlp_raw_w4_9 for 2026-10-23: 10 models, trained up to 2026-10-16..2026-10-22
+[  265s] tf_raw_B for 2026-10-23: 5 models, trained up to 2026-09-22..2026-10-22
+[  265s] mlp_res_B9 for 2026-10-23: 10 models, trained up to 2026-10-16..2026-10-22
+[  265s] mlp_res_xr9 for 2026-10-23: 10 models, trained up to 2026-10-16..2026-10-22
+[  265s] mlp_res_BN9 for 2026-10-23: 10 models, trained up to 2026-10-16..2026-10-22
+[  265s] mlp_res_xrN9 for 2026-10-23: 10 models, trained up to 2026-10-16..2026-10-22
+[  265s] lgb_res for 2026-10-23: 5 models, trained up to 2026-10-16..2026-10-22
+[  267s] [OK] 2026-10-23: newest labelled day 2026-10-22 = previous trading day
+[  267s] [OK] 2026-10-23: 109 input features present (largest missing share 0%)
+[  267s] [FATAL] data\ref\exdiv_fetch_log.csv missing: run fetch_exdiv.py (or add today's ex-dates to exdiv_manual.csv and use --force)
+[  267s] [OK] 2026-10-23: TX night session present
+[  267s] [OK] mlp_raw_B9: newest model trained up to 2026-10-22
+[  267s] [OK] mlp_raw_xr9: newest model trained up to 2026-10-22
+[  267s] [OK] mlp_raw_w4_9: newest model trained up to 2026-10-22
+[  267s] [OK] tf_raw_B: newest model trained up to 2026-10-22
+[  267s] [OK] mlp_res_B9: newest model trained up to 2026-10-22
+[  267s] [OK] mlp_res_xr9: newest model trained up to 2026-10-22
+[  267s] [OK] mlp_res_BN9: newest model trained up to 2026-10-22
+[  267s] [OK] mlp_res_xrN9: newest model trained up to 2026-10-22
+[  267s] [OK] lgb_res: newest model trained up to 2026-10-22
+[  267s] [OK] 2026-10-23: share of 1 = 0.76, pbar = 0.513, 50 Top50 stocks
+[  267s] wrote out\submission_v9_1023cloud.csv: 50 stocks x 1 date(s), share of 1 = 0.760
+[  267s] 2026-10-23: pbar 0.513; share of 1 among the 50: before hedge 0.76, final 0.76; changed by the hedge 0
+
+real	4m28.728s
+user	7m20.848s
+sys	0m4.948s

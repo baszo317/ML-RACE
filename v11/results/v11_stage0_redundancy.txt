@@ -1,0 +1,112 @@
+
+L (existing = B, 67 features): R^2 per group (mean over its columns of max(OLS R^2, max Spearman^2)); dropped if mean >= 0.9
+        n  r2_mean  r2_ols_mean  rho2_mean  r2_min  r2_max                          closest  dropped
+group                                                                                               
+KBAR    9    0.937        0.937      0.899   0.749   1.000        KMID ~ intraday_ret (1.0)     True
+PRICE   4    0.970        0.970      0.737   0.892   1.000       OPEN0 ~ intraday_ret (1.0)     True
+ROC     5    0.899        0.897      0.718   0.695   1.000              ROC20 ~ ret20 (1.0)    False
+MA      5    0.954        0.951      0.834   0.893   1.000         MA30 ~ close_SMA30 (1.0)     True
+STD     5    0.774        0.755      0.745   0.714   0.969          STD5 ~ BB_width (0.984)    False
+BETA    5    0.881        0.881      0.608   0.815   0.936           BETA20 ~ ret20 (0.886)    False
+RSQR    5    0.148        0.148      0.058   0.092   0.254         RSQR5 ~ BB_width (0.302)    False
+RESI    5    0.867        0.867      0.579   0.796   0.932  RESI60 ~ MACD_hist_norm (0.845)    False
+MAX     5    0.855        0.855      0.431   0.807   0.876              MAX30 ~ RSI (0.695)    False
+MIN     5    0.876        0.876      0.475   0.858   0.893      MIN30 ~ close_SMA30 (0.746)    False
+QTLU    5    0.884        0.884      0.768   0.862   0.904              QTLU30 ~ RSI (0.91)    False
+QTLD    5    0.906        0.906      0.748   0.873   0.942     QTLD30 ~ close_SMA30 (0.931)     True
+RANK    5    0.873        0.860      0.835   0.840   0.921          RANK5 ~ BB_pctb (0.956)    False
+RSV     5    0.846        0.842      0.765   0.821   0.877              RSV30 ~ RSI (0.925)    False
+IDX    15    0.565        0.565      0.420   0.430   0.688           IMXD20 ~ ret20 (0.796)    False
+CORR    5    0.345        0.345      0.151   0.240   0.438     CORR10 ~ close_SMA30 (0.472)    False
+CORD    5    0.396        0.396      0.270   0.331   0.433           CORD20 ~ ret20 (0.601)    False
+CNT    15    0.556        0.556      0.415   0.469   0.665             CNTD5 ~ ret5 (0.756)    False
+SUM    15    0.855        0.850      0.702   0.757   0.938           SUMD20 ~ ret20 (0.948)    False
+VMA     5    0.818        0.760      0.805   0.617   1.000          VMA20 ~ vol_ratio (1.0)    False
+VSTD    5    0.560        0.478      0.532   0.277   0.736       VSTD20 ~ vol_ratio (0.858)    False
+WVMA    5    0.105        0.105      0.024   0.096   0.124         WVMA60 ~ beta_us (0.208)    False
+VSUM   15    0.470        0.467      0.420   0.416   0.567      VSUMP10 ~ vol_ratio (0.753)    False
+per column (highest 25 R^2):
+        col group    r2  r2_ols  rho_max       rho_with
+ a158_KSFT2  KBAR 1.000   1.000    0.998            clv
+ a158_VMA20   VMA 1.000   0.896    1.000      vol_ratio
+ a158_ROC20   ROC 1.000   0.993    1.000          ret20
+  a158_KMID  KBAR 1.000   1.000    1.000   intraday_ret
+ a158_OPEN0 PRICE 1.000   1.000    1.000   intraday_ret
+  a158_ROC5   ROC 1.000   0.998    1.000           ret5
+  a158_MA30    MA 1.000   0.987    1.000    close_SMA30
+   a158_KUP  KBAR 1.000   1.000    1.000   upper_shadow
+  a158_KLOW  KBAR 1.000   0.999    1.000   lower_shadow
+  a158_KLEN  KBAR 1.000   0.999    1.000          range
+ a158_HIGH0 PRICE 0.996   0.996    0.776            clv
+  a158_KSFT  KBAR 0.993   0.993    0.920            clv
+  a158_LOW0 PRICE 0.993   0.993    0.762            clv
+  a158_MA20    MA 0.982   0.982    0.922    close_SMA30
+  a158_STD5   STD 0.969   0.874    0.984       BB_width
+  a158_MA10    MA 0.956   0.956    0.896           ret5
+a158_QTLD30  QTLD 0.942   0.942    0.931    close_SMA30
+a158_SUMP20   SUM 0.938   0.938    0.948          ret20
+a158_SUMD20   SUM 0.938   0.938    0.948          ret20
+a158_SUMN20   SUM 0.938   0.938    0.948          ret20
+  a158_MA60    MA 0.937   0.937    0.836            RSI
+a158_BETA30  BETA 0.936   0.936    0.814          ret20
+a158_RESI30  RESI 0.932   0.932    0.749 MACD_hist_norm
+a158_BETA20  BETA 0.929   0.929    0.886          ret20
+a158_QTLD20  QTLD 0.928   0.928    0.865    close_SMA30
+lgb: dropped ['KBAR', 'PRICE', 'MA', 'QTLD']; K = 19; Bonferroni one-sided 5%: t > 2.791
+
+M (existing = union of the three MLPs, 106 features): R^2 per group (mean over its columns of max(OLS R^2, max Spearman^2)); dropped if mean >= 0.9
+        n  r2_mean  r2_ols_mean  rho2_mean  r2_min  r2_max                          closest  dropped
+group                                                                                               
+KBAR    9    0.960        0.960      0.899   0.847   1.000        KMID ~ intraday_ret (1.0)     True
+PRICE   4    0.971        0.970      0.737   0.893   1.000       OPEN0 ~ intraday_ret (1.0)     True
+ROC     5    0.947        0.946      0.718   0.900   1.000              ROC20 ~ ret20 (1.0)     True
+MA      5    0.961        0.959      0.834   0.899   1.000         MA30 ~ close_SMA30 (1.0)     True
+STD     5    0.805        0.787      0.745   0.757   0.969          STD5 ~ BB_width (0.984)    False
+BETA    5    0.908        0.908      0.622   0.841   0.945           BETA20 ~ ret20 (0.886)     True
+RSQR    5    0.188        0.188      0.058   0.111   0.274         RSQR5 ~ BB_width (0.302)    False
+RESI    5    0.886        0.886      0.579   0.814   0.959  RESI60 ~ MACD_hist_norm (0.845)    False
+MAX     5    0.879        0.879      0.431   0.857   0.896              MAX30 ~ RSI (0.695)    False
+MIN     5    0.893        0.893      0.475   0.874   0.911      MIN30 ~ close_SMA30 (0.746)    False
+QTLU    5    0.901        0.901      0.768   0.873   0.921              QTLU30 ~ RSI (0.91)     True
+QTLD    5    0.915        0.915      0.748   0.878   0.948     QTLD30 ~ close_SMA30 (0.931)     True
+RANK    5    0.884        0.879      0.835   0.852   0.926          RANK5 ~ BB_pctb (0.956)    False
+RSV     5    0.861        0.861      0.765   0.836   0.885              RSV30 ~ RSI (0.925)    False
+IDX    15    0.596        0.596      0.420   0.510   0.705           IMXD20 ~ ret20 (0.796)    False
+CORR    5    0.397        0.397      0.176   0.265   0.478     CORR10 ~ close_SMA30 (0.472)    False
+CORD    5    0.447        0.447      0.294   0.358   0.525           CORD20 ~ ret20 (0.601)    False
+CNT    15    0.583        0.583      0.415   0.525   0.680             CNTD5 ~ ret5 (0.756)    False
+SUM    15    0.888        0.888      0.702   0.844   0.945           SUMD20 ~ ret20 (0.948)    False
+VMA     5    0.820        0.773      0.805   0.626   1.000          VMA20 ~ vol_ratio (1.0)    False
+VSTD    5    0.564        0.502      0.532   0.295   0.736       VSTD20 ~ vol_ratio (0.858)    False
+WVMA    5    0.171        0.171      0.028   0.123   0.240         WVMA60 ~ absr_60 (0.224)    False
+VSUM   15    0.490        0.488      0.420   0.448   0.567      VSUMP10 ~ vol_ratio (0.753)    False
+per column (highest 25 R^2):
+        col group    r2  r2_ols  rho_max       rho_with
+ a158_KSFT2  KBAR 1.000   1.000    0.998            clv
+ a158_VMA20   VMA 1.000   0.898    1.000      vol_ratio
+ a158_ROC20   ROC 1.000   0.994    1.000          ret20
+  a158_KMID  KBAR 1.000   1.000    1.000   intraday_ret
+ a158_OPEN0 PRICE 1.000   1.000    1.000   intraday_ret
+  a158_ROC5   ROC 1.000   0.998    1.000           ret5
+  a158_MA30    MA 1.000   0.990    1.000    close_SMA30
+   a158_KUP  KBAR 1.000   1.000    1.000   upper_shadow
+  a158_KLOW  KBAR 1.000   0.999    1.000   lower_shadow
+  a158_KLEN  KBAR 1.000   1.000    1.000          range
+ a158_HIGH0 PRICE 0.996   0.996    0.776            clv
+  a158_KSFT  KBAR 0.993   0.993    0.920            clv
+  a158_LOW0 PRICE 0.993   0.993    0.762            clv
+  a158_MA20    MA 0.986   0.986    0.922    close_SMA30
+  a158_STD5   STD 0.969   0.878    0.984       BB_width
+  a158_MA60    MA 0.961   0.961    0.836            RSI
+  a158_MA10    MA 0.960   0.960    0.896           ret5
+a158_RESI60  RESI 0.959   0.959    0.845 MACD_hist_norm
+ a158_KMID2  KBAR 0.950   0.950    0.942   intraday_ret
+a158_QTLD30  QTLD 0.948   0.948    0.931    close_SMA30
+a158_RESI30  RESI 0.947   0.947    0.749 MACD_hist_norm
+a158_SUMP20   SUM 0.945   0.945    0.948          ret20
+a158_SUMD20   SUM 0.945   0.945    0.948          ret20
+a158_SUMN20   SUM 0.945   0.945    0.948          ret20
+a158_BETA30  BETA 0.945   0.945    0.814          ret20
+mlp: dropped ['KBAR', 'PRICE', 'ROC', 'MA', 'BETA', 'QTLU', 'QTLD']; K = 16; Bonferroni one-sided 5%: t > 2.734
+
+written /home/claude/mlrace/v11/cache/stage0.json; 12s

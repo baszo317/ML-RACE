@@ -1,0 +1,11 @@
+v4 rule (w_T 0.5, ex-dividend day -> 0), bp/day, Top50; d_ and t_ = paired difference to the control
+                                            config   val  hold  post   all    sd  timing  xsec  d_val  t_val  d_hold  t_hold  d_post  t_post  nwt_val
+control: raw MLPs without night (seeds 1-5, cloud) 13.14 13.69 12.94 13.28 49.64    1.46 11.83    NaN    NaN     NaN     NaN     NaN     NaN      NaN
+             H2: raw MLPs + night_ret, night_range 13.25 14.36 13.85 13.62 50.02    1.94 11.68   0.11   0.51    0.67    1.28    0.90    0.52     0.45
+         reference: existing raw MLPs (seeds 1-10) 13.22 13.95 12.63 13.38 49.60    1.55 11.83   0.08   0.97    0.26    1.11   -0.31   -0.64     0.96
+
+pre-registered decision: val t = 0.51 (needs >= 2.0), hold diff = +0.67 (needs > 0) -> do not adopt
+for information, static 2026-06-01..09-30: control 12.55, with night 14.10, diff +1.55 (t 0.76, 84 days)
+for information, live 2026-10-01..10-22: control 15.13, with night 12.43, diff -2.70 (t -1.54, 15 days)
+corr(pbar, market intraday) control : val 0.132, hold 0.204, post -0.097, all 0.128
+corr(pbar, market intraday) night   : val 0.140, hold 0.218, post -0.065, all 0.140

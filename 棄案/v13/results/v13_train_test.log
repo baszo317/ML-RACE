@@ -1,0 +1,36 @@
+2026-11-05 18:55:29 v13_train.py start: panel 165,346 rows, 2020-01-02 .. 2026-10-23 (0 s); torch 2.15.0+cu132, pandas 3.0.5, 2 logical cpus, workers 2 x 1 threads [TEST]
+2026-11-05 18:55:29 12 units, 12 to do
+2026-11-05 18:55:43 [1/12] lstm 2026-06-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 1 s; elapsed 0.2 min
+2026-11-05 18:55:43 [2/12] tcn 2026-06-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 1 s; elapsed 0.2 min
+2026-11-05 18:55:54 [3/12] tcn 2026-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 1 s; elapsed 0.4 min
+2026-11-05 18:55:54 [4/12] lstm 2026-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 1 s; elapsed 0.4 min
+2026-11-05 18:56:05 [5/12] tcn 2025-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 1 s; elapsed 0.6 min
+2026-11-05 18:56:05 [6/12] lstm 2025-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 2 s; elapsed 0.6 min
+2026-11-05 18:56:16 [7/12] tcn 2024-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 2 s; elapsed 0.8 min
+2026-11-05 18:56:17 [8/12] lstm 2024-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 2 s; elapsed 0.8 min
+2026-11-05 18:56:25 [9/12] tcn 2023-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.1 min, predict 2 s; elapsed 0.9 min
+2026-11-05 18:56:29 [10/12] lstm 2023-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 2 s; elapsed 1.0 min
+2026-11-05 18:56:37 [11/12] tcn 2022-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 1 s; elapsed 1.1 min
+2026-11-05 18:56:40 [12/12] lstm 2022-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min, predict 2 s; elapsed 1.2 min
+2026-11-05 18:56:41 v13_train.py end: 12 of 12 units done, 1.2 min this run
+2026-11-05 21:40:27 v13_train.py start: kinds lstm,tcn,floam; raw panel 165,346 rows, 2020-01-02 .. 2026-10-23; torch 2.14.1+cpu, pandas 3.0.1, 8 logical cpus, workers 2 x 2 threads [TEST]
+2026-11-05 21:40:27 18 units (LSTM-R 6, CNN-R 6, F-LOAM 6), 18 to do
+2026-11-05 21:40:50 [1/18] LSTM-R 2026-06-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; elapsed 0.4 min
+2026-11-05 21:40:53 [2/18] F-LOAM 2026-06-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; Optuna: leaves 30, lr 0.089, 5 rounds (LSTM 0.1 min, LightGBM 0.1 min); elapsed 0.4 min
+2026-11-05 21:41:10 [3/18] LSTM-R 2026-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; elapsed 0.7 min
+2026-11-05 21:41:16 [4/18] CNN-R 2026-06-01 seed 1: best epoch 1, 20,000 training rows, train 0.4 min; elapsed 0.8 min
+2026-11-05 21:41:26 [5/18] F-LOAM 2026-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; Optuna: leaves 50, lr 0.012, 1 rounds (LSTM 0.1 min, LightGBM 0.1 min); elapsed 1.0 min
+2026-11-05 21:41:39 [6/18] CNN-R 2026-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.4 min; elapsed 1.2 min
+2026-11-05 21:41:41 [7/18] LSTM-R 2025-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min; elapsed 1.2 min
+2026-11-05 21:41:57 [8/18] F-LOAM 2025-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; Optuna: leaves 30, lr 0.089, 1 rounds (LSTM 0.1 min, LightGBM 0.1 min); elapsed 1.5 min
+2026-11-05 21:42:06 [9/18] CNN-R 2025-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.4 min; elapsed 1.7 min
+2026-11-05 21:42:14 [10/18] LSTM-R 2024-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min; elapsed 1.8 min
+2026-11-05 21:42:25 [11/18] F-LOAM 2024-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; Optuna: leaves 50, lr 0.012, 46 rounds (LSTM 0.1 min, LightGBM 0.2 min); elapsed 2.0 min
+2026-11-05 21:42:37 [12/18] CNN-R 2024-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; elapsed 2.2 min
+2026-11-05 21:42:40 [13/18] LSTM-R 2023-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min; elapsed 2.2 min
+2026-11-05 21:43:04 [14/18] CNN-R 2023-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.4 min; elapsed 2.6 min
+2026-11-05 21:43:20 [15/18] LSTM-R 2022-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min; elapsed 2.9 min
+2026-11-05 21:43:21 [16/18] F-LOAM 2023-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.7 min; Optuna: leaves 30, lr 0.023, 318 rounds (LSTM 0.1 min, LightGBM 0.6 min); elapsed 2.9 min
+2026-11-05 21:43:34 [17/18] F-LOAM 2022-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.2 min; Optuna: leaves 30, lr 0.089, 7 rounds (LSTM 0.1 min, LightGBM 0.1 min); elapsed 3.1 min
+2026-11-05 21:43:41 [18/18] CNN-R 2022-01-01 seed 1: best epoch 1, 20,000 training rows, train 0.3 min; elapsed 3.2 min
+2026-11-05 21:43:42 v13_train.py end: 18 of 18 units done, 3.3 min this run

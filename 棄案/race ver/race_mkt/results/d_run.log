@@ -1,0 +1,112 @@
+02:10:12 D run: futures features 37, dropped []
+02:10:16 model MB: 971 OOS days to 2024-12-31 (4s)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:1620: RuntimeWarning: All-NaN slice encountered
+  return fnb._ureduce(a,
+/sessions/rcw-01mnyupywwtrsxtyxy7hd3wg/mnt/ML RACE/race ver/race_mkt/research/mktlib.py:405: RuntimeWarning: Mean of empty slice
+  self.mu = np.nanmean(Xc, axis=0); self.sd = np.nanstd(Xc, axis=0)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:2019: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+02:10:22 model MF: 971 OOS days to 2024-12-31 (6s)
+02:10:24 model MFO: 971 OOS days to 2024-12-31 (3s)
+02:10:25 model MS: 971 OOS days to 2024-12-31 (0s)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:1620: RuntimeWarning: All-NaN slice encountered
+  return fnb._ureduce(a,
+/sessions/rcw-01mnyupywwtrsxtyxy7hd3wg/mnt/ML RACE/race ver/race_mkt/research/mktlib.py:405: RuntimeWarning: Mean of empty slice
+  self.mu = np.nanmean(Xc, axis=0); self.sd = np.nanstd(Xc, axis=0)
+/usr/local/lib/python3.10/dist-packages/numpy/lib/_nanfunctions_impl.py:2019: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+02:10:26 model MV: 971 OOS days to 2024-12-31 (1s)
+race_mkt D (2022-01-03 .. 2024-12-31), 727 days; candidates vs DL0 (bp/day, NW 5 lags)
+
+cand  days      AR      t     sd  timing    xsec  ones  !=25    diff      t   holm  pass  years(diff)
+DL0    727   16.35  10.25   42.5    0.14   16.21  24.6  0.24 
+P1     727   16.61   9.53   46.2    2.99   13.62  23.1  0.88   +0.26   0.32  1.000 False  2022:+1.77 2023:-0.72 2024:-0.30
+P2     727   16.67   9.11   47.6    3.38   13.28  23.0  0.89   +0.32   0.35  1.000 False  2022:+0.56 2023:+0.12 2024:+0.27
+P3     727   16.58   9.14   47.5    1.81   14.77  22.6  0.89   +0.23   0.31  1.000 False  2022:+0.37 2023:-0.32 2024:+0.64
+P4     727   16.62   9.39   46.0    2.10   14.52  24.6  0.88   +0.27   0.31  1.000 False  2022:+0.37 2023:+0.19 2024:+0.24
+P5     727   16.57  10.12   43.5    1.57   15.01  26.5  0.75   +0.22   0.27  1.000 False  2022:+0.75 2023:-0.89 2024:+0.79
+P6     727   16.43   9.35   45.4    2.14   14.29  23.4  0.37   +0.08   0.12  1.000 False  2022:+0.45 2023:-0.56 2024:+0.33
+P7     727   16.36  10.24   42.4    0.11   16.25  24.5  0.30   +0.01   0.25  1.000 False  2022:-0.02 2023:-0.02 2024:+0.07
+P8     727   15.99   8.73   48.8    2.74   13.25  21.6  0.90   -0.36  -0.41  1.000 False  2022:+0.92 2023:-1.61 2024:-0.43
+
+ones (5/25/50/75/95 %) and the 19-day view (share of rolling 19-day means above 0/10/20/30/40 bp, worst)
+DL0   ones [22, 25, 25, 25, 25]  P19>0 0.980 >10 0.694 >20 0.306 >30 0.080 >40 0.032  worst19 -4.2
+P1    ones [9, 18, 24, 28, 36]  P19>0 0.961 >10 0.708 >20 0.286 >30 0.120 >40 0.024  worst19 -5.5
+P2    ones [8, 16, 24, 29, 37]  P19>0 0.966 >10 0.697 >20 0.322 >30 0.126 >40 0.028  worst19 -5.1
+P3    ones [12, 18, 23, 26, 34]  P19>0 0.956 >10 0.687 >20 0.309 >30 0.102 >40 0.041  worst19 -15.9
+P4    ones [15, 20, 24, 28, 36]  P19>0 0.969 >10 0.705 >20 0.312 >30 0.121 >40 0.032  worst19 -8.5
+P5    ones [19, 20, 25, 35, 40]  P19>0 0.986 >10 0.726 >20 0.292 >30 0.096 >40 0.025  worst19 -7.9
+P6    ones [8, 24, 25, 25, 25]  P19>0 0.959 >10 0.680 >20 0.295 >30 0.124 >40 0.032  worst19 -5.9
+P7    ones [22, 24, 25, 25, 25]  P19>0 0.980 >10 0.693 >20 0.306 >30 0.083 >40 0.032  worst19 -4.2
+P8    ones [8, 15, 22, 27, 35]  P19>0 0.953 >10 0.652 >20 0.296 >30 0.118 >40 0.030  worst19 -7.4
+
+H2 (futures information): P2 - P1 = +0.06 (t 0.10) years 2022:-1.22 2023:+0.85 2024:+0.57
+
+passed the D rule (mean > 0, NW t >= 2, >= 2 of 3 years > 0): none
+stock calibration c (bp per unit normal score): median 19.57, first usable 2022-04-11 00:00:00
+  MB: calibration slope b median 0.699 (share > 0 1.00), |mu| median 6.24 bp
+  MF: calibration slope b median 0.847 (share > 0 1.00), |mu| median 7.24 bp
+  MFO: calibration slope b median 0.665 (share > 0 1.00), |mu| median 4.90 bp
+  MS: calibration slope b median 0.000 (share > 0 0.25), |mu| median 0.00 bp
+  MV: calibration slope b median 0.530 (share > 0 1.00), |mu| median 7.25 bp
+
+1. market models: OOS corr(mhat, m) (2021 = calibration only), sign hit rate, E[sign(mhat) m] (bp)
+  MB   D corr +0.117 | 2021: +0.253 2022: +0.132 2023: +0.108 2024: +0.100 | hit 0.530 | all-in (vs median) +6.07 | vol terciles low +0.105 mid +0.163 high +0.100  lambda median 1000
+  MF   D corr +0.123 | 2021: +0.276 2022: +0.137 2023: +0.094 2024: +0.139 | hit 0.546 | all-in (vs median) +7.02 | vol terciles low +0.126 mid +0.114 high +0.122  lambda median 3000
+  MFO  D corr +0.099 | 2021: +0.185 2022: +0.109 2023: +0.056 2024: +0.151 | hit 0.523 | all-in (vs median) +3.52 | vol terciles low +0.084 mid +0.040 high +0.132  lambda median 3000
+  MS   D corr +0.037 | 2021: +0.034 2022: +0.053 2023: +0.038 2024: +0.009 | hit 0.509 | all-in (vs median) +1.93 | vol terciles low +0.020 mid -0.009 high +0.063  gap R2 (train) median 0.730, b median -0.097
+  MV   D corr +0.106 | 2021: +0.270 2022: +0.148 2023: +0.048 2024: +0.113 | hit 0.532 | all-in (vs median) +4.70 | vol terciles low +0.122 mid +0.028 high +0.142  features selected median 38
+  MF - MB: corr diff by year 2022: +0.005 2023: -0.014 2024: +0.038; corr(MF, MB) 0.828
+
+2. each futures feature vs m on D (Pearson; descriptive, in-sample; |t| ~ corr * sqrt(n))
+  rt_mtx_ratio_z250            corr -0.116  n 724
+  rt_small_ratio_z250          corr -0.114  n 724
+  rt_small_ratio               corr -0.108  n 724
+  tw_foreign_netbuy_n          corr +0.098  n 724
+  div_retail_foreign           corr -0.095  n 724
+  f_txeq_net_d5n               corr +0.091  n 724
+  lt10_nonspec_d1n             corr -0.088  n 724
+  f_txeq_net_d1n               corr +0.087  n 724
+  pc_vol_z60                   corr +0.085  n 724
+  fo_bias_d1n                  corr +0.073  n 724
+  it_txeq_net_d1n              corr +0.072  n 724
+  lt10_all_z250                corr +0.070  n 724
+  lt5_all_z250                 corr +0.069  n 724
+  pc_oi_d1n                    corr +0.065  n 724
+  lt10_spec_z250               corr +0.063  n 724
+  f_txeq_net_z250              corr +0.063  n 724
+  rt_tx_ratio_z250             corr -0.061  n 724
+  lt10_all_d1n                 corr +0.061  n 724
+  f_txeq_flow_n                corr +0.060  n 724
+  fo_bias_z250                 corr +0.054  n 724
+  pc_oi_z250                   corr +0.052  n 724
+  rt_small_ratio_d1n           corr -0.051  n 724
+  basis_dev                    corr +0.050  n 668
+  fo_put_net_z250              corr -0.050  n 724
+  small_vol_share_z60          corr +0.048  n 724
+  dl_txeq_net_d1n              corr -0.045  n 724
+  lt10_near_minus_all_z250     corr +0.028  n 724
+  tw_margin_chg_n              corr -0.022  n 724
+  lt10_nonspec_z250            corr -0.019  n 724
+  night_day_vol_z60            corr -0.018  n 724
+  it_txeq_net_z250             corr -0.009  n 724
+  oi_txeq_d1n                  corr +0.009  n 724
+  fo_call_net_z250             corr +0.008  n 724
+  oi_price_regime              corr -0.005  n 724
+  dl_txeq_net_z250             corr +0.002  n 724
+  term_spread_dev              corr +0.001  n 724
+  rt_tmf_ratio_z250            corr +nan  n 47
+
+3. ceilings on D (bp/day), WF3 ranking; ex-dividend rule only where noted
+  DL0 (Top25 + ex-div)                            16.35
+  (a) our ranking, best k known ex post           66.43
+  (b) m known: all 1 if m > 0 else all 0          51.98   (= E|m|)
+  (c) true ranking, Top25                        108.65
+  (d) everything known                           118.61   (= mean |r|)
+
+4. value of a market forecast with OOS correlation rho (synthetic, known calibration mu = rho * sd_m * z; 20 seeds)
+  rho 0.05: gain  -0.21 bp/day (sd over seeds 0.45); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +0.23  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.10: gain  +0.19 bp/day (sd over seeds 0.77); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +0.93  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.15: gain  +0.88 bp/day (sd over seeds 0.89); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +2.08  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.20: gain  +1.82 bp/day (sd over seeds 1.01); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +3.70  (sd_m 69.5, sd_a = c 20.8)
+  rho 0.30: gain  +4.64 bp/day (sd over seeds 1.29); formula rho^2 sd_m^2 / (sd_a sqrt(2 pi)) =  +8.33  (sd_m 69.5, sd_a = c 20.8)

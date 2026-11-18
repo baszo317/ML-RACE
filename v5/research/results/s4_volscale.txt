@@ -1,0 +1,16 @@
+stock view: OOS slope of e on 2(p_e - mean) by eps quintile (2022-01..2026-05)
+ eps quintile  mean eps (bp)  mean |e| (bp)  slope (bp)  slope / mean eps     n
+            1         66.277         73.755      70.851             1.069 21291
+            2         89.844         93.999      79.812             0.888 21291
+            3        113.892        118.600      94.127             0.826 21290
+            4        147.672        152.691     101.981             0.691 21291
+            5        207.656        217.421     144.995             0.698 21291
+slope(top quintile) / slope(bottom quintile) = 2.05 (bootstrap by day: 5-95% 1.67..2.53); eps ratio 3.13
+
+market view: slope of m (100-stock mean) on 2 pbar - 1 by market-vol quintile (time series, 2022-01..2026-05)
+ a quintile  mean a (bp)  mean |m| (bp)  slope (bp)  slope / mean a  days
+          1      111.951         43.442      48.360           0.432   213
+          2      125.295         59.903      96.425           0.770   213
+          3      132.690         63.770     202.741           1.528   213
+          4      137.623         56.769      56.285           0.409   213
+          5      150.394         61.594     159.606           1.061   213

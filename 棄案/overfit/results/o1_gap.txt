@@ -1,0 +1,224 @@
+o1_gap.py  2026-10-28 01:42   78 of 78 units
+
+==============================================================================================================
+0. Is the re-run the same model as the walk-forward?  (OOS predictions, seed average, vs the cached walk-forward)
+==============================================================================================================
+  mlp_raw_B9: 116353 rows; corr of predictions 0.974 (within-day 0.966); OOS corr(pbar, m): re-run 0.0893, cached walk-forward 0.1058
+  mlp_res_xr9: 116353 rows; corr of predictions 0.984 (within-day 0.986); OOS rank IC: re-run 0.1039, cached walk-forward 0.1056
+  lgb_res: 116353 rows; corr of predictions 0.998 (within-day 0.998); OOS rank IC: re-run 0.1048, cached walk-forward 0.1050
+  (cached MLPs = torch, seed 1-10 average; cached LightGBM = seed 1-5 average; the re-run = seed 1-3)
+
+==============================================================================================================
+1. The production models: fit on their own training window (in) vs the next fold (OOS)
+==============================================================================================================
+
+  mlp_raw_B9, real labels (IC/corr = corr(pbar_t, Top50 m_t); (fit) = against the labels it was trained on, (true) = real labels; edge = weighted share of correct signs - 50%, percentage points):
+           best  in: wll(fit)  in: edge(fit)  in: IC/corr(fit)  oos: wll  oos: edge  oos: IC/corr
+fold                                                                                             
+2022-01  1.0000        0.6641         9.3519            0.3962    0.6930     3.9030        0.0874
+2023-01  1.0000        0.6693         8.4171            0.3137    0.6946     3.8041        0.0306
+2024-01  3.0000        0.6531        10.4325            0.4230    0.6860     5.5870        0.1195
+2025-01  1.6667        0.6643         9.0621            0.3612    0.6914     4.1434        0.1659
+2026-01  1.0000        0.6734         7.7365            0.2899    0.6805     5.7646        0.2202
+2026-06  1.3333        0.6705         7.9909            0.3306    0.7195     0.7888       -0.1144
+mean     1.5000        0.6658         8.8318            0.3524    0.6942     3.9985        0.0849
+
+  mlp_raw_B9, random labels (IC/corr = corr(pbar_t, Top50 m_t); (fit) = against the labels it was trained on, (true) = real labels; edge = weighted share of correct signs - 50%, percentage points):
+         best  in: wll(fit)  in: edge(fit)  in: IC/corr(fit)  in: IC/corr(true)  oos: wll  oos: edge  oos: IC/corr
+fold                                                                                                              
+2022-01   1.0        0.6926         1.3857            0.1144             0.1182    0.6932    -0.1073        0.0019
+2023-01   3.0        0.6919         2.4435            0.1246             0.0141    0.6937    -0.1845       -0.0130
+2024-01   1.0        0.6928         0.9176            0.0219            -0.0305    0.6933    -0.4601        0.0810
+2025-01   1.0        0.6929         0.9856            0.0579             0.0657    0.6937    -1.4728        0.1293
+2026-01   2.0        0.6926         1.4132            0.0811            -0.0284    0.6948    -3.1712        0.0089
+2026-06   1.0        0.6928         0.9579            0.0705             0.0418    0.6925     2.0029        0.0840
+mean      1.5        0.6926         1.3506            0.0784             0.0302    0.6936    -0.5655        0.0487
+
+  mlp_raw_B9, dayflip labels (IC/corr = corr(pbar_t, Top50 m_t); (fit) = against the labels it was trained on, (true) = real labels; edge = weighted share of correct signs - 50%, percentage points):
+         best  in: wll(fit)  in: edge(fit)  in: IC/corr(fit)  in: IC/corr(true)  oos: wll  oos: edge  oos: IC/corr
+fold                                                                                                              
+2022-01   1.0        0.6791         5.0018            0.3710             0.1737    0.6896     4.2598        0.0928
+2023-01   1.0        0.6823         4.6241            0.3404             0.0752    0.6956    -0.1412       -0.0805
+2024-01   1.0        0.6846         3.8961            0.3196             0.0532    0.6882     4.1924        0.1631
+2025-01   1.0        0.6848         4.1307            0.3033            -0.0002    0.6950     0.8137       -0.0203
+2026-01   1.0        0.6852         3.9533            0.2907             0.0460    0.6906     2.3360        0.1859
+2026-06   1.0        0.6853         3.7050            0.2908             0.0094    0.6951     1.1786        0.0799
+mean      1.0        0.6836         4.2185            0.3193             0.0595    0.6923     2.1065        0.0702
+
+  mlp_res_xr9, real labels (IC/corr = rank IC (100 stocks, daily mean); (fit) = against the labels it was trained on, (true) = real labels; edge = weighted share of correct signs - 50%, percentage points):
+           best  in: wll(fit)  in: edge(fit)  in: IC/corr(fit)  oos: wll  oos: edge  oos: IC/corr
+fold                                                                                             
+2022-01  1.6667        0.6748         7.5273            0.1533    0.6833     5.4225        0.0948
+2023-01  3.0000        0.6681         8.7666            0.1632    0.6912     4.6601        0.1001
+2024-01  1.3333        0.6770         7.0683            0.1373    0.6791     6.2632        0.1265
+2025-01  5.0000        0.6642         9.4728            0.1734    0.6920     4.3547        0.0962
+2026-01  1.0000        0.6787         6.6781            0.1327    0.6850     4.4014        0.1018
+2026-06  2.3333        0.6746         7.5304            0.1480    0.6877     3.4982        0.0797
+mean     2.3889        0.6729         7.8406            0.1513    0.6864     4.7667        0.0998
+
+  mlp_res_xr9, random labels (IC/corr = rank IC (100 stocks, daily mean); (fit) = against the labels it was trained on, (true) = real labels; edge = weighted share of correct signs - 50%, percentage points):
+           best  in: wll(fit)  in: edge(fit)  in: IC/corr(fit)  in: IC/corr(true)  oos: wll  oos: edge  oos: IC/corr
+fold                                                                                                                
+2022-01  1.0000        0.6925         1.6920            0.0269             0.0127    0.6927     1.4358        0.0199
+2023-01  1.0000        0.6927         0.9553            0.0233             0.0043    0.6940    -0.6889        0.0034
+2024-01  3.0000        0.6924         1.3393            0.0333             0.0151    0.6931     0.5752        0.0196
+2025-01  3.0000        0.6922         1.6249            0.0307             0.0266    0.6936    -0.4103        0.0022
+2026-01  1.0000        0.6929         0.9772            0.0141             0.0042    0.6933     0.5003        0.0025
+2026-06  2.0000        0.6925         1.4384            0.0246            -0.0006    0.6937    -0.6496       -0.0172
+mean     1.8333        0.6925         1.3378            0.0255             0.0104    0.6934     0.1271        0.0051
+
+  lgb_res, real labels (IC/corr = rank IC (100 stocks, daily mean); (fit) = against the labels it was trained on, (true) = real labels; edge = weighted share of correct signs - 50%, percentage points):
+             best  in: wll(fit)  in: edge(fit)  in: IC/corr(fit)  oos: wll  oos: edge  oos: IC/corr
+fold                                                                                               
+2022-01  192.0000        0.6469        14.8510            0.2695    0.6828     5.1756        0.1049
+2023-01  182.6667        0.6542        12.9156            0.2374    0.6881     4.6862        0.0990
+2024-01  169.6667        0.6629        11.5033            0.2124    0.6830     5.8324        0.1249
+2025-01  333.6667        0.6556        12.6455            0.2305    0.6891     3.7868        0.1000
+2026-01   76.3333        0.6780         8.1023            0.1668    0.6882     3.2883        0.0961
+2026-06  421.3333        0.6580        12.1806            0.2250    0.6896     4.1446        0.0791
+mean     229.2778        0.6593        12.0331            0.2236    0.6868     4.4856        0.1007
+
+  lgb_res, random labels (IC/corr = rank IC (100 stocks, daily mean); (fit) = against the labels it was trained on, (true) = real labels; edge = weighted share of correct signs - 50%, percentage points):
+            best  in: wll(fit)  in: edge(fit)  in: IC/corr(fit)  in: IC/corr(true)  oos: wll  oos: edge  oos: IC/corr
+fold                                                                                                                 
+2022-01   1.0000        0.6930         2.1060            0.0361             0.0028    0.6931     2.5632        0.0421
+2023-01   9.0000        0.6923         4.2011            0.0845            -0.0283    0.6932    -0.1338       -0.0116
+2024-01   5.0000        0.6928         2.6338            0.0589             0.0134    0.6930     1.5637        0.0405
+2025-01   1.0000        0.6931         0.6669            0.0352            -0.0014    0.6931     0.7090       -0.0041
+2026-01  18.0000        0.6923         4.1853            0.0732            -0.0193    0.6932    -0.2996       -0.0030
+2026-06  37.0000        0.6916         4.9031            0.0896            -0.0071    0.6935    -0.5226       -0.0085
+mean     11.8333        0.6925         3.1160            0.0629            -0.0067    0.6932     0.6467        0.0092
+
+==============================================================================================================
+2. Learning curves of the refit (mean over folds and seeds): in-sample keeps improving, OOS does not
+==============================================================================================================
+
+  mlp_raw_B9, real labels; early stopping picked 1.5 on average (min 1, max 5); step = epoch
+      in: corr_fit  in: edge_fit  in: wll_fit  oos: corr_fit  oos: edge_fit  oos: wll_fit
+step                                                                                     
+1           0.3123        8.1732       0.6709         0.0818         3.9083        0.6935
+2           0.4157        9.9112       0.6576         0.0867         4.2335        0.6978
+3           0.4734       10.8960       0.6487         0.0954         4.3088        0.6994
+4           0.5041       11.5990       0.6421         0.1055         4.4441        0.6997
+5           0.5278       12.1106       0.6371         0.1041         4.5447        0.7011
+6           0.5467       12.6017       0.6327         0.1098         4.5511        0.7018
+7           0.5624       13.0123       0.6292         0.1026         4.4469        0.7031
+8           0.5738       13.3967       0.6254         0.1049         4.4435        0.7052
+9           0.5883       13.7996       0.6221         0.0986         4.3684        0.7062
+10          0.5986       14.0517       0.6190         0.0961         4.3262        0.7082
+
+  mlp_raw_B9, random labels; early stopping picked 1.5 on average (min 1, max 3); step = epoch
+      in: corr_fit  in: edge_fit  in: wll_fit  oos: corr_fit  oos: edge_fit  oos: wll_fit
+step                                                                                     
+1           0.0576        1.0652       0.6928         0.0410        -0.8162        0.6937
+2           0.1089        1.5987       0.6924         0.0511         0.0121        0.6933
+3           0.1401        1.9867       0.6921         0.0218         0.0936        0.6934
+4           0.1395        2.2301       0.6917         0.0292        -0.2952        0.6937
+5           0.1625        2.4348       0.6914         0.0164        -0.1160        0.6940
+6           0.1740        2.8028       0.6909         0.0396        -0.1666        0.6942
+7           0.1913        2.9770       0.6905         0.0550         0.1696        0.6939
+8           0.2070        3.1564       0.6901         0.0429         0.8026        0.6933
+9           0.2180        3.4994       0.6896         0.0529         0.4869        0.6939
+10          0.2141        3.6225       0.6891         0.0578         0.8912        0.6935
+
+  mlp_raw_B9, dayflip labels; early stopping picked 1.0 on average (min 1, max 1); step = epoch
+      in: corr_fit  in: edge_fit  in: wll_fit  oos: corr_fit  oos: edge_fit  oos: wll_fit
+step                                                                                     
+1           0.3193        4.2185       0.6836         0.0702         2.1065        0.6923
+2           0.3923        5.9946       0.6734         0.0464         1.0943        0.6982
+3           0.4522        7.2324       0.6652         0.0501         0.5484        0.7018
+4           0.4922        8.2115       0.6587         0.0582        -0.2632        0.7052
+5           0.5208        8.9551       0.6534         0.0412        -0.1489        0.7084
+6           0.5440        9.7704       0.6485         0.0523         0.2335        0.7104
+7           0.5679       10.3524       0.6439         0.0539         0.1250        0.7137
+8           0.5859       11.1623       0.6392         0.0509        -0.1054        0.7178
+9           0.6016       11.6466       0.6350         0.0433         0.1606        0.7200
+10          0.6142       12.1031       0.6317         0.0480        -0.0823        0.7245
+
+  mlp_res_xr9, real labels; early stopping picked 2.4 on average (min 1, max 6); step = epoch
+      in: edge_fit  in: ic_fit  in: wll_fit  oos: edge_fit  oos: ic_fit  oos: wll_fit
+step                                                                                 
+1           6.6783      0.1344       0.6781         4.9737       0.1035        0.6855
+2           7.7522      0.1495       0.6738         4.8921       0.1023        0.6853
+3           8.4149      0.1598       0.6704         4.9331       0.1017        0.6857
+4           8.9548      0.1675       0.6672         5.0287       0.1006        0.6863
+5           9.4231      0.1743       0.6641         5.1482       0.1016        0.6866
+6           9.7820      0.1800       0.6614         5.1053       0.1010        0.6875
+7          10.1264      0.1853       0.6587         5.1611       0.1011        0.6883
+8          10.5096      0.1906       0.6561         5.2048       0.1009        0.6883
+9          10.8630      0.1951       0.6537         5.0843       0.0988        0.6892
+10         11.1398      0.1996       0.6513         5.1699       0.0996        0.6898
+
+  mlp_res_xr9, random labels; early stopping picked 1.8 on average (min 1, max 3); step = epoch
+      in: edge_fit  in: ic_fit  in: wll_fit  oos: edge_fit  oos: ic_fit  oos: wll_fit
+step                                                                                 
+1           1.1013      0.0190       0.6927         0.3291       0.0069        0.6933
+2           1.5385      0.0287       0.6924        -0.1083      -0.0005        0.6935
+3           1.8521      0.0345       0.6921         0.1168       0.0040        0.6934
+4           2.2502      0.0392       0.6917         0.4129       0.0101        0.6932
+5           2.4402      0.0433       0.6913         0.0838      -0.0006        0.6938
+6           2.8142      0.0480       0.6909         0.4360       0.0054        0.6935
+7           3.0537      0.0534       0.6904         0.4162       0.0026        0.6938
+8           3.2954      0.0580       0.6900         0.9520       0.0162        0.6932
+9           3.6535      0.0634       0.6893         0.8010       0.0115        0.6936
+10          3.8756      0.0686       0.6886         1.1632       0.0196        0.6931
+
+  lgb_res, real labels; early stopping picked 229.3 on average (min 71, max 557); step = trees
+      in: edge_fit  in: ic_fit  in: wll_fit  oos: edge_fit  oos: ic_fit  oos: wll_fit
+step                                                                                 
+10          6.6431      0.1534       0.6890         3.6848       0.0885        0.6914
+25          7.7042      0.1641       0.6840         3.9974       0.0916        0.6897
+50          8.7520      0.1776       0.6780         4.1370       0.0946        0.6880
+100        10.0266      0.1954       0.6701         4.3785       0.0996        0.6866
+200        11.8610      0.2211       0.6598         4.7162       0.1038        0.6859
+300        13.3249      0.2419       0.6519         4.7462       0.1047        0.6861
+500        15.6669      0.2752       0.6388         4.7105       0.1042        0.6869
+750        17.9613      0.3089       0.6245         4.8431       0.1029        0.6882
+1000       19.8754      0.3375       0.6116         4.8211       0.1017        0.6896
+
+  lgb_res, random labels; early stopping picked 11.8 on average (min 1, max 37); step = trees
+      in: edge_fit  in: ic_fit  in: wll_fit  oos: edge_fit  oos: ic_fit  oos: wll_fit
+step                                                                                 
+10          4.2144      0.0774       0.6924         0.4083       0.0054        0.6931
+25          5.8941      0.1038       0.6914         0.2238       0.0022        0.6932
+50          7.2258      0.1289       0.6899         0.0695       0.0022        0.6932
+100         8.9058      0.1588       0.6870         0.1022       0.0033        0.6934
+200        11.1397      0.2003       0.6818        -0.0164       0.0029        0.6938
+300        12.9801      0.2332       0.6769         0.2388       0.0060        0.6941
+500        15.6552      0.2831       0.6680         0.3342       0.0091        0.6947
+750        18.1006      0.3304       0.6578         0.3124       0.0095        0.6954
+1000       20.0789      0.3674       0.6482         0.4667       0.0095        0.6961
+
+==============================================================================================================
+3. Mini pipeline (market MLP + two stock-view members, ex-dividend rule, no hedge): Top50 AR bp/day
+==============================================================================================================
+labels    fold  in-sample days  in-sample AR  OOS days  OOS AR  OOS se  gap (in - OOS)  OOS AR without the ex-div rule  in-sample AR without
+  real 2022-01             455         30.78       246   13.66    2.70           17.12                           12.00                 30.85
+  real 2023-01             701         28.20       239    9.80    2.62           18.41                            8.98                 28.09
+  real 2024-01             940         29.66       242   16.42    3.18           13.24                           16.68                 29.48
+  real 2025-01            1182         28.50       243   12.26    3.12           16.24                           12.29                 28.52
+  real 2026-01            1425         21.08        95   18.26    5.72            2.82                           17.91                 20.84
+  real 2026-06            1520         26.05        99   15.46    6.29           10.59                           13.32                 25.91
+  real: OOS AR pooled over folds 13.68 bp/day (se 1.41); without the ex-dividend rule 13.01; mean in-sample AR 27.38
+
+labels    fold  in-sample days  in-sample AR  OOS days  OOS AR  OOS se  gap (in - OOS)  OOS AR without the ex-div rule  in-sample AR without
+random 2022-01             455          3.89       246    5.12    1.80           -1.23                            4.05                  3.25
+random 2023-01             701         -0.10       239   -0.83    2.05            0.74                           -0.78                 -0.37
+random 2024-01             940          0.25       242    2.67    2.54           -2.42                            2.13                 -0.52
+random 2025-01            1182          3.57       243    1.17    2.60            2.41                            0.46                  2.78
+random 2026-01            1425         -0.86        95   -0.96    4.25            0.10                           -1.21                 -1.41
+random 2026-06            1520          0.33        99    3.59    4.94           -3.26                            3.02                 -0.16
+  random: OOS AR pooled over folds 1.94 bp/day (se 1.09); without the ex-dividend rule 1.39; mean in-sample AR 1.18
+
+==============================================================================================================
+4. OOS stability of the walk-forward members actually used (cached predictions, incl. the Transformer that was not re-run)
+==============================================================================================================
+         days  corr(pbar,m) tf_raw_B  corr(pbar,m) mlp_raw_B9  corr(pbar,m) mlp_raw_xr9  corr(pbar,m) mlp_raw_w4_9  IC mlp_res_xr9  IC mlp_res_B9  IC lgb_resid
+fold                                                                                                                                                           
+2022-01   246                  0.136                    0.109                     0.103                      0.109           0.099          0.109         0.105
+2023-01   239                  0.050                    0.037                     0.029                      0.037           0.104          0.095         0.100
+2024-01   242                  0.150                    0.148                     0.129                      0.148           0.129          0.127         0.127
+2025-01   243                  0.177                    0.192                     0.160                      0.150           0.098          0.097         0.100
+2026-01    95                  0.240                    0.237                     0.258                      0.242           0.114          0.110         0.098
+2026-06    99                 -0.030                   -0.112                    -0.074                     -0.151           0.081          0.067         0.081
+  (market-view members: correlation of the daily mean prediction with the Top50 intraday return; stock-view members: daily rank IC)

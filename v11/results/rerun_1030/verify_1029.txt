@@ -1,0 +1,30 @@
+10/29 replay in the same cloud environment: the 10/28 models removed from copies of models_v9 and models_v11, retrained with
+the same seeds on the 10/29 morning data (data\, v7\data\tx_daily.csv and the ex-dividend table exactly as on the laptop),
+then 10/29 predicted; compared with the files the laptop wrote on 10/29 07:37-07:41.
+
+v9      submission: 50/50 the same; probabilities (6 decimals in the files): largest difference 1e-06
+v11     submission: 50/50 the same; probabilities (6 decimals in the files): largest difference 1e-06
+v11 W0  submission: 50/50 the same; probabilities (6 decimals in the files): largest difference 1e-06
+
+model weights, laptop vs cloud retrain (largest absolute difference over all parameters):
+  lgb_res       2026-10-28_s26102801.pt: LightGBM, keys ['best_epoch', 'features', 'fmt', 'kind']...
+  lgb_res_xrN   2026-10-28_s26102801.pt: LightGBM, keys ['best_epoch', 'features', 'fmt', 'kind']...
+  mlp_raw_B9    2026-10-28_s26102801.pt: 3.1e-07  (best epoch 1 vs 1)
+  mlp_raw_B9    2026-10-28_s26102802.pt: 9.8e-08  (best epoch 1 vs 1)
+  mlp_raw_w4_9  2026-10-28_s26102801.pt: 7.8e-08  (best epoch 1 vs 1)
+  mlp_raw_w4_9  2026-10-28_s26102802.pt: 5.6e-06  (best epoch 1 vs 1)
+  mlp_raw_xr9   2026-10-28_s26102801.pt: 1.7e-06  (best epoch 2 vs 2)
+  mlp_raw_xr9   2026-10-28_s26102802.pt: 2.2e-06  (best epoch 4 vs 4)
+  mlp_res_B9    2026-10-28_s26102801.pt: 1.1e-06  (best epoch 4 vs 4)
+  mlp_res_B9    2026-10-28_s26102802.pt: 4.3e-07  (best epoch 4 vs 4)
+  mlp_res_BN9   2026-10-28_s26102801.pt: 1.1e-06  (best epoch 1 vs 1)
+  mlp_res_BN9   2026-10-28_s26102802.pt: 8.1e-08  (best epoch 1 vs 1)
+  mlp_res_xr9   2026-10-28_s26102801.pt: 2.6e-06  (best epoch 1 vs 1)
+  mlp_res_xr9   2026-10-28_s26102802.pt: 1.2e-05  (best epoch 1 vs 1)
+  mlp_res_xrN9  2026-10-28_s26102801.pt: 1.2e-06  (best epoch 1 vs 1)
+  mlp_res_xrN9  2026-10-28_s26102802.pt: 2.1e-06  (best epoch 1 vs 1)
+  tf_raw_B      2026-10-28_s26102801.pt: 1.7e-04  (best epoch 1 vs 1)
+  lgb_res       2026-10-28_s26102801.pt: LightGBM model text (model_str) 96 trees, lines that differ 49 of 2025; best iteration 96 vs 96
+  lgb_res_xrN   2026-10-28_s26102801.pt: LightGBM model text (model_str) 115 trees, lines that differ 25 of 2420; best iteration 115 vs 115
+  (LightGBM: same trees and leaf values; only some split thresholds and feature ranges differ in the last digits, relative
+   difference <= 1.1e-3 of the threshold, from floating-point differences in the features; no 10/29 prediction changed)

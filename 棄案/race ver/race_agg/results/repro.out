@@ -1,0 +1,1 @@
+16:55:26 repro C.LU 2024-01-01 seed 1: best_iter 290 (part 1: 290), max |diff| 0.000e+00, n 24196 / 24196, 30.6 s; lightgbm 4.6.0

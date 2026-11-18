@@ -1,0 +1,40 @@
+(1) w_T as a risk setting: daily AR 2022-01..2026-10 (bp/day) and the mean over every 19-day stretch
+ w_T   mean     sd  timing   xsec  sd_19d  P(19d>0)  P(19d>20)  P(19d>25)  P(19d>30)  q05_19d  q95_19d
+0.00 11.507 43.869  -0.519 12.025   9.246     0.882      0.154      0.065      0.023   -5.064   26.449
+0.25 12.582 46.826   0.578 12.004   9.537     0.903      0.212      0.095      0.030   -3.951   28.427
+0.50 13.382 49.595   1.550 11.832  10.025     0.911      0.237      0.120      0.054   -3.385   30.346
+0.75 13.272 53.814   2.325 10.947  10.853     0.887      0.236      0.128      0.072   -4.943   31.699
+1.00 12.847 56.984   3.180  9.667  12.430     0.852      0.269      0.161      0.086   -8.248   33.627
+1.50 12.156 61.391   4.198  7.958  13.832     0.819      0.273      0.164      0.093  -10.558   35.675
+2.00 11.314 65.021   4.919  6.395  14.959     0.791      0.254      0.168      0.102  -11.950   36.465
+days: 1164; 19-day stretches: 1146 (overlapping, so neighbouring stretches share days)
+
+(2a) Top50 stock-days around ex-dividend dates (r = open->close, resid = r - same-day mean of the 100 stocks, bp)
+    flag          period   n      r  resid  P(y=1)  t_resid
+ex_next1     pre 2020-21 103 -21.69  -7.20    0.39    -0.56
+ex_next1     val 2022-24 170 -14.13   1.50    0.42     0.10
+ex_next1 hold 2025-26/05  60  12.20  13.34    0.47     0.69
+ex_next1   post 2026/06-  50 -68.05 -23.03    0.28    -0.55
+ex_today     pre 2020-21 103 -50.23 -15.21    0.37    -0.81
+ex_today     val 2022-24 169 -53.99 -45.08    0.37    -3.22
+ex_today hold 2025-26/05  61 -67.13 -67.97    0.30    -2.92
+ex_today   post 2026/06-  50 -99.12 -74.45    0.32    -1.87
+ex_prev1     pre 2020-21 103 -19.08 -10.36    0.39    -0.60
+ex_prev1     val 2022-24 169 -30.32 -19.04    0.39    -1.20
+ex_prev1 hold 2025-26/05  61  25.22  32.10    0.44     1.20
+ex_prev1   post 2026/06-  50 -60.73 -37.85    0.36    -1.14
+ex_prev2     pre 2020-21 103 -33.84 -19.69    0.30    -1.67
+ex_prev2     val 2022-24 169 -38.65 -15.90    0.31    -1.14
+ex_prev2 hold 2025-26/05  61 -45.96 -46.15    0.38    -2.12
+ex_prev2   post 2026/06-  50  -0.28   9.69    0.36     0.24
+ex_next1 = the day before an ex-dividend day; ex_prev1 / ex_prev2 = 1 / 2 trading days after it
+
+(2b) force a guess on neighbour stock-days vs the v2/v4 rule (w_T 0.5 + ex-dividend day -> 0), paired, bp/day
+         rule  stock-days  changed  d_val  t_val  d_hold  t_hold  d_post  t_post
+ex_next1 -> 0         280      170   0.14   1.19   -0.04   -0.57    1.17    1.76
+ex_next1 -> 1         280      110   0.01   0.09    0.05    0.46   -0.21   -0.24
+ex_prev1 -> 0         280      121   0.19   1.96   -0.03   -0.39   -0.02   -0.11
+ex_prev1 -> 1         280      159  -0.09  -0.70    0.15    0.92   -1.25   -1.41
+ex_prev2 -> 0         280      143   0.11   1.15   -0.01   -0.07    0.25    0.40
+ex_prev2 -> 1         280      137  -0.24  -2.24   -0.34   -2.04    0.24    0.45
+Holm bar for the best of 6 rules: z(1 - 0.05/6) = 2.39; hold must have the same sign.

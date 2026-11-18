@@ -1,0 +1,41 @@
+# cloud (same machine as the L screen): python a158_screen.py --family v10 --members lgb_res --workers 2 -> the 30 V10 lgb_res units; the laptop's stage2.bat then trains only the MLP units
+2026-10-26 13:02:29 family v10: 30 units, 30 to do, 2 worker(s); panel (165346, 278)
+2026-10-26 13:02:47 [1/30] v10 v10 lgb_res 2022-01-01 seed 1: 18s (best 122); elapsed 0.3 min, about 9 min left
+2026-10-26 13:02:48 [2/30] v10 v10 lgb_res 2022-01-01 seed 2: 18s (best 123); elapsed 0.3 min, about 4 min left
+2026-10-26 13:03:04 [3/30] v10 v10 lgb_res 2022-01-01 seed 3: 17s (best 136); elapsed 0.6 min, about 5 min left
+2026-10-26 13:04:31 [10/30] v10 v10 lgb_res 2023-01-01 seed 5: 28s (best 166); elapsed 2.0 min, about 4 min left
+2026-10-26 13:09:39 [20/30] v10 v10 lgb_res 2026-01-01 seed 1: 36s (best 63); elapsed 7.2 min, about 4 min left
+2026-10-26 13:15:45 [30/30] v10 v10 lgb_res 2026-06-01 seed 5: 95s (best 382); elapsed 13.3 min, about 0 min left
+2026-10-26 13:15:45 finished: 30 units in 13.3 min, 0 failed; mean 50.2s per unit
+2026-10-26 13:19:33 family v10: 300 units, 270 to do, 4 worker(s); panel (165346, 278)
+2026-10-26 13:19:51 [1/270] v10 v10 mlp_res_xr9 2022-01-01 seed 4: 11s (best 1); elapsed 0.3 min, about 83 min left
+2026-10-26 13:19:51 [2/270] v10 v10 mlp_res_xr9 2022-01-01 seed 3: 11s (best 1); elapsed 0.3 min, about 41 min left
+2026-10-26 13:19:53 [3/270] v10 v10 mlp_res_xr9 2022-01-01 seed 2: 13s (best 2); elapsed 0.3 min, about 30 min left
+2026-10-26 13:20:05 [10/270] v10 v10 mlp_res_xr9 2022-01-01 seed 10: 7s (best 2); elapsed 0.5 min, about 14 min left
+2026-10-26 13:20:51 [20/270] v10 v10 mlp_res_xr9 2023-01-01 seed 8: 29s (best 5); elapsed 1.3 min, about 16 min left
+2026-10-26 13:21:33 [30/270] v10 v10 mlp_res_xr9 2024-01-01 seed 10: 13s (best 1); elapsed 2.0 min, about 16 min left
+2026-10-26 13:23:00 [40/270] v10 v10 mlp_res_xr9 2026-01-01 seed 1: 24s (best 2); elapsed 3.5 min, about 20 min left
+2026-10-26 13:23:54 [50/270] v10 v10 mlp_res_xr9 2026-01-01 seed 9: 24s (best 2); elapsed 4.4 min, about 19 min left
+2026-10-26 13:24:55 [60/270] v10 v10 mlp_res_xr9 2026-06-01 seed 8: 30s (best 3); elapsed 5.4 min, about 19 min left
+2026-10-26 13:25:19 [70/270] mlp base mlp_res_xr9 2023-01-01 seed 10: 8s (best 2); elapsed 5.8 min, about 16 min left
+2026-10-26 13:26:03 [80/270] mlp base mlp_res_xr9 2026-01-01 seed 6: 12s (best 1); elapsed 6.5 min, about 15 min left
+2026-10-26 13:26:46 [90/270] mlp base mlp_res_xr9 2026-06-01 seed 9: 17s (best 2); elapsed 7.2 min, about 14 min left
+2026-10-26 13:27:00 [100/270] v10 v10 mlp_res_BN9 2022-01-01 seed 10: 6s (best 2); elapsed 7.5 min, about 13 min left
+2026-10-26 13:27:31 [110/270] v10 v10 mlp_res_BN9 2023-01-01 seed 10: 9s (best 2); elapsed 8.0 min, about 12 min left
+2026-10-26 13:27:56 [120/270] v10 v10 mlp_res_BN9 2024-01-01 seed 10: 10s (best 1); elapsed 8.4 min, about 10 min left
+2026-10-26 13:29:00 [130/270] v10 v10 mlp_res_BN9 2026-01-01 seed 1: 17s (best 2); elapsed 9.5 min, about 10 min left
+2026-10-26 13:29:33 [140/270] v10 v10 mlp_res_BN9 2026-01-01 seed 10: 14s (best 1); elapsed 10.0 min, about 9 min left
+2026-10-26 13:30:24 [150/270] mlp base mlp_res_BN9 2022-01-01 seed 7: 4s (best 2); elapsed 10.9 min, about 9 min left
+2026-10-26 13:30:48 [160/270] mlp base mlp_res_BN9 2023-01-01 seed 10: 10s (best 4); elapsed 11.3 min, about 8 min left
+2026-10-26 13:31:24 [170/270] mlp base mlp_res_BN9 2026-01-01 seed 6: 10s (best 1); elapsed 11.8 min, about 7 min left
+2026-10-26 13:31:52 [180/270] v10 v10 mlp_res_xrN9 2022-01-01 seed 1: 7s (best 2); elapsed 12.3 min, about 6 min left
+2026-10-26 13:32:07 [190/270] v10 v10 mlp_res_xrN9 2022-01-01 seed 10: 6s (best 1); elapsed 12.6 min, about 5 min left
+2026-10-26 13:32:40 [200/270] v10 v10 mlp_res_xrN9 2023-01-01 seed 9: 13s (best 3); elapsed 13.1 min, about 5 min left
+2026-10-26 13:33:11 [210/270] v10 v10 mlp_res_xrN9 2024-01-01 seed 9: 15s (best 2); elapsed 13.6 min, about 4 min left
+2026-10-26 13:34:20 [220/270] v10 v10 mlp_res_xrN9 2025-01-01 seed 9: 25s (best 4); elapsed 14.8 min, about 3 min left
+2026-10-26 13:35:17 [230/270] v10 v10 mlp_res_xrN9 2026-06-01 seed 1: 22s (best 2); elapsed 15.7 min, about 3 min left
+2026-10-26 13:36:04 [240/270] mlp base mlp_res_xrN9 2022-01-01 seed 8: 5s (best 2); elapsed 16.5 min, about 2 min left
+2026-10-26 13:36:30 [250/270] mlp base mlp_res_xrN9 2023-01-01 seed 10: 9s (best 2); elapsed 17.0 min, about 1 min left
+2026-10-26 13:37:15 [260/270] mlp base mlp_res_xrN9 2026-01-01 seed 6: 14s (best 1); elapsed 17.7 min, about 1 min left
+2026-10-26 13:37:59 [270/270] mlp base mlp_res_xrN9 2026-06-01 seed 9: 22s (best 4); elapsed 18.4 min, about 0 min left
+2026-10-26 13:38:01 finished: 270 units in 18.5 min, 0 failed; mean 16.2s per unit

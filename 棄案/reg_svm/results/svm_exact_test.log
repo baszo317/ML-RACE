@@ -1,0 +1,50 @@
+2026-11-04 08:47:59 svm_exact.py start: 6 folds, 6 to do, workers 2, kernel cache 800 MB, scikit-learn 1.7.2 [TEST]
+2026-11-04 08:48:09 [2026-06-01] window 3,000 rows (2,762 before the last 120 days); tuning 4 pairs on 1,500 rows
+2026-11-04 08:48:09 [2026-01-01] window 3,000 rows (2,739 before the last 120 days); tuning 4 pairs on 1,500 rows
+2026-11-04 08:48:09 [2026-06-01]   C 0.01  g 0.5 : val rank IC -0.0740  (0 s)
+2026-11-04 08:48:09 [2026-01-01]   C 0.01  g 0.5 : val rank IC +0.0716  (0 s)
+2026-11-04 08:48:10 [2026-06-01]   C 0.03  g 0.5 : val rank IC -0.0740  (0 s)
+2026-11-04 08:48:10 [2026-01-01]   C 0.03  g 0.5 : val rank IC +0.0716  (0 s)
+2026-11-04 08:48:10 [2026-06-01]   C 0.1   g 0.5 : val rank IC -0.0740  (0 s)
+2026-11-04 08:48:10 [2026-01-01]   C 0.1   g 0.5 : val rank IC +0.0716  (0 s)
+2026-11-04 08:48:10 [2026-06-01]   C 0.3   g 0.5 : val rank IC -0.0596  (0 s)
+2026-11-04 08:48:10 [2026-06-01] tuned C 0.3, g 0.5 -> full fit on 3,000 rows with C 0.3, gamma 0.5/67; expected roughly 0-0 min on an i5-10210U (started 08:48)
+2026-11-04 08:48:10 [2026-01-01]   C 0.3   g 0.5 : val rank IC +0.0921  (0 s)
+2026-11-04 08:48:10 [2026-01-01] tuned C 0.3, g 0.5 -> full fit on 3,000 rows with C 0.3, gamma 0.5/67; expected roughly 0-0 min on an i5-10210U (started 08:48)
+2026-11-04 08:48:11 [2026-06-01] full fit done in 0.0 min, 2,883 support vectors (96%); predicting 9,899 rows
+2026-11-04 08:48:11 [2026-01-01] full fit done in 0.0 min, 2,830 support vectors (94%); predicting 9,500 rows
+2026-11-04 08:48:13 [2026-01-01] saved cache/svm_exact_test/2026-01-01.npz: OOS rank IC +0.0685 (predict 0.0 min, fold total 0.2 min)
+2026-11-04 08:48:13 [2026-06-01] saved cache/svm_exact_test/2026-06-01.npz: OOS rank IC +0.0887 (predict 0.0 min, fold total 0.2 min)
+2026-11-04 08:48:14 [2024-01-01] window 3,000 rows (2,606 before the last 120 days); tuning 4 pairs on 1,500 rows
+2026-11-04 08:48:14 [2025-01-01] window 3,000 rows (2,694 before the last 120 days); tuning 4 pairs on 1,500 rows
+2026-11-04 08:48:15 [2024-01-01]   C 0.01  g 0.5 : val rank IC +0.1787  (0 s)
+2026-11-04 08:48:15 [2025-01-01]   C 0.01  g 0.5 : val rank IC +0.0894  (0 s)
+2026-11-04 08:48:15 [2024-01-01]   C 0.03  g 0.5 : val rank IC +0.1787  (0 s)
+2026-11-04 08:48:15 [2025-01-01]   C 0.03  g 0.5 : val rank IC +0.0938  (0 s)
+2026-11-04 08:48:15 [2024-01-01]   C 0.1   g 0.5 : val rank IC +0.1787  (0 s)
+2026-11-04 08:48:15 [2025-01-01]   C 0.1   g 0.5 : val rank IC +0.0894  (0 s)
+2026-11-04 08:48:15 [2025-01-01]   C 0.3   g 0.5 : val rank IC +0.0163  (0 s)
+2026-11-04 08:48:15 [2025-01-01] tuned C 0.03, g 0.5 -> full fit on 3,000 rows with C 0.03, gamma 0.5/67; expected roughly 0-0 min on an i5-10210U (started 08:48)
+2026-11-04 08:48:15 [2024-01-01]   C 0.3   g 0.5 : val rank IC +0.1035  (0 s)
+2026-11-04 08:48:15 [2024-01-01] tuned C 0.01, g 0.5 -> full fit on 3,000 rows with C 0.01, gamma 0.5/67; expected roughly 0-0 min on an i5-10210U (started 08:48)
+2026-11-04 08:48:16 [2025-01-01] full fit done in 0.0 min, 2,884 support vectors (96%); predicting 24,287 rows
+2026-11-04 08:48:16 [2024-01-01] full fit done in 0.0 min, 2,949 support vectors (98%); predicting 24,196 rows
+2026-11-04 08:48:23 [2025-01-01] saved cache/svm_exact_test/2025-01-01.npz: OOS rank IC +0.0783 (predict 0.1 min, fold total 0.2 min)
+2026-11-04 08:48:23 [2024-01-01] saved cache/svm_exact_test/2024-01-01.npz: OOS rank IC +0.0840 (predict 0.1 min, fold total 0.2 min)
+2026-11-04 08:48:24 [2022-01-01] window 3,000 rows (2,172 before the last 120 days); tuning 4 pairs on 1,500 rows
+2026-11-04 08:48:24 [2023-01-01] window 3,000 rows (2,477 before the last 120 days); tuning 4 pairs on 1,500 rows
+2026-11-04 08:48:25 [2022-01-01]   C 0.01  g 0.5 : val rank IC +0.0444  (0 s)
+2026-11-04 08:48:25 [2023-01-01]   C 0.01  g 0.5 : val rank IC +0.0060  (0 s)
+2026-11-04 08:48:25 [2023-01-01]   C 0.03  g 0.5 : val rank IC +0.0065  (0 s)
+2026-11-04 08:48:25 [2022-01-01]   C 0.03  g 0.5 : val rank IC +0.0443  (0 s)
+2026-11-04 08:48:25 [2023-01-01]   C 0.1   g 0.5 : val rank IC +0.0135  (0 s)
+2026-11-04 08:48:25 [2022-01-01]   C 0.1   g 0.5 : val rank IC +0.0456  (0 s)
+2026-11-04 08:48:26 [2023-01-01]   C 0.3   g 0.5 : val rank IC -0.0117  (0 s)
+2026-11-04 08:48:26 [2023-01-01] tuned C 0.1, g 0.5 -> full fit on 3,000 rows with C 0.1, gamma 0.5/67; expected roughly 0-0 min on an i5-10210U (started 08:48)
+2026-11-04 08:48:26 [2022-01-01]   C 0.3   g 0.5 : val rank IC +0.0691  (0 s)
+2026-11-04 08:48:26 [2022-01-01] tuned C 0.3, g 0.5 -> full fit on 3,000 rows with C 0.3, gamma 0.5/67; expected roughly 0-0 min on an i5-10210U (started 08:48)
+2026-11-04 08:48:26 [2023-01-01] full fit done in 0.0 min, 2,919 support vectors (97%); predicting 23,899 rows
+2026-11-04 08:48:27 [2022-01-01] full fit done in 0.0 min, 2,799 support vectors (93%); predicting 24,572 rows
+2026-11-04 08:48:33 [2022-01-01] saved cache/svm_exact_test/2022-01-01.npz: OOS rank IC +0.0696 (predict 0.1 min, fold total 0.2 min)
+2026-11-04 08:48:33 [2023-01-01] saved cache/svm_exact_test/2023-01-01.npz: OOS rank IC +0.0817 (predict 0.1 min, fold total 0.2 min)
+2026-11-04 08:48:34 svm_exact.py end: 6 of 6 folds done, 0.01 h this run

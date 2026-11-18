@@ -1,0 +1,40 @@
+[run_asof] v9 on /tmp/claude-0/-home-claude/6a2b61c3-80a1-5e4b-95c2-bb732ce3f64e/scratchpad/chk1103 as of 2026-11-03: --dates auto
+[   12s] core panel (165846, 134)
+[   14s] extended panel (469168, 77) (303322 rows of extra stocks for mlp_res_B9)
+[   14s] labelled data up to 2026-11-02; torch 2.14.1+cu130; schedule mlp: every 1, 2 new, pool 5; transformer: every 1, 1 new, pool 5; lgb: every 1, 1 new, pool 5
+[   14s] next trading day 2026-11-04: ex-dividend announced for none of the stocks
+[   15s] mlp_raw_B9: no new model needed (newest trained up to 2026-11-02)
+[   15s] mlp_raw_xr9: no new model needed (newest trained up to 2026-11-02)
+[   15s] mlp_raw_w4_9: no new model needed (newest trained up to 2026-11-02)
+[   15s] tf_raw_B: no new model needed (newest trained up to 2026-11-02)
+[   15s] mlp_res_B9: no new model needed (newest trained up to 2026-11-02)
+[   15s] mlp_res_xr9: no new model needed (newest trained up to 2026-11-02)
+[   15s] mlp_res_BN9: no new model needed (newest trained up to 2026-11-02)
+[   15s] mlp_res_xrN9: no new model needed (newest trained up to 2026-11-02)
+[   15s] lgb_res: no new model needed (newest trained up to 2026-11-02)
+[   17s] mlp_raw_B9 for 2026-11-03: 10 models, trained up to 2026-10-22..2026-11-02
+[   17s] mlp_raw_xr9 for 2026-11-03: 10 models, trained up to 2026-10-22..2026-11-02
+[   17s] mlp_raw_w4_9 for 2026-11-03: 10 models, trained up to 2026-10-22..2026-11-02
+[   17s] tf_raw_B for 2026-11-03: 5 models, trained up to 2026-10-22..2026-11-02
+[   17s] mlp_res_B9 for 2026-11-03: 10 models, trained up to 2026-10-22..2026-11-02
+[   17s] mlp_res_xr9 for 2026-11-03: 10 models, trained up to 2026-10-22..2026-11-02
+[   17s] mlp_res_BN9 for 2026-11-03: 10 models, trained up to 2026-10-22..2026-11-02
+[   17s] mlp_res_xrN9 for 2026-11-03: 10 models, trained up to 2026-10-22..2026-11-02
+[   17s] lgb_res for 2026-11-03: 5 models, trained up to 2026-10-22..2026-11-02
+[   18s] [INFO] environment: python 3.13.18, pandas 3.0.5, numpy 2.5.3, torch 2.14.1+cu130, lightgbm 4.7.0, pyarrow 26.0.1
+[   18s] [OK] 2026-11-03: newest labelled day 2026-11-02 = previous trading day
+[   18s] [OK] 2026-11-03: 109 input features present (largest missing share 0%)
+[   18s] [OK] ex-dividend table fetched today (0 Top100 announcements)
+[   18s] [OK] 2026-11-03: TX night session present
+[   18s] [OK] mlp_raw_B9: newest model trained up to 2026-11-02
+[   18s] [OK] mlp_raw_xr9: newest model trained up to 2026-11-02
+[   18s] [OK] mlp_raw_w4_9: newest model trained up to 2026-11-02
+[   18s] [OK] tf_raw_B: newest model trained up to 2026-11-02
+[   18s] [OK] mlp_res_B9: newest model trained up to 2026-11-02
+[   18s] [OK] mlp_res_xr9: newest model trained up to 2026-11-02
+[   18s] [OK] mlp_res_BN9: newest model trained up to 2026-11-02
+[   18s] [OK] mlp_res_xrN9: newest model trained up to 2026-11-02
+[   18s] [OK] lgb_res: newest model trained up to 2026-11-02
+[   18s] [OK] 2026-11-03: share of 1 = 0.52, pbar = 0.461, 50 Top50 stocks
+[   18s] wrote /tmp/claude-0/-home-claude/6a2b61c3-80a1-5e4b-95c2-bb732ce3f64e/scratchpad/chk1103/v9/out/submission_v9_1103.csv: 50 stocks x 1 date(s), share of 1 = 0.520
+[   18s] 2026-11-03: pbar 0.461; share of 1 among the 50: before hedge 0.46, final 0.52; changed by the hedge 3

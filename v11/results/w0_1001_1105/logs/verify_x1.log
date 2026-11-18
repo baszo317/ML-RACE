@@ -1,0 +1,7 @@
+# python verify_x1.py base   (copy of the laptop tree, data up to 11/03 placeholder)
+2026-10-22 s1: laptop 134 trees, here 134; trees identical True; max |p diff| on 2026-10-27 0.00e+00
+2026-10-27 s26102701: laptop 115 trees, here 115; trees identical False; max |p diff| on 2026-10-28 0.00e+00
+2026-10-28 s26102801: laptop 115 trees, here 115; trees identical False; max |p diff| on 2026-10-29 0.00e+00
+2026-10-30 s26103001: laptop 129 trees, here 129; trees identical False; max |p diff| on 2026-11-02 0.00e+00
+# python verify_x1.py asof 2026-11-02   (the 11/05 as-of copy: base has no labelled day after 11/02)
+2026-11-02 s26110201: laptop 126 trees, here 126; trees identical False; max |p diff| on 2026-11-03 0.00e+00

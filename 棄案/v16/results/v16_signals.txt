@@ -1,0 +1,24 @@
+v16_signals.py -- K1 Kalman beta (research\PREREG_v16.md)
+  2026-11-08 10:13, pandas 2.3.3, numpy 2.2.6
+  prices 2020-01-02 .. 2026-11-02, 1658 days x 100 stocks; 37 grid points; filter + selection 3s
+
+K1: chosen (phi, q) per fold, by the pooled log-likelihood of the days before the fold
+  gain = log-likelihood of the chosen point minus that of q = 0 (fixed beta, all data since 2020);
+  best RW / best phi<1 = the best point with phi = 1 / phi < 1; memory = 1 / steady-state gain (README_v16 theorem 3)
+  2022-01-01: phi 0.999, q 0.001; log-lik gain over q = 0 +113.3 (36,893 terms); best RW q 0.001 (+109.3), best phi<1 phi 0.999 q 0.001 (+113.3); memory 52 days, stationary sd 0.71, reversion half-life 693 days
+  2023-01-01: phi 1, q 0.0003; log-lik gain over q = 0 +168.9 (61,465 terms); best RW q 0.0003 (+168.9), best phi<1 phi 0.999 q 0.001 (+168.8); memory 95 days
+  2024-01-01: phi 0.999, q 0.001; log-lik gain over q = 0 +596.8 (85,364 terms); best RW q 0.001 (+593.9), best phi<1 phi 0.999 q 0.001 (+596.8); memory 56 days, stationary sd 0.71, reversion half-life 693 days
+  2025-01-01: phi 0.999, q 0.001; log-lik gain over q = 0 +771.3 (109,560 terms); best RW q 0.001 (+747.3), best phi<1 phi 0.999 q 0.001 (+771.3); memory 58 days, stationary sd 0.71, reversion half-life 693 days
+  2026-01-01: phi 0.999, q 0.001; log-lik gain over q = 0 +1018.6 (133,847 terms); best RW q 0.001 (+985.8), best phi<1 phi 0.999 q 0.001 (+1018.6); memory 58 days, stationary sd 0.71, reversion half-life 693 days
+  2026-06-01: phi 0.999, q 0.001; log-lik gain over q = 0 +1140.2 (143,347 terms); best RW q 0.001 (+1108.1), best phi<1 phi 0.999 q 0.001 (+1140.2); memory 58 days, stationary sd 0.71, reversion half-life 693 days
+
+leak check (prices cut at D-1, 6 random days from 2022 on; max |difference| of beta at D, must be 0): 0.0e+00  OK
+
+Top50 betas on the walk-forward days (2022-01 .. 2026-10-22, 58,175 stock-days, clipped to [0.2, 2.5]):
+  mean, cross-sectional sd (mean over days), mean |x - OLS120|, correlation with OLS120, day-to-day sd of the change:
+    OLS120  mean 0.882, cs sd 0.608, |x - OLS120| 0.000, corr 1.000, daily change sd 0.0289
+    E1      mean 0.864, cs sd 0.555, |x - OLS120| 0.039, corr 0.997, daily change sd 0.0266
+    K1      mean 0.881, cs sd 0.557, |x - OLS120| 0.099, corr 0.970, daily change sd 0.0312
+    K1q0    mean 0.846, cs sd 0.458, |x - OLS120| 0.270, corr 0.745, daily change sd 0.0026
+
+saved /sessions/rcw-01lyzz5sxzexcpo1xxzeuak3/mnt/ML RACE/v16/cache/signals16.pkl (20s)

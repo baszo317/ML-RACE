@@ -1,0 +1,9 @@
+Top50 bp/day = mean of (2 pred - 1) * (close - open) / open; static = 2026-06-01..09-30, Oct = after 09-30 (extension)
+v9 rolling (each day: models trained up to the day before) static  21.53 (84 d)   Oct  37.43 (15 d)   all  23.94 (99 d)
+  same, before the hedge                                   static  19.89 (84 d)   Oct  32.85 (15 d)   all  21.86 (99 d)
+v9 frozen (all models trained up to 2026-05-29)            static  19.10 (84 d)   Oct  31.43 (15 d)   all  20.97 (99 d)
+v4 static upload (rolling, 15.36 on the static leaderboard) static  15.36 (84 d)   Oct    nan (0 d)   all  15.36 (84 d)
+groupmate V3 (submission-1-phase1_2.csv)                   static  20.31 (84 d)   Oct    nan (0 d)   all  20.31 (84 d)
+
+model pool used on the last day of the static period and on the newest day:
+(recombined from stored member probabilities)

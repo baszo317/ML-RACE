@@ -1,0 +1,62 @@
+{
+ "written": "2026-11-17 02:10:54",
+ "prereg_sha256": "52cc57a0914f96cf5a888604d16c045f5d213bc4d3092aec09d2dd85532ea26b",
+ "code": {
+  "PREREG_race_mkt.md": "52cc57a0914f96cf5a888604d16c045f5d213bc4d3092aec09d2dd85532ea26b",
+  "mkt_eval.py": "e41f3bf616558cc96c4c97079fdc8b5601ffb07ae3499dc609719d1a7b3b7b5b",
+  "mktlib.py": "0cdee238dbe051ad8f3380c9f80a69a452027f39ab5f9fc298ebf0ce02864905"
+ },
+ "ext": {
+  "finmind/fut_daily_MTX.csv": "cab154efef5359bad957b778a859b60dd5f5bc94c4eb1ca4bd9ce7482ac531f4",
+  "finmind/fut_daily_TMF.csv": "3f878bfa7d5cae9d11de94afb15d026fbf72f4dfeacb56e8dd3a2bcc86ef29b9",
+  "finmind/fut_daily_TX.csv": "9ab93e46cddd773fb132995ab4a1369ca46837eed5ac3af246ef29b581b36b2a",
+  "finmind/fut_inst_MTX.csv": "f195689585a48ab21580dbad40442d81507d2d89a8330ef3d40a91ee394ff4d4",
+  "finmind/fut_inst_TMF.csv": "b1be49e216567e1a356b8b5a3f60ed425ab74c6f48521677feafa04e9b614832",
+  "finmind/fut_inst_TX.csv": "20b95014886a9f025574229d3f31af3ddb8733a6c33a427b458b39b1fb5308e0",
+  "finmind/opt_inst_TXO.csv": "8553ec4ae32d5fc54ff3d4f7eed23870c7bfc32875b33aab9b5e080ec83db533",
+  "finmind/total_inst.csv": "74f77cbffca6132abd13cfbaab87e12d713e7aa10b8c6ba2085339de6c052505",
+  "finmind/total_margin.csv": "55c4208c943552f01ff91225b972d7275601d2a0cc51fdf427dce4a94c13cd1f",
+  "taifex/fut_inst_taifex.csv": "f35a9399b5e0c522c8cf68fa6386292de60d7a6c594cc874625daad1b8a4e29a",
+  "taifex/large_trader_TX.csv": "b560b9306dabe22b68eda3ad586524c432f2baefdd26c032a2fff5955745e2d7",
+  "taifex/pc_ratio.csv": "d18f6ba9ebb09cecd0210230400ac8732effeb3a75754fa8f2ca458c266e524c"
+ },
+ "passed": [],
+ "d_summary": {
+  "DL0": {
+   "diff": null,
+   "diff_t": null
+  },
+  "P1": {
+   "diff": 0.264886109273428,
+   "diff_t": 0.31835742975835746
+  },
+  "P2": {
+   "diff": 0.3208014130409152,
+   "diff_t": 0.3479264410271414
+  },
+  "P3": {
+   "diff": 0.23374291227678326,
+   "diff_t": 0.31217832818420965
+  },
+  "P4": {
+   "diff": 0.26957085020806576,
+   "diff_t": 0.3146712185171226
+  },
+  "P5": {
+   "diff": 0.22402712838777994,
+   "diff_t": 0.2694730495969383
+  },
+  "P6": {
+   "diff": 0.07971157073107651,
+   "diff_t": 0.12188447795606358
+  },
+  "P7": {
+   "diff": 0.011547294996787609,
+   "diff_t": 0.2452897317228153
+  },
+  "P8": {
+   "diff": -0.36147625496485686,
+   "diff_t": -0.4146645226492013
+  }
+ }
+}

@@ -1,0 +1,69 @@
+09:09:35 race_agg train: 30 units to do (['B2']), workers 2, budget 120.0
+09:09:55 B2 2022-01-01 seed1: done (14.6 s) {'best_iter': 77, 'unique_days': 287}
+09:10:03 B2 2022-01-01 seed2: done (21.9 s) {'best_iter': 195, 'unique_days': 284}
+09:10:08 B2 2022-01-01 seed3: done (12.5 s) {'best_iter': 118, 'unique_days': 285}
+09:10:18 B2 2022-01-01 seed4: done (14.3 s) {'best_iter': 137, 'unique_days': 290}
+09:10:19 B2 2022-01-01 seed5: done (10.6 s) {'best_iter': 86, 'unique_days': 286}
+09:10:31 B2 2022-01-01 seed6: done (12.7 s) {'best_iter': 113, 'unique_days': 279}
+09:10:31 B2 2022-01-01 seed7: done (11.3 s) {'best_iter': 89, 'unique_days': 281}
+09:10:46 B2 2022-01-01 seed9: done (13.6 s) {'best_iter': 114, 'unique_days': 281}
+09:10:49 B2 2022-01-01 seed8: done (17.9 s) {'best_iter': 197, 'unique_days': 290}
+09:11:04 B2 2022-01-01 seed10: done (18.0 s) {'best_iter': 198, 'unique_days': 288}
+09:11:09 B2 2023-01-01 seed1: done (18.7 s) {'best_iter': 95, 'unique_days': 437}
+09:11:29 B2 2023-01-01 seed2: done (24.6 s) {'best_iter': 167, 'unique_days': 441}
+09:11:56 B2 2023-01-01 seed4: done (25.9 s) {'best_iter': 197, 'unique_days': 444}
+09:11:57 B2 2023-01-01 seed3: done (46.7 s) {'best_iter': 442, 'unique_days': 446}
+09:11:57 race_agg train: 16 units left (['B2'])
+09:12:05 race_agg train: 16 units to do (['B2']), workers 2, budget 125.0
+09:12:25 B2 2023-01-01 seed6: done (18.1 s) {'best_iter': 69, 'unique_days': 445}
+09:12:44 B2 2023-01-01 seed7: done (19.3 s) {'best_iter': 118, 'unique_days': 437}
+09:12:47 B2 2023-01-01 seed5: done (40.3 s) {'best_iter': 335, 'unique_days': 458}
+09:13:10 B2 2023-01-01 seed8: done (25.8 s) {'best_iter': 192, 'unique_days': 452}
+09:13:13 B2 2023-01-01 seed9: done (25.6 s) {'best_iter': 192, 'unique_days': 450}
+09:13:37 B2 2023-01-01 seed10: done (25.7 s) {'best_iter': 193, 'unique_days': 439}
+09:13:49 B2 2024-01-01 seed1: done (35.2 s) {'best_iter': 208, 'unique_days': 606}
+09:14:35 B2 2024-01-01 seed2: done (56.8 s) {'best_iter': 395, 'unique_days': 595}
+09:14:42 B2 2024-01-01 seed3: done (53.3 s) {'best_iter': 374, 'unique_days': 581}
+09:14:43 race_agg train: 7 units left (['B2'])
+09:14:58 race_agg train: 7 units to do (['B2']), workers 2, budget 110.0
+09:15:44 B2 2024-01-01 seed5: done (37.4 s) {'best_iter': 219, 'unique_days': 577}
+09:15:52 B2 2024-01-01 seed4: done (45.8 s) {'best_iter': 292, 'unique_days': 603}
+09:16:15 B2 2024-01-01 seed6: done (31.1 s) {'best_iter': 172, 'unique_days': 596}
+09:16:33 B2 2024-01-01 seed7: done (40.4 s) {'best_iter': 261, 'unique_days': 590}
+09:16:54 B2 2024-01-01 seed8: done (38.7 s) {'best_iter': 240, 'unique_days': 593}
+09:17:05 B2 2024-01-01 seed9: done (31.5 s) {'best_iter': 194, 'unique_days': 591}
+09:17:05 race_agg train: 1 units left (['B2'])
+09:17:15 race_agg train: 22 units to do (['B2', 'B1']), workers 2, budget 120.0
+09:17:38 B1 2022-01-01 seed4: done (21.1 s) {'best_iter': 178}
+09:17:38 B1 2022-01-01 seed5: done (21.8 s) {'best_iter': 189}
+09:17:56 B1 2022-01-01 seed6: done (17.8 s) {'best_iter': 194}
+09:17:58 B1 2022-01-01 seed7: done (19.2 s) {'best_iter': 214}
+09:18:16 B1 2022-01-01 seed8: done (20.3 s) {'best_iter': 231}
+09:18:16 B1 2022-01-01 seed9: done (18.5 s) {'best_iter': 204}
+09:18:34 B1 2022-01-01 seed10: done (17.4 s) {'best_iter': 181}
+09:19:01 B1 2023-01-01 seed4: done (44.8 s) {'best_iter': 418}
+09:19:18 B1 2023-01-01 seed5: done (43.0 s) {'best_iter': 382}
+09:19:44 B1 2023-01-01 seed6: done (41.5 s) {'best_iter': 431}
+09:19:45 race_agg train: 12 units left (['B2', 'B1'])
+09:20:37 race_agg train: 18 units to do (['E4', 'F1']), workers 2, budget 125.0
+09:20:51 F1 2022-01-01 seed1: done (12.2 s) {'best_iter': 105}
+09:20:54 F1 2022-01-01 seed2: done (15.3 s) {'best_iter': 176}
+09:21:05 F1 2022-01-01 seed3: done (13.8 s) {'best_iter': 136}
+09:21:40 F1 2023-01-01 seed1: done (45.6 s) {'best_iter': 449}
+09:21:54 F1 2023-01-01 seed2: done (48.3 s) {'best_iter': 504}
+09:22:10 F1 2023-01-01 seed3: done (29.3 s) {'best_iter': 276}
+09:22:33 F1 2024-01-01 seed1: done (38.8 s) {'best_iter': 290}
+09:22:42 F1 2024-01-01 seed2: done (32.0 s) {'best_iter': 217}
+09:23:00 F1 2024-01-01 seed3: done (25.5 s) {'best_iter': 184}
+09:23:00 race_agg train: 9 units left (['E4', 'F1'])
+09:23:07 race_agg train: 9 units to do (['E4']), workers 2, budget 125.0
+09:23:21 E4 2022-01-01 seed2: done (12.8 s) {'best_iter': 207, 'n_keep': 102}
+09:23:24 E4 2022-01-01 seed1: done (16.4 s) {'best_iter': 301, 'n_keep': 102}
+09:23:34 E4 2022-01-01 seed3: done (13.1 s) {'best_iter': 234, 'n_keep': 102}
+09:23:53 E4 2023-01-01 seed1: done (28.5 s) {'best_iter': 395, 'n_keep': 101}
+09:24:00 E4 2023-01-01 seed2: done (26.0 s) {'best_iter': 329, 'n_keep': 101}
+09:24:40 E4 2023-01-01 seed3: done (46.7 s) {'best_iter': 769, 'n_keep': 101}
+09:24:43 E4 2024-01-01 seed1: done (41.6 s) {'best_iter': 513, 'n_keep': 97}
+09:25:31 E4 2024-01-01 seed3: done (46.5 s) {'best_iter': 471, 'n_keep': 97}
+09:25:34 E4 2024-01-01 seed2: done (53.2 s) {'best_iter': 610, 'n_keep': 97}
+09:25:34 race_agg train: 0 units left (['E4'])

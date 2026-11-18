@@ -1,0 +1,29 @@
+v16_smoother_posthoc.py -- after the S3 judgment (report only)
+  2026-11-08 10:40, pandas 2.3.3, numpy 2.2.6
+
+1. stock view p_e, daily rank IC with the excess return (val / hold / post / all), and minus v11 (NW t):
+    v11                0.1140 / 0.1088 / 0.0900 / 0.1105
+    v11 + S3-0         0.1127 / 0.1079 / 0.0927 / 0.1096   val -0.0014 (-2.02)  hold -0.0009 (-0.96)  post +0.0027 (0.78)  all -0.0009 (-1.51)
+    v11 + S3a          0.1146 / 0.1106 / 0.0903 / 0.1114   val +0.0005 (0.40)  hold +0.0018 (1.02)  post +0.0003 (0.05)  all +0.0009 (0.82)
+    v11 + S3b          0.1150 / 0.1106 / 0.0925 / 0.1119   val +0.0010 (0.82)  hold +0.0018 (1.21)  post +0.0025 (0.50)  all +0.0014 (1.40)
+    v11 + S3f          0.1134 / 0.1096 / 0.0974 / 0.1110   val -0.0006 (-0.64)  hold +0.0008 (0.79)  post +0.0074 (1.56)  all +0.0005 (0.61)
+    v11 + S3 selected  0.1150 / 0.1109 / 0.0919 / 0.1118   val +0.0009 (0.76)  hold +0.0021 (1.29)  post +0.0019 (0.36)  all +0.0013 (1.34)
+
+2. each S3x against the v11 stock view (all periods): rank correlation rho, own IC, gain condition IC_z - rho IC_x (README_v14 theorem 2)
+    S3-0  rho 0.804, IC_z 0.0914, IC_z - rho IC_x +0.0026
+    S3a   rho 0.346, IC_z 0.0577, IC_z - rho IC_x +0.0195
+    S3b   rho 0.560, IC_z 0.0830, IC_z - rho IC_x +0.0211
+    S3f   rho 0.739, IC_z 0.0995, IC_z - rho IC_x +0.0178
+
+3. AR difference split into timing (share of 1s x Top50 mean) and cross-section (bp/day, all periods), share of 1s:
+    S3a         - S3-0: AR +0.30 / +0.08 / +1.49 / +0.34   timing +0.01 / +0.32 / -0.58 / +0.05   xsec +0.30 / -0.24 / +2.07 / +0.29   share of 1s 0.590 vs 0.592
+    S3b         - S3-0: AR +0.45 / +0.50 / -0.12 / +0.42   timing +0.01 / +0.52 / -0.05 / +0.15   xsec +0.44 / -0.03 / -0.07 / +0.26   share of 1s 0.594 vs 0.592
+    S3 selected - S3-0: AR +0.23 / +0.83 / +0.82 / +0.45   timing -0.10 / +0.46 / -0.36 / +0.04   xsec +0.33 / +0.37 / +1.17 / +0.41   share of 1s 0.592 vs 0.592
+    S3 selected - v11 : AR +0.06 / +0.65 / +1.85 / +0.38   timing +0.08 / +0.49 / +0.25 / +0.21   xsec -0.02 / +0.15 / +1.60 / +0.17   share of 1s 0.592 vs 0.588
+    S3-0        - v11 : AR -0.17 / -0.19 / +1.03 / -0.07   timing +0.18 / +0.03 / +0.60 / +0.17   xsec -0.35 / -0.22 / +0.43 / -0.25   share of 1s 0.592 vs 0.588
+
+4. shrinkage of the all-period difference (prior N(0, tau^2), tau 0.185 bp/day from the overfit study):
+    S3 selected - S3-0: observed +0.45 (se 0.37) -> posterior mean +0.092 bp/day
+    S3 selected - v11: observed +0.38 (se 0.38) -> posterior mean +0.073 bp/day
+
+(23s)

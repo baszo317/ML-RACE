@@ -1,0 +1,10 @@
+lgb: baseline block 1 rank IC 0.1051, AR 14.20
+   eps 0.01: family rank IC +9.37e-3 -> AR +0.527 bp/day (t 5.5); AR per 1e-3 of IC 0.056 bp
+   eps 0.02: family rank IC +18.96e-3 -> AR +1.021 bp/day (t 7.8); AR per 1e-3 of IC 0.054 bp
+   eps 0.05: family rank IC +47.02e-3 -> AR +2.029 bp/day (t 11.0); AR per 1e-3 of IC 0.043 bp
+   eps 0.10: family rank IC +92.79e-3 -> AR +4.183 bp/day (t 16.9); AR per 1e-3 of IC 0.045 bp
+mlp: baseline block 1 rank IC 0.1055, AR 14.14
+   eps 0.01: family rank IC +9.70e-3 -> AR +0.314 bp/day (t 3.5); AR per 1e-3 of IC 0.032 bp
+   eps 0.02: family rank IC +19.51e-3 -> AR +0.637 bp/day (t 5.6); AR per 1e-3 of IC 0.033 bp
+   eps 0.05: family rank IC +48.27e-3 -> AR +1.722 bp/day (t 9.4); AR per 1e-3 of IC 0.036 bp
+   eps 0.10: family rank IC +95.00e-3 -> AR +3.821 bp/day (t 17.5); AR per 1e-3 of IC 0.040 bp

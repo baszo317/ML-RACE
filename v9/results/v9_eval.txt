@@ -1,0 +1,31 @@
+rows: current members 116353, v9 members 116353, common 116353
+check: control from this script 13.3818 vs v8 mlib.daily 13.3818
+
+Top50 bp/day, walk-forward 2022-01..2026-10 (yearly retrain; post = models frozen at 2026-05-29); d_/t_ = paired difference to the control
+                                                  config   val  hold  post   all    sd  timing  xsec  P19>0  P19>20  static   Oct
+           control: v4 rule, current members (= v5 live) 13.22 13.95 12.63 13.38 49.60    1.55 11.83   0.91    0.24   12.16 15.26
+                                      v9: all 11 changes 13.99 14.33 16.59 14.31 48.26    1.76 12.55   0.93    0.28   15.46 22.91
+                          ablation: v9 without the hedge 14.32 14.59 16.50 14.58 51.12    1.98 12.60   0.91    0.29   15.88 19.97
+    ablation: v9 without the ex-dividend neighbour rules 13.54 14.33 15.25 13.91 48.72    1.72 12.19   0.91    0.28   13.77 23.58
+                           ablation: v9 without LightGBM 13.90 12.12 14.51 13.44 47.00    1.18 12.25   0.93    0.23   15.29 10.15
+                     ablation: v9 without the 4-year MLP 14.20 14.16 17.64 14.48 48.20    1.68 12.81   0.93    0.28   17.05 21.00
+                     ablation: v9 without the v3 members 13.69 14.16 15.68 13.99 48.17    1.58 12.41   0.92    0.28   15.43 17.13
+    split: v9 market view + current stock view, v4 rules 12.96 13.98 12.72 13.24 50.05    1.72 11.52   0.91    0.24   12.52 13.83
+    split: current market view + v9 stock view, v4 rules 13.72 14.57 15.45 14.11 51.75    1.67 12.44   0.90    0.28   14.80 19.06
+split: current members + v9 rules (ex neighbours, hedge) 13.92 13.49 14.61 13.85 46.72    1.37 12.48   0.93    0.24   13.93 18.43
+                             split: v9 members, v4 rules 13.85 14.58 14.76 14.14 51.57    1.91 12.23   0.90    0.27   13.71 20.65
+
+                                                  config  d_val  t_val  d_hold  t_hold  d_post  t_post
+           control: v4 rule, current members (= v5 live)   0.00    NaN    0.00     NaN    0.00     NaN
+                                      v9: all 11 changes   0.77   1.17    0.39    0.38    3.96    1.50
+                          ablation: v9 without the hedge   1.10   1.87    0.64    0.64    3.87    1.47
+    ablation: v9 without the ex-dividend neighbour rules   0.32   0.48    0.38    0.38    2.62    1.01
+                           ablation: v9 without LightGBM   0.68   1.19   -1.83   -2.05    1.88    0.86
+                     ablation: v9 without the 4-year MLP   0.98   1.49    0.21    0.21    5.01    1.95
+                     ablation: v9 without the v3 members   0.47   0.70    0.21    0.21    3.05    1.23
+    split: v9 market view + current stock view, v4 rules  -0.26  -1.19    0.03    0.06    0.09    0.06
+    split: current market view + v9 stock view, v4 rules   0.50   0.92    0.62    0.66    2.81    1.26
+split: current members + v9 rules (ex neighbours, hedge)   0.70   1.64   -0.46   -0.78    1.98    1.12
+                             split: v9 members, v4 rules   0.63   1.09    0.63    0.64    2.13    0.86
+
+pre-registered check (selection used val only): hold diff +0.39 (t 0.38), post diff +3.96 (t 1.50) -> both > 0: the mix generalised to the periods not used for picking

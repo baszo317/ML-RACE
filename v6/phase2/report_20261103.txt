@@ -1,0 +1,79 @@
+Phase 2 check  2026-11-03 (Tue)   prices: FinMind 50   (50/50 stocks)
+  market: Top50 mean (close - open)/open -265.59 bp, 6 of 50 up; previous trading day 2026-11-02
+
+   AR score     AR bp   timing     xsec    1s   hits  file
+   0.026559    265.59   265.59     0.00  0.00  44/50  (baseline) Always down
+  -0.006321    -63.21    42.49  -105.70  0.42  25/50  (baseline) Previous day
+  -0.002052    -20.52  -116.86    96.33  0.72  20/50  v6/submission_v11_1103_wt0_lam0.5.csv
+
+  per stock: r_bp = (close - open)/open in bp, y = close > open, prev_p = the Previous day baseline,
+  pN = prediction of file N, bpN = its contribution (2p - 1) * r / 50 in bp (the column sums to the AR in bp)
+    p1, bp1: v6/submission_v11_1103_wt0_lam0.5.csv
+        r_bp  y  prev_p  p1    bp1   source
+id                                         
+2330  -21.74  0       1   1  -0.43  FinMind
+2317 -140.56  0       1   1  -2.81  FinMind
+2454 -719.70  0       1   1 -14.39  FinMind
+2308 -378.79  0       1   1  -7.58  FinMind
+2881 -344.83  0       0   1  -6.90  FinMind
+2882 -258.62  0       0   1  -5.17  FinMind
+2382 -111.11  0       0   1  -2.22  FinMind
+2412   31.55  1       0   1   0.63  FinMind
+2891 -172.19  0       0   1  -3.44  FinMind
+3711 -449.61  0       1   1  -8.99  FinMind
+2886 -166.36  0       0   1  -3.33  FinMind
+2303 -550.46  0       1   1 -11.01  FinMind
+6669  -84.03  0       1   0   1.68  FinMind
+5871   47.85  1       0   1   0.96  FinMind
+2884 -266.94  0       0   1  -5.34  FinMind
+2357 -133.19  0       0   1  -2.66  FinMind
+2345 -447.28  0       0   0   8.95  FinMind
+1216   12.35  1       0   1   0.25  FinMind
+2885 -321.68  0       0   1  -6.43  FinMind
+2603 -220.18  0       1   1  -4.40  FinMind
+3045    0.00  0       0   1   0.00  FinMind
+2892 -161.66  0       0   1  -3.23  FinMind
+2880 -110.89  0       0   1  -2.22  FinMind
+6505 -414.14  0       1   0   8.28  FinMind
+5880 -155.71  0       0   1  -3.11  FinMind
+3231 -194.44  0       0   1  -3.89  FinMind
+3017 -232.95  0       1   0   4.66  FinMind
+2383 -361.84  0       1   0   7.24  FinMind
+2207  206.38  1       0   1   4.13  FinMind
+2327 -755.10  0       1   0  15.10  FinMind
+4904  -44.25  0       0   1  -0.88  FinMind
+2002   25.91  1       1   1   0.52  FinMind
+3008 -669.81  0       1   0  13.40  FinMind
+2890 -347.83  0       0   1  -6.96  FinMind
+2883 -566.80  0       0   1 -11.34  FinMind
+1303 -703.26  0       1   0  14.07  FinMind
+2301 -420.17  0       1   1  -8.40  FinMind
+2395 -432.10  0       0   1  -8.64  FinMind
+3034 -263.16  0       0   1  -5.26  FinMind
+2379 -245.16  0       0   1  -4.90  FinMind
+8069 -496.69  0       1   0   9.93  FinMind
+2887  -96.04  0       0   1  -1.92  FinMind
+2912  -89.09  0       0   1  -1.78  FinMind
+3661 -570.57  0       1   0  11.41  FinMind
+2059  120.48  1       0   1   2.41  FinMind
+3653 -210.87  0       1   0   4.22  FinMind
+1301 -458.33  0       1   0   9.17  FinMind
+2615 -334.73  0       0   0   6.69  FinMind
+3293 -214.11  0       0   1  -4.28  FinMind
+2609 -387.00  0       1   0   7.74  FinMind
+
+
+Accumulated from v6/phase2/scores.csv (board: total = sum of the daily AR scores, average = total / days)
+  days      total    average       first        last  series
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  uploaded (v6/phase2/uploaded.csv)
+     1   0.001497   0.001497  2026-10-30  2026-10-30  v11/out/submission_v11_MMDD.csv
+     1   0.002962   0.002962  2026-10-30  2026-10-30  v11/out/submission_v11_MMDD_wt0_lam0.5.csv
+     1  -0.006980  -0.006980  2026-10-27  2026-10-27  v11/out/submission_v9.4_MMDD_wt0_lam0.5.csv
+     4   0.000248   0.000062  2026-10-28  2026-11-03  v6/submission_v11_MMDD.csv
+     5   0.012603   0.002521  2026-10-28  2026-11-03  v6/submission_v11_MMDD_wt0_lam0.5.csv
+     1   0.017756   0.017756  2026-10-29  2026-10-29  v6/upload_v5_2026-10-29.csv
+     2  -0.010096  -0.005048  2026-10-27  2026-10-30  v9/out/submission_v9_MMDD.csv
+     6   0.034991   0.005832  2026-10-27  2026-11-03  (baseline) Always down (every scored day)
+     6  -0.026045  -0.004341  2026-10-27  2026-11-03  (baseline) Previous day (every scored day)
+        same 1 days as uploaded: Always down total 0.010730, average 0.010730
+        same 1 days as uploaded: Previous day total 0.004795, average 0.004795

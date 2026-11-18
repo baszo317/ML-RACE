@@ -1,0 +1,4 @@
+fully market-neutral book (E* = 0, H6b method), Top50 bp/day, walk-forward 2022-01..2026-10
+  all 10.40 (val 10.75, hold 8.22, post 15.22); sd 36.4; corr(AR, m) +0.026; mean |E| 0.028; P19>0 0.873, P19>20 0.105
+  vs v4: all -2.98, val -2.47 (t -2.08), hold -5.72, post +2.59
+  by market day: biggest-down 10% 13.42 | middle 80% 9.47 | biggest-up 10% 14.75

@@ -1,0 +1,7 @@
+2026-11-11: 50 stocks, Top50 mean r 144.92 bp, 40 up; course zip vs FinMind largest |r difference| 6.7e-16
+  AR score    AR bp   timing     xsec    1s  hits  file
+ -0.014492  -144.92  -144.92     0.00  0.00  10/50  (baseline) Always down
+ -0.003701   -37.01    -5.80   -31.22  0.48  22/50  (baseline) Previous day
+  0.000137     1.37    34.78   -33.41  0.62  29/50  submission_v11_1111_wt0_lam0.5.csv
+  0.000137     1.37    34.78   -33.41  0.62  29/50  submission_v11_1111.csv
+ -0.003188   -31.88     5.80   -37.68  0.52  26/50  submission_v9_1111.csv

@@ -1,0 +1,308 @@
+2026-11-07 22:07:12 v15_train.py start: 306 units (B0 30, B1 30, B2 30, B3 30, B4 30, B5 30, C0 30, C1 30, C2 30, A1 6, A2 6, B6 18, A0 6), 306 to do; lightgbm 4.7.0, scikit-learn 1.8.0, torch 2.14.1+cpu, pandas 3.0.1, 8 logical cpus, workers 2 x 2 threads
+2026-11-07 22:07:56 [1/306] B0 (lgb_res replica (control)) 2026-06-01 seed 1: 0.6 min, 335 rounds; elapsed 0.7 min
+2026-11-07 22:08:11 [2/306] B0 (lgb_res replica (control)) 2026-06-01 seed 2: 0.9 min, 557 rounds; elapsed 1.0 min
+2026-11-07 22:08:35 [3/306] B0 (lgb_res replica (control)) 2026-06-01 seed 3: 0.7 min, 372 rounds; elapsed 1.4 min
+2026-11-07 22:08:51 [4/306] B0 (lgb_res replica (control)) 2026-06-01 seed 4: 0.7 min, 363 rounds; elapsed 1.6 min
+2026-11-07 22:09:05 [5/306] B0 (lgb_res replica (control)) 2026-01-01 seed 1: 0.2 min, 71 rounds; elapsed 1.9 min
+2026-11-07 22:09:19 [6/306] B0 (lgb_res replica (control)) 2026-01-01 seed 2: 0.2 min, 82 rounds; elapsed 2.1 min
+2026-11-07 22:09:20 [7/306] B0 (lgb_res replica (control)) 2026-06-01 seed 5: 0.7 min, 456 rounds; elapsed 2.1 min
+2026-11-07 22:09:34 [8/306] B0 (lgb_res replica (control)) 2026-01-01 seed 3: 0.2 min, 76 rounds; elapsed 2.4 min
+2026-11-07 22:09:36 [9/306] B0 (lgb_res replica (control)) 2026-01-01 seed 4: 0.3 min, 101 rounds; elapsed 2.4 min
+2026-11-07 22:09:47 [10/306] B0 (lgb_res replica (control)) 2026-01-01 seed 5: 0.2 min, 76 rounds; elapsed 2.6 min
+2026-11-07 22:10:07 [11/306] B0 (lgb_res replica (control)) 2025-01-01 seed 1: 0.5 min, 372 rounds; elapsed 2.9 min
+2026-11-07 22:10:15 [12/306] B0 (lgb_res replica (control)) 2025-01-01 seed 2: 0.5 min, 325 rounds; elapsed 3.1 min
+2026-11-07 22:10:32 [13/306] B0 (lgb_res replica (control)) 2025-01-01 seed 3: 0.4 min, 304 rounds; elapsed 3.3 min
+2026-11-07 22:10:36 [14/306] B0 (lgb_res replica (control)) 2025-01-01 seed 4: 0.4 min, 236 rounds; elapsed 3.4 min
+2026-11-07 22:10:48 [15/306] B0 (lgb_res replica (control)) 2024-01-01 seed 1: 0.2 min, 148 rounds; elapsed 3.6 min
+2026-11-07 22:10:58 [16/306] B0 (lgb_res replica (control)) 2024-01-01 seed 2: 0.2 min, 109 rounds; elapsed 3.8 min
+2026-11-07 22:10:58 [17/306] B0 (lgb_res replica (control)) 2025-01-01 seed 5: 0.4 min, 346 rounds; elapsed 3.8 min
+2026-11-07 22:11:15 [18/306] B0 (lgb_res replica (control)) 2024-01-01 seed 3: 0.3 min, 252 rounds; elapsed 4.1 min
+2026-11-07 22:11:16 [19/306] B0 (lgb_res replica (control)) 2024-01-01 seed 4: 0.3 min, 261 rounds; elapsed 4.1 min
+2026-11-07 22:11:25 [20/306] B0 (lgb_res replica (control)) 2023-01-01 seed 1: 0.1 min, 148 rounds; elapsed 4.2 min
+2026-11-07 22:11:33 [21/306] B0 (lgb_res replica (control)) 2024-01-01 seed 5: 0.3 min, 279 rounds; elapsed 4.4 min
+2026-11-07 22:11:37 [22/306] B0 (lgb_res replica (control)) 2023-01-01 seed 2: 0.2 min, 229 rounds; elapsed 4.4 min
+2026-11-07 22:11:43 [23/306] B0 (lgb_res replica (control)) 2023-01-01 seed 3: 0.2 min, 171 rounds; elapsed 4.5 min
+2026-11-07 22:11:49 [24/306] B0 (lgb_res replica (control)) 2023-01-01 seed 4: 0.2 min, 214 rounds; elapsed 4.6 min
+2026-11-07 22:11:58 [25/306] B0 (lgb_res replica (control)) 2023-01-01 seed 5: 0.2 min, 240 rounds; elapsed 4.8 min
+2026-11-07 22:11:59 [26/306] B0 (lgb_res replica (control)) 2022-01-01 seed 1: 0.2 min, 218 rounds; elapsed 4.8 min
+2026-11-07 22:12:07 [27/306] B0 (lgb_res replica (control)) 2022-01-01 seed 2: 0.2 min, 171 rounds; elapsed 4.9 min
+2026-11-07 22:12:09 [28/306] B0 (lgb_res replica (control)) 2022-01-01 seed 3: 0.2 min, 187 rounds; elapsed 5.0 min
+2026-11-07 22:12:17 [29/306] B0 (lgb_res replica (control)) 2022-01-01 seed 4: 0.2 min, 166 rounds; elapsed 5.1 min
+2026-11-07 22:12:18 [30/306] B0 (lgb_res replica (control)) 2022-01-01 seed 5: 0.2 min, 145 rounds; elapsed 5.1 min
+2026-11-07 22:13:06 [31/306] B1 (sigma^0.5 weights (GLS)) 2026-06-01 seed 1: 0.8 min, 418 rounds; elapsed 5.9 min
+2026-11-07 22:13:11 [32/306] B1 (sigma^0.5 weights (GLS)) 2026-06-01 seed 2: 0.9 min, 493 rounds; elapsed 6.0 min
+2026-11-07 22:13:57 [33/306] B1 (sigma^0.5 weights (GLS)) 2026-06-01 seed 3: 0.8 min, 426 rounds; elapsed 6.7 min
+2026-11-07 22:14:06 [34/306] B1 (sigma^0.5 weights (GLS)) 2026-06-01 seed 4: 0.9 min, 474 rounds; elapsed 6.9 min
+2026-11-07 22:14:23 [35/306] B1 (sigma^0.5 weights (GLS)) 2026-01-01 seed 1: 0.3 min, 67 rounds; elapsed 7.2 min
+2026-11-07 22:14:45 [36/306] B1 (sigma^0.5 weights (GLS)) 2026-01-01 seed 2: 0.4 min, 110 rounds; elapsed 7.5 min
+2026-11-07 22:14:47 [37/306] B1 (sigma^0.5 weights (GLS)) 2026-06-01 seed 5: 0.8 min, 412 rounds; elapsed 7.6 min
+2026-11-07 22:15:00 [38/306] B1 (sigma^0.5 weights (GLS)) 2026-01-01 seed 3: 0.3 min, 79 rounds; elapsed 7.8 min
+2026-11-07 22:15:02 [39/306] B1 (sigma^0.5 weights (GLS)) 2026-01-01 seed 4: 0.3 min, 83 rounds; elapsed 7.8 min
+2026-11-07 22:15:13 [40/306] B1 (sigma^0.5 weights (GLS)) 2026-01-01 seed 5: 0.2 min, 67 rounds; elapsed 8.0 min
+2026-11-07 22:15:23 [41/306] B1 (sigma^0.5 weights (GLS)) 2025-01-01 seed 1: 0.3 min, 227 rounds; elapsed 8.2 min
+2026-11-07 22:15:38 [42/306] B1 (sigma^0.5 weights (GLS)) 2025-01-01 seed 2: 0.4 min, 303 rounds; elapsed 8.4 min
+2026-11-07 22:15:48 [43/306] B1 (sigma^0.5 weights (GLS)) 2025-01-01 seed 3: 0.4 min, 322 rounds; elapsed 8.6 min
+2026-11-07 22:15:58 [44/306] B1 (sigma^0.5 weights (GLS)) 2025-01-01 seed 4: 0.3 min, 210 rounds; elapsed 8.8 min
+2026-11-07 22:16:11 [45/306] B1 (sigma^0.5 weights (GLS)) 2025-01-01 seed 5: 0.4 min, 261 rounds; elapsed 9.0 min
+2026-11-07 22:16:16 [46/306] B1 (sigma^0.5 weights (GLS)) 2024-01-01 seed 1: 0.3 min, 262 rounds; elapsed 9.1 min
+2026-11-07 22:16:29 [47/306] B1 (sigma^0.5 weights (GLS)) 2024-01-01 seed 2: 0.3 min, 215 rounds; elapsed 9.3 min
+2026-11-07 22:16:33 [48/306] B1 (sigma^0.5 weights (GLS)) 2024-01-01 seed 3: 0.3 min, 242 rounds; elapsed 9.4 min
+2026-11-07 22:16:46 [49/306] B1 (sigma^0.5 weights (GLS)) 2024-01-01 seed 4: 0.3 min, 171 rounds; elapsed 9.6 min
+2026-11-07 22:16:53 [50/306] B1 (sigma^0.5 weights (GLS)) 2024-01-01 seed 5: 0.3 min, 191 rounds; elapsed 9.7 min
+2026-11-07 22:17:03 [51/306] B1 (sigma^0.5 weights (GLS)) 2023-01-01 seed 1: 0.3 min, 224 rounds; elapsed 9.8 min
+2026-11-07 22:17:09 [52/306] B1 (sigma^0.5 weights (GLS)) 2023-01-01 seed 2: 0.3 min, 253 rounds; elapsed 10.0 min
+2026-11-07 22:17:17 [53/306] B1 (sigma^0.5 weights (GLS)) 2023-01-01 seed 3: 0.2 min, 234 rounds; elapsed 10.1 min
+2026-11-07 22:17:27 [54/306] B1 (sigma^0.5 weights (GLS)) 2023-01-01 seed 4: 0.3 min, 314 rounds; elapsed 10.2 min
+2026-11-07 22:17:31 [55/306] B1 (sigma^0.5 weights (GLS)) 2023-01-01 seed 5: 0.2 min, 241 rounds; elapsed 10.3 min
+2026-11-07 22:17:34 [56/306] B1 (sigma^0.5 weights (GLS)) 2022-01-01 seed 1: 0.1 min, 179 rounds; elapsed 10.4 min
+2026-11-07 22:17:40 [57/306] B1 (sigma^0.5 weights (GLS)) 2022-01-01 seed 2: 0.1 min, 233 rounds; elapsed 10.5 min
+2026-11-07 22:17:43 [58/306] B1 (sigma^0.5 weights (GLS)) 2022-01-01 seed 3: 0.1 min, 223 rounds; elapsed 10.5 min
+2026-11-07 22:17:47 [59/306] B1 (sigma^0.5 weights (GLS)) 2022-01-01 seed 4: 0.1 min, 169 rounds; elapsed 10.6 min
+2026-11-07 22:17:51 [60/306] B1 (sigma^0.5 weights (GLS)) 2022-01-01 seed 5: 0.1 min, 193 rounds; elapsed 10.7 min
+2026-11-07 22:18:22 [61/306] B2 (Huber weights, cap 2 x day median |r|) 2026-06-01 seed 1: 0.6 min, 335 rounds; elapsed 11.2 min
+2026-11-07 22:18:32 [62/306] B2 (Huber weights, cap 2 x day median |r|) 2026-06-01 seed 2: 0.7 min, 417 rounds; elapsed 11.3 min
+2026-11-07 22:18:57 [63/306] B2 (Huber weights, cap 2 x day median |r|) 2026-06-01 seed 3: 0.6 min, 334 rounds; elapsed 11.8 min
+2026-11-07 22:19:17 [64/306] B2 (Huber weights, cap 2 x day median |r|) 2026-06-01 seed 4: 0.7 min, 421 rounds; elapsed 12.1 min
+2026-11-07 22:19:38 [65/306] B2 (Huber weights, cap 2 x day median |r|) 2026-01-01 seed 1: 0.4 min, 97 rounds; elapsed 12.4 min
+2026-11-07 22:20:03 [66/306] B2 (Huber weights, cap 2 x day median |r|) 2026-06-01 seed 5: 1.1 min, 504 rounds; elapsed 12.9 min
+2026-11-07 22:20:04 [67/306] B2 (Huber weights, cap 2 x day median |r|) 2026-01-01 seed 2: 0.4 min, 101 rounds; elapsed 12.9 min
+2026-11-07 22:20:21 [68/306] B2 (Huber weights, cap 2 x day median |r|) 2026-01-01 seed 3: 0.3 min, 86 rounds; elapsed 13.2 min
+2026-11-07 22:20:23 [69/306] B2 (Huber weights, cap 2 x day median |r|) 2026-01-01 seed 4: 0.3 min, 97 rounds; elapsed 13.2 min
+2026-11-07 22:20:39 [70/306] B2 (Huber weights, cap 2 x day median |r|) 2026-01-01 seed 5: 0.3 min, 121 rounds; elapsed 13.4 min
+2026-11-07 22:20:39 [71/306] B2 (Huber weights, cap 2 x day median |r|) 2025-01-01 seed 1: 0.3 min, 150 rounds; elapsed 13.4 min
+2026-11-07 22:20:57 [72/306] B2 (Huber weights, cap 2 x day median |r|) 2025-01-01 seed 2: 0.3 min, 182 rounds; elapsed 13.8 min
+2026-11-07 22:20:59 [73/306] B2 (Huber weights, cap 2 x day median |r|) 2025-01-01 seed 3: 0.3 min, 215 rounds; elapsed 13.8 min
+2026-11-07 22:21:16 [74/306] B2 (Huber weights, cap 2 x day median |r|) 2025-01-01 seed 4: 0.3 min, 193 rounds; elapsed 14.1 min
+2026-11-07 22:21:22 [75/306] B2 (Huber weights, cap 2 x day median |r|) 2025-01-01 seed 5: 0.4 min, 263 rounds; elapsed 14.2 min
+2026-11-07 22:21:28 [76/306] B2 (Huber weights, cap 2 x day median |r|) 2024-01-01 seed 1: 0.2 min, 144 rounds; elapsed 14.3 min
+2026-11-07 22:21:41 [77/306] B2 (Huber weights, cap 2 x day median |r|) 2024-01-01 seed 2: 0.3 min, 266 rounds; elapsed 14.5 min
+2026-11-07 22:21:42 [78/306] B2 (Huber weights, cap 2 x day median |r|) 2024-01-01 seed 3: 0.2 min, 159 rounds; elapsed 14.5 min
+2026-11-07 22:21:56 [79/306] B2 (Huber weights, cap 2 x day median |r|) 2024-01-01 seed 5: 0.2 min, 172 rounds; elapsed 14.7 min
+2026-11-07 22:21:59 [80/306] B2 (Huber weights, cap 2 x day median |r|) 2024-01-01 seed 4: 0.3 min, 266 rounds; elapsed 14.8 min
+2026-11-07 22:22:10 [81/306] B2 (Huber weights, cap 2 x day median |r|) 2023-01-01 seed 1: 0.2 min, 263 rounds; elapsed 15.0 min
+2026-11-07 22:22:12 [82/306] B2 (Huber weights, cap 2 x day median |r|) 2023-01-01 seed 2: 0.2 min, 233 rounds; elapsed 15.0 min
+2026-11-07 22:22:20 [83/306] B2 (Huber weights, cap 2 x day median |r|) 2023-01-01 seed 3: 0.2 min, 137 rounds; elapsed 15.1 min
+2026-11-07 22:22:23 [84/306] B2 (Huber weights, cap 2 x day median |r|) 2023-01-01 seed 4: 0.2 min, 141 rounds; elapsed 15.2 min
+2026-11-07 22:22:33 [85/306] B2 (Huber weights, cap 2 x day median |r|) 2023-01-01 seed 5: 0.2 min, 152 rounds; elapsed 15.3 min
+2026-11-07 22:22:33 [86/306] B2 (Huber weights, cap 2 x day median |r|) 2022-01-01 seed 1: 0.2 min, 178 rounds; elapsed 15.3 min
+2026-11-07 22:22:42 [87/306] B2 (Huber weights, cap 2 x day median |r|) 2022-01-01 seed 2: 0.2 min, 171 rounds; elapsed 15.5 min
+2026-11-07 22:22:42 [88/306] B2 (Huber weights, cap 2 x day median |r|) 2022-01-01 seed 3: 0.2 min, 173 rounds; elapsed 15.5 min
+2026-11-07 22:22:53 [89/306] B2 (Huber weights, cap 2 x day median |r|) 2022-01-01 seed 4: 0.2 min, 186 rounds; elapsed 15.7 min
+2026-11-07 22:22:54 [90/306] B2 (Huber weights, cap 2 x day median |r|) 2022-01-01 seed 5: 0.2 min, 205 rounds; elapsed 15.7 min
+2026-11-07 22:23:59 [91/306] B3 (3-day target) 2026-06-01 seed 2: 1.1 min, 504 rounds; elapsed 16.8 min
+2026-11-07 22:23:59 [92/306] B3 (3-day target) 2026-06-01 seed 1: 1.1 min, 542 rounds; elapsed 16.8 min
+2026-11-07 22:24:47 [93/306] B3 (3-day target) 2026-06-01 seed 4: 0.8 min, 432 rounds; elapsed 17.6 min
+2026-11-07 22:24:56 [94/306] B3 (3-day target) 2026-06-01 seed 3: 0.9 min, 522 rounds; elapsed 17.7 min
+2026-11-07 22:25:12 [95/306] B3 (3-day target) 2026-01-01 seed 1: 0.3 min, 96 rounds; elapsed 18.0 min
+2026-11-07 22:25:29 [96/306] B3 (3-day target) 2026-01-01 seed 2: 0.3 min, 111 rounds; elapsed 18.3 min
+2026-11-07 22:25:35 [97/306] B3 (3-day target) 2026-06-01 seed 5: 0.8 min, 510 rounds; elapsed 18.4 min
+2026-11-07 22:25:45 [98/306] B3 (3-day target) 2026-01-01 seed 3: 0.3 min, 88 rounds; elapsed 18.5 min
+2026-11-07 22:25:53 [99/306] B3 (3-day target) 2026-01-01 seed 4: 0.3 min, 129 rounds; elapsed 18.7 min
+2026-11-07 22:26:02 [100/306] B3 (3-day target) 2026-01-01 seed 5: 0.3 min, 105 rounds; elapsed 18.8 min
+2026-11-07 22:26:11 [101/306] B3 (3-day target) 2025-01-01 seed 1: 0.3 min, 161 rounds; elapsed 19.0 min
+2026-11-07 22:26:23 [102/306] B3 (3-day target) 2025-01-01 seed 2: 0.4 min, 210 rounds; elapsed 19.2 min
+2026-11-07 22:26:30 [103/306] B3 (3-day target) 2025-01-01 seed 3: 0.3 min, 167 rounds; elapsed 19.3 min
+2026-11-07 22:26:40 [104/306] B3 (3-day target) 2025-01-01 seed 4: 0.3 min, 149 rounds; elapsed 19.5 min
+2026-11-07 22:26:56 [105/306] B3 (3-day target) 2024-01-01 seed 1: 0.3 min, 152 rounds; elapsed 19.7 min
+2026-11-07 22:26:56 [106/306] B3 (3-day target) 2025-01-01 seed 5: 0.4 min, 258 rounds; elapsed 19.7 min
+2026-11-07 22:27:09 [107/306] B3 (3-day target) 2024-01-01 seed 2: 0.2 min, 160 rounds; elapsed 20.0 min
+2026-11-07 22:27:11 [108/306] B3 (3-day target) 2024-01-01 seed 3: 0.2 min, 182 rounds; elapsed 20.0 min
+2026-11-07 22:27:21 [109/306] B3 (3-day target) 2024-01-01 seed 4: 0.2 min, 136 rounds; elapsed 20.2 min
+2026-11-07 22:27:24 [110/306] B3 (3-day target) 2024-01-01 seed 5: 0.2 min, 157 rounds; elapsed 20.2 min
+2026-11-07 22:27:31 [111/306] B3 (3-day target) 2023-01-01 seed 1: 0.2 min, 147 rounds; elapsed 20.3 min
+2026-11-07 22:27:39 [112/306] B3 (3-day target) 2023-01-01 seed 2: 0.2 min, 277 rounds; elapsed 20.4 min
+2026-11-07 22:27:45 [113/306] B3 (3-day target) 2023-01-01 seed 3: 0.2 min, 246 rounds; elapsed 20.5 min
+2026-11-07 22:27:54 [114/306] B3 (3-day target) 2023-01-01 seed 4: 0.3 min, 245 rounds; elapsed 20.7 min
+2026-11-07 22:27:59 [115/306] B3 (3-day target) 2022-01-01 seed 1: 0.1 min, 86 rounds; elapsed 20.8 min
+2026-11-07 22:28:01 [116/306] B3 (3-day target) 2023-01-01 seed 5: 0.3 min, 265 rounds; elapsed 20.8 min
+2026-11-07 22:28:04 [117/306] B3 (3-day target) 2022-01-01 seed 2: 0.1 min, 90 rounds; elapsed 20.9 min
+2026-11-07 22:28:06 [118/306] B3 (3-day target) 2022-01-01 seed 3: 0.1 min, 95 rounds; elapsed 20.9 min
+2026-11-07 22:28:10 [119/306] B3 (3-day target) 2022-01-01 seed 4: 0.1 min, 92 rounds; elapsed 21.0 min
+2026-11-07 22:28:12 [120/306] B3 (3-day target) 2022-01-01 seed 5: 0.1 min, 89 rounds; elapsed 21.0 min
+2026-11-07 22:29:18 [121/306] B4 (5-day target) 2026-06-01 seed 2: 1.1 min, 486 rounds; elapsed 22.1 min
+2026-11-07 22:29:33 [122/306] B4 (5-day target) 2026-06-01 seed 1: 1.4 min, 632 rounds; elapsed 22.4 min
+2026-11-07 22:30:16 [123/306] B4 (5-day target) 2026-06-01 seed 3: 0.9 min, 549 rounds; elapsed 23.1 min
+2026-11-07 22:30:32 [124/306] B4 (5-day target) 2026-06-01 seed 4: 1.0 min, 605 rounds; elapsed 23.3 min
+2026-11-07 22:30:54 [125/306] B4 (5-day target) 2026-01-01 seed 1: 0.4 min, 97 rounds; elapsed 23.7 min
+2026-11-07 22:31:16 [126/306] B4 (5-day target) 2026-06-01 seed 5: 1.0 min, 482 rounds; elapsed 24.1 min
+2026-11-07 22:31:16 [127/306] B4 (5-day target) 2026-01-01 seed 2: 0.4 min, 101 rounds; elapsed 24.1 min
+2026-11-07 22:31:34 [128/306] B4 (5-day target) 2026-01-01 seed 3: 0.3 min, 99 rounds; elapsed 24.4 min
+2026-11-07 22:31:34 [129/306] B4 (5-day target) 2026-01-01 seed 4: 0.3 min, 102 rounds; elapsed 24.4 min
+2026-11-07 22:32:07 [130/306] B4 (5-day target) 2026-01-01 seed 5: 0.5 min, 87 rounds; elapsed 24.9 min
+2026-11-07 22:32:10 [131/306] B4 (5-day target) 2025-01-01 seed 1: 0.6 min, 147 rounds; elapsed 25.0 min
+2026-11-07 22:32:42 [132/306] B4 (5-day target) 2025-01-01 seed 3: 0.5 min, 111 rounds; elapsed 25.5 min
+2026-11-07 22:32:47 [133/306] B4 (5-day target) 2025-01-01 seed 2: 0.7 min, 175 rounds; elapsed 25.6 min
+2026-11-07 22:33:11 [134/306] B4 (5-day target) 2025-01-01 seed 4: 0.5 min, 91 rounds; elapsed 26.0 min
+2026-11-07 22:33:23 [135/306] B4 (5-day target) 2025-01-01 seed 5: 0.6 min, 136 rounds; elapsed 26.2 min
+2026-11-07 22:33:52 [136/306] B4 (5-day target) 2024-01-01 seed 1: 0.7 min, 208 rounds; elapsed 26.7 min
+2026-11-07 22:34:04 [137/306] B4 (5-day target) 2024-01-01 seed 2: 0.7 min, 185 rounds; elapsed 26.9 min
+2026-11-07 22:34:31 [138/306] B4 (5-day target) 2024-01-01 seed 3: 0.6 min, 185 rounds; elapsed 27.3 min
+2026-11-07 22:34:48 [139/306] B4 (5-day target) 2024-01-01 seed 4: 0.7 min, 235 rounds; elapsed 27.6 min
+2026-11-07 22:35:05 [140/306] B4 (5-day target) 2023-01-01 seed 1: 0.3 min, 56 rounds; elapsed 27.9 min
+2026-11-07 22:35:14 [141/306] B4 (5-day target) 2024-01-01 seed 5: 0.7 min, 225 rounds; elapsed 28.0 min
+2026-11-07 22:35:17 [142/306] B4 (5-day target) 2023-01-01 seed 2: 0.2 min, 46 rounds; elapsed 28.1 min
+2026-11-07 22:35:27 [143/306] B4 (5-day target) 2023-01-01 seed 3: 0.2 min, 55 rounds; elapsed 28.3 min
+2026-11-07 22:35:28 [144/306] B4 (5-day target) 2023-01-01 seed 4: 0.2 min, 38 rounds; elapsed 28.3 min
+2026-11-07 22:35:32 [145/306] B4 (5-day target) 2022-01-01 seed 1: 0.1 min, 62 rounds; elapsed 28.3 min
+2026-11-07 22:35:34 [146/306] B4 (5-day target) 2023-01-01 seed 5: 0.1 min, 60 rounds; elapsed 28.4 min
+2026-11-07 22:35:41 [147/306] B4 (5-day target) 2022-01-01 seed 2: 0.2 min, 78 rounds; elapsed 28.5 min
+2026-11-07 22:35:43 [148/306] B4 (5-day target) 2022-01-01 seed 3: 0.1 min, 67 rounds; elapsed 28.5 min
+2026-11-07 22:35:50 [149/306] B4 (5-day target) 2022-01-01 seed 4: 0.1 min, 69 rounds; elapsed 28.6 min
+2026-11-07 22:35:54 [150/306] B4 (5-day target) 2022-01-01 seed 5: 0.2 min, 88 rounds; elapsed 28.7 min
+2026-11-07 22:36:43 [151/306] B5 (no ex-dividend event rows) 2026-06-01 seed 2: 0.8 min, 407 rounds; elapsed 29.5 min
+2026-11-07 22:36:45 [152/306] B5 (no ex-dividend event rows) 2026-06-01 seed 1: 0.9 min, 473 rounds; elapsed 29.6 min
+2026-11-07 22:37:15 [153/306] B5 (no ex-dividend event rows) 2026-06-01 seed 4: 0.5 min, 253 rounds; elapsed 30.1 min
+2026-11-07 22:37:31 [154/306] B5 (no ex-dividend event rows) 2026-06-01 seed 3: 0.8 min, 531 rounds; elapsed 30.3 min
+2026-11-07 22:37:50 [155/306] B5 (no ex-dividend event rows) 2026-01-01 seed 1: 0.3 min, 105 rounds; elapsed 30.6 min
+2026-11-07 22:38:02 [156/306] B5 (no ex-dividend event rows) 2026-06-01 seed 5: 0.8 min, 412 rounds; elapsed 30.8 min
+2026-11-07 22:38:08 [157/306] B5 (no ex-dividend event rows) 2026-01-01 seed 2: 0.3 min, 73 rounds; elapsed 30.9 min
+2026-11-07 22:38:19 [158/306] B5 (no ex-dividend event rows) 2026-01-01 seed 3: 0.3 min, 74 rounds; elapsed 31.1 min
+2026-11-07 22:38:25 [159/306] B5 (no ex-dividend event rows) 2026-01-01 seed 4: 0.3 min, 75 rounds; elapsed 31.2 min
+2026-11-07 22:38:34 [160/306] B5 (no ex-dividend event rows) 2026-01-01 seed 5: 0.3 min, 84 rounds; elapsed 31.4 min
+2026-11-07 22:38:48 [161/306] B5 (no ex-dividend event rows) 2025-01-01 seed 1: 0.4 min, 274 rounds; elapsed 31.6 min
+2026-11-07 22:39:05 [162/306] B5 (no ex-dividend event rows) 2025-01-01 seed 2: 0.5 min, 402 rounds; elapsed 31.9 min
+2026-11-07 22:39:13 [163/306] B5 (no ex-dividend event rows) 2025-01-01 seed 3: 0.4 min, 290 rounds; elapsed 32.0 min
+2026-11-07 22:39:24 [164/306] B5 (no ex-dividend event rows) 2025-01-01 seed 4: 0.3 min, 202 rounds; elapsed 32.2 min
+2026-11-07 22:39:38 [165/306] B5 (no ex-dividend event rows) 2025-01-01 seed 5: 0.4 min, 286 rounds; elapsed 32.4 min
+2026-11-07 22:39:40 [166/306] B5 (no ex-dividend event rows) 2024-01-01 seed 1: 0.3 min, 203 rounds; elapsed 32.5 min
+2026-11-07 22:39:54 [167/306] B5 (no ex-dividend event rows) 2024-01-01 seed 2: 0.3 min, 219 rounds; elapsed 32.7 min
+2026-11-07 22:39:57 [168/306] B5 (no ex-dividend event rows) 2024-01-01 seed 3: 0.3 min, 226 rounds; elapsed 32.8 min
+2026-11-07 22:40:07 [169/306] B5 (no ex-dividend event rows) 2024-01-01 seed 4: 0.2 min, 140 rounds; elapsed 32.9 min
+2026-11-07 22:40:14 [170/306] B5 (no ex-dividend event rows) 2024-01-01 seed 5: 0.3 min, 243 rounds; elapsed 33.0 min
+2026-11-07 22:40:15 [171/306] B5 (no ex-dividend event rows) 2023-01-01 seed 1: 0.1 min, 114 rounds; elapsed 33.0 min
+2026-11-07 22:40:24 [172/306] B5 (no ex-dividend event rows) 2023-01-01 seed 3: 0.2 min, 162 rounds; elapsed 33.2 min
+2026-11-07 22:40:25 [173/306] B5 (no ex-dividend event rows) 2023-01-01 seed 2: 0.2 min, 174 rounds; elapsed 33.2 min
+2026-11-07 22:40:34 [174/306] B5 (no ex-dividend event rows) 2023-01-01 seed 5: 0.2 min, 141 rounds; elapsed 33.4 min
+2026-11-07 22:40:37 [175/306] B5 (no ex-dividend event rows) 2023-01-01 seed 4: 0.2 min, 217 rounds; elapsed 33.4 min
+2026-11-07 22:40:40 [176/306] B5 (no ex-dividend event rows) 2022-01-01 seed 1: 0.1 min, 148 rounds; elapsed 33.5 min
+2026-11-07 22:40:43 [177/306] B5 (no ex-dividend event rows) 2022-01-01 seed 2: 0.1 min, 154 rounds; elapsed 33.5 min
+2026-11-07 22:40:47 [178/306] B5 (no ex-dividend event rows) 2022-01-01 seed 3: 0.1 min, 125 rounds; elapsed 33.6 min
+2026-11-07 22:40:51 [179/306] B5 (no ex-dividend event rows) 2022-01-01 seed 4: 0.1 min, 158 rounds; elapsed 33.7 min
+2026-11-07 22:40:55 [180/306] B5 (no ex-dividend event rows) 2022-01-01 seed 5: 0.1 min, 150 rounds; elapsed 33.7 min
+2026-11-07 22:41:07 [181/306] C0 (mlp_res_xr9 replica (control)) 2026-06-01 seed 1: 0.3 min, best epoch 2; elapsed 33.9 min
+2026-11-07 22:41:09 [182/306] C0 (mlp_res_xr9 replica (control)) 2026-06-01 seed 2: 0.2 min, best epoch 2; elapsed 33.9 min
+2026-11-07 22:41:20 [183/306] C0 (mlp_res_xr9 replica (control)) 2026-06-01 seed 3: 0.2 min, best epoch 2; elapsed 34.1 min
+2026-11-07 22:41:26 [184/306] C0 (mlp_res_xr9 replica (control)) 2026-06-01 seed 4: 0.3 min, best epoch 3; elapsed 34.2 min
+2026-11-07 22:41:40 [185/306] C0 (mlp_res_xr9 replica (control)) 2026-01-01 seed 1: 0.2 min, best epoch 2; elapsed 34.5 min
+2026-11-07 22:41:45 [186/306] C0 (mlp_res_xr9 replica (control)) 2026-06-01 seed 5: 0.4 min, best epoch 5; elapsed 34.6 min
+2026-11-07 22:41:56 [187/306] C0 (mlp_res_xr9 replica (control)) 2026-01-01 seed 3: 0.2 min, best epoch 1; elapsed 34.7 min
+2026-11-07 22:42:00 [188/306] C0 (mlp_res_xr9 replica (control)) 2026-01-01 seed 2: 0.3 min, best epoch 4; elapsed 34.8 min
+2026-11-07 22:42:07 [189/306] C0 (mlp_res_xr9 replica (control)) 2026-01-01 seed 4: 0.2 min, best epoch 2; elapsed 34.9 min
+2026-11-07 22:42:10 [190/306] C0 (mlp_res_xr9 replica (control)) 2026-01-01 seed 5: 0.2 min, best epoch 2; elapsed 35.0 min
+2026-11-07 22:42:19 [191/306] C0 (mlp_res_xr9 replica (control)) 2025-01-01 seed 1: 0.2 min, best epoch 4; elapsed 35.1 min
+2026-11-07 22:42:22 [192/306] C0 (mlp_res_xr9 replica (control)) 2025-01-01 seed 2: 0.2 min, best epoch 4; elapsed 35.2 min
+2026-11-07 22:42:33 [193/306] C0 (mlp_res_xr9 replica (control)) 2025-01-01 seed 3: 0.2 min, best epoch 5; elapsed 35.3 min
+2026-11-07 22:42:35 [194/306] C0 (mlp_res_xr9 replica (control)) 2025-01-01 seed 4: 0.2 min, best epoch 5; elapsed 35.4 min
+2026-11-07 22:42:40 [195/306] C0 (mlp_res_xr9 replica (control)) 2024-01-01 seed 1: 0.1 min, best epoch 1; elapsed 35.5 min
+2026-11-07 22:42:45 [196/306] C0 (mlp_res_xr9 replica (control)) 2024-01-01 seed 2: 0.1 min, best epoch 1; elapsed 35.5 min
+2026-11-07 22:42:46 [197/306] C0 (mlp_res_xr9 replica (control)) 2025-01-01 seed 5: 0.2 min, best epoch 5; elapsed 35.6 min
+2026-11-07 22:42:50 [198/306] C0 (mlp_res_xr9 replica (control)) 2024-01-01 seed 3: 0.1 min, best epoch 1; elapsed 35.6 min
+2026-11-07 22:42:51 [199/306] C0 (mlp_res_xr9 replica (control)) 2024-01-01 seed 4: 0.1 min, best epoch 1; elapsed 35.6 min
+2026-11-07 22:42:54 [200/306] C0 (mlp_res_xr9 replica (control)) 2024-01-01 seed 5: 0.1 min, best epoch 1; elapsed 35.7 min
+2026-11-07 22:42:55 [201/306] C0 (mlp_res_xr9 replica (control)) 2023-01-01 seed 1: 0.1 min, best epoch 2; elapsed 35.7 min
+2026-11-07 22:42:59 [202/306] C0 (mlp_res_xr9 replica (control)) 2023-01-01 seed 2: 0.1 min, best epoch 2; elapsed 35.8 min
+2026-11-07 22:43:02 [203/306] C0 (mlp_res_xr9 replica (control)) 2023-01-01 seed 3: 0.1 min, best epoch 4; elapsed 35.8 min
+2026-11-07 22:43:04 [204/306] C0 (mlp_res_xr9 replica (control)) 2023-01-01 seed 4: 0.1 min, best epoch 2; elapsed 35.9 min
+2026-11-07 22:43:06 [205/306] C0 (mlp_res_xr9 replica (control)) 2022-01-01 seed 1: 0.0 min, best epoch 2; elapsed 35.9 min
+2026-11-07 22:43:07 [206/306] C0 (mlp_res_xr9 replica (control)) 2023-01-01 seed 5: 0.1 min, best epoch 3; elapsed 35.9 min
+2026-11-07 22:43:10 [207/306] C0 (mlp_res_xr9 replica (control)) 2022-01-01 seed 2: 0.1 min, best epoch 2; elapsed 36.0 min
+2026-11-07 22:43:10 [208/306] C0 (mlp_res_xr9 replica (control)) 2022-01-01 seed 3: 0.1 min, best epoch 2; elapsed 36.0 min
+2026-11-07 22:43:12 [209/306] C0 (mlp_res_xr9 replica (control)) 2022-01-01 seed 4: 0.0 min, best epoch 2; elapsed 36.0 min
+2026-11-07 22:43:14 [210/306] C0 (mlp_res_xr9 replica (control)) 2022-01-01 seed 5: 0.0 min, best epoch 2; elapsed 36.0 min
+2026-11-07 22:43:25 [211/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-06-01 seed 2: 0.2 min, best epoch 2; elapsed 36.2 min
+2026-11-07 22:43:27 [212/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-06-01 seed 1: 0.2 min, best epoch 3; elapsed 36.2 min
+2026-11-07 22:43:41 [213/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-06-01 seed 4: 0.2 min, best epoch 3; elapsed 36.5 min
+2026-11-07 22:43:42 [214/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-06-01 seed 3: 0.3 min, best epoch 4; elapsed 36.5 min
+2026-11-07 22:43:54 [215/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-01-01 seed 1: 0.2 min, best epoch 2; elapsed 36.7 min
+2026-11-07 22:44:01 [216/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-06-01 seed 5: 0.3 min, best epoch 5; elapsed 36.8 min
+2026-11-07 22:44:09 [217/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-01-01 seed 2: 0.3 min, best epoch 4; elapsed 37.0 min
+2026-11-07 22:44:09 [218/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-01-01 seed 3: 0.1 min, best epoch 1; elapsed 37.0 min
+2026-11-07 22:44:20 [219/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-01-01 seed 4: 0.2 min, best epoch 2; elapsed 37.1 min
+2026-11-07 22:44:20 [220/306] C1 (multi-task MLP (D, D+1, D+2)) 2026-01-01 seed 5: 0.2 min, best epoch 2; elapsed 37.1 min
+2026-11-07 22:44:32 [221/306] C1 (multi-task MLP (D, D+1, D+2)) 2025-01-01 seed 1: 0.2 min, best epoch 4; elapsed 37.3 min
+2026-11-07 22:44:38 [222/306] C1 (multi-task MLP (D, D+1, D+2)) 2025-01-01 seed 2: 0.3 min, best epoch 7; elapsed 37.4 min
+2026-11-07 22:44:40 [223/306] C1 (multi-task MLP (D, D+1, D+2)) 2025-01-01 seed 3: 0.1 min, best epoch 2; elapsed 37.5 min
+2026-11-07 22:44:53 [224/306] C1 (multi-task MLP (D, D+1, D+2)) 2025-01-01 seed 4: 0.2 min, best epoch 5; elapsed 37.7 min
+2026-11-07 22:44:55 [225/306] C1 (multi-task MLP (D, D+1, D+2)) 2025-01-01 seed 5: 0.3 min, best epoch 5; elapsed 37.7 min
+2026-11-07 22:44:58 [226/306] C1 (multi-task MLP (D, D+1, D+2)) 2024-01-01 seed 1: 0.1 min, best epoch 1; elapsed 37.8 min
+2026-11-07 22:45:03 [227/306] C1 (multi-task MLP (D, D+1, D+2)) 2024-01-01 seed 2: 0.1 min, best epoch 2; elapsed 37.8 min
+2026-11-07 22:45:04 [228/306] C1 (multi-task MLP (D, D+1, D+2)) 2024-01-01 seed 3: 0.1 min, best epoch 1; elapsed 37.9 min
+2026-11-07 22:45:08 [229/306] C1 (multi-task MLP (D, D+1, D+2)) 2024-01-01 seed 4: 0.1 min, best epoch 1; elapsed 37.9 min
+2026-11-07 22:45:09 [230/306] C1 (multi-task MLP (D, D+1, D+2)) 2024-01-01 seed 5: 0.1 min, best epoch 1; elapsed 38.0 min
+2026-11-07 22:45:13 [231/306] C1 (multi-task MLP (D, D+1, D+2)) 2023-01-01 seed 1: 0.1 min, best epoch 2; elapsed 38.0 min
+2026-11-07 22:45:15 [232/306] C1 (multi-task MLP (D, D+1, D+2)) 2023-01-01 seed 2: 0.1 min, best epoch 2; elapsed 38.1 min
+2026-11-07 22:45:21 [233/306] C1 (multi-task MLP (D, D+1, D+2)) 2023-01-01 seed 4: 0.1 min, best epoch 2; elapsed 38.1 min
+2026-11-07 22:45:22 [234/306] C1 (multi-task MLP (D, D+1, D+2)) 2023-01-01 seed 3: 0.1 min, best epoch 4; elapsed 38.2 min
+2026-11-07 22:45:25 [235/306] C1 (multi-task MLP (D, D+1, D+2)) 2022-01-01 seed 1: 0.1 min, best epoch 2; elapsed 38.2 min
+2026-11-07 22:45:27 [236/306] C1 (multi-task MLP (D, D+1, D+2)) 2023-01-01 seed 5: 0.1 min, best epoch 3; elapsed 38.3 min
+2026-11-07 22:45:29 [237/306] C1 (multi-task MLP (D, D+1, D+2)) 2022-01-01 seed 2: 0.1 min, best epoch 2; elapsed 38.3 min
+2026-11-07 22:45:30 [238/306] C1 (multi-task MLP (D, D+1, D+2)) 2022-01-01 seed 3: 0.0 min, best epoch 1; elapsed 38.3 min
+2026-11-07 22:45:32 [239/306] C1 (multi-task MLP (D, D+1, D+2)) 2022-01-01 seed 4: 0.1 min, best epoch 2; elapsed 38.3 min
+2026-11-07 22:45:33 [240/306] C1 (multi-task MLP (D, D+1, D+2)) 2022-01-01 seed 5: 0.1 min, best epoch 2; elapsed 38.3 min
+2026-11-07 22:45:46 [241/306] C2 (supervised autoencoder + MLP) 2026-06-01 seed 1: 0.2 min, best epoch 2; elapsed 38.6 min
+2026-11-07 22:45:47 [242/306] C2 (supervised autoencoder + MLP) 2026-06-01 seed 2: 0.2 min, best epoch 2; elapsed 38.6 min
+2026-11-07 22:46:00 [243/306] C2 (supervised autoencoder + MLP) 2026-06-01 seed 3: 0.2 min, best epoch 2; elapsed 38.8 min
+2026-11-07 22:46:05 [244/306] C2 (supervised autoencoder + MLP) 2026-06-01 seed 4: 0.3 min, best epoch 3; elapsed 38.9 min
+2026-11-07 22:46:18 [245/306] C2 (supervised autoencoder + MLP) 2026-01-01 seed 1: 0.2 min, best epoch 2; elapsed 39.1 min
+2026-11-07 22:46:22 [246/306] C2 (supervised autoencoder + MLP) 2026-06-01 seed 5: 0.4 min, best epoch 4; elapsed 39.2 min
+2026-11-07 22:46:28 [247/306] C2 (supervised autoencoder + MLP) 2026-01-01 seed 2: 0.2 min, best epoch 1; elapsed 39.3 min
+2026-11-07 22:46:31 [248/306] C2 (supervised autoencoder + MLP) 2026-01-01 seed 3: 0.2 min, best epoch 1; elapsed 39.3 min
+2026-11-07 22:46:41 [249/306] C2 (supervised autoencoder + MLP) 2026-01-01 seed 4: 0.2 min, best epoch 2; elapsed 39.5 min
+2026-11-07 22:46:41 [250/306] C2 (supervised autoencoder + MLP) 2026-01-01 seed 5: 0.2 min, best epoch 1; elapsed 39.5 min
+2026-11-07 22:46:55 [251/306] C2 (supervised autoencoder + MLP) 2025-01-01 seed 2: 0.2 min, best epoch 3; elapsed 39.7 min
+2026-11-07 22:47:00 [252/306] C2 (supervised autoencoder + MLP) 2025-01-01 seed 1: 0.3 min, best epoch 5; elapsed 39.8 min
+2026-11-07 22:47:15 [253/306] C2 (supervised autoencoder + MLP) 2025-01-01 seed 3: 0.3 min, best epoch 5; elapsed 40.1 min
+2026-11-07 22:47:20 [254/306] C2 (supervised autoencoder + MLP) 2025-01-01 seed 4: 0.3 min, best epoch 5; elapsed 40.1 min
+2026-11-07 22:47:27 [255/306] C2 (supervised autoencoder + MLP) 2024-01-01 seed 1: 0.1 min, best epoch 1; elapsed 40.3 min
+2026-11-07 22:47:33 [256/306] C2 (supervised autoencoder + MLP) 2024-01-01 seed 2: 0.1 min, best epoch 1; elapsed 40.4 min
+2026-11-07 22:47:35 [257/306] C2 (supervised autoencoder + MLP) 2025-01-01 seed 5: 0.3 min, best epoch 5; elapsed 40.4 min
+2026-11-07 22:47:40 [258/306] C2 (supervised autoencoder + MLP) 2024-01-01 seed 3: 0.1 min, best epoch 1; elapsed 40.5 min
+2026-11-07 22:47:42 [259/306] C2 (supervised autoencoder + MLP) 2024-01-01 seed 4: 0.1 min, best epoch 1; elapsed 40.5 min
+2026-11-07 22:47:49 [260/306] C2 (supervised autoencoder + MLP) 2023-01-01 seed 1: 0.1 min, best epoch 2; elapsed 40.6 min
+2026-11-07 22:47:52 [261/306] C2 (supervised autoencoder + MLP) 2024-01-01 seed 5: 0.2 min, best epoch 3; elapsed 40.7 min
+2026-11-07 22:47:56 [262/306] C2 (supervised autoencoder + MLP) 2023-01-01 seed 2: 0.1 min, best epoch 2; elapsed 40.7 min
+2026-11-07 22:48:03 [263/306] C2 (supervised autoencoder + MLP) 2023-01-01 seed 3: 0.2 min, best epoch 4; elapsed 40.8 min
+2026-11-07 22:48:03 [264/306] C2 (supervised autoencoder + MLP) 2023-01-01 seed 4: 0.1 min, best epoch 2; elapsed 40.9 min
+2026-11-07 22:48:09 [265/306] C2 (supervised autoencoder + MLP) 2022-01-01 seed 1: 0.1 min, best epoch 2; elapsed 40.9 min
+2026-11-07 22:48:11 [266/306] C2 (supervised autoencoder + MLP) 2023-01-01 seed 5: 0.1 min, best epoch 2; elapsed 41.0 min
+2026-11-07 22:48:13 [267/306] C2 (supervised autoencoder + MLP) 2022-01-01 seed 2: 0.1 min, best epoch 1; elapsed 41.0 min
+2026-11-07 22:48:16 [268/306] C2 (supervised autoencoder + MLP) 2022-01-01 seed 3: 0.1 min, best epoch 1; elapsed 41.1 min
+2026-11-07 22:48:19 [269/306] C2 (supervised autoencoder + MLP) 2022-01-01 seed 4: 0.1 min, best epoch 2; elapsed 41.1 min
+2026-11-07 22:48:20 [270/306] C2 (supervised autoencoder + MLP) 2022-01-01 seed 5: 0.1 min, best epoch 1; elapsed 41.1 min
+2026-11-07 22:53:34 [271/306] A1 (Random Forest) 2026-01-01 seed 1: 5.2 min, leaf 1000; elapsed 46.4 min
+2026-11-07 22:55:15 [272/306] A1 (Random Forest) 2026-06-01 seed 1: 6.9 min, leaf 250; elapsed 48.1 min
+2026-11-07 22:58:01 [273/306] A1 (Random Forest) 2024-01-01 seed 1: 2.8 min, leaf 1000; elapsed 50.8 min
+2026-11-07 22:58:17 [274/306] A1 (Random Forest) 2025-01-01 seed 1: 4.7 min, leaf 250; elapsed 51.1 min
+2026-11-07 22:59:22 [275/306] A1 (Random Forest) 2022-01-01 seed 1: 1.1 min, leaf 250; elapsed 52.2 min
+2026-11-07 23:00:13 [276/306] A1 (Random Forest) 2023-01-01 seed 1: 2.2 min, leaf 250; elapsed 53.0 min
+2026-11-07 23:04:23 [277/306] A2 (ExtraTrees) 2026-06-01 seed 1: 5.0 min, leaf 250; elapsed 57.2 min
+2026-11-07 23:05:03 [278/306] A2 (ExtraTrees) 2026-01-01 seed 1: 4.8 min, leaf 250; elapsed 57.8 min
+2026-11-07 23:07:42 [279/306] A2 (ExtraTrees) 2024-01-01 seed 1: 2.6 min, leaf 250; elapsed 60.5 min
+2026-11-07 23:08:02 [280/306] A2 (ExtraTrees) 2025-01-01 seed 1: 3.6 min, leaf 250; elapsed 60.8 min
+2026-11-07 23:08:51 [281/306] A2 (ExtraTrees) 2022-01-01 seed 1: 0.8 min, leaf 250; elapsed 61.7 min
+2026-11-07 23:09:10 [282/306] A2 (ExtraTrees) 2023-01-01 seed 1: 1.5 min, leaf 250; elapsed 62.0 min
+2026-11-07 23:14:46 [283/306] B6 (DoubleEnsemble (Qlib)) 2026-06-01 seed 1: 5.9 min, 335 rounds; elapsed 67.6 min
+2026-11-07 23:16:48 [284/306] B6 (DoubleEnsemble (Qlib)) 2026-06-01 seed 2: 7.6 min, 557 rounds; elapsed 69.6 min
+2026-11-07 23:17:35 [285/306] B6 (DoubleEnsemble (Qlib)) 2026-01-01 seed 1: 0.8 min, 71 rounds; elapsed 70.4 min
+2026-11-07 23:18:17 [286/306] B6 (DoubleEnsemble (Qlib)) 2026-06-01 seed 3: 3.5 min, 372 rounds; elapsed 71.1 min
+2026-11-07 23:18:24 [287/306] B6 (DoubleEnsemble (Qlib)) 2026-01-01 seed 2: 0.8 min, 82 rounds; elapsed 71.2 min
+2026-11-07 23:19:06 [288/306] B6 (DoubleEnsemble (Qlib)) 2026-01-01 seed 3: 0.8 min, 76 rounds; elapsed 71.9 min
+2026-11-07 23:21:28 [289/306] B6 (DoubleEnsemble (Qlib)) 2025-01-01 seed 1: 3.1 min, 372 rounds; elapsed 74.3 min
+2026-11-07 23:21:47 [290/306] B6 (DoubleEnsemble (Qlib)) 2025-01-01 seed 2: 2.7 min, 325 rounds; elapsed 74.6 min
+2026-11-07 23:22:57 [291/306] B6 (DoubleEnsemble (Qlib)) 2024-01-01 seed 1: 1.2 min, 148 rounds; elapsed 75.8 min
+2026-11-07 23:23:50 [292/306] B6 (DoubleEnsemble (Qlib)) 2024-01-01 seed 2: 0.9 min, 109 rounds; elapsed 76.6 min
+2026-11-07 23:24:00 [293/306] B6 (DoubleEnsemble (Qlib)) 2025-01-01 seed 3: 2.5 min, 304 rounds; elapsed 76.8 min
+2026-11-07 23:25:07 [294/306] B6 (DoubleEnsemble (Qlib)) 2023-01-01 seed 1: 1.1 min, 148 rounds; elapsed 77.9 min
+2026-11-07 23:25:49 [295/306] B6 (DoubleEnsemble (Qlib)) 2024-01-01 seed 3: 2.0 min, 252 rounds; elapsed 78.6 min
+2026-11-07 23:26:50 [296/306] B6 (DoubleEnsemble (Qlib)) 2023-01-01 seed 2: 1.7 min, 229 rounds; elapsed 79.6 min
+2026-11-07 23:27:03 [297/306] B6 (DoubleEnsemble (Qlib)) 2023-01-01 seed 3: 1.2 min, 171 rounds; elapsed 79.9 min
+2026-11-07 23:28:15 [298/306] B6 (DoubleEnsemble (Qlib)) 2022-01-01 seed 2: 1.2 min, 171 rounds; elapsed 81.0 min
+2026-11-07 23:28:25 [299/306] B6 (DoubleEnsemble (Qlib)) 2022-01-01 seed 1: 1.6 min, 218 rounds; elapsed 81.2 min
+2026-11-07 23:29:47 [300/306] B6 (DoubleEnsemble (Qlib)) 2022-01-01 seed 3: 1.5 min, 187 rounds; elapsed 82.6 min
+2026-11-07 23:30:15 [301/306] A0 (sklearn default RF (report only)) 2026-06-01 seed 1: 1.8 min, leaf 1; elapsed 83.1 min
+2026-11-07 23:31:39 [302/306] A0 (sklearn default RF (report only)) 2026-01-01 seed 1: 1.9 min, leaf 1; elapsed 84.4 min
+2026-11-07 23:31:43 [303/306] A0 (sklearn default RF (report only)) 2025-01-01 seed 1: 1.5 min, leaf 1; elapsed 84.5 min
+2026-11-07 23:32:30 [304/306] A0 (sklearn default RF (report only)) 2023-01-01 seed 1: 0.8 min, leaf 1; elapsed 85.3 min
+2026-11-07 23:32:46 [305/306] A0 (sklearn default RF (report only)) 2024-01-01 seed 1: 1.1 min, leaf 1; elapsed 85.6 min
+2026-11-07 23:33:01 [306/306] A0 (sklearn default RF (report only)) 2022-01-01 seed 1: 0.5 min, leaf 1; elapsed 85.8 min
+2026-11-07 23:33:08 v15_train.py end: 306 of 306 units done, 85.9 min this run

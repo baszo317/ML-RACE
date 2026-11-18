@@ -1,0 +1,6 @@
+2026-10-30: 50 stocks, mean intraday return +79.71 bp, 32 closed above the open
+(baseline) Always down                        AR -0.007971 (  -79.71 bp)  timing   -79.71  xsec    +0.00  share1 0.00  hits 18/50
+(baseline) Previous day                       AR -0.001918 (  -19.18 bp)  timing   -25.51  xsec    +6.33  share1 0.34  hits 27/50
+submission_v11_1030_wt0_lam0.5.csv            AR +0.002962 (  +29.62 bp)  timing   +19.13  xsec   +10.49  share1 0.62  hits 31/50
+submission_v11_1030.csv                       AR +0.001497 (  +14.97 bp)  timing   +12.75  xsec    +2.22  share1 0.58  hits 29/50
+submission_v9_1030.csv                        AR -0.002143 (  -21.43 bp)  timing    -9.57  xsec   -11.86  share1 0.44  hits 26/50

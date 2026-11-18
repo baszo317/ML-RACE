@@ -1,0 +1,18 @@
+static period: 2026-06-01 .. 2026-09-30, 84 days, 50 stocks; bp/day
+
+leaderboard baselines (this scoring reproduces them):
+  Previous day  (predict y_t-1)                   7.22   leaderboard 0.000722 = 7.22
+  Always down   (all 0)                          -2.04   leaderboard -0.000204 = -2.04
+
+forbidden for static (day-t information):
+  perfect foresight (close_t > open_t)          198.18
+  close_t > close_t-1 (today's close)           159.80
+  RSI_t > RSI_t-1 (same-row RSI)                158.99
+  MACD_t > MACD_t-1 (same-row MACD)             111.80
+  gap_t < 0 (today's open)                       29.91
+  gap_t below the day median (today's open)      20.35
+
+allowed, for comparison:
+  RSI_t-1 > RSI_t-2                              -6.99
+  v4 static upload (rolling, every day trained up to the day before): 15.36 (compare_static.py)
+  v4 + the real 09:00 open as a model input (v7 e6, upper bound, not allowed for static): 17.37

@@ -1,0 +1,245 @@
+16:52:19 PREREG_race_agg.md written (sha256 ccbc3dd4cb3859acc34dc9f412905976e4d13da42f9035ae6dea0fd81c4eedce), committed to D:\ML RACE\race ver\race_agg\research at 16:49:51
+16:55:26 repro C.LU 2024-01-01 seed 1: best_iter 290 (part 1: 290), max |diff| 0.000e+00, n 24196 / 24196, 30.6 s; lightgbm 4.6.0
+16:58:09 race_agg train: 135 units to do (all), workers 2, budget None
+16:58:21 GM.LU 2022-01-01 seed1: done (11.1 s) {'best_iter': 211}
+16:58:21 GM.LU 2022-01-01 seed2: done (11.8 s) {'best_iter': 250}
+16:58:32 GM.LU 2022-01-01 seed3: done (10.8 s) {'best_iter': 219}
+16:58:41 GM.LU 2023-01-01 seed1: done (19.5 s) {'best_iter': 278}
+16:58:56 GM.LU 2023-01-01 seed2: done (23.8 s) {'best_iter': 361}
+16:59:04 GM.LU 2023-01-01 seed3: done (22.6 s) {'best_iter': 341}
+16:59:16 GM.LU 2024-01-01 seed1: done (19.9 s) {'best_iter': 187}
+16:59:27 GM.LU 2024-01-01 seed2: done (22.7 s) {'best_iter': 217}
+16:59:29 GM.LN 2022-01-01 seed1: done (1.9 s) {'best_epoch': 4}
+16:59:31 GM.LN 2022-01-01 seed2: done (1.6 s) {'best_epoch': 4}
+16:59:33 GM.LN 2022-01-01 seed3: done (1.9 s) {'best_epoch': 5}
+16:59:35 GM.LN 2023-01-01 seed1: done (1.6 s) {'best_epoch': 1}
+16:59:37 GM.LN 2023-01-01 seed2: done (1.7 s) {'best_epoch': 1}
+16:59:40 GM.LN 2023-01-01 seed3: done (2.0 s) {'best_epoch': 2}
+16:59:44 GM.LN 2024-01-01 seed1: done (3.7 s) {'best_epoch': 3}
+16:59:46 GM.LU 2024-01-01 seed3: done (29.4 s) {'best_iter': 304}
+16:59:48 GM.LN 2024-01-01 seed2: done (3.8 s) {'best_epoch': 3}
+16:59:49 GM.LN 2024-01-01 seed3: done (3.1 s) {'best_epoch': 2}
+17:00:03 GM.LP 2022-01-01 seed0: done (15.1 s) 
+17:00:12 GM.LP 2023-01-01 seed0: done (23.0 s) 
+17:00:22 GM.LC 2022-01-01 seed0: done (9.1 s) {'best_iter': 115}
+17:00:36 GM.LP 2024-01-01 seed0: done (32.4 s) 
+17:00:40 GM.LC 2023-01-01 seed0: done (17.8 s) {'best_iter': 165}
+17:00:45 GM.LM 2022-01-01 seed2026: done (4.8 s) 
+17:00:50 GM.LM 2022-01-01 seed2027: done (4.8 s) 
+17:00:55 GM.LM 2022-01-01 seed2028: done (4.5 s) 
+17:01:00 GM.LC 2024-01-01 seed0: done (24.2 s) {'best_iter': 178}
+17:01:04 GM.LM 2023-01-01 seed2026: done (8.7 s) 
+17:01:08 GM.LM 2023-01-01 seed2027: done (7.5 s) 
+17:01:12 GM.LM 2023-01-01 seed2028: done (7.6 s) 
+17:01:20 GM.LM 2024-01-01 seed2026: done (11.3 s) 
+17:01:23 GM.LM 2024-01-01 seed2027: done (10.6 s) 
+17:01:30 GM.LM 2024-01-01 seed2028: done (10.5 s) 
+17:02:59 E4sel 2022-01-01 seed0: done (96.1 s) {'n_keep': 102, 'base_ic': 0.1408}
+17:03:05 E4sel 2023-01-01 seed0: done (94.1 s) {'n_keep': 101, 'base_ic': 0.1137}
+17:03:26 C1 2022-01-01 seed0: done (21.4 s) {'T': 47}
+17:04:01 C1 2023-01-01 seed0: done (34.3 s) {'T': 5}
+17:04:52 E4sel 2024-01-01 seed0: done (112.8 s) {'n_keep': 97, 'base_ic': 0.1251}
+17:04:57 C1 2024-01-01 seed0: done (55.9 s) {'T': 45}
+17:05:14 C2 2022-01-01 seed0: done (21.2 s) {'T': 2}
+17:05:33 C2 2023-01-01 seed0: done (35.7 s) {'T': 14}
+17:06:01 C2 2024-01-01 seed0: done (46.7 s) {'T': 3}
+17:07:54 D1 2022-01-01 seed1: done (140.3 s) {'leaves': 2}
+17:10:36 D1 2023-01-01 seed1: done (275.1 s) {'leaves': 3}
+17:12:34 E1 2022-01-01 seed1: done (117.6 s) {'leaf': 250}
+17:14:40 D1 2024-01-01 seed1: done (406.1 s) {'leaves': 2}
+17:16:38 E1 2023-01-01 seed1: done (243.3 s) {'leaf': 250}
+17:16:50 B1 2022-01-01 seed4: done (12.1 s) {'best_iter': 178}
+17:17:03 B1 2022-01-01 seed5: done (12.3 s) {'best_iter': 189}
+17:17:16 B1 2022-01-01 seed6: done (13.3 s) {'best_iter': 194}
+17:17:30 B1 2022-01-01 seed7: done (13.8 s) {'best_iter': 214}
+17:17:45 B1 2022-01-01 seed8: done (14.1 s) {'best_iter': 231}
+17:17:58 B1 2022-01-01 seed9: done (13.1 s) {'best_iter': 204}
+17:18:12 B1 2022-01-01 seed10: done (13.4 s) {'best_iter': 181}
+17:18:44 B1 2023-01-01 seed4: done (31.7 s) {'best_iter': 418}
+17:19:15 B1 2023-01-01 seed5: done (30.0 s) {'best_iter': 382}
+17:19:48 B1 2023-01-01 seed6: done (32.6 s) {'best_iter': 431}
+17:20:20 B1 2023-01-01 seed7: done (31.7 s) {'best_iter': 390}
+17:20:51 B1 2023-01-01 seed8: done (31.1 s) {'best_iter': 371}
+17:21:07 E1 2024-01-01 seed1: done (387.0 s) {'leaf': 250}
+17:21:38 B1 2023-01-01 seed9: done (46.7 s) {'best_iter': 660}
+17:21:44 B1 2023-01-01 seed10: done (36.3 s) {'best_iter': 487}
+17:22:10 B1 2024-01-01 seed4: done (31.8 s) {'best_iter': 277}
+17:22:21 B1 2024-01-01 seed5: done (37.3 s) {'best_iter': 357}
+17:22:42 B1 2024-01-01 seed6: done (31.7 s) {'best_iter': 275}
+17:22:56 B1 2024-01-01 seed7: done (34.6 s) {'best_iter': 316}
+17:23:16 B1 2024-01-01 seed8: done (34.0 s) {'best_iter': 321}
+17:23:30 B1 2024-01-01 seed9: done (33.3 s) {'best_iter': 316}
+17:23:30 B2 2022-01-01 seed1: exists (0.0 s) 
+17:23:31 B2 2022-01-01 seed2: exists (0.0 s) 
+17:23:31 B2 2022-01-01 seed3: exists (0.0 s) 
+17:23:32 B2 2022-01-01 seed4: exists (0.0 s) 
+17:23:32 B2 2022-01-01 seed5: exists (0.0 s) 
+17:23:33 B2 2022-01-01 seed6: exists (0.0 s) 
+17:23:33 B2 2022-01-01 seed7: exists (0.0 s) 
+17:23:34 B2 2022-01-01 seed8: exists (0.0 s) 
+17:23:34 B2 2022-01-01 seed9: exists (0.0 s) 
+17:23:35 B2 2022-01-01 seed10: exists (0.0 s) 
+17:23:35 B2 2023-01-01 seed1: exists (0.0 s) 
+17:23:36 B2 2023-01-01 seed2: exists (0.0 s) 
+17:23:36 B2 2023-01-01 seed3: exists (0.0 s) 
+17:23:37 B2 2023-01-01 seed4: exists (0.0 s) 
+17:23:37 B2 2023-01-01 seed5: exists (0.0 s) 
+17:23:38 B2 2023-01-01 seed6: exists (0.0 s) 
+17:23:38 B2 2023-01-01 seed7: exists (0.0 s) 
+17:23:39 B2 2023-01-01 seed8: exists (0.0 s) 
+17:23:39 B2 2023-01-01 seed9: exists (0.0 s) 
+17:23:40 B2 2023-01-01 seed10: exists (0.0 s) 
+17:23:40 B2 2024-01-01 seed1: exists (0.0 s) 
+17:23:41 B2 2024-01-01 seed2: exists (0.0 s) 
+17:23:41 B2 2024-01-01 seed3: exists (0.0 s) 
+17:23:42 B2 2024-01-01 seed4: exists (0.0 s) 
+17:23:42 B2 2024-01-01 seed5: exists (0.0 s) 
+17:23:43 B2 2024-01-01 seed6: exists (0.0 s) 
+17:23:43 B2 2024-01-01 seed7: exists (0.0 s) 
+17:23:44 B2 2024-01-01 seed8: exists (0.0 s) 
+17:23:44 B2 2024-01-01 seed9: exists (0.0 s) 
+17:23:50 B1 2024-01-01 seed10: done (33.6 s) {'best_iter': 321}
+17:24:03 C3 2022-01-01 seed1: done (12.1 s) {'best_iter': 164}
+17:24:14 B2 2024-01-01 seed10: done (29.3 s) {'best_iter': 247, 'unique_days': 582}
+17:24:15 C3 2022-01-01 seed2: done (11.9 s) {'best_iter': 152}
+17:24:28 C3 2022-01-01 seed3: done (14.0 s) {'best_iter': 204}
+17:24:38 C3 2023-01-01 seed1: done (22.7 s) {'best_iter': 258}
+17:24:54 C3 2023-01-01 seed2: done (25.1 s) {'best_iter': 300}
+17:25:03 C3 2023-01-01 seed3: done (24.2 s) {'best_iter': 278}
+17:25:25 C3 2024-01-01 seed1: done (31.0 s) {'best_iter': 273}
+17:25:31 C3 2024-01-01 seed2: done (28.1 s) {'best_iter': 237}
+17:25:48 D2 2022-01-01 seed1: done (16.2 s) {'best_iter': 256}
+17:25:53 C3 2024-01-01 seed3: done (28.0 s) {'best_iter': 236}
+17:26:04 D2 2022-01-01 seed2: done (16.1 s) {'best_iter': 256}
+17:26:08 D2 2022-01-01 seed3: done (13.9 s) {'best_iter': 181}
+17:26:35 D2 2023-01-01 seed1: done (30.9 s) {'best_iter': 400}
+17:26:41 D2 2023-01-01 seed2: done (32.8 s) {'best_iter': 437}
+17:27:09 D2 2023-01-01 seed3: done (33.9 s) {'best_iter': 436}
+17:27:12 D2 2024-01-01 seed1: done (31.1 s) {'best_iter': 274}
+17:27:37 D2 2024-01-01 seed3: done (24.4 s) {'best_iter': 200}
+17:27:38 F1 2022-01-01 seed1: exists (0.0 s) 
+17:27:38 F1 2022-01-01 seed2: exists (0.0 s) 
+17:27:39 F1 2022-01-01 seed3: exists (0.0 s) 
+17:27:39 F1 2023-01-01 seed1: exists (0.0 s) 
+17:27:40 F1 2023-01-01 seed2: exists (0.0 s) 
+17:27:40 F1 2023-01-01 seed3: exists (0.0 s) 
+17:27:41 F1 2024-01-01 seed1: exists (0.0 s) 
+17:27:41 D2 2024-01-01 seed2: done (30.9 s) {'best_iter': 266}
+17:27:41 F1 2024-01-01 seed2: exists (0.0 s) 
+17:27:42 F1 2024-01-01 seed3: exists (0.0 s) 
+17:27:42 E4 2022-01-01 seed1: exists (0.0 s) 
+17:27:42 E4 2022-01-01 seed2: exists (0.0 s) 
+17:27:42 E4 2022-01-01 seed3: exists (0.0 s) 
+17:27:43 E4 2023-01-01 seed1: exists (0.0 s) 
+17:27:43 E4 2023-01-01 seed2: exists (0.0 s) 
+17:27:43 E4 2023-01-01 seed3: exists (0.0 s) 
+17:27:43 E4 2024-01-01 seed1: exists (0.0 s) 
+17:27:44 E4 2024-01-01 seed2: exists (0.0 s) 
+17:27:44 E4 2024-01-01 seed3: exists (0.0 s) 
+17:27:44 race_agg train: 0 units left (all)
+17:30:27 E3 2022-01-01 leaf 50: oob_row_wll 0.6513, oob_row_ic 0.2268, oob_day_wll 0.6806, oob_day_ic 0.1472, oob_day_cover 1.0000, val_wll 0.6814, val_ic 0.1432, test_wll 0.6818, test_ic 0.1136 (105.4 s)
+17:31:40 E3 2022-01-01 leaf 250: oob_row_wll 0.6718, oob_row_ic 0.1744, oob_day_wll 0.6814, oob_day_ic 0.1459, oob_day_cover 1.0000, val_wll 0.6822, val_ic 0.1472, test_wll 0.6825, test_ic 0.1098 (73.5 s)
+17:32:30 E3 2022-01-01 leaf 1000: oob_row_wll 0.6819, oob_row_ic 0.1361, oob_day_wll 0.6842, oob_day_ic 0.1315, oob_day_cover 1.0000, val_wll 0.6849, val_ic 0.1268, test_wll 0.6858, test_ic 0.0941 (49.3 s)
+17:32:57 E3 2022-01-01 leaf 4000: oob_row_wll 0.6877, oob_row_ic 0.1172, oob_day_wll 0.6871, oob_day_ic 0.1204, oob_day_cover 1.0000, val_wll 0.6893, val_ic 0.1066, test_wll 0.6890, test_ic 0.0792 (27.0 s)
+17:36:01 E3 2023-01-01 leaf 50: oob_row_wll 0.6483, oob_row_ic 0.2263, oob_day_wll 0.6791, oob_day_ic 0.1435, oob_day_cover 1.0000, val_wll 0.6812, val_ic 0.1176, test_wll 0.6864, test_ic 0.1133 (184.0 s)
+17:38:18 E3 2023-01-01 leaf 250: oob_row_wll 0.6693, oob_row_ic 0.1728, oob_day_wll 0.6795, oob_day_ic 0.1437, oob_day_cover 1.0000, val_wll 0.6827, val_ic 0.1074, test_wll 0.6866, test_ic 0.1079 (137.6 s)
+17:39:53 E3 2023-01-01 leaf 1000: oob_row_wll 0.6805, oob_row_ic 0.1281, oob_day_wll 0.6828, oob_day_ic 0.1275, oob_day_cover 1.0000, val_wll 0.6873, val_ic 0.0738, test_wll 0.6879, test_ic 0.0955 (94.8 s)
+17:40:50 E3 2023-01-01 leaf 4000: oob_row_wll 0.6869, oob_row_ic 0.1089, oob_day_wll 0.6862, oob_day_ic 0.1110, oob_day_cover 1.0000, val_wll 0.6908, val_ic 0.0631, test_wll 0.6897, test_ic 0.0869 (57.1 s)
+17:45:21 E3 2024-01-01 leaf 50: oob_row_wll 0.6499, oob_row_ic 0.2239, oob_day_wll 0.6804, oob_day_ic 0.1394, oob_day_cover 1.0000, val_wll 0.6840, val_ic 0.1115, test_wll 0.6800, test_ic 0.1351 (271.1 s)
+17:48:44 E3 2024-01-01 leaf 250: oob_row_wll 0.6707, oob_row_ic 0.1700, oob_day_wll 0.6814, oob_day_ic 0.1388, oob_day_cover 1.0000, val_wll 0.6843, val_ic 0.1146, test_wll 0.6814, test_ic 0.1305 (202.8 s)
+17:51:09 E3 2024-01-01 leaf 1000: oob_row_wll 0.6807, oob_row_ic 0.1320, oob_day_wll 0.6833, oob_day_ic 0.1267, oob_day_cover 1.0000, val_wll 0.6854, val_ic 0.1062, test_wll 0.6829, test_ic 0.1287 (144.9 s)
+17:52:40 E3 2024-01-01 leaf 4000: oob_row_wll 0.6867, oob_row_ic 0.1082, oob_day_wll 0.6865, oob_day_ic 0.1115, oob_day_cover 1.0000, val_wll 0.6876, val_ic 0.1008, test_wll 0.6863, test_ic 0.1130 (91.1 s)
+10:17:35 race_agg train [V]: 27 units to do (['F1', 'D2', 'C3']), workers 2, budget 110.0
+10:19:10 C3 2025-01-01 seed2: done (93.4 s) {'best_iter': 556}
+10:19:26 C3 2025-01-01 seed1: done (108.8 s) {'best_iter': 704}
+10:20:50 race_agg train [V]: 25 units to do (['F1', 'D2', 'C3']), workers 2, budget 100.0
+10:21:45 C3 2026-01-01 seed1: done (39.8 s) {'best_iter': 111}
+10:22:38 C3 2025-01-01 seed3: done (92.4 s) {'best_iter': 588}
+10:22:41 C3 2026-01-01 seed2: done (55.7 s) {'best_iter': 154}
+10:22:42 race_agg train [V]: 22 units left (['F1', 'D2', 'C3'])
+10:23:59 race_agg train [V]: 22 units to do (['F1', 'D2', 'C3']), workers 2, budget 100.0
+10:24:52 C3 2026-01-01 seed3: done (51.0 s) {'best_iter': 164}
+10:25:47 C3 2026-06-01 seed1: done (105.8 s) {'best_iter': 484}
+10:26:33 C3 2026-06-01 seed2: done (100.0 s) {'best_iter': 520}
+10:26:33 race_agg train [V]: 19 units left (['F1', 'D2', 'C3'])
+10:26:49 race_agg train [V]: 19 units to do (['F1', 'D2', 'C3']), workers 2, budget 100.0
+10:28:20 D2 2025-01-01 seed1: done (87.7 s) {'best_iter': 508}
+10:28:35 C3 2026-06-01 seed3: done (102.6 s) {'best_iter': 430}
+10:29:37 D2 2025-01-01 seed2: done (77.1 s) {'best_iter': 577}
+10:29:37 race_agg train [V]: 16 units left (['F1', 'D2', 'C3'])
+10:29:46 race_agg train [V]: 16 units to do (['F1', 'D2']), workers 2, budget 100.0
+10:30:39 D2 2026-01-01 seed1: done (48.4 s) {'best_iter': 135}
+10:31:17 D2 2025-01-01 seed3: done (87.1 s) {'best_iter': 487}
+10:31:24 D2 2026-01-01 seed2: done (44.9 s) {'best_iter': 137}
+10:32:08 D2 2026-01-01 seed3: done (50.7 s) {'best_iter': 174}
+10:32:46 race_agg train [V]: 12 units to do (['F1', 'D2']), workers 2, budget 100.0
+10:34:39 D2 2026-06-01 seed1: done (111.2 s) {'best_iter': 490}
+10:35:31 D2 2026-06-01 seed2: done (163.2 s) {'best_iter': 847}
+10:35:31 race_agg train [V]: 10 units left (['F1', 'D2'])
+10:35:40 race_agg train [V]: 10 units to do (['F1', 'D2']), workers 2, budget 95.0
+10:36:52 F1 2025-01-01 seed1: done (70.4 s) {'best_iter': 369}
+10:37:32 D2 2026-06-01 seed3: done (110.6 s) {'best_iter': 438}
+10:38:13 F1 2025-01-01 seed2: done (80.1 s) {'best_iter': 446}
+10:38:13 race_agg train [V]: 7 units left (['F1', 'D2'])
+10:38:26 race_agg train [V]: 7 units to do (['F1']), workers 2, budget 100.0
+10:39:34 F1 2026-01-01 seed1: done (64.8 s) {'best_iter': 222}
+10:40:13 F1 2026-01-01 seed2: done (38.7 s) {'best_iter': 157}
+10:40:15 F1 2025-01-01 seed3: done (105.6 s) {'best_iter': 711}
+10:40:16 race_agg train [V]: 4 units left (['F1'])
+10:40:23 race_agg train [V]: 4 units to do (['F1']), workers 2, budget 100.0
+10:41:11 F1 2026-01-01 seed3: done (45.8 s) {'best_iter': 182}
+10:41:44 F1 2026-06-01 seed1: done (79.1 s) {'best_iter': 376}
+10:42:53 F1 2026-06-01 seed2: done (101.8 s) {'best_iter': 473}
+10:43:12 F1 2026-06-01 seed3: done (87.1 s) {'best_iter': 388}
+10:43:12 race_agg train [V]: 0 units left (['F1'])
+10:43:35 race_agg train [V]: 30 units to do (['B2']), workers 2, budget 100.0
+10:44:43 B2 2025-01-01 seed1: done (66.6 s) {'best_iter': 322, 'unique_days': 758}
+10:44:52 B2 2025-01-01 seed2: done (75.5 s) {'best_iter': 401, 'unique_days': 746}
+10:46:11 B2 2025-01-01 seed3: done (88.1 s) {'best_iter': 480, 'unique_days': 734}
+10:46:12 B2 2025-01-01 seed4: done (79.6 s) {'best_iter': 407, 'unique_days': 740}
+10:46:12 race_agg train [V]: 26 units left (['B2'])
+10:46:22 race_agg train [V]: 26 units to do (['B2']), workers 2, budget 100.0
+10:47:46 B2 2025-01-01 seed6: done (79.1 s) {'best_iter': 472, 'unique_days': 756}
+10:47:46 B2 2025-01-01 seed5: done (79.7 s) {'best_iter': 480, 'unique_days': 733}
+10:49:12 B2 2025-01-01 seed7: done (86.3 s) {'best_iter': 497, 'unique_days': 751}
+10:49:25 race_agg train [V]: 23 units to do (['B2']), workers 2, budget 100.0
+10:50:41 B2 2025-01-01 seed9: done (73.6 s) {'best_iter': 441, 'unique_days': 765}
+10:51:01 B2 2025-01-01 seed8: done (93.9 s) {'best_iter': 628, 'unique_days': 748}
+10:51:35 B2 2026-01-01 seed1: done (34.1 s) {'best_iter': 74, 'unique_days': 911}
+10:51:52 B2 2025-01-01 seed10: done (71.1 s) {'best_iter': 406, 'unique_days': 746}
+10:51:52 race_agg train [V]: 19 units left (['B2'])
+10:51:58 race_agg train [V]: 19 units to do (['B2']), workers 2, budget 105.0
+10:53:04 B2 2026-01-01 seed2: done (64.6 s) {'best_iter': 124, 'unique_days': 918}
+10:53:11 B2 2026-01-01 seed3: done (71.0 s) {'best_iter': 138, 'unique_days': 901}
+10:54:12 B2 2026-01-01 seed5: done (60.4 s) {'best_iter': 44, 'unique_days': 902}
+10:54:21 B2 2026-01-01 seed4: done (76.0 s) {'best_iter': 90, 'unique_days': 899}
+10:54:21 race_agg train [V]: 15 units left (['B2'])
+10:54:31 race_agg train [V]: 15 units to do (['B2']), workers 2, budget 105.0
+10:55:32 B2 2026-01-01 seed7: done (50.1 s) {'best_iter': 135, 'unique_days': 876}
+10:55:36 B2 2026-01-01 seed6: done (53.5 s) {'best_iter': 154, 'unique_days': 901}
+10:56:21 B2 2026-01-01 seed9: done (45.4 s) {'best_iter': 131, 'unique_days': 919}
+10:56:33 B2 2026-01-01 seed8: done (61.0 s) {'best_iter': 192, 'unique_days': 916}
+10:56:33 race_agg train [V]: 11 units left (['B2'])
+10:56:41 race_agg train [V]: 11 units to do (['B2']), workers 2, budget 100.0
+10:57:31 B2 2026-01-01 seed10: done (47.9 s) {'best_iter': 137, 'unique_days': 891}
+10:58:00 B2 2026-06-01 seed1: done (76.8 s) {'best_iter': 308, 'unique_days': 978}
+10:58:52 B2 2026-06-01 seed2: done (80.4 s) {'best_iter': 291, 'unique_days': 962}
+10:59:17 B2 2026-06-01 seed3: done (77.5 s) {'best_iter': 297, 'unique_days': 954}
+10:59:17 race_agg train [V]: 7 units left (['B2'])
+10:59:29 race_agg train [V]: 7 units to do (['B2']), workers 2, budget 100.0
+11:01:07 B2 2026-06-01 seed5: done (95.0 s) {'best_iter': 293, 'unique_days': 950}
+11:01:21 B2 2026-06-01 seed4: done (109.7 s) {'best_iter': 381, 'unique_days': 958}
+11:03:20 race_agg train [V]: 26 units to do (['B2', 'B1']), workers 2, budget 100.0
+11:05:08 B2 2026-06-01 seed9: done (102.7 s) {'best_iter': 356, 'unique_days': 953}
+11:05:14 B2 2026-06-01 seed10: done (109.3 s) {'best_iter': 399, 'unique_days': 966}
+11:05:14 race_agg train [V]: 24 units left (['B2', 'B1'])
+11:05:53 race_agg train [V]: 24 units to do (['B2', 'B1']), workers 2, budget 100.0
+11:07:41 B2 2026-06-01 seed7: done (78.5 s) {'best_iter': 276, 'unique_days': 955}
+11:07:44 B2 2026-06-01 seed8: done (81.9 s) {'best_iter': 304, 'unique_days': 975}
+11:07:44 race_agg train [V]: 22 units left (['B2', 'B1'])
+11:07:58 race_agg train [V]: 21 units to do (['B1']), workers 2, budget 100.0
+11:09:45 B1 2026-06-01 seed9: done (105.2 s) {'best_iter': 444}
+11:10:03 B1 2026-06-01 seed10: done (122.9 s) {'best_iter': 566}
+11:10:03 race_agg train [V]: 19 units left (['B1'])
+11:10:09 race_agg train [V]: 19 units to do (['B1']), workers 2, budget 100.0
+11:13:00 B1 2026-06-01 seed8: done (168.9 s) {'best_iter': 540}

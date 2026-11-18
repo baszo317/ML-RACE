@@ -1,0 +1,23 @@
+WF-daily (PREREG_race_live.md section 2), written 2026-11-15 23:33:09
+models fitted: 729; complete years: ['2022', '2023', '2024']; days scored: 727
+
+          mean   NW t     sd    2022    2023    2024
+WF3      16.35  10.25   42.5   18.13   11.83   19.00
+WF1      15.84   9.96   42.7   17.58   11.38   18.49
+SD       15.10   9.80   42.7   17.02   10.69   17.50
+QR       16.14  10.26   42.4   19.12   10.75   18.43
+MR       16.67  10.65   42.0   19.16   11.67   19.08
+
+paired differences (same days), NW 5 lags
+WF3-MR     -0.32 t  -0.78 SE  0.41  by year   -1.03   +0.16   -0.08
+WF3-QR     +0.21 t  +0.45 SE  0.46  by year   -1.00   +1.08   +0.57
+WF3-SD     +1.25 t  +2.10 SE  0.59  by year   +1.10   +1.14   +1.50
+WF1-WF3    -0.50 t  -1.60 SE  0.31  by year   -0.55   -0.45   -0.52
+MR-SD     +1.57 t  +2.58 SE  0.61  by year   +2.14   +0.98   +1.58
+
+share of 19-day means < 0: WF3 0.020, WF1 0.025, SD 0.031, QR 0.023, MR 0.021
+names changed per day in the Top25 (WF3): 6.7
+best_iter of the daily models: median 354, 10% 201, 90% 578
+
+decision rule (PREREG section 2): WF3 - MR = -0.32, -SE = -0.41 -> live uses WF-daily (pool 3)
+WF1 (latest model only) is descriptive; it is not part of the decision.
